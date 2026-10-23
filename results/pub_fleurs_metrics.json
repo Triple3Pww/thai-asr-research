@@ -1,0 +1,12 @@
+{
+ "manifest": "E:/Claude/datasets/fleurs_th/manifest_test_eval.jsonl",
+ "n": 1021,
+ "cer": {
+  "twL": 0.069,
+  "patL": 0.0618,
+  "nectec": 0.0617,
+  "r2ep_a75": 0.0612,
+  "gs2a_a50": 0.0595,
+  "typhoon_rt": 0.0892
+ }
+}

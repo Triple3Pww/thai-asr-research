@@ -1,0 +1,98 @@
+{
+  "arm": "finetune_emotion2vec",
+  "condition": "top4",
+  "date": "2026-09-22 13:30:39",
+  "model": "emotion2vec/emotion2vec_plus_large",
+  "cache": "D:\\sensevoice-spike\\ft_cache",
+  "score_mic": "mic_clip",
+  "device": "cuda",
+  "cache_index": {
+    "built": "2026-09-22 12:33:23",
+    "shards": [
+      "train-00000.parquet",
+      "train-00010.parquet",
+      "train-00020.parquet"
+    ],
+    "agreement_min": 0.7,
+    "mics": [
+      "mic_clip",
+      "mic_con",
+      "mic_middle",
+      "mic_zoom"
+    ],
+    "mic_clips_available": {
+      "mic_clip": 1256,
+      "mic_con": 1256,
+      "mic_middle": 691,
+      "mic_zoom": 0
+    },
+    "rows_seen": 2882,
+    "rows_kept": 1256,
+    "skipped": {
+      "no_majority_or_unmapped": 247,
+      "below_agreement": 619,
+      "held_out_frustrated": 760
+    },
+    "actors": [
+      "001",
+      "002",
+      "003",
+      "004",
+      "005",
+      "006",
+      "108",
+      "109",
+      "110",
+      "111",
+      "112",
+      "113",
+      "114",
+      "115",
+      "181",
+      "182",
+      "183",
+      "184",
+      "185",
+      "186",
+      "187",
+      "188"
+    ],
+    "gold_distribution": {
+      "NEUTRAL": 415,
+      "HAPPY": 352,
+      "ANGRY": 289,
+      "SAD": 200
+    },
+    "audio_seconds": 5912.0
+  },
+  "hyperparameters": {
+    "epochs": 8,
+    "lr_head": 0.001,
+    "lr_backbone": 0.0001,
+    "grad_accum": 8,
+    "seed": 0,
+    "weight_decay": 0.01,
+    "train_mics": [
+      "mic_clip"
+    ],
+    "selection": "dev accuracy, reported once on test",
+    "trainable_params": 50388996,
+    "total_params": 164048921,
+    "unfrozen_groups": 4,
+    "swept_lr_backbone": [
+      1e-05,
+      3e-05,
+      0.0001
+    ]
+  },
+  "environment": {
+    "python": "3.11.9",
+    "torch": "2.14.0+cu130",
+    "numpy": "1.26.4",
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 5060 Ti",
+    "threads": 4,
+    "venv": "D:/sensevoice-spike/.venv",
+    "platform": "Windows-10-10.0.26200-SP0"
+  }
+}

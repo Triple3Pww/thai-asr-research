@@ -1,0 +1,8 @@
+{
+ "manifest": "E:/Claude/datasets/gigaspeech2_th/manifest_test_fresh300.jsonl",
+ "n": 300,
+ "cer": {
+  "patL": 0.148,
+  "twL": 0.1464
+ }
+}

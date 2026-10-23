@@ -1,0 +1,20 @@
+{
+ "tag": "d1_rw_malsd_b2",
+ "split": "real",
+ "condition": "none",
+ "n_utts": 682,
+ "audio_h": 1.83,
+ "rtf": 0.013,
+ "asr_health": {
+  "ok": true,
+  "model": "typhoon-ai/typhoon-asr-realtime",
+  "sample_rate": 16000,
+  "decoding": {
+   "strategy": "malsd_batch",
+   "device": "cuda",
+   "beam_size": 2,
+   "shipped_strategy": "greedy_batch"
+  }
+ },
+ "align_backend": "dp"
+}

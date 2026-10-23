@@ -1,0 +1,164 @@
+{
+ "tag": "h2",
+ "sets": [
+  "lot_train",
+  "porjai_train"
+ ],
+ "hidden": 0,
+ "lr": 0.001,
+ "bs": 32,
+ "epochs": 30,
+ "best_val_greedy_cer": 0.12927314968469963,
+ "log": [
+  {
+   "epoch": 0,
+   "loss": 7.4914,
+   "val_greedy_cer": 0.9854
+  },
+  {
+   "epoch": 1,
+   "loss": 3.7386,
+   "val_greedy_cer": 0.7217
+  },
+  {
+   "epoch": 2,
+   "loss": 2.4453,
+   "val_greedy_cer": 0.4954
+  },
+  {
+   "epoch": 3,
+   "loss": 1.8024,
+   "val_greedy_cer": 0.3433
+  },
+  {
+   "epoch": 4,
+   "loss": 1.4543,
+   "val_greedy_cer": 0.2628
+  },
+  {
+   "epoch": 5,
+   "loss": 1.2462,
+   "val_greedy_cer": 0.2215
+  },
+  {
+   "epoch": 6,
+   "loss": 1.1123,
+   "val_greedy_cer": 0.1939
+  },
+  {
+   "epoch": 7,
+   "loss": 1.0217,
+   "val_greedy_cer": 0.1701
+  },
+  {
+   "epoch": 8,
+   "loss": 0.9572,
+   "val_greedy_cer": 0.1613
+  },
+  {
+   "epoch": 9,
+   "loss": 0.9095,
+   "val_greedy_cer": 0.1569
+  },
+  {
+   "epoch": 10,
+   "loss": 0.8732,
+   "val_greedy_cer": 0.1483
+  },
+  {
+   "epoch": 11,
+   "loss": 0.8446,
+   "val_greedy_cer": 0.1445
+  },
+  {
+   "epoch": 12,
+   "loss": 0.8214,
+   "val_greedy_cer": 0.1418
+  },
+  {
+   "epoch": 13,
+   "loss": 0.8022,
+   "val_greedy_cer": 0.1403
+  },
+  {
+   "epoch": 14,
+   "loss": 0.7858,
+   "val_greedy_cer": 0.1401
+  },
+  {
+   "epoch": 15,
+   "loss": 0.7719,
+   "val_greedy_cer": 0.1389
+  },
+  {
+   "epoch": 16,
+   "loss": 0.7596,
+   "val_greedy_cer": 0.1384
+  },
+  {
+   "epoch": 17,
+   "loss": 0.749,
+   "val_greedy_cer": 0.1361
+  },
+  {
+   "epoch": 18,
+   "loss": 0.7391,
+   "val_greedy_cer": 0.1346
+  },
+  {
+   "epoch": 19,
+   "loss": 0.7305,
+   "val_greedy_cer": 0.1357
+  },
+  {
+   "epoch": 20,
+   "loss": 0.7226,
+   "val_greedy_cer": 0.1328
+  },
+  {
+   "epoch": 21,
+   "loss": 0.7154,
+   "val_greedy_cer": 0.1325
+  },
+  {
+   "epoch": 22,
+   "loss": 0.7087,
+   "val_greedy_cer": 0.1315
+  },
+  {
+   "epoch": 23,
+   "loss": 0.7026,
+   "val_greedy_cer": 0.13
+  },
+  {
+   "epoch": 24,
+   "loss": 0.6969,
+   "val_greedy_cer": 0.131
+  },
+  {
+   "epoch": 25,
+   "loss": 0.6915,
+   "val_greedy_cer": 0.1338
+  },
+  {
+   "epoch": 26,
+   "loss": 0.6866,
+   "val_greedy_cer": 0.13
+  },
+  {
+   "epoch": 27,
+   "loss": 0.682,
+   "val_greedy_cer": 0.1322
+  },
+  {
+   "epoch": 28,
+   "loss": 0.6774,
+   "val_greedy_cer": 0.1293
+  },
+  {
+   "epoch": 29,
+   "loss": 0.6733,
+   "val_greedy_cer": 0.1294
+  }
+ ]
+}

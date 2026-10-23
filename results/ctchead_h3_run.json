@@ -1,0 +1,165 @@
+{
+ "tag": "h3",
+ "sets": [
+  "lot_train",
+  "porjai_train"
+ ],
+ "hidden": 1024,
+ "lr": 0.001,
+ "bs": 32,
+ "epochs": 30,
+ "best_val_greedy_cer": 0.1091,
+ "log": [
+  {
+   "epoch": 0,
+   "loss": 3.7751,
+   "val_greedy_cer": 0.1962
+  },
+  {
+   "epoch": 1,
+   "loss": 0.956,
+   "val_greedy_cer": 0.141
+  },
+  {
+   "epoch": 2,
+   "loss": 0.7993,
+   "val_greedy_cer": 0.1383
+  },
+  {
+   "epoch": 3,
+   "loss": 0.7335,
+   "val_greedy_cer": 0.1274
+  },
+  {
+   "epoch": 4,
+   "loss": 0.6899,
+   "val_greedy_cer": 0.1245
+  },
+  {
+   "epoch": 5,
+   "loss": 0.6544,
+   "val_greedy_cer": 0.1228
+  },
+  {
+   "epoch": 6,
+   "loss": 0.6257,
+   "val_greedy_cer": 0.115
+  },
+  {
+   "epoch": 7,
+   "loss": 0.6,
+   "val_greedy_cer": 0.1171
+  },
+  {
+   "epoch": 8,
+   "loss": 0.5768,
+   "val_greedy_cer": 0.1181
+  },
+  {
+   "epoch": 9,
+   "loss": 0.5577,
+   "val_greedy_cer": 0.1208
+  },
+  {
+   "epoch": 10,
+   "loss": 0.5388,
+   "val_greedy_cer": 0.1136
+  },
+  {
+   "epoch": 11,
+   "loss": 0.5229,
+   "val_greedy_cer": 0.1112
+  },
+  {
+   "epoch": 12,
+   "loss": 0.5085,
+   "val_greedy_cer": 0.1112
+  },
+  {
+   "epoch": 13,
+   "loss": 0.4942,
+   "val_greedy_cer": 0.1128
+  },
+  {
+   "epoch": 14,
+   "loss": 0.4811,
+   "val_greedy_cer": 0.112
+  },
+  {
+   "epoch": 15,
+   "loss": 0.4697,
+   "val_greedy_cer": 0.1186
+  },
+  {
+   "epoch": 16,
+   "loss": 0.4576,
+   "val_greedy_cer": 0.1161
+  },
+  {
+   "epoch": 17,
+   "loss": 0.4474,
+   "val_greedy_cer": 0.1139
+  },
+  {
+   "epoch": 18,
+   "loss": 0.4373,
+   "val_greedy_cer": 0.1107
+  },
+  {
+   "epoch": 19,
+   "loss": 0.4275,
+   "val_greedy_cer": 0.1133
+  },
+  {
+   "epoch": 20,
+   "loss": 0.4175,
+   "val_greedy_cer": 0.113
+  },
+  {
+   "epoch": 21,
+   "loss": 0.41,
+   "val_greedy_cer": 0.1124
+  },
+  {
+   "epoch": 22,
+   "loss": 0.4008,
+   "val_greedy_cer": 0.1144
+  },
+  {
+   "epoch": 23,
+   "loss": 0.3932,
+   "val_greedy_cer": 0.1116
+  },
+  {
+   "epoch": 24,
+   "loss": 0.3848,
+   "val_greedy_cer": 0.1159
+  },
+  {
+   "epoch": 25,
+   "loss": 0.3775,
+   "val_greedy_cer": 0.1175
+  },
+  {
+   "epoch": 26,
+   "loss": 0.3701,
+   "val_greedy_cer": 0.112
+  },
+  {
+   "epoch": 27,
+   "loss": 0.3636,
+   "val_greedy_cer": 0.1111
+  },
+  {
+   "epoch": 28,
+   "loss": 0.356,
+   "val_greedy_cer": 0.114
+  },
+  {
+   "epoch": 29,
+   "loss": 0.3495,
+   "val_greedy_cer": 0.1091
+  }
+ ],
+ "note": "rebuilt 2026-10-07 from the checkpoint log after an over-broad rm deleted the original"
+}

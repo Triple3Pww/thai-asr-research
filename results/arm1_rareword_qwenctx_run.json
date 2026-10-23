@@ -1,0 +1,31 @@
+{
+ "tag": "arm1_rareword_qwenctx",
+ "model": "typhoon-ai/typhoon-asr-qwen-0.6b-ctx",
+ "split": "real",
+ "conditions": [
+  "none",
+  "bias@50",
+  "dis@50"
+ ],
+ "n_utts": 682,
+ "n_rows": 2046,
+ "audio_h": 1.83,
+ "seconds": 6856.6,
+ "dtype": "bfloat16",
+ "device": "cuda",
+ "max_new_tokens": 440,
+ "prompt_format": "space-joined entries + newline + 'Thai'; bare 'Thai' for none",
+ "prompt_samples": {
+  "none": "Thai",
+  "bias@50": "โรงเรียนสตรีสมุทรปราการ บางกระปิ โรงเรียนศรีบุณยานนท์ NHS ทันตแพทย์หญิง มนปรียา โรงเรียนสาธิตบูรพา หุ้น Coca-Cola กาดหลวง นพ. กฤษณะ โรงบาลเมตตาประชารักษ์ ห้วยขวาง K-SET ห้าสิบ กิจเจริญ หยง Aan KKP EMXCN-UH Central เซเว่น แท็กซ์บักโนมส์ กิตติพงศ์ ม. ราชภัฏภูเก็ต BG Pathum United BECL แก้วมณี มีท อวตา",
+  "dis@50": "วิมวิภา สุทธิสาร ดีพัค โชปรา Flash Express ธัญญ่า วรินทร์ มหาราษฎร์ ไชยวัฒน์ เพียรกิจ เอมมา แชมเบอร์เลน กอล์ฟ หุ้นกู้ SKE ฝน มูลนิธิชัยพัฒนา ซิดนีย์ ทศพล ลิ้มพิจารณ์กิจ หุ้น ZOOM กองทุน KKP TECH-UH-M Albaqir พิม องค์การเภสัชกรรม เต้ กระเษียร ปัญญาคำเลิศ GUCCI PowerPoint เต้ย ExxonMobil SWC บอร์เนียว"
+ },
+ "params_b": 0.782,
+ "align_backend": "dp",
+ "in_process": true,
+ "note": "loads in-process (qwen3_asr is not NeMo, :8007 cannot serve it), so audio does NOT cross the PCM16 wire that changes 3.4% of transcripts on the NeMo path",
+ "environment": {
+  "python": "3.11.9",
+  "torch": "2.13.0+cu130"
+ }
+}

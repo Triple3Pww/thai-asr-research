@@ -1,0 +1,12 @@
+{
+ "tag": "rlm_dev_npt",
+ "pool": [
+  "nec",
+  "patL",
+  "twL"
+ ],
+ "half": "dev",
+ "gamma": 2.0,
+ "delta": 8.0,
+ "lm": "Qwen/Qwen3-0.6B"
+}

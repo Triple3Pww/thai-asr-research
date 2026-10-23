@@ -1,0 +1,13 @@
+{
+ "tag": "ctchead_h3_real_dis50_tau-1.5",
+ "mode": "rnnt",
+ "condition": "dis@50",
+ "split": "real",
+ "n_utts": 682,
+ "tau": -1.5,
+ "max_gap": 6,
+ "spots_accepted": 52,
+ "audio_h": 1.83,
+ "rtf": 0.0261,
+ "align_backend": "dp"
+}

@@ -1,0 +1,20 @@
+{
+ "base": "results\\gs2lot_a75_bench_hyps.jsonl",
+ "arm": "results\\soup2_lot_s0c_a75_bench_hyps.jsonl",
+ "official_cer": {
+  "base": 0.04716,
+  "arm": 0.0471
+ },
+ "official_entity_recall": {
+  "base": 0.4459,
+  "arm": 0.4331
+ },
+ "own_cer": {
+  "base": 0.04689,
+  "arm": 0.04683
+ },
+ "rel_change": -0.0013,
+ "p_arm_not_better": 0.4846,
+ "utts_changed": 56,
+ "half": "dev"
+}

@@ -1,0 +1,13 @@
+{
+ "tag": "ctchead_h3_synth_bias50_tau-0.5",
+ "mode": "rnnt",
+ "condition": "bias@50",
+ "split": "synth",
+ "n_utts": 1380,
+ "tau": -0.5,
+ "max_gap": 6,
+ "spots_accepted": 723,
+ "audio_h": 5.77,
+ "rtf": 0.0226,
+ "align_backend": "dp"
+}

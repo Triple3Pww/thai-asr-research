@@ -1,0 +1,9 @@
+{
+ "tag": "loop3_tta_ctrl",
+ "lr": 0.0,
+ "steps": 3,
+ "head": "E:\\Claude\\asr-research\\checkpoints\\ctchead_h3.pt",
+ "n_utts": 682,
+ "adapt_ms_per_turn": 0.0,
+ "objective": "entropy of frozen CTC head on non-blank frames; encoder LayerNorm affine only; causal; reset per session"
+}

@@ -1,0 +1,185 @@
+{
+  "arm": "bench_public_thai_ser",
+  "date": "2026-09-26 00:37:06",
+  "model": "awghuku/wav2vec2-base-thai-ser",
+  "question": "how good is the only public Thai SER model? nobody had ever measured it",
+  "protocol": "identical to F23 -- THAI-SER 8 folds, agreement>=0.71, 4 classes, mic_con",
+  "label_recovery": "model ships id2label {0..4} with NO emotion names; the index->emotion permutation is fitted on TRAIN folds and applied to test",
+  "upper_bound_warning": "its train/test split is UNKNOWN and our test folds may be its training data -- every score here is an UPPER bound for it",
+  "fairness": "its 5th logit is dropped rather than scored wrong, so a frustrated prediction never costs it",
+  "by_cap": {
+    "none": {
+      "cap_seconds": null,
+      "n_folds": 8,
+      "WA_mean": 0.5515233272582566,
+      "WA_std": 0.047358207428295135,
+      "UA_mean": 0.4583786903185194,
+      "UA_std": 0.036570188628700456,
+      "canonical_order_WA_mean": 0.08560584616297964,
+      "mapping_stable_across_folds": true,
+      "mappings": [
+        [
+          1,
+          2,
+          0,
+          4
+        ],
+        [
+          1,
+          2,
+          0,
+          4
+        ],
+        [
+          1,
+          2,
+          0,
+          4
+        ],
+        [
+          1,
+          2,
+          0,
+          4
+        ],
+        [
+          1,
+          2,
+          0,
+          4
+        ],
+        [
+          1,
+          2,
+          0,
+          4
+        ],
+        [
+          1,
+          2,
+          0,
+          4
+        ],
+        [
+          1,
+          2,
+          0,
+          4
+        ]
+      ],
+      "per_fold": {
+        "0": {
+          "n_test": 483,
+          "mapping_fitted_on_train": [
+            1,
+            2,
+            0,
+            4
+          ],
+          "train_accuracy_of_mapping": 0.5486868686868687,
+          "WA": 0.5279503105590062,
+          "UA": 0.4656357388316151
+        },
+        "1": {
+          "n_test": 429,
+          "mapping_fitted_on_train": [
+            1,
+            2,
+            0,
+            4
+          ],
+          "train_accuracy_of_mapping": 0.5438850817079599,
+          "WA": 0.6317016317016317,
+          "UA": 0.3814928845101259
+        },
+        "2": {
+          "n_test": 383,
+          "mapping_fitted_on_train": [
+            1,
+            2,
+            0,
+            4
+          ],
+          "train_accuracy_of_mapping": 0.5409168527518718,
+          "WA": 0.5953002610966057,
+          "UA": 0.45502256626029414
+        },
+        "3": {
+          "n_test": 546,
+          "mapping_fitted_on_train": [
+            1,
+            2,
+            0,
+            4
+          ],
+          "train_accuracy_of_mapping": 0.5505250238647211,
+          "WA": 0.532967032967033,
+          "UA": 0.43991707791949297
+        },
+        "4": {
+          "n_test": 513,
+          "mapping_fitted_on_train": [
+            1,
+            2,
+            0,
+            4
+          ],
+          "train_accuracy_of_mapping": 0.5575282135975778,
+          "WA": 0.49902534113060426,
+          "UA": 0.4572947647774772
+        },
+        "5": {
+          "n_test": 583,
+          "mapping_fitted_on_train": [
+            1,
+            2,
+            0,
+            4
+          ],
+          "train_accuracy_of_mapping": 0.5440570958001647,
+          "WA": 0.5660377358490566,
+          "UA": 0.4839507623224729
+        },
+        "6": {
+          "n_test": 614,
+          "mapping_fitted_on_train": [
+            1,
+            2,
+            0,
+            4
+          ],
+          "train_accuracy_of_mapping": 0.5503100338218715,
+          "WA": 0.5651465798045603,
+          "UA": 0.5004790120407071
+        },
+        "7": {
+          "n_test": 589,
+          "mapping_fitted_on_train": [
+            1,
+            2,
+            0,
+            4
+          ],
+          "train_accuracy_of_mapping": 0.5521516101453405,
+          "WA": 0.4940577249575552,
+          "UA": 0.4832367158859696
+        }
+      }
+    }
+  },
+  "best_cap": "none",
+  "comparison": {
+    "ours_F23_frozen_head_3s": {
+      "WA": 77.18,
+      "UA": 73.18
+    },
+    "ours_F23_frozen_head_uncapped": {
+      "WA": 82.22,
+      "UA": 79.82
+    },
+    "thaiser_published_baseline": {
+      "WA": 67.34,
+      "UA": 62.61
+    }
+  }
+}

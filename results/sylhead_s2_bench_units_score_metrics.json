@@ -1,0 +1,32 @@
+{
+ "EAR head (sylhead_s2_bench_units)": {
+  "unit_err": 0.16406749783205152,
+  "tone_err": 0.1520452900864087,
+  "onset_rhyme_err": 0.16808048083891045
+ },
+ "NECTEC-fastconformer": {
+  "unit_err": 0.1146667045761483,
+  "tone_err": 0.10896862895330524,
+  "onset_rhyme_err": 0.11728973954559017
+ },
+ "typhoon-whisper-large-v3": {
+  "unit_err": 0.13707120822256658,
+  "tone_err": 0.12961307623547438,
+  "onset_rhyme_err": 0.14003154439660684
+ },
+ "NECTEC+LOTUSDIS-conv (A2)": {
+  "unit_err": 0.1018580384686465,
+  "tone_err": 0.0953049844634572,
+  "onset_rhyme_err": 0.10456541199539622
+ },
+ "fw_turbo_fp16_hyps": {
+  "unit_err": 0.13884821517421775,
+  "tone_err": 0.13233729195930702,
+  "onset_rhyme_err": 0.14122511616010913
+ },
+ "hyps": {
+  "unit_err": 0.09652701761369291,
+  "tone_err": 0.08938832843825821,
+  "onset_rhyme_err": 0.09955667334498487
+ }
+}

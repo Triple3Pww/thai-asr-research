@@ -1,0 +1,20 @@
+{
+ "base": "results\\loop7_nec_patL_twL_hyps.jsonl",
+ "arm": "results\\loop3_rover_gs2_patL_twL_hyps.jsonl",
+ "official_cer": {
+  "base": 0.05008,
+  "arm": 0.04902
+ },
+ "official_entity_recall": {
+  "base": 0.4076,
+  "arm": 0.414
+ },
+ "own_cer": {
+  "base": 0.0498,
+  "arm": 0.04877
+ },
+ "rel_change": -0.021,
+ "p_arm_not_better": 0.136,
+ "utts_changed": 66,
+ "half": "dev"
+}

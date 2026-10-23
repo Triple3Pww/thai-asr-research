@@ -1,0 +1,10 @@
+{
+ "tag": "picker_vote",
+ "model": null,
+ "n": 682,
+ "stats": {
+  "spots": 1960,
+  "llm_overrode_vote": 0
+ },
+ "llm_latency_ms_p50": null
+}

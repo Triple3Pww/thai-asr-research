@@ -1,0 +1,23 @@
+{
+ "tag": "d3_rw_beam2_a01",
+ "split": "real",
+ "condition": "none",
+ "n_utts": 682,
+ "audio_h": 1.83,
+ "rtf": 0.1358,
+ "asr_health": {
+  "ok": true,
+  "model": "typhoon-ai/typhoon-asr-realtime",
+  "sample_rate": 16000,
+  "decoding": {
+   "strategy": "malsd_batch",
+   "device": "cuda",
+   "cuda_graphs": false,
+   "beam_size": 2,
+   "ngram_lm": "E:/asr-bench/typhoon-ngram/ngram_4gram_bpe2048.nemo",
+   "ngram_alpha": 0.1,
+   "shipped_strategy": "greedy_batch"
+  }
+ },
+ "align_backend": "dp"
+}

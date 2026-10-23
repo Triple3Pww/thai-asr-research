@@ -1,0 +1,7 @@
+{
+ "model": "checkpoints/gs2a_a25.nemo",
+ "n": 682,
+ "latency_ms_p50": 128.4,
+ "latency_ms_p90": 194.4,
+ "rtf": 0.0138
+}

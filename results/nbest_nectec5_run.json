@@ -1,0 +1,8 @@
+{
+ "model": "E:/fw-spike/models/nectec_fc/pathumma-stt-th-fastconformer-rnnt-large.nemo",
+ "decoding": "malsd_batch beam 5, n-best",
+ "utts": 682,
+ "mean_cands": 4.42,
+ "latency_ms_p50": 112.9,
+ "latency_ms_p90": 161.9
+}

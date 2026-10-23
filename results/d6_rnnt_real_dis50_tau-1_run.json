@@ -1,0 +1,13 @@
+{
+ "tag": "d6_rnnt_real_dis50_tau-1",
+ "mode": "rnnt",
+ "condition": "dis@50",
+ "split": "real",
+ "n_utts": 682,
+ "tau": -1.0,
+ "max_gap": 6,
+ "spots_accepted": 17,
+ "audio_h": 1.83,
+ "rtf": 0.0266,
+ "align_backend": "dp"
+}

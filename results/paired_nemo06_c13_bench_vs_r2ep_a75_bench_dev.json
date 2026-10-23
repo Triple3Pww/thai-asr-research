@@ -1,0 +1,20 @@
+{
+ "base": "results\\r2ep_a75_bench_hyps.jsonl",
+ "arm": "results\\nemo06_c13_bench_hyps.jsonl",
+ "official_cer": {
+  "base": 0.04561,
+  "arm": 0.09711
+ },
+ "official_entity_recall": {
+  "base": 0.4331,
+  "arm": 0.2739
+ },
+ "own_cer": {
+  "base": 0.04539,
+  "arm": 0.0963
+ },
+ "rel_change": 1.1289,
+ "p_arm_not_better": 1.0,
+ "utts_changed": 328,
+ "half": "dev"
+}

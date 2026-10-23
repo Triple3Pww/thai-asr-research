@@ -1,0 +1,11 @@
+{
+ "manifest": "E:/Claude/datasets/gigaspeech2_th/manifest_val_conv.jsonl",
+ "n": 448,
+ "cer": {
+  "base": 0.0743,
+  "a25": 0.0659,
+  "a50": 0.0613,
+  "a75": 0.0536,
+  "a100": 0.0547
+ }
+}

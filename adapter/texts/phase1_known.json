@@ -1,0 +1,3082 @@
+[
+ {
+  "id": "p1_0001",
+  "text": "สวัสดีค่ะ วันนี้ทางร้านเปิดให้บริการตามปกติหรือเปล่าคะ พอดีอยากจะแวะเข้าไปเลือกดูของ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "สวัสดีค่ะวันนี้ทางร้านเปิดให้บริการตามปกติหรือเปล่าคะพอดีอยากจะแวะเข้าไปเลือกดูของ"
+ },
+ {
+  "id": "p1_0002",
+  "text": "ขอโทษนะครับ ตอนนี้หน้าร้านยังเปิดอยู่ไหมครับ พอดีผมกำลังจะออกจากบ้านไปที่ร้านครับ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "ขอโทษนะครับตอนนี้หน้าร้านยังเปิดอยู่ไหมครับพอดีผมกําลังจะออกจากบ้านไปที่ร้านครับ"
+ },
+ {
+  "id": "p1_0003",
+  "text": "รบกวนสอบถามหน่อยค่ะ วันนี้ร้านปิดดึกไหมคะ พอดีเลิกงานช้ากลัวว่าจะแวะไปไม่ทัน",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "รบกวนสอบถามหน่อยค่ะวันนี้ร้านปิดดึกไหมคะพอดีเลิกงานช้ากลัวว่าจะแวะไปไม่ทัน"
+ },
+ {
+  "id": "p1_0004",
+  "text": "ช่วงบ่ายวันนี้ทางร้านเปิดตลอดเลยไหมครับ หรือว่ามีปิดพักกลางวันด้วยครับ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "ช่วงบ่ายวันนี้ทางร้านเปิดตลอดเลยไหมครับหรือว่ามีปิดพักกลางวันด้วยครับ"
+ },
+ {
+  "id": "p1_0005",
+  "text": "ตอนนี้ร้านยังเปิดรับลูกค้าอยู่ไหมคะ หรือว่าเตรียมตัวจะปิดร้านกันแล้ว",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "ตอนนี้ร้านยังเปิดรับลูกค้าอยู่ไหมคะหรือว่าเตรียมตัวจะปิดร้านกันแล้ว"
+ },
+ {
+  "id": "p1_0006",
+  "text": "เย็นนี้ร้านปิดประมาณช่วงไหนครับ พอดีขับรถมาจากที่ไกลเลยกลัวว่าจะไปไม่ทันครับ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "เย็นนี้ร้านปิดประมาณช่วงไหนครับพอดีขับรถมาจากที่ไกลเลยกลัวว่าจะไปไม่ทันครับ"
+ },
+ {
+  "id": "p1_0007",
+  "text": "ร้านเปิดให้บริการทุกวันเลยไหมคะ พอดีกำลังหาเวลาว่างชวนเพื่อนเพื่อนไปอุดหนุนค่ะ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "ร้านเปิดให้บริการทุกวันเลยไหมคะพอดีกําลังหาเวลาว่างชวนเพื่อนเพื่อนไปอุดหนุนค่ะ"
+ },
+ {
+  "id": "p1_0008",
+  "text": "ช่วงวันหยุดยาวแบบนี้ ร้านยังเปิดตามปกติหรือเปล่าครับ อยากแวะเข้าไปเลือกของครับ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "ช่วงวันหยุดยาวแบบนี้ร้านยังเปิดตามปกติหรือเปล่าครับอยากแวะเข้าไปเลือกของครับ"
+ },
+ {
+  "id": "p1_0009",
+  "text": "รบกวนสอบถามค่ะ ช่วงบ่ายแก่แก่แบบนี้ร้านยังเปิดต้อนรับลูกค้าอยู่ใช่ไหมคะ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "รบกวนสอบถามค่ะช่วงบ่ายแก่แก่แบบนี้ร้านยังเปิดต้อนรับลูกค้าอยู่ใช่ไหมคะ"
+ },
+ {
+  "id": "p1_0010",
+  "text": "ทางร้านเปิดทำการแต่เช้าตรู่เลยไหมครับ พอดีอยากแวะซื้อของก่อนเดินทางไปทำงานครับ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "ทางร้านเปิดทําการแต่เช้าตรู่เลยไหมครับพอดีอยากแวะซื้อของก่อนเดินทางไปทํางานครับ"
+ },
+ {
+  "id": "p1_0011",
+  "text": "ไม่ทราบว่าช่วงหัวค่ำร้านปิดหรือยังคะ พอดีกว่าจะเลิกธุระก็เริ่มมืดแล้วค่ะ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "ไม่ทราบว่าช่วงหัวค่ําร้านปิดหรือยังคะพอดีกว่าจะเลิกธุระก็เริ่มมืดแล้วค่ะ"
+ },
+ {
+  "id": "p1_0012",
+  "text": "สัปดาห์นี้มีวันไหนที่ร้านหยุดบ้างไหมครับ หรือว่าเปิดให้บริการต่อเนื่องทุกวันเลยครับ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "สัปดาห์นี้มีวันไหนที่ร้านหยุดบ้างไหมครับหรือว่าเปิดให้บริการต่อเนื่องทุกวันเลยครับ"
+ },
+ {
+  "id": "p1_0013",
+  "text": "ถ้าไปถึงตอนนี้ ร้านยังเปิดรับลูกค้าไหมคะ กลัวว่าจะชนช่วงร้านปิดค่ะ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "ถ้าไปถึงตอนนี้ร้านยังเปิดรับลูกค้าไหมคะกลัวว่าจะชนช่วงร้านปิดค่ะ"
+ },
+ {
+  "id": "p1_0014",
+  "text": "ขอสอบถามหน่อยครับ วันนี้เปิดร้านสายไหมครับ ผมไปยืนรอหน้าร้านตั้งแต่เช้าแล้วครับ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "ขอสอบถามหน่อยครับวันนี้เปิดร้านสายไหมครับผมไปยืนรอหน้าร้านตั้งแต่เช้าแล้วครับ"
+ },
+ {
+  "id": "p1_0015",
+  "text": "วันนี้มีกำหนดปิดร้านเร็วกว่าเดิมไหมคะ พอดีเห็นว่าฝนเริ่มจะตกแล้วค่ะ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "วันนี้มีกําหนดปิดร้านเร็วกว่าเดิมไหมคะพอดีเห็นว่าฝนเริ่มจะตกแล้วค่ะ"
+ },
+ {
+  "id": "p1_0016",
+  "text": "พรุ่งนี้ช่วงสายทางร้านเปิดพร้อมให้บริการเลยไหมครับ อยากรีบเข้าไปทำธุระครับ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "พรุ่งนี้ช่วงสายทางร้านเปิดพร้อมให้บริการเลยไหมครับอยากรีบเข้าไปทําธุระครับ"
+ },
+ {
+  "id": "p1_0017",
+  "text": "ถ้าจะเข้าไปช่วงใกล้ค่ำ ทางร้านยังมีคนคอยดูแลและเปิดให้บริการอยู่ใช่ไหมคะ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "ถ้าจะเข้าไปช่วงใกล้ค่ําทางร้านยังมีคนคอยดูแลและเปิดให้บริการอยู่ใช่ไหมคะ"
+ },
+ {
+  "id": "p1_0018",
+  "text": "วันนี้ร้านเปิดถึงดึกเหมือนเดิมไหมครับ กลัวว่าถ้าไปช้าแล้วร้านจะปิดก่อนครับ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "วันนี้ร้านเปิดถึงดึกเหมือนเดิมไหมครับกลัวว่าถ้าไปช้าแล้วร้านจะปิดก่อนครับ"
+ },
+ {
+  "id": "p1_0019",
+  "text": "ไม่ทราบว่าวันนี้ร้านเปิดถึงตอนไหนคะ พอดีเพิ่งเสร็จงานแล้วอยากรีบเข้าไปซื้อของค่ะ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "ไม่ทราบว่าวันนี้ร้านเปิดถึงตอนไหนคะพอดีเพิ่งเสร็จงานแล้วอยากรีบเข้าไปซื้อของค่ะ"
+ },
+ {
+  "id": "p1_0020",
+  "text": "ช่วงนี้ร้านเปิดให้ลูกค้านั่งรอข้างในได้ไหมครับ หรือว่าเปิดรับเฉพาะหน้าร้านครับ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "ช่วงนี้ร้านเปิดให้ลูกค้านั่งรอข้างในได้ไหมครับหรือว่าเปิดรับเฉพาะหน้าร้านครับ"
+ },
+ {
+  "id": "p1_0021",
+  "text": "ร้านตั้งอยู่แถวไหนคะ พอดีขับรถวนหาแถวหน้าปากซอยนานแล้วยังหาไม่เจอเลยค่ะ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "ร้านตั้งอยู่แถวไหนคะพอดีขับรถวนหาแถวหน้าปากซอยนานแล้วยังหาไม่เจอเลยค่ะ"
+ },
+ {
+  "id": "p1_0022",
+  "text": "ถ้าขับรถมาจากทางแยกใหญ่ ต้องเลี้ยวเข้าซอยไหนถึงจะเจอหน้าร้านครับ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "ถ้าขับรถมาจากทางแยกใหญ่ต้องเลี้ยวเข้าซอยไหนถึงจะเจอหน้าร้านครับ"
+ },
+ {
+  "id": "p1_0023",
+  "text": "รบกวนสอบถามทางหน่อยค่ะ ร้านตั้งอยู่ติดกับตลาดสดหรือว่าอยู่ฝั่งตรงข้ามคะ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "รบกวนสอบถามทางหน่อยค่ะร้านตั้งอยู่ติดกับตลาดสดหรือว่าอยู่ฝั่งตรงข้ามคะ"
+ },
+ {
+  "id": "p1_0024",
+  "text": "ทางเข้าร้านมีป้ายบอกชัดเจนไหมครับ พอดีกลัวว่าจะขับรถเลยปากซอยไปครับ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "ทางเข้าร้านมีป้ายบอกชัดเจนไหมครับพอดีกลัวว่าจะขับรถเลยปากซอยไปครับ"
+ },
+ {
+  "id": "p1_0025",
+  "text": "ไม่ทราบว่าที่ร้านมีที่จอดรถสำหรับลูกค้าไหมคะ หรือว่าต้องจอดชิดริมถนนใหญ่",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "ไม่ทราบว่าที่ร้านมีที่จอดรถสําหรับลูกค้าไหมคะหรือว่าต้องจอดชิดริมถนนใหญ่"
+ },
+ {
+  "id": "p1_0026",
+  "text": "แถวหน้าร้านมีจุดสังเกตอะไรบ้างครับ ผมขับรถวนมองหาจนทั่วแล้วยังไม่เห็นเลยครับ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "แถวหน้าร้านมีจุดสังเกตอะไรบ้างครับผมขับรถวนมองหาจนทั่วแล้วยังไม่เห็นเลยครับ"
+ },
+ {
+  "id": "p1_0027",
+  "text": "ตอนนี้ยืนอยู่ตรงข้ามวัดแล้วค่ะ ต้องเดินข้ามสะพานลอยไปทางฝั่งไหนต่อคะ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "ตอนนี้ยืนอยู่ตรงข้ามวัดแล้วค่ะต้องเดินข้ามสะพานลอยไปทางฝั่งไหนต่อคะ"
+ },
+ {
+  "id": "p1_0028",
+  "text": "ถ้ามารถประจำทาง ต้องลงตรงป้ายไหนถึงจะเดินเข้าร้านได้สะดวกที่สุดครับ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "ถ้ามารถประจําทางต้องลงตรงป้ายไหนถึงจะเดินเข้าร้านได้สะดวกที่สุดครับ"
+ },
+ {
+  "id": "p1_0029",
+  "text": "ร้านอยู่ในซอยลึกมากไหมคะ พอดีไม่ได้เอารถส่วนตัวมาเลยต้องเดินเท้าเข้าไปค่ะ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "ร้านอยู่ในซอยลึกมากไหมคะพอดีไม่ได้เอารถส่วนตัวมาเลยต้องเดินเท้าเข้าไปค่ะ"
+ },
+ {
+  "id": "p1_0030",
+  "text": "พอเลี้ยวเข้าซอยมาแล้ว ร้านจะอยู่ทางฝั่งซ้ายมือหรือว่าอยู่ทางขวามือครับ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "พอเลี้ยวเข้าซอยมาแล้วร้านจะอยู่ทางฝั่งซ้ายมือหรือว่าอยู่ทางขวามือครับ"
+ },
+ {
+  "id": "p1_0031",
+  "text": "บริเวณหน้าร้านมีที่ว่างพอให้จอดรถยนต์ได้ไหมคะ กลัวว่าจะไม่มีที่จอดรถค่ะ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "บริเวณหน้าร้านมีที่ว่างพอให้จอดรถยนต์ได้ไหมคะกลัวว่าจะไม่มีที่จอดรถค่ะ"
+ },
+ {
+  "id": "p1_0032",
+  "text": "ถ้าขับรถตามถนนใหญ่มา จะมองเห็นตัวร้านตั้งอยู่ริมถนนเลยหรือเปล่าครับ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "ถ้าขับรถตามถนนใหญ่มาจะมองเห็นตัวร้านตั้งอยู่ริมถนนเลยหรือเปล่าครับ"
+ },
+ {
+  "id": "p1_0033",
+  "text": "รบกวนช่วยบอกทางหน่อยค่ะ ตอนนี้ยืนอยู่ตรงตึกแถวหัวมุมถนนแล้วไปต่อไม่ถูกค่ะ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "รบกวนช่วยบอกทางหน่อยค่ะตอนนี้ยืนอยู่ตรงตึกแถวหัวมุมถนนแล้วไปต่อไม่ถูกค่ะ"
+ },
+ {
+  "id": "p1_0034",
+  "text": "ตึกของร้านทาสีอะไรไว้ครับ จะได้มองหาจากระยะไกลได้ง่ายขึ้นครับ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "ตึกของร้านทาสีอะไรไว้ครับจะได้มองหาจากระยะไกลได้ง่ายขึ้นครับ"
+ },
+ {
+  "id": "p1_0035",
+  "text": "เดินเข้ามาจากปากทาง มีทางแยกข้างในอีกไหมคะ หรือว่าให้เดินตรงเข้ามาเรื่อยเรื่อย",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "เดินเข้ามาจากปากทางมีทางแยกข้างในอีกไหมคะหรือว่าให้เดินตรงเข้ามาเรื่อยเรื่อย"
+ },
+ {
+  "id": "p1_0036",
+  "text": "ถ้าขับรถยนต์ไป ทางร้านมีที่จอดรถรองรับไว้ข้างในรั้วไหมครับ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "ถ้าขับรถยนต์ไปทางร้านมีที่จอดรถรองรับไว้ข้างในรั้วไหมครับ"
+ },
+ {
+  "id": "p1_0037",
+  "text": "หน้าร้านอยู่ติดกับสะพานลอยคนข้ามเลยหรือเปล่าคะ พอดีเห็นสะพานลอยอยู่ข้างหน้าค่ะ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "หน้าร้านอยู่ติดกับสะพานลอยคนข้ามเลยหรือเปล่าคะพอดีเห็นสะพานลอยอยู่ข้างหน้าค่ะ"
+ },
+ {
+  "id": "p1_0038",
+  "text": "ซอยทางเข้าร้านแคบมากไหมครับ รถยนต์ขนาดใหญ่สามารถขับสวนกันได้สะดวกไหมครับ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "ซอยทางเข้าร้านแคบมากไหมครับรถยนต์ขนาดใหญ่สามารถขับสวนกันได้สะดวกไหมครับ"
+ },
+ {
+  "id": "p1_0039",
+  "text": "ไม่ทราบว่าร้านอยู่ใกล้กับสวนสาธารณะไหมคะ พอดีเพื่อนบอกว่าอยู่แถวนั้นค่ะ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "ไม่ทราบว่าร้านอยู่ใกล้กับสวนสาธารณะไหมคะพอดีเพื่อนบอกว่าอยู่แถวนั้นค่ะ"
+ },
+ {
+  "id": "p1_0040",
+  "text": "ถ้าขับตามแผนที่มา ทางเข้าจะอยู่ติดกับสะพานข้ามคลองเลยใช่ไหมครับ",
+  "theme": "a customer phoning a shop to ask about opening hours and how to find it",
+  "phase": 1,
+  "label_text": "ถ้าขับตามแผนที่มาทางเข้าจะอยู่ติดกับสะพานข้ามคลองเลยใช่ไหมครับ"
+ },
+ {
+  "id": "p1_0041",
+  "text": "อยากสอบถามว่าของที่สั่งไปทำไมยังไม่มาส่งเลยครับ",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "อยากสอบถามว่าของที่สั่งไปทําไมยังไม่มาส่งเลยครับ"
+ },
+ {
+  "id": "p1_0042",
+  "text": "รบกวนช่วยดูให้หน่อยได้ไหมคะว่าพัสดุติดปัญหาอะไรทำไมถึงช้าจัง",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "รบกวนช่วยดูให้หน่อยได้ไหมคะว่าพัสดุติดปัญหาอะไรทําไมถึงช้าจัง"
+ },
+ {
+  "id": "p1_0043",
+  "text": "ผมรอของมานานมากแล้วแต่ก็ยังไม่ได้รับของสักทีครับ",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "ผมรอของมานานมากแล้วแต่ก็ยังไม่ได้รับของสักทีครับ"
+ },
+ {
+  "id": "p1_0044",
+  "text": "สินค้าที่กดสั่งซื้อไปทำไมสถานะถึงไม่ขยับไปไหนเลยคะ",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "สินค้าที่กดสั่งซื้อไปทําไมสถานะถึงไม่ขยับไปไหนเลยคะ"
+ },
+ {
+  "id": "p1_0045",
+  "text": "ไม่ทราบว่าของที่สั่งไปตกหล่นอยู่ตรงไหนช่วยตามเรื่องให้ทีครับ",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "ไม่ทราบว่าของที่สั่งไปตกหล่นอยู่ตรงไหนช่วยตามเรื่องให้ทีครับ"
+ },
+ {
+  "id": "p1_0046",
+  "text": "ของที่สั่งไปยังไม่เห็นมาส่งเลยช่วยตามคนส่งให้หน่อยค่ะ",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "ของที่สั่งไปยังไม่เห็นมาส่งเลยช่วยตามคนส่งให้หน่อยค่ะ"
+ },
+ {
+  "id": "p1_0047",
+  "text": "ของที่สั่งไปจำเป็นต้องรีบใช้แต่ทำไมยังส่งมาไม่ถึงสักทีครับ",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "ของที่สั่งไปจําเป็นต้องรีบใช้แต่ทําไมยังส่งมาไม่ถึงสักทีครับ"
+ },
+ {
+  "id": "p1_0048",
+  "text": "พัสดุของฉันยังติดอยู่ที่คลังสินค้าหรือว่าออกมาส่งแล้วคะ",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "พัสดุของฉันยังติดอยู่ที่คลังสินค้าหรือว่าออกมาส่งแล้วคะ"
+ },
+ {
+  "id": "p1_0049",
+  "text": "ผมรอรับสินค้าอยู่ตั้งนานแล้วทำไมถึงยังไม่มีใครมาส่งเลยครับ",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "ผมรอรับสินค้าอยู่ตั้งนานแล้วทําไมถึงยังไม่มีใครมาส่งเลยครับ"
+ },
+ {
+  "id": "p1_0050",
+  "text": "มีข้อความแจ้งว่านำส่งไม่สำเร็จทั้งที่ยังไม่มีใครติดต่อมาหาเลยนะคะ",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "มีข้อความแจ้งว่านําส่งไม่สําเร็จทั้งที่ยังไม่มีใครติดต่อมาหาเลยนะคะ"
+ },
+ {
+  "id": "p1_0051",
+  "text": "อยากทราบว่าพัสดุส่งออกมาหรือยังครับทำไมถึงยังมาไม่ถึงเสียที",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "อยากทราบว่าพัสดุส่งออกมาหรือยังครับทําไมถึงยังมาไม่ถึงเสียที"
+ },
+ {
+  "id": "p1_0052",
+  "text": "ทำไมของที่สั่งไปถึงมาช้าขนาดนี้มีปัญหาในการจัดส่งหรือเปล่าคะ",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "ทําไมของที่สั่งไปถึงมาช้าขนาดนี้มีปัญหาในการจัดส่งหรือเปล่าคะ"
+ },
+ {
+  "id": "p1_0053",
+  "text": "ช่วยตรวจสอบให้หน่อยครับว่าของที่ผมสั่งไปส่งถึงไหนแล้ว",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "ช่วยตรวจสอบให้หน่อยครับว่าของที่ผมสั่งไปส่งถึงไหนแล้ว"
+ },
+ {
+  "id": "p1_0054",
+  "text": "คนอื่นเขาได้รับของกันไปแล้วทำไมของฉันยังไม่มาส่งคะ",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "คนอื่นเขาได้รับของกันไปแล้วทําไมของฉันยังไม่มาส่งคะ"
+ },
+ {
+  "id": "p1_0055",
+  "text": "พัสดุตีกลับไปที่ต้นทางหรือเปล่าครับทำไมยังไม่มาถึงบ้านผม",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "พัสดุตีกลับไปที่ต้นทางหรือเปล่าครับทําไมยังไม่มาถึงบ้านผม"
+ },
+ {
+  "id": "p1_0056",
+  "text": "ขึ้นสถานะว่ากำลังนำส่งแต่ทำไมฉันยังไม่เห็นมีใครมาส่งของเลยคะ",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "ขึ้นสถานะว่ากําลังนําส่งแต่ทําไมฉันยังไม่เห็นมีใครมาส่งของเลยคะ"
+ },
+ {
+  "id": "p1_0057",
+  "text": "ช่วยเร่งพนักงานนำส่งให้หน่อยครับรอสินค้านานจนผิดปกติแล้ว",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "ช่วยเร่งพนักงานนําส่งให้หน่อยครับรอสินค้านานจนผิดปกติแล้ว"
+ },
+ {
+  "id": "p1_0058",
+  "text": "ของที่สั่งไปมีปัญหาเรื่องการขนส่งหรือเปล่าคะทำไมยังไม่ได้รับ",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "ของที่สั่งไปมีปัญหาเรื่องการขนส่งหรือเปล่าคะทําไมยังไม่ได้รับ"
+ },
+ {
+  "id": "p1_0059",
+  "text": "ผมติดต่อคนส่งพัสดุไม่ได้เลยครับไม่ทราบว่าของติดค้างอยู่ที่ไหน",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "ผมติดต่อคนส่งพัสดุไม่ได้เลยครับไม่ทราบว่าของติดค้างอยู่ที่ไหน"
+ },
+ {
+  "id": "p1_0060",
+  "text": "รบกวนช่วยตรวจสอบสถานะการจัดส่งสินค้าให้หน่อยค่ะว่าติดขัดอะไร",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "รบกวนช่วยตรวจสอบสถานะการจัดส่งสินค้าให้หน่อยค่ะว่าติดขัดอะไร"
+ },
+ {
+  "id": "p1_0061",
+  "text": "ทำไมพัสดุของผมถึงค้างอยู่ที่เดิมไม่ขยับช่วยตามให้ด่วนครับ",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "ทําไมพัสดุของผมถึงค้างอยู่ที่เดิมไม่ขยับช่วยตามให้ด่วนครับ"
+ },
+ {
+  "id": "p1_0062",
+  "text": "สั่งสินค้าไปตั้งนานแล้วค่ะอยากรู้ว่าสินค้าจะมาส่งจริงไหม",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "สั่งสินค้าไปตั้งนานแล้วค่ะอยากรู้ว่าสินค้าจะมาส่งจริงไหม"
+ },
+ {
+  "id": "p1_0063",
+  "text": "เจ้าหน้าที่ช่วยดูให้หน่อยครับว่าทำไมสินค้ายังไม่ยอมมาส่งเสียที",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "เจ้าหน้าที่ช่วยดูให้หน่อยครับว่าทําไมสินค้ายังไม่ยอมมาส่งเสียที"
+ },
+ {
+  "id": "p1_0064",
+  "text": "พัสดุหายระหว่างทางหรือเปล่าคะทำไมไม่เห็นมีพนักงานมาส่งของเลย",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "พัสดุหายระหว่างทางหรือเปล่าคะทําไมไม่เห็นมีพนักงานมาส่งของเลย"
+ },
+ {
+  "id": "p1_0065",
+  "text": "ไม่ทราบว่าสินค้าที่ผมสั่งซื้อไปมีของพร้อมส่งจริงหรือเปล่าครับ",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "ไม่ทราบว่าสินค้าที่ผมสั่งซื้อไปมีของพร้อมส่งจริงหรือเปล่าครับ"
+ },
+ {
+  "id": "p1_0066",
+  "text": "หนูรอของจนถอดใจแล้วค่ะทำไมขนส่งถึงยังไม่เอาของมาส่งสักที",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "หนูรอของจนถอดใจแล้วค่ะทําไมขนส่งถึงยังไม่เอาของมาส่งสักที"
+ },
+ {
+  "id": "p1_0067",
+  "text": "รอจนไม่รู้จะตามเรื่องยังไงแล้วค่ะทำไมพัสดุยังมาไม่ถึงอีก",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "รอจนไม่รู้จะตามเรื่องยังไงแล้วค่ะทําไมพัสดุยังมาไม่ถึงอีก"
+ },
+ {
+  "id": "p1_0068",
+  "text": "ขอยกเลิกได้ไหมครับถ้าสั่งของไปแล้วยังไม่ยอมมาส่งให้แบบนี้",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "ขอยกเลิกได้ไหมครับถ้าสั่งของไปแล้วยังไม่ยอมมาส่งให้แบบนี้"
+ },
+ {
+  "id": "p1_0069",
+  "text": "สินค้าของฉันหลงทางไปที่สาขาอื่นหรือเปล่าคะทำไมถึงยังไม่ได้ของ",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "สินค้าของฉันหลงทางไปที่สาขาอื่นหรือเปล่าคะทําไมถึงยังไม่ได้ของ"
+ },
+ {
+  "id": "p1_0070",
+  "text": "ผมสอบถามเรื่องของที่สั่งไปหน่อยครับทำไมยังจัดส่งไม่เรียบร้อยเสียที",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "ผมสอบถามเรื่องของที่สั่งไปหน่อยครับทําไมยังจัดส่งไม่เรียบร้อยเสียที"
+ },
+ {
+  "id": "p1_0071",
+  "text": "มีใครพอจะช่วยตามสินค้าให้ได้ไหมคะรอของมานานจนร้อนใจแล้ว",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "มีใครพอจะช่วยตามสินค้าให้ได้ไหมคะรอของมานานจนร้อนใจแล้ว"
+ },
+ {
+  "id": "p1_0072",
+  "text": "รบกวนช่วยประสานงานกับคนนำส่งให้หน่อยครับว่าพัสดุตกหล่นตรงไหน",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "รบกวนช่วยประสานงานกับคนนําส่งให้หน่อยครับว่าพัสดุตกหล่นตรงไหน"
+ },
+ {
+  "id": "p1_0073",
+  "text": "ทำไมในระบบบอกว่าส่งสำเร็จแล้วแต่ฉันยังไม่เห็นได้ของเลยคะ",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "ทําไมในระบบบอกว่าส่งสําเร็จแล้วแต่ฉันยังไม่เห็นได้ของเลยคะ"
+ },
+ {
+  "id": "p1_0074",
+  "text": "พัสดุส่งไปผิดที่หรือเปล่าครับทำไมคนแถวบ้านได้ของกันไปแล้ว",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "พัสดุส่งไปผิดที่หรือเปล่าครับทําไมคนแถวบ้านได้ของกันไปแล้ว"
+ },
+ {
+  "id": "p1_0075",
+  "text": "ไม่ทราบว่าคนส่งของลืมพัสดุของฉันไว้ที่สาขาหรือเปล่าคะ",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "ไม่ทราบว่าคนส่งของลืมพัสดุของฉันไว้ที่สาขาหรือเปล่าคะ"
+ },
+ {
+  "id": "p1_0076",
+  "text": "ช่วยตรวจสอบให้ทีครับว่าทำไมพัสดุถึงหยุดนิ่งไม่ขยับเลย",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "ช่วยตรวจสอบให้ทีครับว่าทําไมพัสดุถึงหยุดนิ่งไม่ขยับเลย"
+ },
+ {
+  "id": "p1_0077",
+  "text": "ฉันนั่งรอรับของอยู่บ้านไม่ไปไหนเลยทำไมคนส่งยังไม่มาถึงคะ",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "ฉันนั่งรอรับของอยู่บ้านไม่ไปไหนเลยทําไมคนส่งยังไม่มาถึงคะ"
+ },
+ {
+  "id": "p1_0078",
+  "text": "ผมรอพัสดุอยู่นานมากแล้วครับทำไมถึงไม่มีความคืบหน้าอะไรเลย",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "ผมรอพัสดุอยู่นานมากแล้วครับทําไมถึงไม่มีความคืบหน้าอะไรเลย"
+ },
+ {
+  "id": "p1_0079",
+  "text": "ทางร้านลืมส่งของให้หนูหรือเปล่าคะทำไมป่านนี้ยังไม่ได้รับของเลย",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "ทางร้านลืมส่งของให้หนูหรือเปล่าคะทําไมป่านนี้ยังไม่ได้รับของเลย"
+ },
+ {
+  "id": "p1_0080",
+  "text": "อยากรู้สาเหตุที่ส่งของล่าช้าครับทำไมถึงยังไม่นำส่งให้ผมสักที",
+  "theme": "a customer asking why something they ordered has not arrived yet",
+  "phase": 1,
+  "label_text": "อยากรู้สาเหตุที่ส่งของล่าช้าครับทําไมถึงยังไม่นําส่งให้ผมสักที"
+ },
+ {
+  "id": "p1_0081",
+  "text": "สวัสดีค่ะ อยากทราบว่าถ้าจะสั่งของ ทางร้านมีช่องทางจ่ายเงินแบบไหนบ้างคะ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "สวัสดีค่ะอยากทราบว่าถ้าจะสั่งของทางร้านมีช่องทางจ่ายเงินแบบไหนบ้างคะ"
+ },
+ {
+  "id": "p1_0082",
+  "text": "รบกวนสอบถามหน่อยครับ ผมสามารถโอนเงินผ่านบัญชีธนาคารได้ไหมครับ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "รบกวนสอบถามหน่อยครับผมสามารถโอนเงินผ่านบัญชีธนาคารได้ไหมครับ"
+ },
+ {
+  "id": "p1_0083",
+  "text": "ถ้าหนูต้องการจ่ายเงินสด ทางร้านรับชำระเงินสดหน้าร้านไหมคะ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "ถ้าหนูต้องการจ่ายเงินสดทางร้านรับชําระเงินสดหน้าร้านไหมคะ"
+ },
+ {
+  "id": "p1_0084",
+  "text": "พี่ครับ ผมจะจ่ายเงินค่าสินค้า ต้องทำรายการยังไงบ้าง ช่วยแนะนำทีครับ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "พี่ครับผมจะจ่ายเงินค่าสินค้าต้องทํารายการยังไงบ้างช่วยแนะนําทีครับ"
+ },
+ {
+  "id": "p1_0085",
+  "text": "ทางร้านรับรูดบัตรไหมคะ พอดีไม่ได้กดเงินสดติดตัวมาเลยค่ะ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "ทางร้านรับรูดบัตรไหมคะพอดีไม่ได้กดเงินสดติดตัวมาเลยค่ะ"
+ },
+ {
+  "id": "p1_0086",
+  "text": "ไม่ทราบว่าโอนผ่านโทรศัพท์มือถือได้ไหมครับ แล้วต้องส่งหลักฐานไปทางไหน",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "ไม่ทราบว่าโอนผ่านโทรศัพท์มือถือได้ไหมครับแล้วต้องส่งหลักฐานไปทางไหน"
+ },
+ {
+  "id": "p1_0087",
+  "text": "สวัสดีค่ะ สอบถามเรื่องการจ่ายเงินค่ะ มีให้เลือกจ่ายแบบไหนบ้างคะ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "สวัสดีค่ะสอบถามเรื่องการจ่ายเงินค่ะมีให้เลือกจ่ายแบบไหนบ้างคะ"
+ },
+ {
+  "id": "p1_0088",
+  "text": "สวัสดีครับ ขอทราบขั้นตอนการชำระเงินหน่อยครับ ว่าต้องเริ่มทำตรงไหนก่อน",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "สวัสดีครับขอทราบขั้นตอนการชําระเงินหน่อยครับว่าต้องเริ่มทําตรงไหนก่อน"
+ },
+ {
+  "id": "p1_0089",
+  "text": "ถ้าจะจ่ายเป็นเงินสด ทางร้านมีพนักงานคอยรับเงินไหมคะ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "ถ้าจะจ่ายเป็นเงินสดทางร้านมีพนักงานคอยรับเงินไหมคะ"
+ },
+ {
+  "id": "p1_0090",
+  "text": "ผมอยากขอผ่อนจ่ายค่าของ ทางร้านมีบริการแบ่งจ่ายไหมครับ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "ผมอยากขอผ่อนจ่ายค่าของทางร้านมีบริการแบ่งจ่ายไหมครับ"
+ },
+ {
+  "id": "p1_0091",
+  "text": "หลังจากที่สั่งซื้อเรียบร้อยแล้ว ต้องแจ้งการโอนเงินทางช่องทางไหนคะ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "หลังจากที่สั่งซื้อเรียบร้อยแล้วต้องแจ้งการโอนเงินทางช่องทางไหนคะ"
+ },
+ {
+  "id": "p1_0092",
+  "text": "ทางร้านมีช่องทางให้จ่ายเงินปลายทางไหมครับ อยากจ่ายพร้อมกับรับของครับ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "ทางร้านมีช่องทางให้จ่ายเงินปลายทางไหมครับอยากจ่ายพร้อมกับรับของครับ"
+ },
+ {
+  "id": "p1_0093",
+  "text": "หนูอยากทราบว่า มีวิธีจ่ายเงินแบบหักผ่านบัญชีโดยตรงไหมคะ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "หนูอยากทราบว่ามีวิธีจ่ายเงินแบบหักผ่านบัญชีโดยตรงไหมคะ"
+ },
+ {
+  "id": "p1_0094",
+  "text": "มีเก็บเงินปลายทางไหมครับ หรือว่าต้องโอนเงินเข้ามาก่อนเท่านั้นครับ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "มีเก็บเงินปลายทางไหมครับหรือว่าต้องโอนเงินเข้ามาก่อนเท่านั้นครับ"
+ },
+ {
+  "id": "p1_0095",
+  "text": "ถ้าพี่จะจ่ายเงิน ต้องขอข้อมูลบัญชีธนาคารจากใครได้บ้างคะ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "ถ้าพี่จะจ่ายเงินต้องขอข้อมูลบัญชีธนาคารจากใครได้บ้างคะ"
+ },
+ {
+  "id": "p1_0096",
+  "text": "ผมจะชำระเงิน ต้องโอนเข้าธนาคารไหน ช่วยส่งรายละเอียดมาให้หน่อยครับ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "ผมจะชําระเงินต้องโอนเข้าธนาคารไหนช่วยส่งรายละเอียดมาให้หน่อยครับ"
+ },
+ {
+  "id": "p1_0097",
+  "text": "ทางร้านรับบัตรธนาคารไหมคะ แล้วมีคิดค่าบริการเพิ่มเติมหรือเปล่าคะ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "ทางร้านรับบัตรธนาคารไหมคะแล้วมีคิดค่าบริการเพิ่มเติมหรือเปล่าคะ"
+ },
+ {
+  "id": "p1_0098",
+  "text": "ถ้าผมจะไปจ่ายเงินที่หน้าร้านเลย ทางร้านรับเงินสดไหมครับ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "ถ้าผมจะไปจ่ายเงินที่หน้าร้านเลยทางร้านรับเงินสดไหมครับ"
+ },
+ {
+  "id": "p1_0099",
+  "text": "ถ้าโอนเงินเรียบร้อยแล้ว ต้องส่งรูปใบเสร็จเพื่อยืนยันทางไหนคะ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "ถ้าโอนเงินเรียบร้อยแล้วต้องส่งรูปใบเสร็จเพื่อยืนยันทางไหนคะ"
+ },
+ {
+  "id": "p1_0100",
+  "text": "รบกวนขอทราบวิธีชำระเงินที่สะดวกที่สุดของทางร้านหน่อยครับ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "รบกวนขอทราบวิธีชําระเงินที่สะดวกที่สุดของทางร้านหน่อยครับ"
+ },
+ {
+  "id": "p1_0101",
+  "text": "ไม่ทราบว่าทางร้านมีบริการให้เลือกแบ่งชำระค่าสินค้าได้ไหมคะ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "ไม่ทราบว่าทางร้านมีบริการให้เลือกแบ่งชําระค่าสินค้าได้ไหมคะ"
+ },
+ {
+  "id": "p1_0102",
+  "text": "สวัสดีครับ ช่วยอธิบายวิธีจ่ายเงินให้ผมฟังหน่อยได้ไหมครับ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "สวัสดีครับช่วยอธิบายวิธีจ่ายเงินให้ผมฟังหน่อยได้ไหมครับ"
+ },
+ {
+  "id": "p1_0103",
+  "text": "ทางร้านมีช่องทางการชำระเงินแบบอื่นนอกจากโอนเงินผ่านธนาคารไหมคะ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "ทางร้านมีช่องทางการชําระเงินแบบอื่นนอกจากโอนเงินผ่านธนาคารไหมคะ"
+ },
+ {
+  "id": "p1_0104",
+  "text": "ผมไม่มีบัตรธนาคาร สามารถจ่ายเป็นเงินสดแทนได้ไหมครับ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "ผมไม่มีบัตรธนาคารสามารถจ่ายเป็นเงินสดแทนได้ไหมครับ"
+ },
+ {
+  "id": "p1_0105",
+  "text": "ถ้าต้องการให้ไปส่งของ แล้วจ่ายเงินที่หน้าบ้านเลย ได้ไหมคะ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "ถ้าต้องการให้ไปส่งของแล้วจ่ายเงินที่หน้าบ้านเลยได้ไหมคะ"
+ },
+ {
+  "id": "p1_0106",
+  "text": "พอดีจะสั่งของครับ อยากทราบว่าต้องโอนเงินไปที่บัญชีชื่ออะไรครับ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "พอดีจะสั่งของครับอยากทราบว่าต้องโอนเงินไปที่บัญชีชื่ออะไรครับ"
+ },
+ {
+  "id": "p1_0107",
+  "text": "สวัสดีค่ะ ทางร้านรับชำระเงินด้วยวิธีไหนได้บ้างคะ รบกวนบอกหน่อยค่ะ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "สวัสดีค่ะทางร้านรับชําระเงินด้วยวิธีไหนได้บ้างคะรบกวนบอกหน่อยค่ะ"
+ },
+ {
+  "id": "p1_0108",
+  "text": "ถ้าโอนเงินผ่านโทรศัพท์มือถือ ต้องส่งหลักฐานยืนยันกับใครครับ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "ถ้าโอนเงินผ่านโทรศัพท์มือถือต้องส่งหลักฐานยืนยันกับใครครับ"
+ },
+ {
+  "id": "p1_0109",
+  "text": "พี่คะ ลูกค้าต้องโอนเงินไปก่อน หรือว่าจ่ายพร้อมกับรับของคะ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "พี่คะลูกค้าต้องโอนเงินไปก่อนหรือว่าจ่ายพร้อมกับรับของคะ"
+ },
+ {
+  "id": "p1_0110",
+  "text": "ระบบรับชำระเงินมีอะไรบ้างครับ ผมจะได้เตรียมตัวให้ถูกต้องครับ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "ระบบรับชําระเงินมีอะไรบ้างครับผมจะได้เตรียมตัวให้ถูกต้องครับ"
+ },
+ {
+  "id": "p1_0111",
+  "text": "ถ้าจะจ่ายเงินด้วยบัตร ต้องติดต่อเจ้าหน้าที่ทางช่องทางไหนคะ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "ถ้าจะจ่ายเงินด้วยบัตรต้องติดต่อเจ้าหน้าที่ทางช่องทางไหนคะ"
+ },
+ {
+  "id": "p1_0112",
+  "text": "ทางร้านมีบริการจ่ายเงินพร้อมกับรับพัสดุไหมครับ สะดวกจ่ายแบบนั้นมากกว่าครับ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "ทางร้านมีบริการจ่ายเงินพร้อมกับรับพัสดุไหมครับสะดวกจ่ายแบบนั้นมากกว่าครับ"
+ },
+ {
+  "id": "p1_0113",
+  "text": "หนูอยากรู้วิธีชำระค่าสินค้าค่ะ มีขั้นตอนอย่างไรบ้างคะ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "หนูอยากรู้วิธีชําระค่าสินค้าค่ะมีขั้นตอนอย่างไรบ้างคะ"
+ },
+ {
+  "id": "p1_0114",
+  "text": "ช่วยบอกรายละเอียดบัญชีสำหรับโอนเงินให้หน่อยครับ ผมพร้อมจ่ายแล้วครับ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "ช่วยบอกรายละเอียดบัญชีสําหรับโอนเงินให้หน่อยครับผมพร้อมจ่ายแล้วครับ"
+ },
+ {
+  "id": "p1_0115",
+  "text": "ไม่ทราบว่าสามารถรูดบัตรจ่ายเงินได้ไหมคะ มีค่าธรรมเนียมไหมคะ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "ไม่ทราบว่าสามารถรูดบัตรจ่ายเงินได้ไหมคะมีค่าธรรมเนียมไหมคะ"
+ },
+ {
+  "id": "p1_0116",
+  "text": "สวัสดีครับ ทางร้านมีตัวเลือกการชำระเงินแบบใดให้เลือกบ้างครับ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "สวัสดีครับทางร้านมีตัวเลือกการชําระเงินแบบใดให้เลือกบ้างครับ"
+ },
+ {
+  "id": "p1_0117",
+  "text": "ถ้าจะขอผ่อนสินค้า ต้องใช้เอกสารอะไรในการชำระเงินบ้างคะ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "ถ้าจะขอผ่อนสินค้าต้องใช้เอกสารอะไรในการชําระเงินบ้างคะ"
+ },
+ {
+  "id": "p1_0118",
+  "text": "ผมต้องการจ่ายเงินให้เรียบร้อย ต้องโอนเข้าบัญชีทางร้านยังไงครับ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "ผมต้องการจ่ายเงินให้เรียบร้อยต้องโอนเข้าบัญชีทางร้านยังไงครับ"
+ },
+ {
+  "id": "p1_0119",
+  "text": "ทางร้านสะดวกให้โอนเงินเข้าธนาคาร หรือจ่ายเงินสดมากกว่ากันคะ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "ทางร้านสะดวกให้โอนเงินเข้าธนาคารหรือจ่ายเงินสดมากกว่ากันคะ"
+ },
+ {
+  "id": "p1_0120",
+  "text": "รบกวนขอขั้นตอนการโอนเงินชำระค่าสินค้าอย่างละเอียดหน่อยครับ",
+  "theme": "a customer asking what payment methods are accepted and how to pay",
+  "phase": 1,
+  "label_text": "รบกวนขอขั้นตอนการโอนเงินชําระค่าสินค้าอย่างละเอียดหน่อยครับ"
+ },
+ {
+  "id": "p1_0121",
+  "text": "พอเปิดกล่องพัสดุดูแล้วเห็นรอยร้าวตรงขอบแก้วชัดเจนมากเลยค่ะ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "พอเปิดกล่องพัสดุดูแล้วเห็นรอยร้าวตรงขอบแก้วชัดเจนมากเลยค่ะ"
+ },
+ {
+  "id": "p1_0122",
+  "text": "ผมลองเสียบสายไฟดูแล้วแต่มันนิ่งสนิทเปิดเครื่องไม่ติดเลยครับ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "ผมลองเสียบสายไฟดูแล้วแต่มันนิ่งสนิทเปิดเครื่องไม่ติดเลยครับ"
+ },
+ {
+  "id": "p1_0123",
+  "text": "ตะเข็บตรงแขนเสื้อเย็บมาไม่เรียบร้อยมีด้ายรุ่ยหลุดออกมาเต็มเลยค่ะ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "ตะเข็บตรงแขนเสื้อเย็บมาไม่เรียบร้อยมีด้ายรุ่ยหลุดออกมาเต็มเลยค่ะ"
+ },
+ {
+  "id": "p1_0124",
+  "text": "ขาเก้าอี้โยกเยกไปมาพอนั่งลงไปแล้วไม่มั่นคงกลัวจะหักครับ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "ขาเก้าอี้โยกเยกไปมาพอนั่งลงไปแล้วไม่มั่นคงกลัวจะหักครับ"
+ },
+ {
+  "id": "p1_0125",
+  "text": "สีของกระเป๋าจริงดูหมองแล้วก็ซีดกว่าในรูปตัวอย่างมากเลยค่ะ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "สีของกระเป๋าจริงดูหมองแล้วก็ซีดกว่าในรูปตัวอย่างมากเลยค่ะ"
+ },
+ {
+  "id": "p1_0126",
+  "text": "ฝาหม้อปิดไม่สนิทมีช่องเผยอขึ้นมาทำให้ไอน้ำรั่วออกตลอดครับ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "ฝาหม้อปิดไม่สนิทมีช่องเผยอขึ้นมาทําให้ไอน้ํารั่วออกตลอดครับ"
+ },
+ {
+  "id": "p1_0127",
+  "text": "รองเท้าที่ส่งมามีรอยเปื้อนคราบดำฝังแน่นเช็ดไม่ออกเลยค่ะ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "รองเท้าที่ส่งมามีรอยเปื้อนคราบดําฝังแน่นเช็ดไม่ออกเลยค่ะ"
+ },
+ {
+  "id": "p1_0128",
+  "text": "ปุ่มปรับระดับพัดลมมันฝืดมากจนหมุนไม่ไปช่วยดูแลให้หน่อยครับ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "ปุ่มปรับระดับพัดลมมันฝืดมากจนหมุนไม่ไปช่วยดูแลให้หน่อยครับ"
+ },
+ {
+  "id": "p1_0129",
+  "text": "สร้อยคอตรงที่เกี่ยวด้านหลังมันหักตั้งแต่ตอนแกะห่อพัสดุเลยค่ะ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "สร้อยคอตรงที่เกี่ยวด้านหลังมันหักตั้งแต่ตอนแกะห่อพัสดุเลยค่ะ"
+ },
+ {
+  "id": "p1_0130",
+  "text": "ใบพัดด้านในเบี้ยวจนส่งเสียงดังผิดปกติตอนเปิดเครื่องหมุนครับ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "ใบพัดด้านในเบี้ยวจนส่งเสียงดังผิดปกติตอนเปิดเครื่องหมุนครับ"
+ },
+ {
+  "id": "p1_0131",
+  "text": "ผ้านวมเนื้อหนามีกลิ่นอับแรงมากจนแสบจมูกซักแล้วก็ยังไม่หายค่ะ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "ผ้านวมเนื้อหนามีกลิ่นอับแรงมากจนแสบจมูกซักแล้วก็ยังไม่หายค่ะ"
+ },
+ {
+  "id": "p1_0132",
+  "text": "เชือกผูกรองเท้าขาดรุ่ยตั้งแต่เปิดกล่องยังไม่ได้ลองใส่เลยครับ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "เชือกผูกรองเท้าขาดรุ่ยตั้งแต่เปิดกล่องยังไม่ได้ลองใส่เลยครับ"
+ },
+ {
+  "id": "p1_0133",
+  "text": "กระจกเงาส่องหน้ามีรอยร้าวเป็นทางยาวตรงมุมด้านบนค่ะ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "กระจกเงาส่องหน้ามีรอยร้าวเป็นทางยาวตรงมุมด้านบนค่ะ"
+ },
+ {
+  "id": "p1_0134",
+  "text": "ล้อหมุนด้านล่างฝืดจนลากไปกับพื้นห้องแทบไม่ไปเลยครับ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "ล้อหมุนด้านล่างฝืดจนลากไปกับพื้นห้องแทบไม่ไปเลยครับ"
+ },
+ {
+  "id": "p1_0135",
+  "text": "เนื้อผ้าบางจนมองทะลุเห็นข้างในแถมรอยเย็บชายเสื้อยังหลุดค่ะ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "เนื้อผ้าบางจนมองทะลุเห็นข้างในแถมรอยเย็บชายเสื้อยังหลุดค่ะ"
+ },
+ {
+  "id": "p1_0136",
+  "text": "หน้าปัดมีรอยขีดข่วนเต็มไปหมดเหมือนของเก่าที่ผ่านการใช้มาครับ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "หน้าปัดมีรอยขีดข่วนเต็มไปหมดเหมือนของเก่าที่ผ่านการใช้มาครับ"
+ },
+ {
+  "id": "p1_0137",
+  "text": "ยางยืดตรงขอบเอวมันยานมากสวมแล้วเลื่อนหลุดลงมาตลอดเลยค่ะ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "ยางยืดตรงขอบเอวมันยานมากสวมแล้วเลื่อนหลุดลงมาตลอดเลยค่ะ"
+ },
+ {
+  "id": "p1_0138",
+  "text": "ขาโต๊ะพับมันโก่งงอจนกางออกไม่ได้ช่วยเปลี่ยนของให้ผมหน่อยครับ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "ขาโต๊ะพับมันโก่งงอจนกางออกไม่ได้ช่วยเปลี่ยนของให้ผมหน่อยครับ"
+ },
+ {
+  "id": "p1_0139",
+  "text": "จานกระเบื้องมีรอยบิ่นตรงขอบคมจนบาดมือตอนหยิบขึ้นมาดูค่ะ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "จานกระเบื้องมีรอยบิ่นตรงขอบคมจนบาดมือตอนหยิบขึ้นมาดูค่ะ"
+ },
+ {
+  "id": "p1_0140",
+  "text": "คอพัดลมมันหักพับลงมาหมุนเกลียวให้แน่นอยู่กับที่ไม่ได้เลยครับ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "คอพัดลมมันหักพับลงมาหมุนเกลียวให้แน่นอยู่กับที่ไม่ได้เลยครับ"
+ },
+ {
+  "id": "p1_0141",
+  "text": "กระติกน้ำมีน้ำซึมหยดตรงฝาหมุนปิดแน่นแค่ไหนก็ยังไหลซึมค่ะ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "กระติกน้ํามีน้ําซึมหยดตรงฝาหมุนปิดแน่นแค่ไหนก็ยังไหลซึมค่ะ"
+ },
+ {
+  "id": "p1_0142",
+  "text": "ด้ามจับกระทะมันหลวมคลอนเอียงไปมาตอนยกเทอาหารลงจานครับ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "ด้ามจับกระทะมันหลวมคลอนเอียงไปมาตอนยกเทอาหารลงจานครับ"
+ },
+ {
+  "id": "p1_0143",
+  "text": "สีเสื้อตกใส่ผ้าอื่นจนเลอะแถมซักแล้วเนื้อผ้าหดสั้นลงมากเลยค่ะ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "สีเสื้อตกใส่ผ้าอื่นจนเลอะแถมซักแล้วเนื้อผ้าหดสั้นลงมากเลยค่ะ"
+ },
+ {
+  "id": "p1_0144",
+  "text": "หน้าเตารีดเป็นรอยไหม้ติดดำตั้งแต่เปิดห่อพัสดุออกมาดูครับ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "หน้าเตารีดเป็นรอยไหม้ติดดําตั้งแต่เปิดห่อพัสดุออกมาดูครับ"
+ },
+ {
+  "id": "p1_0145",
+  "text": "ปลอกหมอนตัดเย็บเบี้ยวไม่ตรงแนวสวมเข้ากับหมอนไม่ได้เลยค่ะ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "ปลอกหมอนตัดเย็บเบี้ยวไม่ตรงแนวสวมเข้ากับหมอนไม่ได้เลยค่ะ"
+ },
+ {
+  "id": "p1_0146",
+  "text": "ท่อน้ำทิ้งมีรอยแตกตรงข้อต่อเปิดน้ำไหลแล้วรั่วซึมท่วมพื้นห้องครับ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "ท่อน้ําทิ้งมีรอยแตกตรงข้อต่อเปิดน้ําไหลแล้วรั่วซึมท่วมพื้นห้องครับ"
+ },
+ {
+  "id": "p1_0147",
+  "text": "ชั้นวางของมีรอยถลอกลึกตรงแผ่นไม้เห็นเนื้อข้างในชัดเจนเลยค่ะ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "ชั้นวางของมีรอยถลอกลึกตรงแผ่นไม้เห็นเนื้อข้างในชัดเจนเลยค่ะ"
+ },
+ {
+  "id": "p1_0148",
+  "text": "เบาะนั่งยวบลงไปจนถึงโครงเหล็กด้านล่างนั่งแล้วเจ็บหลังมากครับ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "เบาะนั่งยวบลงไปจนถึงโครงเหล็กด้านล่างนั่งแล้วเจ็บหลังมากครับ"
+ },
+ {
+  "id": "p1_0149",
+  "text": "กาน้ำร้อนพอกดปุ่มต้มแล้วน้ำไม่ร้อนไฟสว่างแล้วก็ดับไปค่ะ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "กาน้ําร้อนพอกดปุ่มต้มแล้วน้ําไม่ร้อนไฟสว่างแล้วก็ดับไปค่ะ"
+ },
+ {
+  "id": "p1_0150",
+  "text": "หัวพ่นละอองน้ำตันกดแล้วไม่ออกมีแต่น้ำซึมเลอะเทอะเปื้อนมือครับ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "หัวพ่นละอองน้ําตันกดแล้วไม่ออกมีแต่น้ําซึมเลอะเทอะเปื้อนมือครับ"
+ },
+ {
+  "id": "p1_0151",
+  "text": "สายสะพายขาดหลุดออกจากกระเป๋าตอนที่กำลังยกขึ้นสะพายไหล่ค่ะ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "สายสะพายขาดหลุดออกจากกระเป๋าตอนที่กําลังยกขึ้นสะพายไหล่ค่ะ"
+ },
+ {
+  "id": "p1_0152",
+  "text": "ร่มพับกางไม่ออกเพราะก้านข้างในหักงอไปติดโครงเหล็กครับ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "ร่มพับกางไม่ออกเพราะก้านข้างในหักงอไปติดโครงเหล็กครับ"
+ },
+ {
+  "id": "p1_0153",
+  "text": "กรอบรูปเบี้ยวประกอบเข้ามุมไม่สนิทแถมกระจกยังมีรอยแตกร้าวค่ะ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "กรอบรูปเบี้ยวประกอบเข้ามุมไม่สนิทแถมกระจกยังมีรอยแตกร้าวค่ะ"
+ },
+ {
+  "id": "p1_0154",
+  "text": "ลิ้นชักตู้ติดขัดแน่นมากดึงออกมาแล้วดันกลับเข้าไปไม่สุดครับ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "ลิ้นชักตู้ติดขัดแน่นมากดึงออกมาแล้วดันกลับเข้าไปไม่สุดครับ"
+ },
+ {
+  "id": "p1_0155",
+  "text": "หมวกปีกกว้างเสียทรงยับมากเอามารีดแล้วก็ยังไม่ยอมคืนรูปค่ะ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "หมวกปีกกว้างเสียทรงยับมากเอามารีดแล้วก็ยังไม่ยอมคืนรูปค่ะ"
+ },
+ {
+  "id": "p1_0156",
+  "text": "ขอบอ่างมีรอยบิ่นแหลมคมกลัวจะโดนบาดช่วยรับของคืนด้วยครับ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "ขอบอ่างมีรอยบิ่นแหลมคมกลัวจะโดนบาดช่วยรับของคืนด้วยครับ"
+ },
+ {
+  "id": "p1_0157",
+  "text": "โคมไฟติดๆ ดับๆ เหมือนสายไฟด้านในขาดช่วยเปลี่ยนของให้ด้วยค่ะ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "โคมไฟติดๆดับๆเหมือนสายไฟด้านในขาดช่วยเปลี่ยนของให้ด้วยค่ะ"
+ },
+ {
+  "id": "p1_0158",
+  "text": "ประตูตู้เสื้อผ้าปิดไม่สนิทบานพับฝืดมีเสียงดังน่ารำคาญมากครับ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "ประตูตู้เสื้อผ้าปิดไม่สนิทบานพับฝืดมีเสียงดังน่ารําคาญมากครับ"
+ },
+ {
+  "id": "p1_0159",
+  "text": "ผ้าปูที่นอนมีรอยด่างเปื้อนซักไม่ออกเลยขอเปลี่ยนของใหม่ได้ไหมคะ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "ผ้าปูที่นอนมีรอยด่างเปื้อนซักไม่ออกเลยขอเปลี่ยนของใหม่ได้ไหมคะ"
+ },
+ {
+  "id": "p1_0160",
+  "text": "ถังขยะตรงที่เหยียบมันหักเหยียบเปิดฝาไม่ได้ช่วยดูแลให้หน่อยครับ",
+  "theme": "a customer describing something wrong with an item they bought",
+  "phase": 1,
+  "label_text": "ถังขยะตรงที่เหยียบมันหักเหยียบเปิดฝาไม่ได้ช่วยดูแลให้หน่อยครับ"
+ },
+ {
+  "id": "p1_0161",
+  "text": "สวัสดีครับ อยากจะโทรมาขอนัดหมายเพื่อเข้าไปปรึกษาเรื่องเอกสารหน่อยครับ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "สวัสดีครับอยากจะโทรมาขอนัดหมายเพื่อเข้าไปปรึกษาเรื่องเอกสารหน่อยครับ"
+ },
+ {
+  "id": "p1_0162",
+  "text": "ไม่ทราบว่าสะดวกให้เข้าไปพบที่ทำงานเพื่อพูดคุยรายละเอียดเพิ่มเติมไหมคะ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "ไม่ทราบว่าสะดวกให้เข้าไปพบที่ทํางานเพื่อพูดคุยรายละเอียดเพิ่มเติมไหมคะ"
+ },
+ {
+  "id": "p1_0163",
+  "text": "ผมขอรบกวนนัดเวลาล่วงหน้าเพื่อเข้าไปพูดคุยกับทุกคนสักครู่ได้ไหมครับ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "ผมขอรบกวนนัดเวลาล่วงหน้าเพื่อเข้าไปพูดคุยกับทุกคนสักครู่ได้ไหมครับ"
+ },
+ {
+  "id": "p1_0164",
+  "text": "ถ้าอยากจะขอนัดเจอกัน รบกวนช่วยดูช่วงเวลาที่สะดวกให้หน่อยนะคะ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "ถ้าอยากจะขอนัดเจอกันรบกวนช่วยดูช่วงเวลาที่สะดวกให้หน่อยนะคะ"
+ },
+ {
+  "id": "p1_0165",
+  "text": "หากทางคุณสะดวกเมื่อไหร่ รบกวนช่วยแจ้งกลับมาเพื่อจะได้ลงบันทึกนัดหมายไว้นะครับ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "หากทางคุณสะดวกเมื่อไหร่รบกวนช่วยแจ้งกลับมาเพื่อจะได้ลงบันทึกนัดหมายไว้นะครับ"
+ },
+ {
+  "id": "p1_0166",
+  "text": "โทรมาสอบถามว่าช่วงนี้พอจะมีเวลาว่างให้เข้าไปรับฟังคำแนะนำบ้างไหมคะ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "โทรมาสอบถามว่าช่วงนี้พอจะมีเวลาว่างให้เข้าไปรับฟังคําแนะนําบ้างไหมคะ"
+ },
+ {
+  "id": "p1_0167",
+  "text": "อยากจะขอนัดหมายเพื่อตรวจสุขภาพ ไม่ทราบว่าต้องเตรียมตัวล่วงหน้าอย่างไรบ้างครับ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "อยากจะขอนัดหมายเพื่อตรวจสุขภาพไม่ทราบว่าต้องเตรียมตัวล่วงหน้าอย่างไรบ้างครับ"
+ },
+ {
+  "id": "p1_0168",
+  "text": "ดิฉันโทรมาขอนัดหมายเพื่อส่งมอบเอกสารสำคัญตามที่ได้ตกลงกันไว้ค่ะ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "ดิฉันโทรมาขอนัดหมายเพื่อส่งมอบเอกสารสําคัญตามที่ได้ตกลงกันไว้ค่ะ"
+ },
+ {
+  "id": "p1_0169",
+  "text": "ถ้าทางนั้นพร้อมเริ่มงานแล้ว ช่วยแจ้งช่วงที่สะดวกเข้ามาได้เลยนะครับ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "ถ้าทางนั้นพร้อมเริ่มงานแล้วช่วยแจ้งช่วงที่สะดวกเข้ามาได้เลยนะครับ"
+ },
+ {
+  "id": "p1_0170",
+  "text": "อยากจะสอบถามว่าพอจะจัดสรรเวลานัดพูดคุยเรื่องโครงการใหม่ได้หรือเปล่าคะ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "อยากจะสอบถามว่าพอจะจัดสรรเวลานัดพูดคุยเรื่องโครงการใหม่ได้หรือเปล่าคะ"
+ },
+ {
+  "id": "p1_0171",
+  "text": "ผมโทรมาขอจองนัดหมายเพื่อนำสิ่งของเข้าไปส่งมอบตามข้อตกลงครับ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "ผมโทรมาขอจองนัดหมายเพื่อนําสิ่งของเข้าไปส่งมอบตามข้อตกลงครับ"
+ },
+ {
+  "id": "p1_0172",
+  "text": "สะดวกให้ดิฉันเข้าไปพบเพื่ออธิบายขั้นตอนการดำเนินงานหรือเปล่าคะ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "สะดวกให้ดิฉันเข้าไปพบเพื่ออธิบายขั้นตอนการดําเนินงานหรือเปล่าคะ"
+ },
+ {
+  "id": "p1_0173",
+  "text": "ไม่ทราบว่าช่วงนี้มีช่วงไหนที่ตารางงานยังว่างพอนัดพบกันได้บ้างครับ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "ไม่ทราบว่าช่วงนี้มีช่วงไหนที่ตารางงานยังว่างพอนัดพบกันได้บ้างครับ"
+ },
+ {
+  "id": "p1_0174",
+  "text": "ทางเราอยากจะรบกวนขอนัดหมายล่วงหน้าเพื่อเข้าไปปรึกษาแนวทางแก้ไขปัญหาค่ะ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "ทางเราอยากจะรบกวนขอนัดหมายล่วงหน้าเพื่อเข้าไปปรึกษาแนวทางแก้ไขปัญหาค่ะ"
+ },
+ {
+  "id": "p1_0175",
+  "text": "พอดีผมติดธุระด่วนเลยอยากจะขอเลื่อนนัดออกไปก่อนได้ไหมครับ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "พอดีผมติดธุระด่วนเลยอยากจะขอเลื่อนนัดออกไปก่อนได้ไหมครับ"
+ },
+ {
+  "id": "p1_0176",
+  "text": "ต้องขออภัยด้วยนะคะ พอดีติดประชุมยืดเยื้อเลยอยากจะขอขยับเวลาให้ช้าลงค่ะ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "ต้องขออภัยด้วยนะคะพอดีติดประชุมยืดเยื้อเลยอยากจะขอขยับเวลาให้ช้าลงค่ะ"
+ },
+ {
+  "id": "p1_0177",
+  "text": "ถ้าจะขอเปลี่ยนกำหนดการนัดหมายที่เคยคุยกันไว้ ทางคุณจะสะดวกหรือเปล่าครับ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "ถ้าจะขอเปลี่ยนกําหนดการนัดหมายที่เคยคุยกันไว้ทางคุณจะสะดวกหรือเปล่าครับ"
+ },
+ {
+  "id": "p1_0178",
+  "text": "เกรงว่าจะไปตามเวลานัดเดิมไม่ทัน ขอเลื่อนไปเป็นรอบถัดไปได้ไหมคะ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "เกรงว่าจะไปตามเวลานัดเดิมไม่ทันขอเลื่อนไปเป็นรอบถัดไปได้ไหมคะ"
+ },
+ {
+  "id": "p1_0179",
+  "text": "เนื่องจากมีภารกิจด่วนเข้ามา ผมจึงอยากขอเลื่อนนัดหมายออกไปก่อนนะครับ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "เนื่องจากมีภารกิจด่วนเข้ามาผมจึงอยากขอเลื่อนนัดหมายออกไปก่อนนะครับ"
+ },
+ {
+  "id": "p1_0180",
+  "text": "อยากจะขอเปลี่ยนเวลานัดหมายให้เร็วขึ้นกว่าเดิม ไม่ทราบว่าพอจะสะดวกไหมคะ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "อยากจะขอเปลี่ยนเวลานัดหมายให้เร็วขึ้นกว่าเดิมไม่ทราบว่าพอจะสะดวกไหมคะ"
+ },
+ {
+  "id": "p1_0181",
+  "text": "ติดปัญหาเรื่องการเดินทางนิดหน่อยครับ อยากขอขยับเวลาพบกันออกไปสักครู่ครับ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "ติดปัญหาเรื่องการเดินทางนิดหน่อยครับอยากขอขยับเวลาพบกันออกไปสักครู่ครับ"
+ },
+ {
+  "id": "p1_0182",
+  "text": "ถ้าไม่สะดวกตามกำหนดการเดิม ขอยกยอดการนัดหมายไปในโอกาสหน้าได้ไหมคะ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "ถ้าไม่สะดวกตามกําหนดการเดิมขอยกยอดการนัดหมายไปในโอกาสหน้าได้ไหมคะ"
+ },
+ {
+  "id": "p1_0183",
+  "text": "ผมขออนุญาตเลื่อนกำหนดการพบกันตามที่นัดไว้ออกไปก่อนอย่างไม่มีกำหนดครับ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "ผมขออนุญาตเลื่อนกําหนดการพบกันตามที่นัดไว้ออกไปก่อนอย่างไม่มีกําหนดครับ"
+ },
+ {
+  "id": "p1_0184",
+  "text": "พอดีมีเหตุจำเป็นกะทันหัน อยากรบกวนขอเปลี่ยนแปลงกำหนดการนัดหมายใหม่ค่ะ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "พอดีมีเหตุจําเป็นกะทันหันอยากรบกวนขอเปลี่ยนแปลงกําหนดการนัดหมายใหม่ค่ะ"
+ },
+ {
+  "id": "p1_0185",
+  "text": "ถ้าขอเลื่อนเวลาให้ช้ากว่าเดิมสักเล็กน้อย ทางคุณจะติดขัดอะไรไหมครับ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "ถ้าขอเลื่อนเวลาให้ช้ากว่าเดิมสักเล็กน้อยทางคุณจะติดขัดอะไรไหมครับ"
+ },
+ {
+  "id": "p1_0186",
+  "text": "ขออภัยจริงๆ ค่ะ พอดีติดงานด่วนเลยต้องขอเลื่อนการนัดหมายไปโอกาสหน้าค่ะ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "ขออภัยจริงๆค่ะพอดีติดงานด่วนเลยต้องขอเลื่อนการนัดหมายไปโอกาสหน้าค่ะ"
+ },
+ {
+  "id": "p1_0187",
+  "text": "เกรงว่าจะติดภารกิจช่วงนั้นพอดี สะดวกขยับนัดหมายไปช่วงอื่นแทนไหมครับ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "เกรงว่าจะติดภารกิจช่วงนั้นพอดีสะดวกขยับนัดหมายไปช่วงอื่นแทนไหมครับ"
+ },
+ {
+  "id": "p1_0188",
+  "text": "พอดีรู้สึกไม่ค่อยสบาย จึงอยากจะขอเลื่อนนัดหมายออกไปรักษาตัวก่อนนะคะ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "พอดีรู้สึกไม่ค่อยสบายจึงอยากจะขอเลื่อนนัดหมายออกไปรักษาตัวก่อนนะคะ"
+ },
+ {
+  "id": "p1_0189",
+  "text": "ผมโทรมาสอบถามเพิ่มเติมว่ายังสะดวกพบกันตามนัดหมายเดิมอยู่หรือเปล่าครับ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "ผมโทรมาสอบถามเพิ่มเติมว่ายังสะดวกพบกันตามนัดหมายเดิมอยู่หรือเปล่าครับ"
+ },
+ {
+  "id": "p1_0190",
+  "text": "โทรมาเพื่อขอยืนยันกำหนดการนัดหมายตามที่พวกเราได้พูดคุยตกลงกันไว้ค่ะ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "โทรมาเพื่อขอยืนยันกําหนดการนัดหมายตามที่พวกเราได้พูดคุยตกลงกันไว้ค่ะ"
+ },
+ {
+  "id": "p1_0191",
+  "text": "ผมขอยืนยันว่าจะเข้าไปพบตามสถานที่และเวลาที่เคยตกลงกันไว้นะครับ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "ผมขอยืนยันว่าจะเข้าไปพบตามสถานที่และเวลาที่เคยตกลงกันไว้นะครับ"
+ },
+ {
+  "id": "p1_0192",
+  "text": "ช่วยตอบกลับเพื่อยืนยันว่าได้รับข้อมูลเรื่องการนัดหมายเรียบร้อยแล้วนะคะ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "ช่วยตอบกลับเพื่อยืนยันว่าได้รับข้อมูลเรื่องการนัดหมายเรียบร้อยแล้วนะคะ"
+ },
+ {
+  "id": "p1_0193",
+  "text": "ทางเราได้บันทึกการนัดหมายของคุณไว้ในระบบเรียบร้อยสมบูรณ์แล้วครับ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "ทางเราได้บันทึกการนัดหมายของคุณไว้ในระบบเรียบร้อยสมบูรณ์แล้วครับ"
+ },
+ {
+  "id": "p1_0194",
+  "text": "อย่าลืมจัดเตรียมเอกสารสำคัญมาให้ครบถ้วนตามที่ได้นัดหมายกันไว้ด้วยนะคะ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "อย่าลืมจัดเตรียมเอกสารสําคัญมาให้ครบถ้วนตามที่ได้นัดหมายกันไว้ด้วยนะคะ"
+ },
+ {
+  "id": "p1_0195",
+  "text": "รบกวนส่งข้อความเพื่อยืนยันเรื่องนัดหมายกลับมาให้ผมทราบได้ไหมครับ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "รบกวนส่งข้อความเพื่อยืนยันเรื่องนัดหมายกลับมาให้ผมทราบได้ไหมครับ"
+ },
+ {
+  "id": "p1_0196",
+  "text": "ถ้าเดินทางไปถึงสถานที่นัดหมายแล้ว ทางเราจะรีบติดต่อกลับไปทันทีค่ะ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "ถ้าเดินทางไปถึงสถานที่นัดหมายแล้วทางเราจะรีบติดต่อกลับไปทันทีค่ะ"
+ },
+ {
+  "id": "p1_0197",
+  "text": "ทางฝ่ายต้อนรับแจ้งว่าได้รับเรื่องการนัดหมายของคุณเรียบร้อยแล้วครับ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "ทางฝ่ายต้อนรับแจ้งว่าได้รับเรื่องการนัดหมายของคุณเรียบร้อยแล้วครับ"
+ },
+ {
+  "id": "p1_0198",
+  "text": "ดิฉันขอโทรมาทบทวนรายละเอียดการนัดหมายให้ถูกต้องตรงกันนะคะ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "ดิฉันขอโทรมาทบทวนรายละเอียดการนัดหมายให้ถูกต้องตรงกันนะคะ"
+ },
+ {
+  "id": "p1_0199",
+  "text": "ทางพวกเราพร้อมสำหรับการพบปะพูดคุยตามกำหนดการนัดหมายเดิมแน่นอนครับ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "ทางพวกเราพร้อมสําหรับการพบปะพูดคุยตามกําหนดการนัดหมายเดิมแน่นอนครับ"
+ },
+ {
+  "id": "p1_0200",
+  "text": "หากมีความจำเป็นต้องเปลี่ยนแปลงนัดหมาย รบกวนช่วยโทรแจ้งล่วงหน้าด้วยนะคะ",
+  "theme": "someone making, moving or confirming an appointment",
+  "phase": 1,
+  "label_text": "หากมีความจําเป็นต้องเปลี่ยนแปลงนัดหมายรบกวนช่วยโทรแจ้งล่วงหน้าด้วยนะคะ"
+ },
+ {
+  "id": "p1_0201",
+  "text": "พอดีเพิ่งสมัครบริการนี้ไป รบกวนช่วยอธิบายวิธีเปิดใช้งานให้ฟังหน่อยได้ไหมครับ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "พอดีเพิ่งสมัครบริการนี้ไปรบกวนช่วยอธิบายวิธีเปิดใช้งานให้ฟังหน่อยได้ไหมครับ"
+ },
+ {
+  "id": "p1_0202",
+  "text": "ไม่เข้าใจว่าระบบนี้ทำงานยังไง เจ้าหน้าที่พอจะเล่าขั้นตอนคร่าวๆ ให้ฟังได้ไหมคะ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "ไม่เข้าใจว่าระบบนี้ทํางานยังไงเจ้าหน้าที่พอจะเล่าขั้นตอนคร่าวๆให้ฟังได้ไหมคะ"
+ },
+ {
+  "id": "p1_0203",
+  "text": "ถ้าต้องการยกเลิกบริการที่ใช้อยู่ จะต้องทำเรื่องยังไงบ้างคะ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "ถ้าต้องการยกเลิกบริการที่ใช้อยู่จะต้องทําเรื่องยังไงบ้างคะ"
+ },
+ {
+  "id": "p1_0204",
+  "text": "ผมอยากทราบว่าถ้าเปิดใช้บริการแล้ว จะมีเจ้าหน้าที่คอยช่วยเหลืออยู่ตลอดไหมครับ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "ผมอยากทราบว่าถ้าเปิดใช้บริการแล้วจะมีเจ้าหน้าที่คอยช่วยเหลืออยู่ตลอดไหมครับ"
+ },
+ {
+  "id": "p1_0205",
+  "text": "ช่วยบอกหน่อยค่ะว่าระบบนี้มีประโยชน์ยังไง แล้วฉันจะได้อะไรบ้างคะ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "ช่วยบอกหน่อยค่ะว่าระบบนี้มีประโยชน์ยังไงแล้วฉันจะได้อะไรบ้างคะ"
+ },
+ {
+  "id": "p1_0206",
+  "text": "บริการที่ว่านี้เราต้องเข้าไปกดยืนยันตัวตนก่อนเริ่มใช้งานใช่ไหมครับ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "บริการที่ว่านี้เราต้องเข้าไปกดยืนยันตัวตนก่อนเริ่มใช้งานใช่ไหมครับ"
+ },
+ {
+  "id": "p1_0207",
+  "text": "สนใจบริการนี้มากค่ะ แต่อยากรู้รายละเอียดเงื่อนไขก่อนตัดสินใจเลือกใช้บริการ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "สนใจบริการนี้มากค่ะแต่อยากรู้รายละเอียดเงื่อนไขก่อนตัดสินใจเลือกใช้บริการ"
+ },
+ {
+  "id": "p1_0208",
+  "text": "พี่ช่วยสอนวิธีตั้งค่าระบบใหม่ให้ผมหน่อยครับ พอดีทำตามคำแนะนำแล้วไม่สำเร็จ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "พี่ช่วยสอนวิธีตั้งค่าระบบใหม่ให้ผมหน่อยครับพอดีทําตามคําแนะนําแล้วไม่สําเร็จ"
+ },
+ {
+  "id": "p1_0209",
+  "text": "อยากรู้ว่าระบบจะตัดเงินอัตโนมัติเลยหรือว่าเราต้องคอยไปจ่ายเองคะ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "อยากรู้ว่าระบบจะตัดเงินอัตโนมัติเลยหรือว่าเราต้องคอยไปจ่ายเองคะ"
+ },
+ {
+  "id": "p1_0210",
+  "text": "ถ้าเกิดปัญหาขัดข้องระหว่างใช้งาน ผมต้องติดต่อใครหรือแก้ไขยังไงได้บ้างครับ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "ถ้าเกิดปัญหาขัดข้องระหว่างใช้งานผมต้องติดต่อใครหรือแก้ไขยังไงได้บ้างครับ"
+ },
+ {
+  "id": "p1_0211",
+  "text": "รบกวนแนะนำวิธีใช้เบื้องต้นหน่อยค่ะ เพราะว่าไม่เคยใช้บริการแบบนี้มาก่อนเลย",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "รบกวนแนะนําวิธีใช้เบื้องต้นหน่อยค่ะเพราะว่าไม่เคยใช้บริการแบบนี้มาก่อนเลย"
+ },
+ {
+  "id": "p1_0212",
+  "text": "บริการนี้มันแตกต่างจากบริการเดิมที่ผมเคยใช้อยู่ยังไงบ้างครับ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "บริการนี้มันแตกต่างจากบริการเดิมที่ผมเคยใช้อยู่ยังไงบ้างครับ"
+ },
+ {
+  "id": "p1_0213",
+  "text": "พอดีเห็นมีบริการใหม่ออกมา เลยอยากโทรมาถามว่ามันเหมาะกับใครบ้างคะ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "พอดีเห็นมีบริการใหม่ออกมาเลยอยากโทรมาถามว่ามันเหมาะกับใครบ้างคะ"
+ },
+ {
+  "id": "p1_0214",
+  "text": "ผมต้องเตรียมเอกสารอะไรเพิ่มเติมไหมครับ ในการขอเปิดใช้บริการตัวนี้",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "ผมต้องเตรียมเอกสารอะไรเพิ่มเติมไหมครับในการขอเปิดใช้บริการตัวนี้"
+ },
+ {
+  "id": "p1_0215",
+  "text": "ช่วยอธิบายให้เข้าใจง่ายๆ หน่อยค่ะว่าระบบนี้ช่วยประหยัดค่าใช้จ่ายได้จริงไหมคะ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "ช่วยอธิบายให้เข้าใจง่ายๆหน่อยค่ะว่าระบบนี้ช่วยประหยัดค่าใช้จ่ายได้จริงไหมคะ"
+ },
+ {
+  "id": "p1_0216",
+  "text": "ก่อนจะเริ่มใช้บริการนี้ ผมจำเป็นต้องเปลี่ยนเครื่องโทรศัพท์ใหม่หรือเปล่าครับ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "ก่อนจะเริ่มใช้บริการนี้ผมจําเป็นต้องเปลี่ยนเครื่องโทรศัพท์ใหม่หรือเปล่าครับ"
+ },
+ {
+  "id": "p1_0217",
+  "text": "ถ้าหนูสมัครบริการนี้ไปแล้ว คนในครอบครัวสามารถใช้ร่วมกันได้ไหมคะ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "ถ้าหนูสมัครบริการนี้ไปแล้วคนในครอบครัวสามารถใช้ร่วมกันได้ไหมคะ"
+ },
+ {
+  "id": "p1_0218",
+  "text": "อยากทราบว่าบริการนี้มีการแจ้งเตือนส่งมาให้เรารู้ล่วงหน้าไหมครับ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "อยากทราบว่าบริการนี้มีการแจ้งเตือนส่งมาให้เรารู้ล่วงหน้าไหมครับ"
+ },
+ {
+  "id": "p1_0219",
+  "text": "ไม่แน่ใจว่าฟังเข้าใจถูกไหม ช่วยอธิบายขั้นตอนการลงทะเบียนใหม่อย่างละเอียดได้ไหมคะ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "ไม่แน่ใจว่าฟังเข้าใจถูกไหมช่วยอธิบายขั้นตอนการลงทะเบียนใหม่อย่างละเอียดได้ไหมคะ"
+ },
+ {
+  "id": "p1_0220",
+  "text": "ถ้าผมเปลี่ยนใจไม่อยากใช้แล้ว จะมีค่าปรับหรือข้อผูกมัดอะไรไหมครับ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "ถ้าผมเปลี่ยนใจไม่อยากใช้แล้วจะมีค่าปรับหรือข้อผูกมัดอะไรไหมครับ"
+ },
+ {
+  "id": "p1_0221",
+  "text": "รบกวนสอบถามค่ะว่าบริการตัวนี้ครอบคลุมการดูแลเรื่องความปลอดภัยด้วยไหมคะ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "รบกวนสอบถามค่ะว่าบริการตัวนี้ครอบคลุมการดูแลเรื่องความปลอดภัยด้วยไหมคะ"
+ },
+ {
+  "id": "p1_0222",
+  "text": "ผมอยากรู้ว่าหลังจากส่งข้อมูลไปแล้ว จะทราบผลการตรวจสอบผ่านช่องทางไหนครับ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "ผมอยากรู้ว่าหลังจากส่งข้อมูลไปแล้วจะทราบผลการตรวจสอบผ่านช่องทางไหนครับ"
+ },
+ {
+  "id": "p1_0223",
+  "text": "คุณพี่ช่วยดูให้หน่อยค่ะว่าบริการนี้เปิดรองรับในพื้นที่ของฉันไหมคะ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "คุณพี่ช่วยดูให้หน่อยค่ะว่าบริการนี้เปิดรองรับในพื้นที่ของฉันไหมคะ"
+ },
+ {
+  "id": "p1_0224",
+  "text": "สรุปแล้วบริการนี้ทำงานผ่านระบบเครือข่าย หรือว่าทำงานด้วยตัวเองครับ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "สรุปแล้วบริการนี้ทํางานผ่านระบบเครือข่ายหรือว่าทํางานด้วยตัวเองครับ"
+ },
+ {
+  "id": "p1_0225",
+  "text": "พอดีได้รับข้อความแนะนำบริการมาค่ะ แต่ยังสงสัยเรื่องขั้นตอนการทำงานอยู่",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "พอดีได้รับข้อความแนะนําบริการมาค่ะแต่ยังสงสัยเรื่องขั้นตอนการทํางานอยู่"
+ },
+ {
+  "id": "p1_0226",
+  "text": "ผมต้องคอยเปิดสัญญาณทิ้งไว้ตลอด เพื่อให้ระบบทำงานต่อเนื่องใช่ไหมครับ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "ผมต้องคอยเปิดสัญญาณทิ้งไว้ตลอดเพื่อให้ระบบทํางานต่อเนื่องใช่ไหมครับ"
+ },
+ {
+  "id": "p1_0227",
+  "text": "อยากสอบถามค่ะว่า ถ้าลืมรหัสผ่านจะมีวิธีขอรหัสใหม่ยังไงบ้างคะ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "อยากสอบถามค่ะว่าถ้าลืมรหัสผ่านจะมีวิธีขอรหัสใหม่ยังไงบ้างคะ"
+ },
+ {
+  "id": "p1_0228",
+  "text": "ช่วยอธิบายส่วนที่ต้องระวังในการใช้งานระบบนี้ให้ผมฟังหน่อยครับ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "ช่วยอธิบายส่วนที่ต้องระวังในการใช้งานระบบนี้ให้ผมฟังหน่อยครับ"
+ },
+ {
+  "id": "p1_0229",
+  "text": "บริการนี้จำเป็นต้องเชื่อมต่อกับบัญชีส่วนตัวของเราตลอดเลยไหมคะ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "บริการนี้จําเป็นต้องเชื่อมต่อกับบัญชีส่วนตัวของเราตลอดเลยไหมคะ"
+ },
+ {
+  "id": "p1_0230",
+  "text": "ผมอยากทราบขั้นตอนตั้งแต่เริ่มต้นจนจบเลยครับ เจ้าหน้าที่พอจะว่างอธิบายไหม",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "ผมอยากทราบขั้นตอนตั้งแต่เริ่มต้นจนจบเลยครับเจ้าหน้าที่พอจะว่างอธิบายไหม"
+ },
+ {
+  "id": "p1_0231",
+  "text": "ทางคุณมีคู่มือการใช้งานส่งมาให้อ่านเพิ่มเติมด้วยหรือเปล่าคะ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "ทางคุณมีคู่มือการใช้งานส่งมาให้อ่านเพิ่มเติมด้วยหรือเปล่าคะ"
+ },
+ {
+  "id": "p1_0232",
+  "text": "ถ้าระบบขัดข้องจนใช้งานไม่ได้ จะมีระบบสำรองมารองรับไหมครับ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "ถ้าระบบขัดข้องจนใช้งานไม่ได้จะมีระบบสํารองมารองรับไหมครับ"
+ },
+ {
+  "id": "p1_0233",
+  "text": "ไม่ทราบว่าถ้าจะเปลี่ยนรูปแบบบริการในภายหลัง จะทำได้ยุ่งยากไหมคะ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "ไม่ทราบว่าถ้าจะเปลี่ยนรูปแบบบริการในภายหลังจะทําได้ยุ่งยากไหมคะ"
+ },
+ {
+  "id": "p1_0234",
+  "text": "ทางระบบจะส่งเจ้าหน้าที่มาสอนการใช้งานถึงที่บ้านเลยใช่ไหมครับ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "ทางระบบจะส่งเจ้าหน้าที่มาสอนการใช้งานถึงที่บ้านเลยใช่ไหมครับ"
+ },
+ {
+  "id": "p1_0235",
+  "text": "อยากให้ช่วยชี้แจงเงื่อนไขที่สำคัญให้ฟังหน่อยค่ะ กลัวว่าจะทำผิดขั้นตอน",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "อยากให้ช่วยชี้แจงเงื่อนไขที่สําคัญให้ฟังหน่อยค่ะกลัวว่าจะทําผิดขั้นตอน"
+ },
+ {
+  "id": "p1_0236",
+  "text": "ผมสามารถทดลองใช้บริการดูก่อนได้ไหมครับ หรือว่าต้องตกลงทันทีเลย",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "ผมสามารถทดลองใช้บริการดูก่อนได้ไหมครับหรือว่าต้องตกลงทันทีเลย"
+ },
+ {
+  "id": "p1_0237",
+  "text": "รบกวนบอกข้อดีของบริการนี้หน่อยค่ะ เผื่อจะได้เอาไปคุยกับคนที่บ้าน",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "รบกวนบอกข้อดีของบริการนี้หน่อยค่ะเผื่อจะได้เอาไปคุยกับคนที่บ้าน"
+ },
+ {
+  "id": "p1_0238",
+  "text": "หากสัญญาณหลุดไป ข้อมูลที่ทำค้างไว้ในระบบจะหายไปไหมครับ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "หากสัญญาณหลุดไปข้อมูลที่ทําค้างไว้ในระบบจะหายไปไหมครับ"
+ },
+ {
+  "id": "p1_0239",
+  "text": "ช่วยแนะนำหน่อยค่ะว่าควรเริ่มต้นจากจุดไหนก่อนเพื่อให้ใช้งานได้ถูกต้อง",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "ช่วยแนะนําหน่อยค่ะว่าควรเริ่มต้นจากจุดไหนก่อนเพื่อให้ใช้งานได้ถูกต้อง"
+ },
+ {
+  "id": "p1_0240",
+  "text": "อยากทราบว่าถ้าจะหยุดพักบริการชั่วคราว สามารถทำเรื่องได้ทางไหนบ้างครับ",
+  "theme": "someone asking a call centre to explain how a service works",
+  "phase": 1,
+  "label_text": "อยากทราบว่าถ้าจะหยุดพักบริการชั่วคราวสามารถทําเรื่องได้ทางไหนบ้างครับ"
+ },
+ {
+  "id": "p1_0241",
+  "text": "สวัสดีครับ สะดวกคุยสายไหมครับ พอดีมีเรื่องสำคัญอยากรบกวนสอบถามครับ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "สวัสดีครับสะดวกคุยสายไหมครับพอดีมีเรื่องสําคัญอยากรบกวนสอบถามครับ"
+ },
+ {
+  "id": "p1_0242",
+  "text": "สวัสดีค่ะ ได้ยินเสียงชัดเจนไหมคะ สัญญาณทางนี้ไม่ค่อยชัดเจนเลยค่ะ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "สวัสดีค่ะได้ยินเสียงชัดเจนไหมคะสัญญาณทางนี้ไม่ค่อยชัดเจนเลยค่ะ"
+ },
+ {
+  "id": "p1_0243",
+  "text": "สวัสดีครับ กำลังรอสายอยู่พอดีเลยครับ คิดถึงเสมอนะครับ สบายดีไหมครับ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "สวัสดีครับกําลังรอสายอยู่พอดีเลยครับคิดถึงเสมอนะครับสบายดีไหมครับ"
+ },
+ {
+  "id": "p1_0244",
+  "text": "สวัสดีค่ะ ขอโทษนะคะที่ติดต่อมากะทันหัน อยากรบกวนช่วยตรวจสอบเรื่องนี้ให้ได้ไหมคะ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "สวัสดีค่ะขอโทษนะคะที่ติดต่อมากะทันหันอยากรบกวนช่วยตรวจสอบเรื่องนี้ให้ได้ไหมคะ"
+ },
+ {
+  "id": "p1_0245",
+  "text": "สวัสดีครับ ดีใจที่โทรมาหานะครับ มีอะไรให้ผมช่วยเหลือบอกได้เลยนะครับ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "สวัสดีครับดีใจที่โทรมาหานะครับมีอะไรให้ผมช่วยเหลือบอกได้เลยนะครับ"
+ },
+ {
+  "id": "p1_0246",
+  "text": "สวัสดีค่ะ ยินดีที่ได้คุยสายกันนะคะ หวังว่าจะมีความสุขและสบายดีนะคะ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "สวัสดีค่ะยินดีที่ได้คุยสายกันนะคะหวังว่าจะมีความสุขและสบายดีนะคะ"
+ },
+ {
+  "id": "p1_0247",
+  "text": "สวัสดีครับ ได้รับข้อความเรียบร้อยแล้วครับ เลยรีบติดต่อกลับมาสอบถามดูครับ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "สวัสดีครับได้รับข้อความเรียบร้อยแล้วครับเลยรีบติดต่อกลับมาสอบถามดูครับ"
+ },
+ {
+  "id": "p1_0248",
+  "text": "สวัสดีค่ะ กำลังจะกดโทรหาพอดีเลยค่ะ ใจตรงกันมากๆ เลยนะคะ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "สวัสดีค่ะกําลังจะกดโทรหาพอดีเลยค่ะใจตรงกันมากๆเลยนะคะ"
+ },
+ {
+  "id": "p1_0249",
+  "text": "สวัสดีครับ เห็นมีสายไม่ได้รับ เลยรีบติดต่อกลับมาว่ามีเรื่องด่วนไหมครับ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "สวัสดีครับเห็นมีสายไม่ได้รับเลยรีบติดต่อกลับมาว่ามีเรื่องด่วนไหมครับ"
+ },
+ {
+  "id": "p1_0250",
+  "text": "สวัสดีค่ะ ถ้ากำลังติดธุระอยู่ สะดวกคุยหรืออยากให้โทรกลับไปใหม่คะ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "สวัสดีค่ะถ้ากําลังติดธุระอยู่สะดวกคุยหรืออยากให้โทรกลับไปใหม่คะ"
+ },
+ {
+  "id": "p1_0251",
+  "text": "ขอโทษจริงๆ ครับที่ตอบกลับล่าช้า พอดีผมติดประชุมสำคัญอยู่ครับ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ขอโทษจริงๆครับที่ตอบกลับล่าช้าพอดีผมติดประชุมสําคัญอยู่ครับ"
+ },
+ {
+  "id": "p1_0252",
+  "text": "ต้องขออภัยด้วยนะคะ พอดีเสียงรอบข้างค่อนข้างดัง อาจจะได้ยินไม่ค่อยชัดค่ะ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ต้องขออภัยด้วยนะคะพอดีเสียงรอบข้างค่อนข้างดังอาจจะได้ยินไม่ค่อยชัดค่ะ"
+ },
+ {
+  "id": "p1_0253",
+  "text": "ขอโทษด้วยครับ น่าจะต่อสายผิดแล้วครับ ทางนี้ไม่มีชื่อนี้อยู่เลยครับ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ขอโทษด้วยครับน่าจะต่อสายผิดแล้วครับทางนี้ไม่มีชื่อนี้อยู่เลยครับ"
+ },
+ {
+  "id": "p1_0254",
+  "text": "ขอโทษนะคะที่พูดแทรกขึ้นมา พอดีสัญญาณทางฝั่งนี้ขาดๆ หายๆ ไปค่ะ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ขอโทษนะคะที่พูดแทรกขึ้นมาพอดีสัญญาณทางฝั่งนี้ขาดๆหายๆไปค่ะ"
+ },
+ {
+  "id": "p1_0255",
+  "text": "ต้องกราบขออภัยเป็นอย่างยิ่งครับที่ทำให้เกิดความล่าช้าและไม่สะดวกในเรื่องนี้ครับ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ต้องกราบขออภัยเป็นอย่างยิ่งครับที่ทําให้เกิดความล่าช้าและไม่สะดวกในเรื่องนี้ครับ"
+ },
+ {
+  "id": "p1_0256",
+  "text": "ขออภัยอย่างยิ่งนะคะที่ติดต่อมารบกวน รู้สึกเกรงใจมากๆ เลยค่ะ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ขออภัยอย่างยิ่งนะคะที่ติดต่อมารบกวนรู้สึกเกรงใจมากๆเลยค่ะ"
+ },
+ {
+  "id": "p1_0257",
+  "text": "ขอโทษด้วยครับที่ทำให้เข้าใจผิด ผมไม่ได้มีเจตนาให้เป็นแบบนั้นเลยครับ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ขอโทษด้วยครับที่ทําให้เข้าใจผิดผมไม่ได้มีเจตนาให้เป็นแบบนั้นเลยครับ"
+ },
+ {
+  "id": "p1_0258",
+  "text": "ต้องขอโทษด้วยนะคะที่ต้องให้เหนื่อยช่วยประสานงานติดตามเรื่องนี้ให้ค่ะ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ต้องขอโทษด้วยนะคะที่ต้องให้เหนื่อยช่วยประสานงานติดตามเรื่องนี้ให้ค่ะ"
+ },
+ {
+  "id": "p1_0259",
+  "text": "ขออภัยจริงๆ ครับ พอดีกำลังขับรถอยู่ เกรงว่าจะคุยไม่สะดวกครับ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ขออภัยจริงๆครับพอดีกําลังขับรถอยู่เกรงว่าจะคุยไม่สะดวกครับ"
+ },
+ {
+  "id": "p1_0260",
+  "text": "ขอโทษจริงๆ ค่ะ สัญญาณโทรศัพท์ไม่นิ่งเลย ถ้าสายหลุดไปต้องขออภัยล่วงหน้านะคะ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ขอโทษจริงๆค่ะสัญญาณโทรศัพท์ไม่นิ่งเลยถ้าสายหลุดไปต้องขออภัยล่วงหน้านะคะ"
+ },
+ {
+  "id": "p1_0261",
+  "text": "ขอบคุณมากเลยนะครับที่ช่วยอธิบายเรื่องนี้ให้เข้าใจอย่างละเอียดและชัดเจนครับ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ขอบคุณมากเลยนะครับที่ช่วยอธิบายเรื่องนี้ให้เข้าใจอย่างละเอียดและชัดเจนครับ"
+ },
+ {
+  "id": "p1_0262",
+  "text": "ขอบพระคุณสำหรับคำแนะนำดีๆ นะคะ ช่วยแก้ปัญหาให้ได้เป็นอย่างดีเลยค่ะ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ขอบพระคุณสําหรับคําแนะนําดีๆนะคะช่วยแก้ปัญหาให้ได้เป็นอย่างดีเลยค่ะ"
+ },
+ {
+  "id": "p1_0263",
+  "text": "ขอบคุณมากครับที่โทรมาบอกข่าวดี เป็นเรื่องที่น่ายินดีและมีความสุขมากครับ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ขอบคุณมากครับที่โทรมาบอกข่าวดีเป็นเรื่องที่น่ายินดีและมีความสุขมากครับ"
+ },
+ {
+  "id": "p1_0264",
+  "text": "ขอบคุณมากๆ เลยค่ะที่คอยเป็นห่วงและโทรมาถามไถ่สารทุกข์สุกดิบกันเสมอนะคะ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ขอบคุณมากๆเลยค่ะที่คอยเป็นห่วงและโทรมาถามไถ่สารทุกข์สุกดิบกันเสมอนะคะ"
+ },
+ {
+  "id": "p1_0265",
+  "text": "ขอบคุณสำหรับความช่วยเหลืออย่างจริงใจครับ รู้สึกซาบซึ้งในน้ำใจของท่านมากครับ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ขอบคุณสําหรับความช่วยเหลืออย่างจริงใจครับรู้สึกซาบซึ้งในน้ําใจของท่านมากครับ"
+ },
+ {
+  "id": "p1_0266",
+  "text": "ขอบคุณที่รับฟังและเข้าใจความรู้สึกนะคะ ช่วยให้รู้สึกสบายใจขึ้นมากเลยค่ะ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ขอบคุณที่รับฟังและเข้าใจความรู้สึกนะคะช่วยให้รู้สึกสบายใจขึ้นมากเลยค่ะ"
+ },
+ {
+  "id": "p1_0267",
+  "text": "ขอบคุณมากครับที่ช่วยดำเนินเรื่องให้อย่างรวดเร็ว เรื่องจัดการเรียบร้อยดีแล้วครับ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ขอบคุณมากครับที่ช่วยดําเนินเรื่องให้อย่างรวดเร็วเรื่องจัดการเรียบร้อยดีแล้วครับ"
+ },
+ {
+  "id": "p1_0268",
+  "text": "ขอบพระคุณที่ให้เกียรติติดต่อมานะคะ ทางเรายินดีที่ได้ร่วมงานกันค่ะ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ขอบพระคุณที่ให้เกียรติติดต่อมานะคะทางเรายินดีที่ได้ร่วมงานกันค่ะ"
+ },
+ {
+  "id": "p1_0269",
+  "text": "ขอบคุณสำหรับข้อมูลที่เป็นประโยชน์มากครับ ผมจะนำคำแนะนำไปปรับปรุงแก้ไขครับ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ขอบคุณสําหรับข้อมูลที่เป็นประโยชน์มากครับผมจะนําคําแนะนําไปปรับปรุงแก้ไขครับ"
+ },
+ {
+  "id": "p1_0270",
+  "text": "ขอบคุณที่โทรมาเตือนความจำนะคะ ไม่อย่างนั้นคงลืมเรื่องสำคัญไปสนิทเลยค่ะ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ขอบคุณที่โทรมาเตือนความจํานะคะไม่อย่างนั้นคงลืมเรื่องสําคัญไปสนิทเลยค่ะ"
+ },
+ {
+  "id": "p1_0271",
+  "text": "รบกวนช่วยส่งรายละเอียดเพิ่มเติมมาทางข้อความให้ด้วยนะครับ ขอบคุณล่วงหน้าครับ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "รบกวนช่วยส่งรายละเอียดเพิ่มเติมมาทางข้อความให้ด้วยนะครับขอบคุณล่วงหน้าครับ"
+ },
+ {
+  "id": "p1_0272",
+  "text": "ถ้าไม่มีข้อสงสัยอะไรเพิ่มเติมแล้ว ดิฉันขออนุญาตวางสายก่อนนะคะ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ถ้าไม่มีข้อสงสัยอะไรเพิ่มเติมแล้วดิฉันขออนุญาตวางสายก่อนนะคะ"
+ },
+ {
+  "id": "p1_0273",
+  "text": "ผมขอตัวไปทำธุระต่อก่อนนะครับ ไว้ค่อยพูดคุยกันใหม่ในโอกาสหน้านะครับ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ผมขอตัวไปทําธุระต่อก่อนนะครับไว้ค่อยพูดคุยกันใหม่ในโอกาสหน้านะครับ"
+ },
+ {
+  "id": "p1_0274",
+  "text": "อย่าลืมดูแลสุขภาพร่างกายด้วยนะคะ ขอให้มีความสุขและเดินทางปลอดภัยค่ะ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "อย่าลืมดูแลสุขภาพร่างกายด้วยนะคะขอให้มีความสุขและเดินทางปลอดภัยค่ะ"
+ },
+ {
+  "id": "p1_0275",
+  "text": "ขอบคุณที่โทรมาคุยกันครับ ขอให้การงานราบรื่นและประสบความสำเร็จนะครับ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ขอบคุณที่โทรมาคุยกันครับขอให้การงานราบรื่นและประสบความสําเร็จนะครับ"
+ },
+ {
+  "id": "p1_0276",
+  "text": "ขอบพระคุณที่กรุณาให้ข้อมูลนะคะ สวัสดีค่ะ ขอให้มีความสุขและโชคดีนะคะ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ขอบพระคุณที่กรุณาให้ข้อมูลนะคะสวัสดีค่ะขอให้มีความสุขและโชคดีนะคะ"
+ },
+ {
+  "id": "p1_0277",
+  "text": "รักษาสุขภาพด้วยนะครับ แล้วค่อยกลับมาพูดคุยกันใหม่นะครับ สวัสดีครับ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "รักษาสุขภาพด้วยนะครับแล้วค่อยกลับมาพูดคุยกันใหม่นะครับสวัสดีครับ"
+ },
+ {
+  "id": "p1_0278",
+  "text": "ยินดีที่ได้แลกเปลี่ยนความคิดเห็นกันนะคะ โอกาสหน้าคงได้ร่วมงานกันค่ะ สวัสดีค่ะ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ยินดีที่ได้แลกเปลี่ยนความคิดเห็นกันนะคะโอกาสหน้าคงได้ร่วมงานกันค่ะสวัสดีค่ะ"
+ },
+ {
+  "id": "p1_0279",
+  "text": "ผมไม่รบกวนแล้วครับ ขอให้พักผ่อนอย่างสบายใจและหลับฝันดีนะครับ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ผมไม่รบกวนแล้วครับขอให้พักผ่อนอย่างสบายใจและหลับฝันดีนะครับ"
+ },
+ {
+  "id": "p1_0280",
+  "text": "ขอบพระคุณสำหรับการติดต่อในสายนี้ค่ะ ขออนุญาตวางสายนะคะ สวัสดีค่ะ",
+  "theme": "greetings, thanks, apologies and polite closings on a phone call",
+  "phase": 1,
+  "label_text": "ขอบพระคุณสําหรับการติดต่อในสายนี้ค่ะขออนุญาตวางสายนะคะสวัสดีค่ะ"
+ },
+ {
+  "id": "p1_0281",
+  "text": "ขอโทษจริงๆ นะครับ พอดีมีธุระด่วนเข้ามาเลยต้องขอเลื่อนนัดออกไปก่อน",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "ขอโทษจริงๆนะครับพอดีมีธุระด่วนเข้ามาเลยต้องขอเลื่อนนัดออกไปก่อน"
+ },
+ {
+  "id": "p1_0282",
+  "text": "พอดีรู้สึกเวียนหัวแล้วก็มีไข้ขึ้นสูง ขออนุญาตยกเลิกนัดไปก่อนนะคะ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "พอดีรู้สึกเวียนหัวแล้วก็มีไข้ขึ้นสูงขออนุญาตยกเลิกนัดไปก่อนนะคะ"
+ },
+ {
+  "id": "p1_0283",
+  "text": "หัวหน้าเพิ่งเรียกเข้าไปคุยเรื่องงานกะทันหัน คงต้องขอยกเลิกนัดของเราไปก่อนครับ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "หัวหน้าเพิ่งเรียกเข้าไปคุยเรื่องงานกะทันหันคงต้องขอยกเลิกนัดของเราไปก่อนครับ"
+ },
+ {
+  "id": "p1_0284",
+  "text": "ทางบ้านมีเรื่องด่วนต้องรีบกลับไปจัดการ คงออกไปเจอตามนัดไม่ได้แล้วค่ะ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "ทางบ้านมีเรื่องด่วนต้องรีบกลับไปจัดการคงออกไปเจอตามนัดไม่ได้แล้วค่ะ"
+ },
+ {
+  "id": "p1_0285",
+  "text": "รถเสียอยู่กลางทางเลยครับ คงตามไปไม่ทัน ขอเลื่อนเป็นรอบหน้าแทนนะครับ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "รถเสียอยู่กลางทางเลยครับคงตามไปไม่ทันขอเลื่อนเป็นรอบหน้าแทนนะครับ"
+ },
+ {
+  "id": "p1_0286",
+  "text": "งานยังทำไม่เสร็จจนปลีกตัวไปไม่ได้ ขอขยับนัดออกไปเป็นคราวหน้านะคะ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "งานยังทําไม่เสร็จจนปลีกตัวไปไม่ได้ขอขยับนัดออกไปเป็นคราวหน้านะคะ"
+ },
+ {
+  "id": "p1_0287",
+  "text": "ต้องขอโทษด้วยจริงๆ ครับ ติดปัญหาหน้างานคงต้องขอรบกวนเลื่อนนัดออกไปก่อน",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "ต้องขอโทษด้วยจริงๆครับติดปัญหาหน้างานคงต้องขอรบกวนเลื่อนนัดออกไปก่อน"
+ },
+ {
+  "id": "p1_0288",
+  "text": "แถวนี้ฝนตกหนักจนน้ำท่วมทางออก เดินทางไปไม่ไหว ขอยกเลิกก่อนนะคะ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "แถวนี้ฝนตกหนักจนน้ําท่วมทางออกเดินทางไปไม่ไหวขอยกเลิกก่อนนะคะ"
+ },
+ {
+  "id": "p1_0289",
+  "text": "ลูกมีไข้สูงต้องพาไปหาหมอ คงต้องขอยกเลิกนัดที่ตกลงกันไว้ครับ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "ลูกมีไข้สูงต้องพาไปหาหมอคงต้องขอยกเลิกนัดที่ตกลงกันไว้ครับ"
+ },
+ {
+  "id": "p1_0290",
+  "text": "มีแขกผู้ใหญ่แวะมาหาที่บ้านกะทันหัน ขออนุญาตเลื่อนไปเจอกันรอบหน้านะคะ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "มีแขกผู้ใหญ่แวะมาหาที่บ้านกะทันหันขออนุญาตเลื่อนไปเจอกันรอบหน้านะคะ"
+ },
+ {
+  "id": "p1_0291",
+  "text": "ท่อน้ำที่ห้องแตกต้องรอช่างเข้ามาซ่อม คงออกไปพบไม่ได้แล้วครับ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "ท่อน้ําที่ห้องแตกต้องรอช่างเข้ามาซ่อมคงออกไปพบไม่ได้แล้วครับ"
+ },
+ {
+  "id": "p1_0292",
+  "text": "เหนื่อยจนลุกแทบไม่ไหวเลย ขอพักผ่อนแล้วค่อยนัดเจอกันใหม่นะคะ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "เหนื่อยจนลุกแทบไม่ไหวเลยขอพักผ่อนแล้วค่อยนัดเจอกันใหม่นะคะ"
+ },
+ {
+  "id": "p1_0293",
+  "text": "เที่ยวบินถูกระงับกะทันหัน เดินทางไปไม่ทันแน่นอน ต้องขอยกเลิกนัดครับ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "เที่ยวบินถูกระงับกะทันหันเดินทางไปไม่ทันแน่นอนต้องขอยกเลิกนัดครับ"
+ },
+ {
+  "id": "p1_0294",
+  "text": "ติดประชุมยาวจนน่าจะไม่เสร็จตามกำหนด ขอเลื่อนกำหนดการออกไปก่อนนะคะ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "ติดประชุมยาวจนน่าจะไม่เสร็จตามกําหนดขอเลื่อนกําหนดการออกไปก่อนนะคะ"
+ },
+ {
+  "id": "p1_0295",
+  "text": "ผมลืมไปสนิทเลยว่ามีธุระสำคัญซ้อนอยู่ ต้องกราบขอโทษที่ต้องขอยกเลิกครับ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "ผมลืมไปสนิทเลยว่ามีธุระสําคัญซ้อนอยู่ต้องกราบขอโทษที่ต้องขอยกเลิกครับ"
+ },
+ {
+  "id": "p1_0296",
+  "text": "หมาที่บ้านป่วยหนักต้องรีบพาไปหาหมอ คงไปตามนัดไม่ได้แล้วค่ะ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "หมาที่บ้านป่วยหนักต้องรีบพาไปหาหมอคงไปตามนัดไม่ได้แล้วค่ะ"
+ },
+ {
+  "id": "p1_0297",
+  "text": "ที่ทำงานมีตรวจงานด่วนต้องอยู่ต้อนรับ ขอเลื่อนการเจอกันไปก่อนครับ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "ที่ทํางานมีตรวจงานด่วนต้องอยู่ต้อนรับขอเลื่อนการเจอกันไปก่อนครับ"
+ },
+ {
+  "id": "p1_0298",
+  "text": "จู่ๆ ก็ปวดท้องรุนแรงจนทนไม่ไหว ขอยกเลิกนัดที่คุยกันไว้ก่อนนะคะ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "จู่ๆก็ปวดท้องรุนแรงจนทนไม่ไหวขอยกเลิกนัดที่คุยกันไว้ก่อนนะคะ"
+ },
+ {
+  "id": "p1_0299",
+  "text": "กระเป๋าเงินหายต้องรีบไปแจ้งความ คงต้องขอเลื่อนการพบปะออกไปก่อนครับ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "กระเป๋าเงินหายต้องรีบไปแจ้งความคงต้องขอเลื่อนการพบปะออกไปก่อนครับ"
+ },
+ {
+  "id": "p1_0300",
+  "text": "ญาติผู้ใหญ่เดินทางมาจากต่างจังหวัด ขออนุญาตเลื่อนนัดไปไว้โอกาสหน้านะคะ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "ญาติผู้ใหญ่เดินทางมาจากต่างจังหวัดขออนุญาตเลื่อนนัดไปไว้โอกาสหน้านะคะ"
+ },
+ {
+  "id": "p1_0301",
+  "text": "ไฟที่บ้านดับสนิทต้องรอเจ้าหน้าที่มาดู ขอยกเลิกการพบกันไปก่อนนะครับ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "ไฟที่บ้านดับสนิทต้องรอเจ้าหน้าที่มาดูขอยกเลิกการพบกันไปก่อนนะครับ"
+ },
+ {
+  "id": "p1_0302",
+  "text": "ลูกค้าติดต่อเข้ามาตามงานด่วนจริงๆ ขอเปลี่ยนไปนัดเจอรอบอื่นแทนนะคะ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "ลูกค้าติดต่อเข้ามาตามงานด่วนจริงๆขอเปลี่ยนไปนัดเจอรอบอื่นแทนนะคะ"
+ },
+ {
+  "id": "p1_0303",
+  "text": "ตื่นมาแล้วเจ็บคอจนไม่มีเสียงพูดเลย คงต้องขอเลื่อนนัดคุยออกไปก่อนครับ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "ตื่นมาแล้วเจ็บคอจนไม่มีเสียงพูดเลยคงต้องขอเลื่อนนัดคุยออกไปก่อนครับ"
+ },
+ {
+  "id": "p1_0304",
+  "text": "ยางรถแบนสนิทกำลังรอคนมาช่วยเปลี่ยน คงไปไม่ทัน ขอเลื่อนนัดนะคะ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "ยางรถแบนสนิทกําลังรอคนมาช่วยเปลี่ยนคงไปไม่ทันขอเลื่อนนัดนะคะ"
+ },
+ {
+  "id": "p1_0305",
+  "text": "ระบบงานในที่ทำงานล่มกะทันหันต้องอยู่แก้ไข คงไปตามที่นัดไว้ไม่ได้ครับ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "ระบบงานในที่ทํางานล่มกะทันหันต้องอยู่แก้ไขคงไปตามที่นัดไว้ไม่ได้ครับ"
+ },
+ {
+  "id": "p1_0306",
+  "text": "ปวดฟันจนแก้มบวมเป่งต้องรีบไปหาหมอฟัน ขอยกเลิกนัดก่อนนะคะ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "ปวดฟันจนแก้มบวมเป่งต้องรีบไปหาหมอฟันขอยกเลิกนัดก่อนนะคะ"
+ },
+ {
+  "id": "p1_0307",
+  "text": "ข้างหน้ามีอุบัติเหตุกีดขวางทางจนขยับไม่ได้เลย ต้องขอเลื่อนการนัดหมายครับ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "ข้างหน้ามีอุบัติเหตุกีดขวางทางจนขยับไม่ได้เลยต้องขอเลื่อนการนัดหมายครับ"
+ },
+ {
+  "id": "p1_0308",
+  "text": "ท้องเสียหนักมากจนหมดแรงก้าวขาไม่ออก ขออนุญาตเลื่อนการพบกันนะคะ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "ท้องเสียหนักมากจนหมดแรงก้าวขาไม่ออกขออนุญาตเลื่อนการพบกันนะคะ"
+ },
+ {
+  "id": "p1_0309",
+  "text": "คุณแม่สะดุดล้มต้องรีบพาท่านไปตรวจ ขอผลัดนัดนี้ไปเป็นคราวหน้านะครับ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "คุณแม่สะดุดล้มต้องรีบพาท่านไปตรวจขอผลัดนัดนี้ไปเป็นคราวหน้านะครับ"
+ },
+ {
+  "id": "p1_0310",
+  "text": "ทำกุญแจห้องหายเข้าห้องไม่ได้เลยค่ะ ขอเลื่อนนัดออกไปเป็นรอบอื่นนะคะ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "ทํากุญแจห้องหายเข้าห้องไม่ได้เลยค่ะขอเลื่อนนัดออกไปเป็นรอบอื่นนะคะ"
+ },
+ {
+  "id": "p1_0311",
+  "text": "ต้องรีบนำเอกสารสำคัญไปส่งให้ผู้ใหญ่ ขอยกเลิกนัดหมายเดิมไปก่อนครับ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "ต้องรีบนําเอกสารสําคัญไปส่งให้ผู้ใหญ่ขอยกเลิกนัดหมายเดิมไปก่อนครับ"
+ },
+ {
+  "id": "p1_0312",
+  "text": "เดินสะดุดบันไดจนข้อเท้าแพลงเดินไม่ไหว ขอยกเลิกนัดที่ตกลงกันไว้นะคะ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "เดินสะดุดบันไดจนข้อเท้าแพลงเดินไม่ไหวขอยกเลิกนัดที่ตกลงกันไว้นะคะ"
+ },
+ {
+  "id": "p1_0313",
+  "text": "มีประชุมด่วนระดับผู้บริหารแทรกเข้ามา ขอเลื่อนนัดที่เราจะเจอกันออกไปก่อนครับ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "มีประชุมด่วนระดับผู้บริหารแทรกเข้ามาขอเลื่อนนัดที่เราจะเจอกันออกไปก่อนครับ"
+ },
+ {
+  "id": "p1_0314",
+  "text": "ตาอักเสบจนลืมตาแทบไม่ขึ้นและแสบมาก ขอขยับนัดไปเป็นโอกาสหน้านะคะ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "ตาอักเสบจนลืมตาแทบไม่ขึ้นและแสบมากขอขยับนัดไปเป็นโอกาสหน้านะคะ"
+ },
+ {
+  "id": "p1_0315",
+  "text": "ติดภารกิจต้องเดินทางไกลกะทันหัน ขออนุญาตยกเลิกนัดที่นัดกันไว้ครับ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "ติดภารกิจต้องเดินทางไกลกะทันหันขออนุญาตยกเลิกนัดที่นัดกันไว้ครับ"
+ },
+ {
+  "id": "p1_0316",
+  "text": "ประตูรั้วหน้าบ้านพังเปิดไม่ออกต้องรอช่างมาช่วย ขอเลื่อนนัดไปก่อนนะคะ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "ประตูรั้วหน้าบ้านพังเปิดไม่ออกต้องรอช่างมาช่วยขอเลื่อนนัดไปก่อนนะคะ"
+ },
+ {
+  "id": "p1_0317",
+  "text": "มีปัญหาเรื่องบัญชีเงินฝากต้องรีบไปจัดการ ขอผลัดนัดออกไปก่อนครับ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "มีปัญหาเรื่องบัญชีเงินฝากต้องรีบไปจัดการขอผลัดนัดออกไปก่อนครับ"
+ },
+ {
+  "id": "p1_0318",
+  "text": "ติดธุระเรื่องทำสัญญาเช่าบ้านที่ยืดเยื้อ ขอเลื่อนการเจอกันออกไปก่อนนะคะ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "ติดธุระเรื่องทําสัญญาเช่าบ้านที่ยืดเยื้อขอเลื่อนการเจอกันออกไปก่อนนะคะ"
+ },
+ {
+  "id": "p1_0319",
+  "text": "เพื่อนร่วมงานป่วยกะทันหันต้องอยู่แทน ขอเลื่อนนัดของเราไปก่อนนะครับ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "เพื่อนร่วมงานป่วยกะทันหันต้องอยู่แทนขอเลื่อนนัดของเราไปก่อนนะครับ"
+ },
+ {
+  "id": "p1_0320",
+  "text": "พายุเข้าลมแรงมากจนออกไปข้างนอกไม่ได้ ขอยกเลิกนัดเดิมไปก่อนนะคะ",
+  "theme": "someone cancelling or postponing something they had arranged",
+  "phase": 1,
+  "label_text": "พายุเข้าลมแรงมากจนออกไปข้างนอกไม่ได้ขอยกเลิกนัดเดิมไปก่อนนะคะ"
+ },
+ {
+  "id": "p1_0321",
+  "text": "ผมยืนหลบแดดอยู่ใต้สะพานลอยฝั่งตรงข้ามตลาดสดครับ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "ผมยืนหลบแดดอยู่ใต้สะพานลอยฝั่งตรงข้ามตลาดสดครับ"
+ },
+ {
+  "id": "p1_0322",
+  "text": "หนูกำลังยืนรออยู่หน้าบันไดเลื่อนตรงทางเข้าห้างนะคะ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "หนูกําลังยืนรออยู่หน้าบันไดเลื่อนตรงทางเข้าห้างนะคะ"
+ },
+ {
+  "id": "p1_0323",
+  "text": "ฉันยืนหลบฝนอยู่ใต้ต้นไม้ใหญ่ข้างรั้วไม้สีขาวค่ะ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "ฉันยืนหลบฝนอยู่ใต้ต้นไม้ใหญ่ข้างรั้วไม้สีขาวค่ะ"
+ },
+ {
+  "id": "p1_0324",
+  "text": "เดินตรงมาริมถนนเลย ผมยืนโบกมืออยู่ข้างตู้ไปรษณีย์สีแดงครับ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "เดินตรงมาริมถนนเลยผมยืนโบกมืออยู่ข้างตู้ไปรษณีย์สีแดงครับ"
+ },
+ {
+  "id": "p1_0325",
+  "text": "เราลุกขึ้นมายืนรออยู่ข้างม้านั่งยาวหน้าทางเข้าสวนสาธารณะค่ะ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "เราลุกขึ้นมายืนรออยู่ข้างม้านั่งยาวหน้าทางเข้าสวนสาธารณะค่ะ"
+ },
+ {
+  "id": "p1_0326",
+  "text": "เห็นผมไหม ผมยืนกางร่มสีน้ำเงินอยู่ตรงกลางลานกว้างครับ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "เห็นผมไหมผมยืนกางร่มสีน้ําเงินอยู่ตรงกลางลานกว้างครับ"
+ },
+ {
+  "id": "p1_0327",
+  "text": "ฉันยืนชะเง้อมองหาเธออยู่ตรงซุ้มขายบัตรเข้าสวนสนุกค่ะ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "ฉันยืนชะเง้อมองหาเธออยู่ตรงซุ้มขายบัตรเข้าสวนสนุกค่ะ"
+ },
+ {
+  "id": "p1_0328",
+  "text": "ผมยืนรอคุณอยู่ข้างเสาไฟสว่างจ้าตรงลานจอดรถด้านในครับ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "ผมยืนรอคุณอยู่ข้างเสาไฟสว่างจ้าตรงลานจอดรถด้านในครับ"
+ },
+ {
+  "id": "p1_0329",
+  "text": "พี่คะ หนูกำลังยืนมองหาพี่อยู่หน้าหอนาฬิกาสูงใหญ่ค่ะ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "พี่คะหนูกําลังยืนมองหาพี่อยู่หน้าหอนาฬิกาสูงใหญ่ค่ะ"
+ },
+ {
+  "id": "p1_0330",
+  "text": "คุณเดินเข้ามาได้เลย ผมยืนรออยู่หน้าประตูกระจกใสของอาคารครับ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "คุณเดินเข้ามาได้เลยผมยืนรออยู่หน้าประตูกระจกใสของอาคารครับ"
+ },
+ {
+  "id": "p1_0331",
+  "text": "หนูยืนอ่านหนังสือรออยู่ริมทางเท้าตรงแปลงดอกไม้สีเหลืองค่ะ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "หนูยืนอ่านหนังสือรออยู่ริมทางเท้าตรงแปลงดอกไม้สีเหลืองค่ะ"
+ },
+ {
+  "id": "p1_0332",
+  "text": "ผมยืนดูแผนที่อยู่ข้างป้ายบอกทางตรงหัวมุมถนนครับ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "ผมยืนดูแผนที่อยู่ข้างป้ายบอกทางตรงหัวมุมถนนครับ"
+ },
+ {
+  "id": "p1_0333",
+  "text": "ฉันยืนรอเธออยู่ตรงเชิงบันไดสะพานข้ามคลองค่ะ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "ฉันยืนรอเธออยู่ตรงเชิงบันไดสะพานข้ามคลองค่ะ"
+ },
+ {
+  "id": "p1_0334",
+  "text": "ลมพัดเย็นดีจัง ผมออกมายืนสูดอากาศอยู่ตรงระเบียงด้านนอกครับ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "ลมพัดเย็นดีจังผมออกมายืนสูดอากาศอยู่ตรงระเบียงด้านนอกครับ"
+ },
+ {
+  "id": "p1_0335",
+  "text": "หนูกำลังยืนสอบถามทางอยู่ตรงโต๊ะประชาสัมพันธ์กลางห้องโถงค่ะ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "หนูกําลังยืนสอบถามทางอยู่ตรงโต๊ะประชาสัมพันธ์กลางห้องโถงค่ะ"
+ },
+ {
+  "id": "p1_0336",
+  "text": "ฝนเริ่มซาแล้ว แต่ฉันยังยืนหลบอยู่ใต้ชายคาหน้าศาลาท่าน้ำค่ะ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "ฝนเริ่มซาแล้วแต่ฉันยังยืนหลบอยู่ใต้ชายคาหน้าศาลาท่าน้ําค่ะ"
+ },
+ {
+  "id": "p1_0337",
+  "text": "ผมยืนกินน้ำผลไม้รอคุณอยู่หน้าร้านขายของหวานตรงปากซอยครับ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "ผมยืนกินน้ําผลไม้รอคุณอยู่หน้าร้านขายของหวานตรงปากซอยครับ"
+ },
+ {
+  "id": "p1_0338",
+  "text": "หนูยืนรอแม่อยู่ข้างป้อมยามตรงประตูรั้วเหล็กสีเขียวค่ะ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "หนูยืนรอแม่อยู่ข้างป้อมยามตรงประตูรั้วเหล็กสีเขียวค่ะ"
+ },
+ {
+  "id": "p1_0339",
+  "text": "ข้ามฝั่งมาได้เลย ผมยืนรออยู่ตรงเกาะกลางถนนฝั่งตรงข้ามครับ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "ข้ามฝั่งมาได้เลยผมยืนรออยู่ตรงเกาะกลางถนนฝั่งตรงข้ามครับ"
+ },
+ {
+  "id": "p1_0340",
+  "text": "ฉันยืนรอเธออยู่แถวลานจอดรถจักรยานข้างกำแพงปูนสีฟ้าค่ะ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "ฉันยืนรอเธออยู่แถวลานจอดรถจักรยานข้างกําแพงปูนสีฟ้าค่ะ"
+ },
+ {
+  "id": "p1_0341",
+  "text": "ผมยืนรับลมรออยู่ตรงมุมโถงทางเดินเชื่อมระหว่างอาคารครับ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "ผมยืนรับลมรออยู่ตรงมุมโถงทางเดินเชื่อมระหว่างอาคารครับ"
+ },
+ {
+  "id": "p1_0342",
+  "text": "หนูเมื่อยขาก็เลยมายืนพิงเสาอยู่ข้างชิงช้าในสนามเด็กเล่นค่ะ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "หนูเมื่อยขาก็เลยมายืนพิงเสาอยู่ข้างชิงช้าในสนามเด็กเล่นค่ะ"
+ },
+ {
+  "id": "p1_0343",
+  "text": "ผมยืนคอยคุณอยู่ใต้ร่มไม้ใหญ่ริมสระบัวหลวงข้างโบสถ์ครับ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "ผมยืนคอยคุณอยู่ใต้ร่มไม้ใหญ่ริมสระบัวหลวงข้างโบสถ์ครับ"
+ },
+ {
+  "id": "p1_0344",
+  "text": "ฉันยืนมองเรือแล่นผ่านอยู่ตรงหัวสะพานไม้ริมแม่น้ำกว้างค่ะ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "ฉันยืนมองเรือแล่นผ่านอยู่ตรงหัวสะพานไม้ริมแม่น้ํากว้างค่ะ"
+ },
+ {
+  "id": "p1_0345",
+  "text": "ผมยืนรอเพื่อนซื้อข้าวอยู่ตรงทางเข้าศูนย์อาหารด้านหลังตึกครับ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "ผมยืนรอเพื่อนซื้อข้าวอยู่ตรงทางเข้าศูนย์อาหารด้านหลังตึกครับ"
+ },
+ {
+  "id": "p1_0346",
+  "text": "หนูกำลังยืนมองหาพี่อยู่หน้าลานหินอ่อนข้างสวนหย่อมค่ะ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "หนูกําลังยืนมองหาพี่อยู่หน้าลานหินอ่อนข้างสวนหย่อมค่ะ"
+ },
+ {
+  "id": "p1_0347",
+  "text": "อากาศแจ่มใสดี ผมเลยออกมายืนรอรับลมอยู่กลางสนามหญ้าครับ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "อากาศแจ่มใสดีผมเลยออกมายืนรอรับลมอยู่กลางสนามหญ้าครับ"
+ },
+ {
+  "id": "p1_0348",
+  "text": "ฉันยืนกางร่มสีเขียวรอเธออยู่ข้างป้ายประกาศตรงทางออกค่ะ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "ฉันยืนกางร่มสีเขียวรอเธออยู่ข้างป้ายประกาศตรงทางออกค่ะ"
+ },
+ {
+  "id": "p1_0349",
+  "text": "ผมยืนพักเหนื่อยอยู่ตรงชานพักบันไดหน้าทางเชื่อมสะพานลอยครับ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "ผมยืนพักเหนื่อยอยู่ตรงชานพักบันไดหน้าทางเชื่อมสะพานลอยครับ"
+ },
+ {
+  "id": "p1_0350",
+  "text": "หนูกำลังยืนชะเง้อรอรับแม่อยู่ตรงทางขึ้นชานชาลารถไฟค่ะ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "หนูกําลังยืนชะเง้อรอรับแม่อยู่ตรงทางขึ้นชานชาลารถไฟค่ะ"
+ },
+ {
+  "id": "p1_0351",
+  "text": "ผมยืนรอคุณอยู่หน้าร้านขายของฝากข้างบันไดทางขึ้นครับ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "ผมยืนรอคุณอยู่หน้าร้านขายของฝากข้างบันไดทางขึ้นครับ"
+ },
+ {
+  "id": "p1_0352",
+  "text": "ฉันยืนเลือกดูเสื้อผ้าเพลินๆ อยู่หน้าร้านริมทางเดินฝั่งนี้ค่ะ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "ฉันยืนเลือกดูเสื้อผ้าเพลินๆอยู่หน้าร้านริมทางเดินฝั่งนี้ค่ะ"
+ },
+ {
+  "id": "p1_0353",
+  "text": "ผมยืนรอจังหวะเดินข้ามถนนอยู่ตรงทางแยกหน้าตลาดนัดครับ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "ผมยืนรอจังหวะเดินข้ามถนนอยู่ตรงทางแยกหน้าตลาดนัดครับ"
+ },
+ {
+  "id": "p1_0354",
+  "text": "หนูยืนรออยู่ใต้เงาต้นหูกวางใหญ่ข้างเสาธงหน้าโรงเรียนค่ะ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "หนูยืนรออยู่ใต้เงาต้นหูกวางใหญ่ข้างเสาธงหน้าโรงเรียนค่ะ"
+ },
+ {
+  "id": "p1_0355",
+  "text": "ผมยืนรออยู่ริมรั้วต้นเข็มใกล้กับศาลพระภูมิหน้าทางเข้าครับ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "ผมยืนรออยู่ริมรั้วต้นเข็มใกล้กับศาลพระภูมิหน้าทางเข้าครับ"
+ },
+ {
+  "id": "p1_0356",
+  "text": "ฉันยืนชมภาพวาดฝาผนังรอเธออยู่ตรงระเบียงหน้าโบสถ์ค่ะ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "ฉันยืนชมภาพวาดฝาผนังรอเธออยู่ตรงระเบียงหน้าโบสถ์ค่ะ"
+ },
+ {
+  "id": "p1_0357",
+  "text": "ผมเดินออกมายืนรับลมเย็นอยู่ตรงประตูหนีไฟหลังอาคารครับ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "ผมเดินออกมายืนรับลมเย็นอยู่ตรงประตูหนีไฟหลังอาคารครับ"
+ },
+ {
+  "id": "p1_0358",
+  "text": "หนูกำลังยืนผูกเชือกรองเท้าอยู่ข้างม้านั่งหินอ่อนใต้ร่มไม้ริมน้ำค่ะ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "หนูกําลังยืนผูกเชือกรองเท้าอยู่ข้างม้านั่งหินอ่อนใต้ร่มไม้ริมน้ําค่ะ"
+ },
+ {
+  "id": "p1_0359",
+  "text": "มองมาทางนี้เลย ผมยืนกวักมือเรียกคุณอยู่หน้าซุ้มประตูวัดครับ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "มองมาทางนี้เลยผมยืนกวักมือเรียกคุณอยู่หน้าซุ้มประตูวัดครับ"
+ },
+ {
+  "id": "p1_0360",
+  "text": "ฉันยืนหลบละอองฝนอยู่ด้านในศาลาที่พักผู้โดยสารริมถนนใหญ่ค่ะ",
+  "theme": "someone on the phone describing where they are standing right now",
+  "phase": 1,
+  "label_text": "ฉันยืนหลบละอองฝนอยู่ด้านในศาลาที่พักผู้โดยสารริมถนนใหญ่ค่ะ"
+ },
+ {
+  "id": "p1_0361",
+  "text": "รบกวนช่วยโอนสายไปที่แผนกบัญชีให้หน่อยได้ไหมคะ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "รบกวนช่วยโอนสายไปที่แผนกบัญชีให้หน่อยได้ไหมคะ"
+ },
+ {
+  "id": "p1_0362",
+  "text": "พอดีผมอยากจะขอคุยกับทางฝ่ายช่างซ่อมหน่อยครับ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "พอดีผมอยากจะขอคุยกับทางฝ่ายช่างซ่อมหน่อยครับ"
+ },
+ {
+  "id": "p1_0363",
+  "text": "ช่วยส่งสายต่อไปให้คนที่ดูแลเรื่องการจัดส่งสินค้าหน่อยค่ะ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "ช่วยส่งสายต่อไปให้คนที่ดูแลเรื่องการจัดส่งสินค้าหน่อยค่ะ"
+ },
+ {
+  "id": "p1_0364",
+  "text": "เรื่องนี้ผมขออนุญาตคุยกับผู้จัดการโดยตรงเลยได้ไหมครับ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "เรื่องนี้ผมขออนุญาตคุยกับผู้จัดการโดยตรงเลยได้ไหมครับ"
+ },
+ {
+  "id": "p1_0365",
+  "text": "ไม่ทราบว่าพอจะต่อสายไปทางฝ่ายขายให้ได้หรือเปล่าคะ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "ไม่ทราบว่าพอจะต่อสายไปทางฝ่ายขายให้ได้หรือเปล่าคะ"
+ },
+ {
+  "id": "p1_0366",
+  "text": "ผมอยากปรึกษาเรื่องสัญญา ช่วยเปลี่ยนสายให้ผมคุยกับฝ่ายกฎหมายทีครับ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "ผมอยากปรึกษาเรื่องสัญญาช่วยเปลี่ยนสายให้ผมคุยกับฝ่ายกฎหมายทีครับ"
+ },
+ {
+  "id": "p1_0367",
+  "text": "หนูขอสายเจ้าหน้าที่คนที่เคยรับเรื่องไว้ได้ไหมคะ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "หนูขอสายเจ้าหน้าที่คนที่เคยรับเรื่องไว้ได้ไหมคะ"
+ },
+ {
+  "id": "p1_0368",
+  "text": "รบกวนส่งสายให้คนที่รับผิดชอบเรื่องการคืนเงินหน่อยครับ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "รบกวนส่งสายให้คนที่รับผิดชอบเรื่องการคืนเงินหน่อยครับ"
+ },
+ {
+  "id": "p1_0369",
+  "text": "รบกวนช่วยโอนสายไปให้เจ้าหน้าที่ฝ่ายต้อนรับหน่อยนะคะ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "รบกวนช่วยโอนสายไปให้เจ้าหน้าที่ฝ่ายต้อนรับหน่อยนะคะ"
+ },
+ {
+  "id": "p1_0370",
+  "text": "พอดีทางนี้ติดต่อผิดแผนก ช่วยโอนไปฝ่ายบริการลูกค้าให้หน่อยครับ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "พอดีทางนี้ติดต่อผิดแผนกช่วยโอนไปฝ่ายบริการลูกค้าให้หน่อยครับ"
+ },
+ {
+  "id": "p1_0371",
+  "text": "ดิฉันต้องการแจ้งเรื่องร้องเรียน ช่วยต่อสายหาหัวหน้างานให้ด้วยค่ะ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "ดิฉันต้องการแจ้งเรื่องร้องเรียนช่วยต่อสายหาหัวหน้างานให้ด้วยค่ะ"
+ },
+ {
+  "id": "p1_0372",
+  "text": "ผมขอพูดสายกับเจ้าหน้าที่ฝ่ายดูแลระบบหน่อยได้ไหมครับ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "ผมขอพูดสายกับเจ้าหน้าที่ฝ่ายดูแลระบบหน่อยได้ไหมครับ"
+ },
+ {
+  "id": "p1_0373",
+  "text": "ช่วยโอนสายไปที่โต๊ะทำงานของฝ่ายบุคคลให้หน่อยนะคะ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "ช่วยโอนสายไปที่โต๊ะทํางานของฝ่ายบุคคลให้หน่อยนะคะ"
+ },
+ {
+  "id": "p1_0374",
+  "text": "รบกวนต่อสายไปหาคนที่ส่งเอกสารมาให้ผมตรวจสอบทีครับ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "รบกวนต่อสายไปหาคนที่ส่งเอกสารมาให้ผมตรวจสอบทีครับ"
+ },
+ {
+  "id": "p1_0375",
+  "text": "อยากคุยรายละเอียดเพิ่มเติม ช่วยต่อสายไปที่แผนกจัดซื้อให้ทีค่ะ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "อยากคุยรายละเอียดเพิ่มเติมช่วยต่อสายไปที่แผนกจัดซื้อให้ทีค่ะ"
+ },
+ {
+  "id": "p1_0376",
+  "text": "ช่วยโอนสายให้ผมคุยกับผู้เชี่ยวชาญด้านนี้โดยเฉพาะหน่อยครับ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "ช่วยโอนสายให้ผมคุยกับผู้เชี่ยวชาญด้านนี้โดยเฉพาะหน่อยครับ"
+ },
+ {
+  "id": "p1_0377",
+  "text": "มีเรื่องสำคัญอยากปรึกษา ขอสายผู้ช่วยผู้จัดการหน่อยได้ไหมคะ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "มีเรื่องสําคัญอยากปรึกษาขอสายผู้ช่วยผู้จัดการหน่อยได้ไหมคะ"
+ },
+ {
+  "id": "p1_0378",
+  "text": "พี่ช่วยโอนสายไปให้พนักงานที่ดูแลเรื่องประกันภัยหน่อยครับ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "พี่ช่วยโอนสายไปให้พนักงานที่ดูแลเรื่องประกันภัยหน่อยครับ"
+ },
+ {
+  "id": "p1_0379",
+  "text": "ขออนุญาตคุยกับเจ้าหน้าที่ฝ่ายประสานงานเรื่องนี้ต่อเลยนะคะ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "ขออนุญาตคุยกับเจ้าหน้าที่ฝ่ายประสานงานเรื่องนี้ต่อเลยนะคะ"
+ },
+ {
+  "id": "p1_0380",
+  "text": "ทางเราอยากติดต่อฝ่ายคลังสินค้า รบกวนช่วยต่อสายให้ด้วยครับ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "ทางเราอยากติดต่อฝ่ายคลังสินค้ารบกวนช่วยต่อสายให้ด้วยครับ"
+ },
+ {
+  "id": "p1_0381",
+  "text": "เรื่องนี้คุณช่วยโอนสายไปให้คนที่ตัดสินใจได้คุยหน่อยค่ะ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "เรื่องนี้คุณช่วยโอนสายไปให้คนที่ตัดสินใจได้คุยหน่อยค่ะ"
+ },
+ {
+  "id": "p1_0382",
+  "text": "ผมขอสายคนที่เคยโทรติดต่อหาผมได้ไหมครับ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "ผมขอสายคนที่เคยโทรติดต่อหาผมได้ไหมครับ"
+ },
+ {
+  "id": "p1_0383",
+  "text": "ช่วยส่งต่อสายไปทางฝ่ายการเงินให้ดิฉันหน่อยนะคะ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "ช่วยส่งต่อสายไปทางฝ่ายการเงินให้ดิฉันหน่อยนะคะ"
+ },
+ {
+  "id": "p1_0384",
+  "text": "ผมอยากสอบถามเรื่องการบำรุงรักษา ขอคุยกับหัวหน้าช่างหน่อยครับ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "ผมอยากสอบถามเรื่องการบํารุงรักษาขอคุยกับหัวหน้าช่างหน่อยครับ"
+ },
+ {
+  "id": "p1_0385",
+  "text": "รบกวนช่วยสลับสายไปให้เจ้าหน้าที่แผนกดูแลลูกค้าทีค่ะ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "รบกวนช่วยสลับสายไปให้เจ้าหน้าที่แผนกดูแลลูกค้าทีค่ะ"
+ },
+ {
+  "id": "p1_0386",
+  "text": "ถ้าจะขอคุยกับเจ้าหน้าที่ฝ่ายรับเรื่องร้องเรียน รบกวนโอนสายทีครับ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "ถ้าจะขอคุยกับเจ้าหน้าที่ฝ่ายรับเรื่องร้องเรียนรบกวนโอนสายทีครับ"
+ },
+ {
+  "id": "p1_0387",
+  "text": "หนูต้องการปรึกษาฝ่ายประชาสัมพันธ์ ช่วยต่อสายให้หนูหน่อยได้ไหมคะ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "หนูต้องการปรึกษาฝ่ายประชาสัมพันธ์ช่วยต่อสายให้หนูหน่อยได้ไหมคะ"
+ },
+ {
+  "id": "p1_0388",
+  "text": "คุณช่วยประสานงานโอนสายไปที่ฝ่ายตรวจสอบเอกสารให้ผมทีครับ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "คุณช่วยประสานงานโอนสายไปที่ฝ่ายตรวจสอบเอกสารให้ผมทีครับ"
+ },
+ {
+  "id": "p1_0389",
+  "text": "ขอสายพนักงานคนที่ให้คำแนะนำเรื่องนี้กับดิฉันค้างไว้หน่อยค่ะ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "ขอสายพนักงานคนที่ให้คําแนะนําเรื่องนี้กับดิฉันค้างไว้หน่อยค่ะ"
+ },
+ {
+  "id": "p1_0390",
+  "text": "เรื่องนี้ค่อนข้างสำคัญ ผมขอคุยกับผู้อำนวยการฝ่ายได้ไหมครับ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "เรื่องนี้ค่อนข้างสําคัญผมขอคุยกับผู้อํานวยการฝ่ายได้ไหมครับ"
+ },
+ {
+  "id": "p1_0391",
+  "text": "ช่วยต่อสายไปที่แผนกจัดเลี้ยงและสัมมนาให้หน่อยนะคะ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "ช่วยต่อสายไปที่แผนกจัดเลี้ยงและสัมมนาให้หน่อยนะคะ"
+ },
+ {
+  "id": "p1_0392",
+  "text": "รบกวนช่วยย้ายสายไปทางฝ่ายออกแบบให้ผมหน่อยครับ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "รบกวนช่วยย้ายสายไปทางฝ่ายออกแบบให้ผมหน่อยครับ"
+ },
+ {
+  "id": "p1_0393",
+  "text": "ดิฉันอยากแจ้งเปลี่ยนข้อมูล ขอสายเจ้าหน้าที่ฝ่ายทะเบียนหน่อยค่ะ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "ดิฉันอยากแจ้งเปลี่ยนข้อมูลขอสายเจ้าหน้าที่ฝ่ายทะเบียนหน่อยค่ะ"
+ },
+ {
+  "id": "p1_0394",
+  "text": "พอดีผมมีเรื่องสงสัยเรื่องยอดเงิน ขอคุยกับแผนกบัญชีหน่อยครับ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "พอดีผมมีเรื่องสงสัยเรื่องยอดเงินขอคุยกับแผนกบัญชีหน่อยครับ"
+ },
+ {
+  "id": "p1_0395",
+  "text": "ช่วยส่งสายไปให้พนักงานฝ่ายช่วยเหลือลูกค้าทีนะคะ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "ช่วยส่งสายไปให้พนักงานฝ่ายช่วยเหลือลูกค้าทีนะคะ"
+ },
+ {
+  "id": "p1_0396",
+  "text": "ผมต้องการแจ้งปัญหาการใช้งาน ช่วยต่อสายหาเจ้าหน้าที่ฝ่ายซ่อมบำรุงทีครับ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "ผมต้องการแจ้งปัญหาการใช้งานช่วยต่อสายหาเจ้าหน้าที่ฝ่ายซ่อมบํารุงทีครับ"
+ },
+ {
+  "id": "p1_0397",
+  "text": "รบกวนคุณช่วยต่อสายไปยังฝ่ายดูแลสมาชิกให้หน่อยได้ไหมคะ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "รบกวนคุณช่วยต่อสายไปยังฝ่ายดูแลสมาชิกให้หน่อยได้ไหมคะ"
+ },
+ {
+  "id": "p1_0398",
+  "text": "ผมอยากพูดคุยกับหัวหน้าแผนกบริการ รบกวนโอนสายให้หน่อยครับ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "ผมอยากพูดคุยกับหัวหน้าแผนกบริการรบกวนโอนสายให้หน่อยครับ"
+ },
+ {
+  "id": "p1_0399",
+  "text": "ช่วยโอนสายไปหาคนที่ดูแลเรื่องการคืนสินค้าให้ดิฉันด้วยค่ะ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "ช่วยโอนสายไปหาคนที่ดูแลเรื่องการคืนสินค้าให้ดิฉันด้วยค่ะ"
+ },
+ {
+  "id": "p1_0400",
+  "text": "เรื่องนี้ต้องให้ผู้รับผิดชอบโดยตรงช่วยดู รบกวนต่อสายให้ผมทีครับ",
+  "theme": "a customer asking to speak to a different person or department",
+  "phase": 1,
+  "label_text": "เรื่องนี้ต้องให้ผู้รับผิดชอบโดยตรงช่วยดูรบกวนต่อสายให้ผมทีครับ"
+ },
+ {
+  "id": "p1_0401",
+  "text": "ไม่ใช่ครับ ผมบอกว่าให้ช่วยปิดพัดลม ไม่ใช่ปิดไฟครับ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ไม่ใช่ครับผมบอกว่าให้ช่วยปิดพัดลมไม่ใช่ปิดไฟครับ"
+ },
+ {
+  "id": "p1_0402",
+  "text": "ฟังผิดแล้วค่ะ ฉันพูดว่าลืมกุญแจไว้บนโต๊ะทำงานค่ะ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ฟังผิดแล้วค่ะฉันพูดว่าลืมกุญแจไว้บนโต๊ะทํางานค่ะ"
+ },
+ {
+  "id": "p1_0403",
+  "text": "เปล่าครับ เมื่อกี้ผมพูดว่าฝนตก ให้รีบไปเก็บผ้าครับ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "เปล่าครับเมื่อกี้ผมพูดว่าฝนตกให้รีบไปเก็บผ้าครับ"
+ },
+ {
+  "id": "p1_0404",
+  "text": "ไม่ได้ยินเหรอคะ หนูบอกว่าอยากกินข้าวต้ม ไม่ได้อยากกินก๋วยเตี๋ยวค่ะ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ไม่ได้ยินเหรอคะหนูบอกว่าอยากกินข้าวต้มไม่ได้อยากกินก๋วยเตี๋ยวค่ะ"
+ },
+ {
+  "id": "p1_0405",
+  "text": "ไม่ใช่แบบนั้นครับ ผมถามว่าเห็นแว่นตาตกอยู่แถวนี้ไหมครับ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ไม่ใช่แบบนั้นครับผมถามว่าเห็นแว่นตาตกอยู่แถวนี้ไหมครับ"
+ },
+ {
+  "id": "p1_0406",
+  "text": "ฟังหนูผิดแล้วค่ะ หนูบอกว่าจะเดินไปเอง ไม่ต้องขับรถมารับค่ะ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ฟังหนูผิดแล้วค่ะหนูบอกว่าจะเดินไปเองไม่ต้องขับรถมารับค่ะ"
+ },
+ {
+  "id": "p1_0407",
+  "text": "สัญญาณไม่ดีเหรอครับ ผมพูดว่าวางเอกสารไว้ในตู้เรียบร้อยแล้วครับ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "สัญญาณไม่ดีเหรอครับผมพูดว่าวางเอกสารไว้ในตู้เรียบร้อยแล้วครับ"
+ },
+ {
+  "id": "p1_0408",
+  "text": "เข้าใจผิดแล้วค่ะ ฉันถามหาเสื้อสีขาว ไม่ใช่เสื้อสีดำค่ะ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "เข้าใจผิดแล้วค่ะฉันถามหาเสื้อสีขาวไม่ใช่เสื้อสีดําค่ะ"
+ },
+ {
+  "id": "p1_0409",
+  "text": "ผมไม่ได้พูดคำนั้นครับ ผมบอกว่าให้เจอกันที่หน้าบ้านครับ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ผมไม่ได้พูดคํานั้นครับผมบอกว่าให้เจอกันที่หน้าบ้านครับ"
+ },
+ {
+  "id": "p1_0410",
+  "text": "ไม่ใช่ค่ะ ที่พูดไปเมื่อกี้คือให้ช่วยเทน้ำใส่เหยือกต่างหากค่ะ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ไม่ใช่ค่ะที่พูดไปเมื่อกี้คือให้ช่วยเทน้ําใส่เหยือกต่างหากค่ะ"
+ },
+ {
+  "id": "p1_0411",
+  "text": "ฟังชัดไหมครับ ผมบอกว่าไม่ต้องซื้อกับข้าวมา แม่ทำเสร็จแล้วครับ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ฟังชัดไหมครับผมบอกว่าไม่ต้องซื้อกับข้าวมาแม่ทําเสร็จแล้วครับ"
+ },
+ {
+  "id": "p1_0412",
+  "text": "คุณฟังผิดไปไกลเลยค่ะ ฉันบอกว่าแมวกำลังหลับ อย่าเสียงดังสิคะ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "คุณฟังผิดไปไกลเลยค่ะฉันบอกว่าแมวกําลังหลับอย่าเสียงดังสิคะ"
+ },
+ {
+  "id": "p1_0413",
+  "text": "ไม่ใช่ครับ เมื่อกี้ผมตะโกนบอกว่าระวังลื่น บันไดมันเปียกน้ำครับ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ไม่ใช่ครับเมื่อกี้ผมตะโกนบอกว่าระวังลื่นบันไดมันเปียกน้ําครับ"
+ },
+ {
+  "id": "p1_0414",
+  "text": "เปล่าค่ะ ไม่ได้บ่นเลย แค่บอกว่ากระเป๋าถือมันเริ่มขาดแล้วค่ะ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "เปล่าค่ะไม่ได้บ่นเลยแค่บอกว่ากระเป๋าถือมันเริ่มขาดแล้วค่ะ"
+ },
+ {
+  "id": "p1_0415",
+  "text": "ตั้งใจฟังผมใหม่นะครับ บอกว่าให้หยิบร่มไปด้วย ฝนจะตกแล้วครับ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ตั้งใจฟังผมใหม่นะครับบอกว่าให้หยิบร่มไปด้วยฝนจะตกแล้วครับ"
+ },
+ {
+  "id": "p1_0416",
+  "text": "ไม่ใช่เรื่องนั้นค่ะ หนูแค่พูดว่ากำลังจะออกไปซื้อของใช้ค่ะ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ไม่ใช่เรื่องนั้นค่ะหนูแค่พูดว่ากําลังจะออกไปซื้อของใช้ค่ะ"
+ },
+ {
+  "id": "p1_0417",
+  "text": "ทำไมฟังเป็นแบบนั้นครับ ผมบอกว่าเสื้อที่คุณใส่ดูเท่ดีครับ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ทําไมฟังเป็นแบบนั้นครับผมบอกว่าเสื้อที่คุณใส่ดูเท่ดีครับ"
+ },
+ {
+  "id": "p1_0418",
+  "text": "ไม่ได้ยินจริงๆ เหรอคะ ฉันบอกให้ช่วยเปิดหน้าต่างตรงระเบียงค่ะ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ไม่ได้ยินจริงๆเหรอคะฉันบอกให้ช่วยเปิดหน้าต่างตรงระเบียงค่ะ"
+ },
+ {
+  "id": "p1_0419",
+  "text": "ผมไม่ได้บอกว่าไม่ว่างครับ ผมบอกว่ากำลังรีบไปหาต่างหากครับ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ผมไม่ได้บอกว่าไม่ว่างครับผมบอกว่ากําลังรีบไปหาต่างหากครับ"
+ },
+ {
+  "id": "p1_0420",
+  "text": "เสียงซ่ามากเลยค่ะ ฟังใหม่นะคะ ให้เอาช้อนไปแช่ในอ่างก่อนค่ะ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "เสียงซ่ามากเลยค่ะฟังใหม่นะคะให้เอาช้อนไปแช่ในอ่างก่อนค่ะ"
+ },
+ {
+  "id": "p1_0421",
+  "text": "เข้าใจผิดไปไกลแล้วครับ ผมพูดเรื่องล้างรถ ไม่ใช่เรื่องซักผ้าครับ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "เข้าใจผิดไปไกลแล้วครับผมพูดเรื่องล้างรถไม่ใช่เรื่องซักผ้าครับ"
+ },
+ {
+  "id": "p1_0422",
+  "text": "ไม่ใช่ค่ะ หนูไม่ได้บอกให้ทิ้ง แต่บอกให้เก็บใส่กล่องไว้ค่ะ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ไม่ใช่ค่ะหนูไม่ได้บอกให้ทิ้งแต่บอกให้เก็บใส่กล่องไว้ค่ะ"
+ },
+ {
+  "id": "p1_0423",
+  "text": "เมื่อกี้สัญญาณหลุดครับ จะบอกว่าลืมหยิบกระเป๋าสตางค์มาด้วยครับ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "เมื่อกี้สัญญาณหลุดครับจะบอกว่าลืมหยิบกระเป๋าสตางค์มาด้วยครับ"
+ },
+ {
+  "id": "p1_0424",
+  "text": "ฟังฉันให้ดีนะคะ ไม่ได้บอกว่าไม่อร่อย แค่บอกว่ายังอิ่มอยู่ค่ะ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ฟังฉันให้ดีนะคะไม่ได้บอกว่าไม่อร่อยแค่บอกว่ายังอิ่มอยู่ค่ะ"
+ },
+ {
+  "id": "p1_0425",
+  "text": "ไม่ใช่แบบนั้นเลยครับ ผมเตือนว่าอย่าลืมใส่กลอนประตูรั้วครับ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ไม่ใช่แบบนั้นเลยครับผมเตือนว่าอย่าลืมใส่กลอนประตูรั้วครับ"
+ },
+ {
+  "id": "p1_0426",
+  "text": "คุณเข้าใจผิดแล้วค่ะ ฉันพูดว่าน้ำในตู้เย็นไม่เย็น ไม่ใช่กาแฟหกค่ะ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "คุณเข้าใจผิดแล้วค่ะฉันพูดว่าน้ําในตู้เย็นไม่เย็นไม่ใช่กาแฟหกค่ะ"
+ },
+ {
+  "id": "p1_0427",
+  "text": "ได้ยินผิดแล้วครับ เมื่อกี้ผมบอกว่าให้ค่อยๆ เดิน บันไดมันชันครับ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ได้ยินผิดแล้วครับเมื่อกี้ผมบอกว่าให้ค่อยๆเดินบันไดมันชันครับ"
+ },
+ {
+  "id": "p1_0428",
+  "text": "เปล่าค่ะ ไม่ได้จะไปเที่ยว แค่บอกว่าจะออกไปตัดผมเฉยๆ ค่ะ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "เปล่าค่ะไม่ได้จะไปเที่ยวแค่บอกว่าจะออกไปตัดผมเฉยๆค่ะ"
+ },
+ {
+  "id": "p1_0429",
+  "text": "สงสัยรอบข้างเสียงดังไป ผมพูดว่าอยากนอนพัก ไม่ได้บอกว่าหิวข้าวครับ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "สงสัยรอบข้างเสียงดังไปผมพูดว่าอยากนอนพักไม่ได้บอกว่าหิวข้าวครับ"
+ },
+ {
+  "id": "p1_0430",
+  "text": "ไม่ใช่ค่ะ ช่วยฟังใหม่นะคะ หนูบอกว่าต้นไม้ในสวนเริ่มเหี่ยวแล้วค่ะ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ไม่ใช่ค่ะช่วยฟังใหม่นะคะหนูบอกว่าต้นไม้ในสวนเริ่มเหี่ยวแล้วค่ะ"
+ },
+ {
+  "id": "p1_0431",
+  "text": "ผมไม่ได้สั่งให้ทำแบบนั้นครับ ผมบอกว่าให้รอผู้จัดการก่อนครับ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ผมไม่ได้สั่งให้ทําแบบนั้นครับผมบอกว่าให้รอผู้จัดการก่อนครับ"
+ },
+ {
+  "id": "p1_0432",
+  "text": "ทำไมคิดอย่างนั้นคะ ฉันบอกว่าภาพวาดบนผนังดูสวยแปลกตาดีค่ะ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ทําไมคิดอย่างนั้นคะฉันบอกว่าภาพวาดบนผนังดูสวยแปลกตาดีค่ะ"
+ },
+ {
+  "id": "p1_0433",
+  "text": "ฟังไม่ชัดใช่ไหมครับ ผมขอย้ำว่าให้เตรียมยาแก้แพ้ไปด้วยครับ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ฟังไม่ชัดใช่ไหมครับผมขอย้ําว่าให้เตรียมยาแก้แพ้ไปด้วยครับ"
+ },
+ {
+  "id": "p1_0434",
+  "text": "ไม่ใช่แบบที่คุณคิดค่ะ ฉันบอกว่าอากาศร้อนจนเหงื่อซึมเสื้อเลยค่ะ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ไม่ใช่แบบที่คุณคิดค่ะฉันบอกว่าอากาศร้อนจนเหงื่อซึมเสื้อเลยค่ะ"
+ },
+ {
+  "id": "p1_0435",
+  "text": "เข้าใจที่ผมพูดผิดแล้วครับ ผมบอกว่าลูกหมาวิ่งหนีออกไปนอกรั้วครับ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "เข้าใจที่ผมพูดผิดแล้วครับผมบอกว่าลูกหมาวิ่งหนีออกไปนอกรั้วครับ"
+ },
+ {
+  "id": "p1_0436",
+  "text": "อย่าเพิ่งวางสายสิคะ เมื่อกี้บอกว่าให้หยิบผ้าเช็ดหน้าตรงเก้าอี้ค่ะ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "อย่าเพิ่งวางสายสิคะเมื่อกี้บอกว่าให้หยิบผ้าเช็ดหน้าตรงเก้าอี้ค่ะ"
+ },
+ {
+  "id": "p1_0437",
+  "text": "ไม่ใช่ครับ ผมหมายถึงให้ดับไฟในเตาถ่านก่อนออกจากครัวครับ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ไม่ใช่ครับผมหมายถึงให้ดับไฟในเตาถ่านก่อนออกจากครัวครับ"
+ },
+ {
+  "id": "p1_0438",
+  "text": "ฟังใหม่ให้ชัดเจนนะคะ ฉันบอกว่าไม่กินเนื้อวัว กินแต่ผักค่ะ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ฟังใหม่ให้ชัดเจนนะคะฉันบอกว่าไม่กินเนื้อวัวกินแต่ผักค่ะ"
+ },
+ {
+  "id": "p1_0439",
+  "text": "ไม่ได้บอกให้ซื้อใหม่ครับ ผมบอกว่าให้เอาไปซ่อมที่ร้านเดิมครับ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ไม่ได้บอกให้ซื้อใหม่ครับผมบอกว่าให้เอาไปซ่อมที่ร้านเดิมครับ"
+ },
+ {
+  "id": "p1_0440",
+  "text": "ไม่ได้ยินจริงๆ ใช่ไหมคะ หนูบอกว่าลมพัดแรงจนหน้าต่างเปิดออกค่ะ",
+  "theme": "someone repeating or correcting what they just said because it was misheard",
+  "phase": 1,
+  "label_text": "ไม่ได้ยินจริงๆใช่ไหมคะหนูบอกว่าลมพัดแรงจนหน้าต่างเปิดออกค่ะ"
+ }
+]

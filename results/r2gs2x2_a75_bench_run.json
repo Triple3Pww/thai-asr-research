@@ -1,0 +1,13 @@
+{
+ "model": "checkpoints/r2gs2x2_a75.nemo",
+ "strategy": "greedy_batch",
+ "beam": 4,
+ "lm": null,
+ "lm_alpha": 0.0,
+ "prompt": null,
+ "att_context": null,
+ "n": 682,
+ "latency_ms_p50": 155.9,
+ "latency_ms_p90": 233.5,
+ "rtf": 0.0169
+}

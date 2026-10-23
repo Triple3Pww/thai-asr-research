@@ -1,0 +1,8 @@
+{
+ "model": "E:/fw-spike/models/typhoon-whisper-turbo-ct2",
+ "n": 5,
+ "utts": 424,
+ "manifest": "E:/Claude/datasets/synth/manifest_heldout.jsonl",
+ "latency_ms_p50": 284.3,
+ "latency_ms_p90": 349.4
+}

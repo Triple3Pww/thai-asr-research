@@ -1,0 +1,8 @@
+{
+ "model": "E:/asr-spike/models/pathumma-stt-th-fastconformer-rnnt-large.nemo",
+ "decoding": "malsd_batch beam 5, n-best",
+ "utts": 16000,
+ "mean_cands": 4.63,
+ "latency_ms_p50": 91.5,
+ "latency_ms_p90": 141.4
+}

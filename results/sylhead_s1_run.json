@@ -1,0 +1,74 @@
+{
+ "tag": "s1",
+ "sets": [
+  "lot_train",
+  "porjai_train"
+ ],
+ "hidden": 512,
+ "lr": 0.001,
+ "bs": 32,
+ "epochs": 12,
+ "best_val_unit_err": 0.3815229660501867,
+ "log": [
+  {
+   "epoch": 0,
+   "loss": 3.5594,
+   "val_unit_err": 0.4726
+  },
+  {
+   "epoch": 1,
+   "loss": 2.0416,
+   "val_unit_err": 0.4236
+  },
+  {
+   "epoch": 2,
+   "loss": 1.8456,
+   "val_unit_err": 0.4009
+  },
+  {
+   "epoch": 3,
+   "loss": 1.7646,
+   "val_unit_err": 0.3985
+  },
+  {
+   "epoch": 4,
+   "loss": 1.7158,
+   "val_unit_err": 0.3925
+  },
+  {
+   "epoch": 5,
+   "loss": 1.6779,
+   "val_unit_err": 0.392
+  },
+  {
+   "epoch": 6,
+   "loss": 1.6451,
+   "val_unit_err": 0.3873
+  },
+  {
+   "epoch": 7,
+   "loss": 1.6153,
+   "val_unit_err": 0.3909
+  },
+  {
+   "epoch": 8,
+   "loss": 1.5863,
+   "val_unit_err": 0.389
+  },
+  {
+   "epoch": 9,
+   "loss": 1.5574,
+   "val_unit_err": 0.3815
+  },
+  {
+   "epoch": 10,
+   "loss": 1.5314,
+   "val_unit_err": 0.3945
+  },
+  {
+   "epoch": 11,
+   "loss": 1.5049,
+   "val_unit_err": 0.3922
+  }
+ ]
+}

@@ -1,0 +1,112 @@
+{
+  "probe": "which-frozen-encoder-carries-thai-emotion",
+  "date": "2026-09-19 18:15:31",
+  "instrument": "linear probe (single affine layer) on mean+std pooled frozen features",
+  "split": "actor-disjoint; lambda chosen on dev actors, reported once on test actors",
+  "actors_total": 22,
+  "test_actors": [
+    "001",
+    "004",
+    "108",
+    "111",
+    "114",
+    "182",
+    "185",
+    "188"
+  ],
+  "encoders": {
+    "emotion2vec": {
+      "dim": 2048,
+      "n_train": 426,
+      "n_dev": 420,
+      "n_test": 410,
+      "weight_decay_chosen_on_dev": 1.0,
+      "dev_accuracy": 0.7523809523809524,
+      "test_accuracy": 0.7707317073170732,
+      "ci95": [
+        0.7300417012708686,
+        0.8114217133632777
+      ],
+      "test_macro_recall": 0.7437164615654033,
+      "test_majority_class": 0.35365853658536583,
+      "beats_majority_class": true,
+      "per_class_recall": {
+        "NEUTRAL": 0.8482758620689655,
+        "HAPPY": 0.7090909090909091,
+        "ANGRY": 0.8137254901960784,
+        "SAD": 0.6037735849056604
+      },
+      "feature_failures": 0
+    },
+    "mel": {
+      "dim": 160,
+      "n_train": 426,
+      "n_dev": 420,
+      "n_test": 410,
+      "weight_decay_chosen_on_dev": 1.0,
+      "dev_accuracy": 0.6261904761904762,
+      "test_accuracy": 0.5756097560975609,
+      "ci95": [
+        0.5277675814735353,
+        0.6234519307215866
+      ],
+      "test_macro_recall": 0.5676429127278758,
+      "test_majority_class": 0.35365853658536583,
+      "beats_majority_class": true,
+      "per_class_recall": {
+        "NEUTRAL": 0.6758620689655173,
+        "HAPPY": 0.5,
+        "ANGRY": 0.5098039215686274,
+        "SAD": 0.5849056603773585
+      },
+      "feature_failures": 0
+    },
+    "sensevoice": {
+      "dim": 1024,
+      "n_train": 426,
+      "n_dev": 420,
+      "n_test": 410,
+      "weight_decay_chosen_on_dev": 0.01,
+      "dev_accuracy": 0.6928571428571428,
+      "test_accuracy": 0.6829268292682927,
+      "ci95": [
+        0.6378834486345896,
+        0.7279702099019959
+      ],
+      "test_macro_recall": 0.700802747904627,
+      "test_majority_class": 0.35365853658536583,
+      "beats_majority_class": true,
+      "per_class_recall": {
+        "NEUTRAL": 0.696551724137931,
+        "HAPPY": 0.6,
+        "ANGRY": 0.6764705882352942,
+        "SAD": 0.8301886792452831
+      },
+      "feature_failures": 0
+    },
+    "typhoon": {
+      "dim": 1024,
+      "n_train": 426,
+      "n_dev": 420,
+      "n_test": 410,
+      "weight_decay_chosen_on_dev": 0.1,
+      "dev_accuracy": 0.6642857142857143,
+      "test_accuracy": 0.651219512195122,
+      "ci95": [
+        0.6050873366789778,
+        0.6973516877112661
+      ],
+      "test_macro_recall": 0.6651632865839303,
+      "test_majority_class": 0.35365853658536583,
+      "beats_majority_class": true,
+      "per_class_recall": {
+        "NEUTRAL": 0.6,
+        "HAPPY": 0.6181818181818182,
+        "ANGRY": 0.7254901960784313,
+        "SAD": 0.7169811320754716
+      },
+      "feature_failures": 0
+    }
+  },
+  "verdict": "typhoon (0.6512) sits between the mel floor (0.5756) and emotion2vec (0.7707). One pass remains viable but the head must be non-linear, and the gap to emotion2vec is the price of the single encoder."
+}

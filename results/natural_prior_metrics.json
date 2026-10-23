@@ -1,0 +1,247 @@
+{
+  "arm": "natural_prior",
+  "date": "2026-09-22 14:29:05",
+  "question": "what is the emotion prior of natural (read) Thai speech, and what does pseudo-labelling it actually yield?",
+  "corpus": {
+    "name": "Common Voice 17 Thai, test split",
+    "clips_scored": 2000,
+    "audio_hours": 2.775,
+    "caveat": "READ speech -- the extreme neutral end, not conversational Thai"
+  },
+  "teacher": {
+    "head": "4-class, refit from the THAI-SER split",
+    "dev_accuracy": 0.8071428571428572,
+    "weight_decay": 0.0001,
+    "epoch": 100
+  },
+  "what_the_teacher_says": {
+    "finetuned_4class": {
+      "NEUTRAL": 0.5855,
+      "HAPPY": 0.1865,
+      "ANGRY": 0.0795,
+      "SAD": 0.1485
+    },
+    "shipped_9class": {
+      "SAD": 0.148,
+      "NEUTRAL": 0.543,
+      "FEARFUL": 0.0205,
+      "HAPPY": 0.084,
+      "DISGUSTED": 0.0615,
+      "SURPRISED": 0.0895,
+      "ANGRY": 0.053,
+      "<UNK>": 0.0005
+    }
+  },
+  "mean_confidence": 0.8703692022557327,
+  "corrected_prior_estimate": {
+    "NEUTRAL": 0.6629407600990275,
+    "HAPPY": 0.13789227619828612,
+    "ANGRY": 0.037530032638324544,
+    "SAD": 0.1616369310643619
+  },
+  "corrected_prior_note": null,
+  "f19_assumed_prior": {
+    "NEUTRAL": 0.85,
+    "HAPPY": 0.06,
+    "ANGRY": 0.05,
+    "SAD": 0.04
+  },
+  "actual_yield_at_f19_thresholds": {
+    "NEUTRAL": {
+      "threshold": 0.0,
+      "n_predicted": 1171,
+      "n_kept": 1171,
+      "share_of_corpus": 0.5855
+    },
+    "HAPPY": {
+      "threshold": 0.99,
+      "n_predicted": 373,
+      "n_kept": 29,
+      "share_of_corpus": 0.0145
+    },
+    "ANGRY": {
+      "threshold": 0.6,
+      "n_predicted": 159,
+      "n_kept": 111,
+      "share_of_corpus": 0.0555
+    },
+    "SAD": {
+      "threshold": 0.9,
+      "n_predicted": 297,
+      "n_kept": 165,
+      "share_of_corpus": 0.0825
+    }
+  },
+  "seconds": 38.8,
+  "sample_for_human_check": {
+    "NEUTRAL": [
+      {
+        "clip": "common_voice_th_25661436.mp3",
+        "confidence": 0.9993090017383954
+      },
+      {
+        "clip": "common_voice_th_25660429.mp3",
+        "confidence": 0.9996216160425512
+      },
+      {
+        "clip": "common_voice_th_25657310.mp3",
+        "confidence": 0.9997382775119987
+      },
+      {
+        "clip": "common_voice_th_25654539.mp3",
+        "confidence": 0.9990984972628515
+      },
+      {
+        "clip": "common_voice_th_25637567.mp3",
+        "confidence": 0.867022762365298
+      },
+      {
+        "clip": "common_voice_th_23658054.mp3",
+        "confidence": 0.9999999006138928
+      },
+      {
+        "clip": "common_voice_th_23655723.mp3",
+        "confidence": 0.9695843131532378
+      },
+      {
+        "clip": "common_voice_th_25638900.mp3",
+        "confidence": 0.9928718305180013
+      },
+      {
+        "clip": "common_voice_th_25614098.mp3",
+        "confidence": 0.9244907223280091
+      },
+      {
+        "clip": "common_voice_th_23688358.mp3",
+        "confidence": 0.9954508758598014
+      }
+    ],
+    "HAPPY": [
+      {
+        "clip": "common_voice_th_25663681.mp3",
+        "confidence": 0.992479352470611
+      },
+      {
+        "clip": "common_voice_th_25653960.mp3",
+        "confidence": 0.9919118733750013
+      },
+      {
+        "clip": "common_voice_th_23655675.mp3",
+        "confidence": 0.9905302941034944
+      },
+      {
+        "clip": "common_voice_th_25656379.mp3",
+        "confidence": 0.9953739989675232
+      },
+      {
+        "clip": "common_voice_th_25661659.mp3",
+        "confidence": 0.9942213120737864
+      },
+      {
+        "clip": "common_voice_th_25641959.mp3",
+        "confidence": 0.9930510804196819
+      },
+      {
+        "clip": "common_voice_th_25656651.mp3",
+        "confidence": 0.9912223971138632
+      },
+      {
+        "clip": "common_voice_th_25630076.mp3",
+        "confidence": 0.994285179990899
+      },
+      {
+        "clip": "common_voice_th_25663929.mp3",
+        "confidence": 0.9970361191268297
+      },
+      {
+        "clip": "common_voice_th_25646376.mp3",
+        "confidence": 0.9990761952747588
+      }
+    ],
+    "ANGRY": [
+      {
+        "clip": "common_voice_th_25648598.mp3",
+        "confidence": 0.8831071462113202
+      },
+      {
+        "clip": "common_voice_th_25654595.mp3",
+        "confidence": 0.914724557254233
+      },
+      {
+        "clip": "common_voice_th_25655203.mp3",
+        "confidence": 0.7805145307407485
+      },
+      {
+        "clip": "common_voice_th_23662676.mp3",
+        "confidence": 0.6587396429559023
+      },
+      {
+        "clip": "common_voice_th_23656064.mp3",
+        "confidence": 0.8059140171972554
+      },
+      {
+        "clip": "common_voice_th_25657837.mp3",
+        "confidence": 0.8089787480570724
+      },
+      {
+        "clip": "common_voice_th_25657414.mp3",
+        "confidence": 0.6764267934660017
+      },
+      {
+        "clip": "common_voice_th_25663685.mp3",
+        "confidence": 0.6369965205160542
+      },
+      {
+        "clip": "common_voice_th_25343025.mp3",
+        "confidence": 0.8956161798116686
+      },
+      {
+        "clip": "common_voice_th_25647290.mp3",
+        "confidence": 0.6510034870472161
+      }
+    ],
+    "SAD": [
+      {
+        "clip": "common_voice_th_25656842.mp3",
+        "confidence": 0.9901080347823827
+      },
+      {
+        "clip": "common_voice_th_25659532.mp3",
+        "confidence": 0.9830842464974227
+      },
+      {
+        "clip": "common_voice_th_25608620.mp3",
+        "confidence": 0.976806616889467
+      },
+      {
+        "clip": "common_voice_th_25657784.mp3",
+        "confidence": 0.957390073071848
+      },
+      {
+        "clip": "common_voice_th_25645692.mp3",
+        "confidence": 0.9986861792410978
+      },
+      {
+        "clip": "common_voice_th_25662388.mp3",
+        "confidence": 0.9256472622711971
+      },
+      {
+        "clip": "common_voice_th_25656591.mp3",
+        "confidence": 0.9982272737176585
+      },
+      {
+        "clip": "common_voice_th_25657049.mp3",
+        "confidence": 0.9838754355592971
+      },
+      {
+        "clip": "common_voice_th_25655916.mp3",
+        "confidence": 0.9544149961884902
+      },
+      {
+        "clip": "common_voice_th_25660656.mp3",
+        "confidence": 0.9756871340526079
+      }
+    ]
+  },
+  "sample_note": "🔴 THE ONLY NON-CIRCULAR VALIDATION AVAILABLE. Listen to these and mark the emotion by ear. The corrected prior above is an estimate from an acted-speech confusion matrix; these clips are ground truth."
+}

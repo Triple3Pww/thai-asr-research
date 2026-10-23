@@ -1,0 +1,19 @@
+{
+ "base": "results\\fw_patlarge_fp16_hyps.jsonl",
+ "arm": "results\\fw_patlarge_int8_hyps.jsonl",
+ "official_cer": {
+  "base": 0.07266,
+  "arm": 0.07398
+ },
+ "official_entity_recall": {
+  "base": 0.3371,
+  "arm": 0.3531
+ },
+ "own_cer": {
+  "base": 0.08479,
+  "arm": 0.08634
+ },
+ "rel_change": 0.0182,
+ "p_arm_not_better": 0.9776,
+ "utts_changed": 212
+}

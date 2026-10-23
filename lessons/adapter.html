@@ -1,0 +1,1536 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What an adapter actually does</title>
+
+<!-- TUTOR_PLAN
+lesson_plan:
+  - step: "1. What the model actually hears"
+    substeps:
+    - substep: "Bridge from what he already has -- .wav samples, 80 ms chunks in live/thai.py --
+        to the row of numbers a neural encoder produces. Frame with HIS turn log
+        (live/_out/turns-<date>.jsonl): a whole turn of audio collapses to six marks he can read.
+        Same move, except nobody chose what the encoder's numbers mean -- training did.
+        Visual: waveform with a draggable slice selector; drag from silence into speech and watch
+        the 512-number row change from flat to busy. Deliberately NOT covering: layers, training,
+        frozen, adapters. Terms banned: vector, embedding, tensor, matrix, dimension."
+  - step: "2. What frozen means"
+    substeps:
+    - substep: "Training = numbers inside the model changing. Frozen = these ones are not allowed
+        to change. Show which groups move and which do not, with counts. Anchor: Typhoon copied
+        every weight as a warm start. Stepper over a few training steps, encoder locked."
+  - step: "3. What the adapter adds"
+    substeps:
+    - substep: "A detour that ADDS a correction rather than replacing the answer. Toggle it on and
+        off, watch the row shift slightly. Establish 'add, never replace' before any why."
+  - step: "4. The bend -- why"
+    substeps:
+    - substep: "THE PAYLOAD. Without the bend the correction is one fixed recipe applied to every
+        slice, including real speech. With it, the correction fires only on slices that match.
+        Two-lane comparison, same input, bend off vs on."
+  - step: "5. The zero start -- why"
+    substeps:
+    - substep: "THE SECOND PAYLOAD. Random start = garbage on step 0, and the decoder learns
+        around the garbage, so the off-switch stops working. Zero start = step 0 is identical to
+        Typhoon, and the off-switch stays valid. Stepper across training steps, two arms."
+  - step: "6. The two lanes, end to end"
+    substeps:
+    - substep: "Real audio takes the clean path, synthetic goes through the adapter, both share
+        the decoder. What ships. Ties parts 1-5 together."
+END_TUTOR_PLAN -->
+
+<style>
+:root{--bg:#fdfdfc;--fg:#1a1a18;--muted:#6b6b66;--line:#e3e3df;--accent:#7a5cff;--card:#fff;
+  --warm:#e5484d;--cool:#0090ff;--good:#30a46c}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#16161a;--fg:#e8e8e4;--muted:#9a9a94;--line:#2c2c33;--accent:#a78bfa;--card:#1d1d22;
+    --warm:#ff6369;--cool:#52a9ff;--good:#3dd68c}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font:16px/1.7 ui-serif,Georgia,"Times New Roman",serif;
+  display:grid;grid-template-columns:240px 1fr}
+nav{border-right:1px solid var(--line);padding:2rem 1.25rem;position:sticky;top:0;height:100vh;
+  font-family:ui-sans-serif,system-ui,sans-serif;font-size:.85rem;overflow-y:auto}
+nav ol{list-style:none;padding:0;margin:0}
+nav li{padding:.45rem 0;color:var(--muted);transition:color .15s}
+nav li.built{color:var(--fg)}
+nav li.built::before{content:"● ";color:var(--accent)}
+nav li.unbuilt::before{content:"○ "}
+nav li a{color:inherit;text-decoration:none;display:inline}
+nav li.built:hover{color:var(--accent)}
+nav li.current{color:var(--accent);font-weight:600}
+nav li.unbuilt{cursor:default}
+nav li.unbuilt:hover{color:var(--muted)}
+section.part{scroll-margin-top:1.5rem}
+main{padding:3rem clamp(1.5rem,5vw,5rem);max-width:70ch}
+h2{font-size:1.6rem;margin-top:3.5rem;padding-top:2rem;border-top:1px solid var(--line)}
+main>section:first-of-type h2{border-top:0;margin-top:0;padding-top:0}
+.analogy{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:0 10px 10px 0;padding:1rem 1.25rem;margin:1.75rem 0 0}
+.analogy h4{margin:0 0 .5rem;font-family:ui-sans-serif,system-ui,sans-serif;font-size:.75rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.analogy p{margin:0}
+.maptable{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.92rem}
+.maptable caption{caption-side:top;text-align:left;font:600 .7rem/1.4 ui-sans-serif,system-ui,sans-serif;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--accent);padding-bottom:.5rem}
+.maptable th{text-align:left;font:600 .78rem/1.4 ui-sans-serif,system-ui,sans-serif;
+  letter-spacing:.04em;text-transform:uppercase;color:var(--muted);
+  padding:.4rem .9rem .4rem 0;border-bottom:1px solid var(--line)}
+.maptable td{padding:.6rem .9rem .6rem 0;border-bottom:1px solid var(--line);vertical-align:top}
+.maptable th:last-child,.maptable td:last-child{padding-right:0}
+.maptable tr:last-child td{border-bottom:0}
+.maptable td:first-child{color:var(--muted)}
+.maptable .sub{display:block;font-size:.84em;color:var(--muted);margin-top:.15rem}
+.analogy + .maptable{margin-top:1rem}
+@media(max-width:620px){
+  .maptable,.maptable tbody,.maptable tr,.maptable td{display:block;width:100%}
+  .maptable thead{display:none}
+  .maptable tr{border-bottom:1px solid var(--line);padding:.6rem 0}
+  .maptable tr:last-child{border-bottom:0}
+  .maptable td{border:0;padding:.1rem 0}
+  .maptable td:first-child::after{content:" \2193";color:var(--accent)}
+}
+.quiz{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1.25rem;margin:2rem 0}
+.quiz.pre{background:transparent;border-style:dashed;margin:1.5rem 0 0}
+.quiz.pre summary{cursor:pointer;color:var(--accent);font-size:.9rem}
+.quiz.pre p{margin:0 0 .5rem}
+.quiz button{display:block;width:100%;text-align:left;margin:.4rem 0;padding:.7rem .9rem;
+  border:1px solid var(--line);border-radius:7px;background:transparent;color:var(--fg);
+  font:inherit;font-size:.95rem;cursor:pointer}
+.quiz button:hover{border-color:var(--accent)}
+.fb{display:none;margin:.6rem 0 0;padding:.7rem .9rem;border-radius:7px;font-size:.9rem}
+.fb.show{display:block}
+.fb.ok{background:color-mix(in srgb,var(--accent) 12%,transparent)}
+.fb.no{background:color-mix(in srgb,#e5484d 12%,transparent)}
+dfn{font-style:normal;font-weight:600;border-bottom:1.5px dotted var(--accent)}
+.unit{background:var(--card);border:1px solid var(--line);border-radius:8px;
+  padding:.75rem 1rem;margin:1.25rem 0;font-size:.9rem}
+.unit b{font-family:ui-monospace,monospace;color:var(--accent)}
+.hint{margin-top:1rem;font-size:.9rem}
+.hint summary{cursor:pointer;color:var(--accent)}
+.ask{font-style:italic;color:var(--muted);border-top:1px dashed var(--line);
+  margin-top:2rem;padding-top:1rem;font-size:.95rem}
+figure{margin:2rem 0}
+figcaption{font-size:.85rem;color:var(--muted);font-family:ui-sans-serif,system-ui,sans-serif;
+  margin-top:.6rem}
+svg{max-width:100%;height:auto}
+.ctl{display:flex;gap:.5rem;align-items:center;margin-top:.75rem;flex-wrap:wrap}
+.ctl button{font:inherit;font-size:.82rem;padding:.4rem .8rem;border:1px solid var(--line);
+  border-radius:6px;background:transparent;color:var(--fg);cursor:pointer}
+.ctl button:hover{border-color:var(--accent);color:var(--accent)}
+.ctl button:disabled{opacity:.4;cursor:default;border-color:var(--line);color:var(--fg)}
+.ctl input[type=range]{flex:1;accent-color:var(--accent);min-width:120px}
+.readout{font-family:ui-monospace,monospace;font-size:.8rem;color:var(--muted)}
+.cap{fill:var(--muted);font-size:11px}
+.lbl{fill:var(--fg);font-size:12px}
+.mono{font-family:ui-monospace,monospace;font-size:11px}
+@media(max-width:800px){body{grid-template-columns:1fr}
+  nav{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line)}}
+</style>
+</head>
+<body>
+
+<nav><ol>
+  <li data-part="1" class="built"><a href="#part-1">What the model actually hears</a></li>
+  <li data-part="2" class="built"><a href="#part-2">What “frozen” means</a></li>
+  <li data-part="3" class="built"><a href="#part-3">What the adapter adds</a></li>
+  <li data-part="4" class="built"><a href="#part-4">The bend — why</a></li>
+  <li data-part="5" class="built"><a href="#part-5">The zero start — why</a></li>
+  <li data-part="6" class="built"><a href="#part-6">The two lanes, end to end</a></li>
+</ol></nav>
+
+<main>
+<section class="part" id="part-1">
+  <h2>1. What the model actually hears</h2>
+
+  <div class="quiz pre">
+    <p><strong>Before you read.</strong> Your microphone hands you 16,000 numbers every second,
+       and each one only says how far the speaker cone moved at that instant. The encoder takes
+       80&nbsp;ms of that and hands back a row of 512 numbers.
+       <br><br>Guess first: what do you think those 512 numbers <em>are</em>?</p>
+    <details><summary>Commit to a guess, then open this</summary>
+      <p>Whatever you guessed — the thing to hold onto is that they are no longer
+      <em>sound</em>. You cannot play them back. They are a <em>description</em>. The rest of this
+      part is about what they describe.</p></details>
+  </div>
+
+  <div class="analogy">
+    <h4>The analogy</h4>
+    <p>You already built this exact thing. Every Thai turn your panel handles gets written to
+      <code>live/_out/turns-&lt;date&gt;.jsonl</code>. The turn itself was maybe two seconds of
+      48&nbsp;kHz audio — megabytes. What you keep is six marks and five stage names: a short row
+      of numbers you can read at a glance. You threw the sound away and kept a description of it.
+      <br><br>The encoder does the same move, just much smaller and much more often.</p>
+  </div>
+
+  <table class="maptable">
+    <caption>You wrote the logger, so you already know this shape</caption>
+    <thead><tr><th>In your turn log</th><th>In the encoder</th></tr></thead>
+    <tbody>
+      <tr><td>one whole turn of audio<span class="sub">a couple of seconds, megabytes</span></td>
+          <td>one 80&nbsp;ms slice of audio<span class="sub">1,280 raw numbers from the mic</span></td></tr>
+      <tr><td>the six marks you record<span class="sub">timings you chose to keep</span></td>
+          <td>the 512 numbers it hands back<span class="sub">a description of that slice</span></td></tr>
+      <tr><td>you decided what each field means</td>
+          <td>nobody decided — training did<span class="sub">this is the one real difference</span></td></tr>
+      <tr><td>you can read the log and understand the turn</td>
+          <td>the rest of the model reads the 512 and works out the words</td></tr>
+      <tr><td>you cannot play the log back as audio</td>
+          <td>you cannot play the 512 numbers back either</td></tr>
+    </tbody>
+  </table>
+
+  <p>That last row is the whole point, so it is worth saying plainly. Once the audio has gone
+  through the encoder, <strong>the sound is gone.</strong> Nothing downstream ever touches it
+  again. The decoder, the part that picks Thai characters, has never heard audio in its life — it
+  only ever sees rows of numbers.</p>
+
+  <div class="unit">
+    <p><b>16 kHz</b> — 16,000 <dfn>samples</dfn> per second. A sample is one number saying where
+    the speaker cone was at one instant. <b>k</b> = kilo = one thousand. The <b>per second</b>
+    makes it a <em>rate</em>, not an amount.<br>
+    <b>80 ms</b> — 80 milliseconds, that is 0.08 of a second. An <em>amount</em> of time.<br>
+    So one slice holds 16,000 &times; 0.08 = <b>1,280</b> samples. That is an amount, not a rate.</p>
+  </div>
+
+  <p>Your own loop already works in slices like this — <code>asr/server_streaming.py</code> feeds
+  the model in chunks rather than whole files. So the slicing is familiar. What is new is what
+  comes <em>out</em> of a slice.</p>
+
+  <figure>
+    <svg viewBox="0 0 400 250" role="img"
+         aria-label="A waveform with a draggable slice selector. Below it, the 1280 raw microphone
+                     numbers for that slice, and the 512 numbers the encoder returns, which change
+                     from flat to busy as the slice moves from silence into speech.">
+      <text x="0" y="10" class="cap">Two seconds of a caller. Drag the slice below.</text>
+      <g id="wave"></g>
+      <rect id="sel" x="0" y="16" width="16" height="54" fill="var(--accent)" opacity=".18"
+            stroke="var(--accent)" stroke-width="1"/>
+
+      <text x="0" y="98" class="lbl">What the microphone gave you</text>
+      <text x="0" y="113" class="cap" id="micCount">1,280 numbers for this slice — first 10:</text>
+      <text x="0" y="131" class="mono" id="micVals" fill="var(--fg)"></text>
+
+      <text x="0" y="163" class="lbl">What the encoder hands back</text>
+      <text x="0" y="178" class="cap">512 numbers, all of them drawn below — first 6:</text>
+      <text x="0" y="196" class="mono" id="encVals" fill="var(--fg)"></text>
+      <g id="encBars"></g>
+      <text x="0" y="245" class="cap" id="encNote"></text>
+    </svg>
+    <div class="ctl">
+      <input type="range" id="pos" min="0" max="100" step="1" value="8" aria-label="slice position">
+      <span class="readout" id="posRead"></span>
+    </div>
+    <figcaption>Drag from the quiet part into the loud part. The microphone numbers just get
+    bigger. The encoder's 512 change <em>shape</em> — that is the difference between recording a
+    sound and describing one. (Values here are illustrative; the sizes and the behaviour are
+    real.)</figcaption>
+  </figure>
+
+  <p>Notice what happened as you dragged. Over silence, most of the 512 sit near zero and a few
+  stay lit — the encoder is still saying something, roughly <em>"nothing is being said here, and
+  the room sounds like this."</em> Over speech, many more light up, in a pattern that changes as
+  the sound changes.</p>
+
+  <p>Nobody sat down and decided that number 137 means "this slice has a nasal sound in it".
+  Training decided, over 11,000 hours of Thai, and no human ever looked. The numbers are not
+  labelled and cannot be read by eye. But they are <em>consistent</em>: the same kind of sound
+  produces a similar row every time, which is exactly what makes the rest of the model possible.</p>
+
+  <p><strong>One sentence to carry into part 2:</strong> the encoder is a machine that turns a
+  slice of sound into a row of 512 numbers, and everything after it works with the row, never the
+  sound.</p>
+
+  <div class="quiz">
+    <p><strong>Check yourself:</strong> what do those 512 numbers hold?</p>
+    <button onclick="pick(this)">A compressed version of the same sound — like an MP3 of that slice</button>
+    <button onclick="pick(this)">A description of what that slice sounds like</button>
+    <button onclick="pick(this)">The Thai characters that were spoken in that slice</button>
+    <p class="fb no">Not compression. An MP3 can be played back — you can decompress it and hear
+       the original. These 512 numbers cannot be turned back into audio at all. Nothing was
+       stored; something was <em>measured</em>.</p>
+    <p class="fb ok">Right. And "sounds like" is doing real work in that sentence — the row says
+       what kind of sound is present, not which sound wave was present. Two different people
+       saying the same syllable produce similar rows, which is the entire reason this is
+       useful.</p>
+    <p class="fb no">That is the decoder's job, and it happens later. The encoder has no idea Thai
+       exists. It has never been told about characters — it only turns sound into rows. Keeping
+       these two jobs separate is what makes part 3 possible, so it is worth holding onto.</p>
+    <details class="hint"><summary>Give me a hint</summary>
+      <p>Ask yourself which of the three you could <em>undo</em>. If you can't get the audio back
+      out, it was never a recording.</p></details>
+  </div>
+
+  <p class="ask">Try this in chat and I'll tell you if it's right: your VoxCPM voice and a real
+  caller both say <span lang="th">สวัสดีครับ</span>. Do you think the encoder gives back the same
+  row of numbers for both, or different rows? And whichever you pick — why does your answer matter
+  for the whole adapter idea?</p>
+</section>
+
+<section class="part" id="part-2">
+  <h2>2. What &ldquo;frozen&rdquo; means</h2>
+
+  <div class="quiz pre">
+    <p><strong>Before you read.</strong> From part&nbsp;3 you know that switching the adapter off
+       gives you back the original numbers <em>exactly</em>.
+       <br><br>Guess first: if the encoder were <em>not</em> frozen while you trained on synthetic
+       audio, would switching the adapter off still give you the original encoder back?</p>
+    <details><summary>Commit to a guess, then open this</summary>
+      <p><strong>No.</strong> And there is no second switch to fix it. That one sentence is the
+      entire reason freezing exists, and the rest of this part is why.</p></details>
+  </div>
+
+  <div class="analogy">
+    <h4>The analogy</h4>
+    <p>Back to the mixing desk from your first lesson. A model is a desk with millions of faders,
+      and one fader is one number. Training is somebody sitting at the desk: play a clip, listen to
+      how wrong it came out, nudge some faders, play the next clip. Do that a few hundred thousand
+      times and the desk is set.
+      <br><br><strong>Freezing is putting tape over a block of faders.</strong> The engineer still
+      reaches for them, still tries to push &mdash; and nothing moves. So every correction they
+      wanted to make has to be made on a fader that is still free.</p>
+  </div>
+
+  <table class="maptable">
+    <caption>Same desk as your first lesson, one thing added</caption>
+    <thead><tr><th>At the mixing desk</th><th>In the model</th></tr></thead>
+    <tbody>
+      <tr><td>one fader</td>
+          <td>one <dfn>weight</dfn> &mdash; a single number inside the model</td></tr>
+      <tr><td>play, listen, nudge, repeat</td>
+          <td><dfn>training</dfn> &mdash; show an example, measure how wrong, nudge the numbers</td></tr>
+      <tr><td>tape over a block of faders</td>
+          <td><dfn>frozen</dfn> &mdash; those numbers are not allowed to change</td></tr>
+      <tr><td>the engineer pushes anyway, nothing moves</td>
+          <td>training still computes a nudge for them; it gets thrown away</td></tr>
+      <tr><td>the correction lands on whatever fader is still free</td>
+          <td>every lesson in the data lands on a number that <em>can</em> move</td></tr>
+      <tr><td>you can peel the tape off later</td>
+          <td>frozen is a choice you make per run, not a property of the model</td></tr>
+    </tbody>
+  </table>
+
+  <p>That fifth row is the one that matters, so here it is on its own:</p>
+
+  <p style="text-align:center;font-size:1.15rem;margin:1.5rem 0"><strong>A lesson has to land
+  somewhere. Freezing decides where.</strong></p>
+
+  <div class="unit">
+    <p><b>M</b> = million. <b>109 M</b> is 109 million separate numbers &mdash; an <em>amount</em>,
+    not a rate. For scale: Typhoon's encoder holds about <b>109 M</b>, the decoder and joint network
+    together about <b>6 M</b>, and the adapter we would bolt on about <b>1 M</b>. In the picture
+    below, <strong>one square is roughly one million numbers</strong>, drawn to scale.</p>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 400 205" role="img"
+         aria-label="Three groups of weights drawn to scale: the encoder at 109 squares, the adapter
+                     at 1, the decoder at 6. Stepping through training clips shows which groups
+                     change, with the encoder locked or unlocked.">
+      <text x="0" y="11" class="cap" id="a2title"></text>
+
+      <text x="0" y="32" class="lbl">ENCODER <tspan class="cap">&mdash; 109 M</tspan></text>
+      <text x="380" y="32" class="cap" text-anchor="end" id="a2lock">&#128274; taped down</text>
+      <g id="a2enc"></g>
+
+      <text x="0" y="110" class="lbl">ADAPTER <tspan class="cap">&mdash; 1 M</tspan></text>
+      <g id="a2ada"></g>
+
+      <text x="0" y="146" class="lbl">DECODER <tspan class="cap">&mdash; 6 M</tspan></text>
+      <g id="a2dec"></g>
+
+      <text x="0" y="190" class="cap" id="a2msg"></text>
+    </svg>
+    <p class="cap" style="margin:.5rem 0 0;color:var(--muted);font-size:.85rem">
+      Before you click: which of the three do you think changes first?</p>
+    <div class="ctl">
+      <button id="a2prev" disabled>&#8592; Back</button>
+      <button id="a2next">Feed a clip &#8594;</button>
+      <span class="readout" id="a2read">0 / 4</span>
+      <button id="a2tape">Encoder: TAPED</button>
+    </div>
+    <figcaption>Run it once with the encoder taped, then hit the tape button and run it again.
+    The second time, the encoder changes &mdash; and nothing you can do afterwards puts it
+    back.</figcaption>
+  </figure>
+
+  <p>Look at the sizes for a second, because they are honest. The adapter is <em>one square</em>
+  against the encoder's hundred and nine. It is not a small model bolted onto a big one &mdash; it
+  is barely a rounding error. That is only possible because it is not trying to do the encoder's
+  job. It is only trying to catch what falls out of the synthetic clips.</p>
+
+  <h3 style="font-size:1.05rem;margin-top:2.5rem">Why this is the answer to your question</h3>
+
+  <p>You asked whether the adapter is just a cheap way to fine-tune the encoder without wrecking
+  it. For most people using adapters, yes. For us, the encoder <strong>is not being fine-tuned at
+  all.</strong> It is being held completely still.</p>
+
+  <p>And that is deliberate, because of what part&nbsp;1 and the two-failure split already told
+  you. A synthetic clip carries two lessons: how <span lang="th">วโรรส</span> is spelled (worth
+  keeping) and what VoxCPM's fake silences sound like (poison). If every group of numbers is free
+  to move, both lessons go wherever they like, mixed together, and you can never separate them
+  again.</p>
+
+  <p>Tape the encoder and the poison has <em>nowhere else to go</em>. The only free numbers on the
+  sound side belong to the adapter. So it collects there &mdash; and the adapter is the one thing
+  in the whole model you can delete.</p>
+
+  <p><strong>Freeze and adapter are one mechanism, not two.</strong> The tape is what makes the bin
+  a bin. Without it, there is no bin, just a bigger mess.</p>
+
+  <div class="quiz">
+    <p><strong>Check yourself:</strong> what does freezing the encoder buy you here?</p>
+    <button onclick="pick(this)">Training runs faster and uses less memory</button>
+    <button onclick="pick(this)">Every lesson from the synthetic clips has to land somewhere you can still remove</button>
+    <button onclick="pick(this)">It stops the model from learning anything wrong</button>
+    <p class="fb no">True, and genuinely useful &mdash; it is why this fits on your 5060 Ti at all.
+       But it is a side effect, not the reason. If speed were the goal you would just train on less
+       data. Ask instead: what becomes <em>possible</em> that was not possible before?</p>
+    <p class="fb ok">Right. Freezing does not stop bad learning &mdash; it decides <em>where</em>
+       bad learning is allowed to accumulate. Somewhere with an off-switch.</p>
+    <p class="fb no">It cannot stop that. The model will happily learn VoxCPM's fake silences
+       either way &mdash; nothing here inspects a lesson and judges it. What changes is only which
+       numbers are available to hold it.</p>
+    <details class="hint"><summary>Give me a hint</summary>
+      <p>Part 3 gave you an off-switch for the adapter. Which group of numbers has no off-switch
+      at all?</p></details>
+  </div>
+
+  <p class="ask">Try this in chat: suppose you froze the <em>decoder</em> instead and left the
+  encoder free. Train on the same synthetic clips. What would the model end up learning, and would
+  it be any use on a real caller?</p>
+</section>
+
+<section class="part" id="part-3">
+  <h2>3. What the adapter adds</h2>
+
+  <div class="quiz pre">
+    <p><strong>Before you read.</strong> Your <code>mint_v4</code> voice is a LoRA &mdash; which is
+       an adapter. When you set <code>VOXCPM_LORA=""</code> you get the plain VoxCPM voice back.
+       <br><br>Guess first: does the model go back to <em>exactly</em> what it was before, or
+       only approximately?</p>
+    <details><summary>Commit to a guess, then open this</summary>
+      <p><strong>Exactly.</strong> Byte for byte, the same model you downloaded. Why that is true
+      &mdash; and why it is the single most useful property an adapter has &mdash; is this whole
+      part.</p></details>
+  </div>
+
+  <div class="analogy">
+    <h4>The analogy</h4>
+    <p>You have been running one of these in production for months. <code>mint_v4</code> is not a
+      retrained VoxCPM &mdash; the VoxCPM weights on your disk were never touched. It is a small
+      separate file that sits <em>beside</em> the model and shifts what comes out. Set
+      <code>VOXCPM_LORA=""</code> and the shifting stops; the original voice returns, unharmed,
+      because it was never edited in the first place.
+      <br><br>The adapter we want to put in the ASR is the same arrangement, aimed at a different
+      problem.</p>
+  </div>
+
+  <table class="maptable">
+    <caption>You already ship one of these</caption>
+    <thead><tr><th>Your mint_v4 LoRA</th><th>The adapter in the ASR</th></tr></thead>
+    <tbody>
+      <tr><td>VoxCPM's own weights<span class="sub">never modified, still on disk as downloaded</span></td>
+          <td>Typhoon's encoder<span class="sub">never modified either</span></td></tr>
+      <tr><td>the small mint_v4 file beside it</td>
+          <td>the adapter &mdash; a small separate thing</td></tr>
+      <tr><td>it shifts the voice that comes out</td>
+          <td>it shifts the row of numbers that comes out</td></tr>
+      <tr><td><code>VOXCPM_LORA=""</code> &rarr; original voice, exactly</td>
+          <td>adapter off &rarr; original numbers, exactly</td></tr>
+      <tr><td><code>r</code> and <code>alpha</code> set how strong the shift is
+              <span class="sub">your notes: wrong values load it &ldquo;at half strength&rdquo;</span></td>
+          <td>same dial, same meaning</td></tr>
+    </tbody>
+  </table>
+
+  <p>The mechanism behind all five of those rows is one word, and it is worth its own line because
+  everything later depends on it:</p>
+
+  <p style="text-align:center;font-size:1.15rem;margin:1.5rem 0"><strong>The adapter
+  <em>adds</em>. It never replaces.</strong></p>
+
+  <p>Here is what that means concretely. From part&nbsp;1 you know the encoder hands back a row of
+  512 numbers describing one slice of sound. The adapter looks at that row and produces
+  <em>its own</em> row of 512 numbers &mdash; small ones. Then the two rows are added together,
+  position by position, and the sum is what carries on to the decoder.</p>
+
+  <p>So the original row is still in there. It was nudged, not overwritten. And if the adapter's
+  row happens to be all zeros, the sum <em>is</em> the original &mdash; not close to it,
+  identical to it.</p>
+
+  <figure>
+    <svg viewBox="0 0 400 235" role="img"
+         aria-label="Three stacked rows of 512 numbers: the encoder's output, the adapter's own
+                     small correction, and the two added together. Switching the adapter off empties
+                     the middle row and makes the sum identical to the encoder's output.">
+      <text x="0" y="11" class="cap">One slice of audio. Each bar is one of the 512 numbers.</text>
+
+      <text x="0" y="30" class="lbl">What the encoder produced</text>
+      <line x1="0" y1="52" x2="380" y2="52" stroke="var(--line)" stroke-width="1"/>
+      <g id="a3rowA"></g>
+
+      <text x="0" y="92" class="lbl">What the adapter produced on its own</text>
+      <line x1="0" y1="114" x2="380" y2="114" stroke="var(--line)" stroke-width="1"/>
+      <g id="a3rowB"></g>
+      <text x="0" y="136" class="cap" id="a3noteB"></text>
+
+      <text x="0" y="163" class="lbl">Added together &mdash; this is what the decoder sees</text>
+      <line x1="0" y1="185" x2="380" y2="185" stroke="var(--line)" stroke-width="1"/>
+      <g id="a3rowC"></g>
+      <text x="0" y="212" class="cap" id="a3noteC"></text>
+    </svg>
+    <div class="ctl">
+      <button id="a3toggle">Adapter: ON</button>
+      <input type="range" id="a3str" min="0" max="200" step="5" value="100"
+             aria-label="adapter strength">
+      <span class="readout" id="a3read"></span>
+    </div>
+    <figcaption>Switch it off and compare the top row with the bottom row &mdash; they are the same
+    row. That is not a coincidence or a rounding artefact: adding zero changes nothing.
+    (Values illustrative; the behaviour is real.)</figcaption>
+  </figure>
+
+  <p>Drag the strength dial and watch the bottom row lean further away from the top one. That dial
+  is not invented for this page &mdash; it is a setting in your own VoxCPM config.</p>
+
+  <div class="unit">
+    <p><b>r</b> &mdash; how narrow the detour is. <code>mint_v4</code> uses 32.<br>
+       <b>alpha</b> &mdash; how far up the correction is turned before it gets added.<br>
+       The correction is multiplied by <b>alpha &divide; r</b> before the addition. At
+       <code>32/32</code> that is <b>&times;1.0</b> &mdash; full strength. At <code>16/32</code> it
+       would be <b>&times;0.5</b>, and the voice would come out only half-shifted toward mint_v4.
+       That is exactly the <em>&ldquo;loads at half strength&rdquo;</em> warning sitting in your
+       <code>CLAUDE.md</code> &mdash; and it can only happen to something that <em>adds</em>. A
+       replacement has no such thing as half.</p>
+  </div>
+
+  <p>One honest note on the map above: a LoRA and the kind of adapter we would put in the ASR are
+  not built identically inside. But on every point that matters here &mdash; base untouched, small
+  separate weights, additive, switchable, scaled by <code>alpha &divide; r</code> &mdash; they
+  behave the same way, which is why your months with <code>mint_v4</code> transfer.</p>
+
+  <h3 style="font-size:1.05rem;margin-top:2.5rem">Now open the box</h3>
+
+  <p>So far the adapter has been a box that emits a small row. Inside, it is three steps and then
+  the addition:</p>
+
+  <figure>
+    <svg viewBox="0 0 400 124" role="img"
+         aria-label="Inside the adapter: the row of 512 is narrowed to 32, the bend happens, it is
+                     widened back to 512, and the result is added to the original row.">
+      <rect x="0" y="30" width="72" height="34" rx="4" fill="none" stroke="var(--line)"/>
+      <text x="36" y="46" class="mono" text-anchor="middle" fill="var(--fg)">512</text>
+      <text x="36" y="59" class="cap" text-anchor="middle">the row in</text>
+
+      <line x1="72" y1="47" x2="98" y2="47" stroke="var(--muted)" stroke-width="1.3"/>
+      <rect x="100" y="30" width="66" height="34" rx="4" fill="none" stroke="var(--accent)"/>
+      <text x="133" y="46" class="mono" text-anchor="middle" fill="var(--fg)">32</text>
+      <text x="133" y="59" class="cap" text-anchor="middle">narrow it</text>
+
+      <line x1="166" y1="47" x2="192" y2="47" stroke="var(--muted)" stroke-width="1.3"/>
+      <rect x="194" y="30" width="66" height="34" rx="4" fill="none" stroke="var(--warm)"
+            stroke-dasharray="4 3"/>
+      <text x="227" y="51" class="cap" text-anchor="middle" fill="var(--warm)">the bend</text>
+
+      <line x1="260" y1="47" x2="286" y2="47" stroke="var(--muted)" stroke-width="1.3"/>
+      <rect x="288" y="30" width="66" height="34" rx="4" fill="none" stroke="var(--accent)"/>
+      <text x="321" y="46" class="mono" text-anchor="middle" fill="var(--fg)">512</text>
+      <text x="321" y="59" class="cap" text-anchor="middle">widen back</text>
+
+      <path d="M321 64 L321 84 L36 84 L36 72" fill="none" stroke="var(--good)" stroke-width="1.4"/>
+      <polygon points="36,64 32,73 40,73" fill="var(--good)"/>
+      <text x="185" y="101" class="cap" text-anchor="middle" fill="var(--good)">and that gets ADDED to the row that came in &mdash; never swapped for it</text>
+      <text x="185" y="118" class="cap" text-anchor="middle" fill="var(--warm)">part 4 is entirely about the dashed box</text>
+    </svg>
+    <figcaption>Narrow, bend, widen, add. Three of those you can already justify: narrowing keeps
+    the adapter small, widening gets it back to a shape you can add, and adding is what leaves the
+    original intact. The dashed one is the question you asked me.</figcaption>
+  </figure>
+
+  <div class="quiz">
+    <p><strong>Check yourself:</strong> what does &ldquo;adds, never replaces&rdquo; actually buy you?</p>
+    <button onclick="pick(this)">When the adapter is more confident than the encoder, its answer wins</button>
+    <button onclick="pick(this)">The encoder's answer is always still in there &mdash; the adapter can only shift it</button>
+    <button onclick="pick(this)">It makes the model bigger, so it can remember more words</button>
+    <p class="fb no">There is no contest and no confidence anywhere in this. Nothing compares the
+       two rows and picks a winner &mdash; they are added together, unconditionally, every single
+       time. Adding is much dumber than choosing, and that is exactly why it is safe.</p>
+    <p class="fb ok">Right. And that is what makes the off-switch real: remove the adapter's
+       contribution and you are exactly back where you started, because nothing was ever lost.
+       Part 5 is about how easily that guarantee gets thrown away by accident.</p>
+    <p class="fb no">Careful &mdash; 1% more weights is not meaningful extra capacity, and nothing
+       here is &ldquo;remembering words&rdquo;. The question an adapter answers is not <em>how
+       much</em> the model can learn, but <em>where new learning is allowed to go</em>. That is a
+       part 6 question.</p>
+    <details class="hint"><summary>Give me a hint</summary>
+      <p>Set the strength dial to 0 and look at the top and bottom rows again. What did the model
+      lose?</p></details>
+  </div>
+
+  <p class="ask">Try this in chat: your notes say a wrong <code>r</code>/<code>alpha</code> made
+  mint_v4 load &ldquo;at half strength&rdquo;, and the voice came out somewhere between plain
+  VoxCPM and mint_v4. Using only what is in this part &mdash; what was <em>physically</em>
+  happening to produce a voice halfway between two voices?</p>
+</section>
+
+<section class="part" id="part-4">
+  <h2>4. The bend &mdash; why</h2>
+
+  <div class="quiz pre">
+    <p><strong>Before you read.</strong> The adapter's job is to catch VoxCPM's quirks. But there
+       is more than one quirk: its silences are too clean, <em>and</em> its timing is too regular
+       &mdash; and those show up in completely different slices of audio.
+       <br><br>Guess first: can one correction, applied the same way to every slice, catch
+       both?</p>
+    <details><summary>Commit to a guess, then open this</summary>
+      <p><strong>No.</strong> And what it does instead is worse than doing nothing, because what
+      it fails to catch does not stay put &mdash; it goes on to the decoder, which is the half you
+      wanted to keep.</p></details>
+  </div>
+
+  <div class="analogy">
+    <h4>The analogy</h4>
+    <p>You already wrote this exact distinction. <code>cap_internal_silence()</code> in
+      <code>stt_typhoon.py</code> shortens a silence <em>only if</em> it is longer than 800&nbsp;ms
+      &mdash; it looks first, then decides. The dumb version would be &ldquo;subtract 800&nbsp;ms
+      from every silence&rdquo;, and you know exactly what that would do: it would wreck every
+      normal pause in the clip while still not handling the pathological ones properly.
+      <br><br>Your rule checks before it acts. The bend is what lets the adapter check before it
+      acts.</p>
+  </div>
+
+  <table class="maptable">
+    <caption>Your own silence fix, and the same shape one level down</caption>
+    <thead><tr><th>In <code>cap_internal_silence()</code></th><th>In the adapter</th></tr></thead>
+    <tbody>
+      <tr><td>it measures the gap before touching it</td>
+          <td>each <dfn>detector</dfn> checks whether its pattern is present</td></tr>
+      <tr><td>acts only when the gap is too long</td>
+          <td>contributes only when it recognises something</td></tr>
+      <tr><td>short pauses pass through untouched</td>
+          <td>slices that match nothing get no correction</td></tr>
+      <tr><td>&ldquo;subtract 800 ms from everything&rdquo;<span class="sub">the version you did not write</span></td>
+          <td>squeeze and widen with no bend in between</td></tr>
+      <tr><td>that would damage normal speech</td>
+          <td>that lets most of the TTS-ness slip past the bin</td></tr>
+    </tbody>
+  </table>
+
+  <h3 style="font-size:1.05rem;margin-top:2.5rem">Forget 512. Start with one number.</h3>
+
+  <p>Everything below uses a single number going in and a single number coming out. Drag the
+  slider and watch what the adapter is able to do &mdash; and what it is not.</p>
+
+  <figure>
+    <svg viewBox="0 0 400 235" role="img"
+         aria-label="One input number passing through the adapter. A graph plots input against
+                     output. With the bend off the graph is a straight line through the middle.
+                     With the bend on the line is flat on the left half and only rises on the
+                     right.">
+      <text x="0" y="11" class="cap" id="a5title"></text>
+
+      <text x="0" y="34" class="mono" id="a5chain" fill="var(--fg)"></text>
+      <text x="0" y="51" class="cap" id="a5chain2"></text>
+
+      <line x1="30" y1="180" x2="330" y2="180" stroke="var(--line)" stroke-width="1"/>
+      <line x1="180" y1="80" x2="180" y2="215" stroke="var(--line)" stroke-width="1"/>
+      <text x="336" y="184" class="cap">input</text>
+      <text x="180" y="74" class="cap" text-anchor="middle">output</text>
+      <text x="34" y="196" class="cap">quiet</text>
+      <text x="326" y="196" class="cap" text-anchor="end">loud</text>
+
+      <path id="a5curve" fill="none" stroke="var(--accent)" stroke-width="2.2"/>
+      <circle id="a5dot" r="4.5" fill="var(--cool)"/>
+      <text x="0" y="228" class="cap" id="a5note"></text>
+    </svg>
+    <div class="ctl">
+      <input type="range" id="a5in" min="-100" max="100" step="1" value="60"
+             aria-label="the number going in">
+      <span class="readout" id="a5read"></span>
+      <button id="a5bend">The bend: OFF</button>
+    </div>
+    <figcaption>With the bend off the graph is a straight line. With it on, the line has a corner
+    in it &mdash; flat on one side, rising on the other. That corner is the whole thing, and it is
+    what the word &ldquo;bend&rdquo; is pointing at.</figcaption>
+  </figure>
+
+  <p><strong>Bend off, drag the slider and watch the output.</strong> It follows the input,
+  always. Halve the input, the output halves. Flip the input to negative, the output flips too.
+  There is no setting anywhere on that slider where the output is zero except dead centre. The
+  output is <em>chained</em> to the input.</p>
+
+  <p><strong>Now turn the bend on and drag again.</strong> Across the entire left half of the
+  slider, the output is <strong>flat zero</strong>. Not small. Zero. The adapter is saying
+  <em>nothing here, I have no opinion, leave this one alone.</em> Then past the corner it starts
+  responding.</p>
+
+  <p style="text-align:center;font-size:1.15rem;margin:1.5rem 0"><strong>A straight line can
+  stretch or flip. It can never say &ldquo;nothing&rdquo;.</strong></p>
+
+  <p>That is the entire difference, and everything else in this part is that one fact repeated 32
+  times.</p>
+
+  <p>There is a second consequence worth knowing, because it explains why every model is built
+  this way. Stack two straight lines and you get&hellip; a straight line. Stack ten and you still
+  have a straight line. Without a corner somewhere, adding more steps buys you literally nothing
+  &mdash; Typhoon's 17 layers would collapse into the work of one. <strong>The corners are the only
+  reason depth means anything.</strong></p>
+
+  <h3 style="font-size:1.05rem;margin-top:2.5rem">Now scale it from one to 32</h3>
+
+  <p>The real adapter has 32 of those middle numbers, not one. Each behaves exactly like the
+  slider you just dragged &mdash; it gets a number, and with the bend on it either stays at zero
+  or speaks up. Call each one a <dfn>detector</dfn>: it is looking for one particular thing, and
+  its number says how much of that thing is in this slice.</p>
+
+  <p>Now the whole question of this part is:</p>
+
+  <p style="text-align:center;font-size:1.15rem;margin:1.5rem 0"><strong>is a detector allowed to
+  stay silent?</strong></p>
+
+  <p><strong>Without the bend, no.</strong> All 32 always have a say. Every correction the adapter
+  makes is a blend of all thirty-two patterns at once, every single time. It cannot produce a
+  correction aimed at clean silence without dragging the other thirty-one along with it.</p>
+
+  <p><strong>With the bend, yes.</strong> The bend is the simplest possible rule: any detector
+  whose number came out below zero is set to exactly zero. Not small &mdash; zero. It contributes
+  nothing at all. So the ones that did not recognise anything stand down, and what is left is a
+  correction aimed at what is actually in this slice.</p>
+
+  <figure>
+    <svg viewBox="0 0 400 200" role="img"
+         aria-label="Four different slices of audio side by side. With the bend off, all 32
+                     detectors contribute in every slice. With the bend on, only the ones that
+                     recognise something contribute, and the corrections become different from
+                     each other.">
+      <text x="0" y="11" class="cap">Four different slices. Each dot is one of the 32 detectors.</text>
+      <g id="a4cols"></g>
+      <text x="0" y="176" class="cap" id="a4note1"></text>
+      <text x="0" y="193" class="cap" id="a4note2"></text>
+    </svg>
+    <p class="cap" style="margin:.5rem 0 0;color:var(--muted);font-size:.85rem">
+      Before you click: with the bend off, how many of the 32 do you think stay silent?</p>
+    <div class="ctl">
+      <button id="a4bend">The bend: OFF</button>
+      <span class="readout" id="a4read"></span>
+    </div>
+    <figcaption>Bend off, look along the bottom row: four corrections that are all blends of the
+    same thirty-two things. Bend on: four corrections that are actually different from one another,
+    because different detectors stood down. (Illustrative values; the on/off behaviour is
+    exact.)</figcaption>
+  </figure>
+
+  <h3 style="font-size:1.05rem;margin-top:2.5rem">Why this decides whether the bin works</h3>
+
+  <p>Here is the part that connects to what you said a moment ago &mdash; <em>the decoder learns
+  the words, the encoder learns the fake voice.</em></p>
+
+  <p>The adapter is the bin standing in for the taped encoder. Its job is to catch the fake-voice
+  lesson before it goes anywhere else. But a bin that can only make one blended, unfocused
+  correction <strong>catches only part of what it is aimed at.</strong> Whatever it misses does not
+  vanish. It carries on up to the decoder &mdash; and the decoder is free to move, so it learns it.</p>
+
+  <p>Which means you end up with fake-voice knowledge sitting in the one place with no off-switch,
+  mixed in with the vocabulary you actually wanted. That is the naive mix again, arrived at by a
+  more expensive route.</p>
+
+  <p style="text-align:center;font-size:1.05rem;margin:1.5rem 0"><strong>No bend &rarr; the bin
+  leaks &rarr; the poison ends up where you cannot delete it.</strong></p>
+
+  <div class="quiz">
+    <p><strong>Check yourself:</strong> what actually goes wrong without the bend?</p>
+    <button onclick="pick(this)">The adapter runs slower</button>
+    <button onclick="pick(this)">The adapter can only make one blended correction, so what it misses lands in the decoder</button>
+    <button onclick="pick(this)">The adapter starts changing the encoder</button>
+    <p class="fb no">The opposite, if anything &mdash; leaving the bend out makes it simpler and
+       marginally faster. Speed was never the problem. Ask what it becomes <em>unable</em> to
+       do.</p>
+    <p class="fb ok">Right, and the second half is the part that stings. Failing to catch
+       something is not neutral &mdash; whatever the bin misses keeps travelling, and the next stop
+       is the half you were trying to protect.</p>
+    <p class="fb no">It cannot. The encoder is taped either way &mdash; that is part 2, and the
+       bend has nothing to do with it. These are two separate mechanisms doing two separate
+       jobs.</p>
+    <details class="hint"><summary>Give me a hint</summary>
+      <p>If the bin does not catch it, where does it go? Look at your own sentence about the
+      decoder again.</p></details>
+  </div>
+
+  <p class="ask">Try this in chat, it is the good one: the bend works by <em>throwing information
+  away</em> &mdash; every detector that came out below zero is discarded down to exactly zero. Why
+  does deleting information make the adapter <em>more</em> capable rather than less?</p>
+</section>
+<section class="part" id="part-5">
+  <h2>5. The zero start &mdash; why</h2>
+
+  <div class="quiz pre">
+    <p><strong>Before you read.</strong> You have bolted the adapter on but trained it for zero
+       steps. Nothing has been taught yet.
+       <br><br>Guess first: at that exact moment, if the adapter's numbers started out
+       <em>random</em>, is the model better than plain Typhoon, the same, or worse?</p>
+    <details><summary>Commit to a guess, then open this</summary>
+      <p><strong>Worse.</strong> You have damaged a model that cost 11,000 hours, before teaching
+      it a single thing. This part is about what that damage actually costs you &mdash; and it is
+      not what you would guess.</p></details>
+  </div>
+
+  <div class="analogy">
+    <h4>The analogy</h4>
+    <p>You branch off <code>main</code>. The branch starts <em>identical</em> &mdash; not similar,
+      identical &mdash; and every commit after that is a change you made on purpose and can read
+      back with <code>git diff main</code>. That is the whole value of branching from the right
+      place.
+      <br><br>Now imagine branching from a random commit in somebody else's repository instead.
+      You can still commit. Your work might even be good. But nothing you do is a clean diff
+      against <code>main</code> any more, and merging it back drags in a thousand changes you never
+      made.</p>
+  </div>
+
+  <table class="maptable">
+    <caption>The lane the synthetic audio takes is a branch, and you choose where it starts</caption>
+    <thead><tr><th>In git</th><th>In the adapter</th></tr></thead>
+    <tbody>
+      <tr><td><code>main</code></td>
+          <td>the real-audio lane &mdash; plain Typhoon, untouched</td></tr>
+      <tr><td>your branch</td>
+          <td>the synthetic-audio lane &mdash; Typhoon plus the adapter</td></tr>
+      <tr><td>branching from <code>main</code><span class="sub">starts byte-identical</span></td>
+          <td>starting the adapter at zero<span class="sub">both lanes produce the same numbers</span></td></tr>
+      <tr><td>each commit, a deliberate change</td>
+          <td>each training step, a deliberate correction</td></tr>
+      <tr><td>branching from a random commit</td>
+          <td>starting the adapter at random</td></tr>
+      <tr><td>nothing is a clean diff any more</td>
+          <td>the two lanes were never related to begin with</td></tr>
+    </tbody>
+  </table>
+
+  <p>From part&nbsp;3: the adapter starts by adding zero, so at the very first step the synthetic
+  lane and the real lane produce <em>exactly</em> the same numbers. Same input, same output, no
+  difference anywhere.</p>
+
+  <p>That is the point. The synthetic lane is a <strong>branch</strong> of the real one. It only
+  moves away from it as far as the adapter learns it needs to, and every bit of that movement is
+  something training put there deliberately.</p>
+
+  <figure>
+    <svg viewBox="0 0 400 215" role="img"
+         aria-label="The same clip sent down two lanes. With a zero start the two lanes begin
+                     identical and drift apart slowly. With a random start they are unrelated from
+                     the first step.">
+      <text x="0" y="11" class="cap" id="a6title"></text>
+
+      <text x="0" y="32" class="lbl">the real lane <tspan class="cap">&mdash; plain Typhoon</tspan></text>
+      <line x1="0" y1="60" x2="380" y2="60" stroke="var(--line)" stroke-width="1"/>
+      <g id="a6real"></g>
+
+      <text x="0" y="98" class="lbl">the synthetic lane <tspan class="cap">&mdash; Typhoon + adapter</tspan></text>
+      <line x1="0" y1="126" x2="380" y2="126" stroke="var(--line)" stroke-width="1"/>
+      <g id="a6syn"></g>
+
+      <text x="0" y="156" class="cap" id="a6agree"></text>
+      <text x="0" y="180" class="cap" id="a6msg1"></text>
+      <text x="0" y="197" class="cap" id="a6msg2"></text>
+    </svg>
+    <p class="cap" style="margin:.5rem 0 0;color:var(--muted);font-size:.85rem">
+      Before you step: how alike do you think the two lanes are before any training?</p>
+    <div class="ctl">
+      <button id="a6prev" disabled>&#8592; Back</button>
+      <button id="a6next">Train a step &#8594;</button>
+      <span class="readout" id="a6read">0 / 3</span>
+      <button id="a6mode">Start: ZERO</button>
+    </div>
+    <figcaption>Step through with a zero start, then switch to a random start and step through
+    again from the beginning. The difference is visible at step 0, before anything has been taught.
+    (Illustrative values; the step-0 identity is exact.)</figcaption>
+  </figure>
+
+  <h3 style="font-size:1.05rem;margin-top:2.5rem">What the random start actually costs you</h3>
+
+  <p>Not training time. Something worse.</p>
+
+  <p>Remember what the decoder is for &mdash; in your own words, it is the part that learns the new
+  words. It learns them by being shown a row of numbers and told which characters go with it. And
+  it is shared: the same decoder sits at the end of both lanes.</p>
+
+  <p>With a <strong>zero start</strong>, a synthetic clip arrives at the decoder looking almost
+  exactly like a real clip would. So when the decoder learns <em>&ldquo;numbers like these mean
+  <span lang="th">วโรรส</span>&rdquo;</em>, that lesson still holds when a real caller says it. The
+  lesson transfers, because the two lanes are relatives.</p>
+
+  <p>With a <strong>random start</strong>, a synthetic clip arrives looking like nothing a real
+  caller ever produces. The decoder still learns something &mdash; but what it learns is
+  <em>&ldquo;garbage of this particular flavour means <span lang="th">วโรรส</span>&rdquo;</em>. A
+  real caller never produces that flavour of garbage. <strong>The lesson does not transfer. You paid
+  for the training and got nothing.</strong></p>
+
+  <p style="text-align:center;font-size:1.15rem;margin:1.5rem 0"><strong>Zero start makes the
+  synthetic lane a branch of the real one. Random start makes it a different repo.</strong></p>
+
+  <p>And there is a second reason, which matters for the way you work. If arm 3 of the experiment
+  comes out worse than the untrained baseline, you need to be able to say <em>why</em>. With a zero
+  start there is a guaranteed floor: the worst case is that training pushes the adapter back toward
+  zero and you land roughly where you began &mdash; an honest null result. With a random start
+  there is no floor at all, and a bad number tells you nothing, because you can no longer separate
+  &ldquo;the idea failed&rdquo; from &ldquo;I started somewhere broken&rdquo;. Your own
+  <code>smartturn</code> table is exactly this problem: every fine-tune landed below the untrained
+  model, and the table could not say which of the two had happened.</p>
+
+  <div class="quiz">
+    <p><strong>Check yourself:</strong> what does a random start actually cost?</p>
+    <button onclick="pick(this)">Training takes longer to settle down</button>
+    <button onclick="pick(this)">What the decoder learns from synthetic clips no longer applies to real ones</button>
+    <button onclick="pick(this)">The adapter ends up learning the wrong things</button>
+    <p class="fb no">A little, and it is the answer most people give &mdash; but time is the cheap
+       part. Ask instead what happens to the <em>lesson</em> you were paying for.</p>
+    <p class="fb ok">Right. The two lanes stop being relatives, so anything learned on one side is
+       not information about the other. The training runs, the loss goes down, and none of it
+       reaches a real caller.</p>
+    <p class="fb no">It can learn perfectly sensible things, given enough steps. The damage is not
+       to the adapter &mdash; it is to what the <em>shared decoder</em> takes away from the
+       synthetic half.</p>
+    <details class="hint"><summary>Give me a hint</summary>
+      <p>Both lanes end at the same decoder. What has to be true about the two lanes for a lesson
+      learned on one to be worth anything on the other?</p></details>
+  </div>
+
+  <p class="ask">Try this in chat: with a random start, the encoder still never moved &mdash; it
+  was taped the whole time, so you can still recover it perfectly. Nothing was lost there. So
+  where exactly <em>is</em> the damage, and why can you not just delete it the way you delete the
+  adapter?</p>
+</section>
+<section class="part" id="part-6">
+  <h2>6. The two lanes, end to end</h2>
+
+  <div class="quiz pre">
+    <p><strong>Before you read.</strong> Training is finished and you delete the adapter. Three
+       groups of numbers went into this: the encoder, the adapter, the decoder.
+       <br><br>Guess first: which of them are different from when you started?</p>
+    <details><summary>Commit to a guess, then open this</summary>
+      <p><strong>Exactly one.</strong> The encoder is byte-identical to what you downloaded, the
+      adapter is in the bin, and the decoder is the only thing that changed. If that surprises
+      you, this part is short.</p></details>
+  </div>
+
+  <div class="analogy">
+    <h4>The analogy</h4>
+    <p>Scaffolding. You cannot put up the building without it, workers stand on it all day, and it
+      is genuinely doing something load-bearing while the work is happening. Then you take it down,
+      and it was never part of the building. If the building falls over when the scaffolding comes
+      off, you built the wrong thing.
+      <br><br>Your own docs already use the word &mdash; <code>corpus_tts/</code> is described as
+      &ldquo;synthetic scaffolding&rdquo;. The adapter is the same idea one level down.</p>
+  </div>
+
+  <table class="maptable">
+    <caption>Nothing new here &mdash; this is parts 1 to 5 assembled</caption>
+    <thead><tr><th>On the building site</th><th>In the training run</th></tr></thead>
+    <tbody>
+      <tr><td>the building</td>
+          <td>the encoder and the decoder &mdash; what ships</td></tr>
+      <tr><td>the scaffolding</td>
+          <td>the adapter</td></tr>
+      <tr><td>workers on the ground floor</td>
+          <td>real clips &mdash; straight through, no detour</td></tr>
+      <tr><td>workers up on the scaffolding</td>
+          <td>synthetic clips &mdash; through the adapter</td></tr>
+      <tr><td>taking the scaffolding down</td>
+          <td>deleting the adapter before you ship</td></tr>
+      <tr><td>the building has to stand without it</td>
+          <td>the model has to work with the adapter gone</td></tr>
+    </tbody>
+  </table>
+
+  <figure>
+    <svg viewBox="0 0 400 205" role="img"
+         aria-label="The full setup. Real clips and synthetic clips both enter the taped encoder;
+                     synthetic clips take a detour through the adapter; both end at the shared
+                     decoder. Switching to what ships removes the synthetic lane and the adapter.">
+      <text x="0" y="11" class="cap" id="a7title"></text>
+
+      <g id="a7realsrc">
+        <rect x="0" y="30" width="76" height="30" rx="4" fill="none" stroke="var(--line)"/>
+        <text x="38" y="49" class="cap" text-anchor="middle">real clips</text>
+      </g>
+      <g id="a7synsrc">
+        <rect x="0" y="112" width="76" height="30" rx="4" fill="none" stroke="var(--warm)"
+              stroke-dasharray="4 3"/>
+        <text x="38" y="126" class="cap" text-anchor="middle" fill="var(--warm)">synthetic</text>
+        <text x="38" y="138" class="cap" text-anchor="middle" fill="var(--warm)">clips</text>
+      </g>
+
+      <line x1="76" y1="45" x2="104" y2="45" stroke="var(--muted)" stroke-width="1.3"/>
+      <line id="a7in2" x1="76" y1="127" x2="104" y2="127" stroke="var(--warm)" stroke-width="1.3"/>
+
+      <rect x="106" y="30" width="70" height="112" rx="4" fill="none" stroke="var(--line)"/>
+      <text x="141" y="78" class="lbl" text-anchor="middle">ENCODER</text>
+      <text x="141" y="94" class="cap" text-anchor="middle">&#128274; taped</text>
+      <text x="141" y="108" class="cap" text-anchor="middle">109 M, unchanged</text>
+
+      <line x1="176" y1="45" x2="292" y2="45" stroke="var(--muted)" stroke-width="1.3"/>
+      <text x="234" y="39" class="cap" text-anchor="middle">straight through</text>
+
+      <g id="a7ada">
+        <line x1="176" y1="127" x2="200" y2="127" stroke="var(--warm)" stroke-width="1.3"/>
+        <rect x="202" y="110" width="66" height="34" rx="4" fill="none" stroke="var(--accent)"/>
+        <text x="235" y="126" class="lbl" text-anchor="middle">ADAPTER</text>
+        <text x="235" y="138" class="cap" text-anchor="middle">1 M, learning</text>
+        <path d="M268 127 L292 127 L292 100" fill="none" stroke="var(--warm)" stroke-width="1.3"/>
+        <text x="235" y="160" class="cap" text-anchor="middle" fill="var(--accent)">the bin</text>
+      </g>
+
+      <rect x="294" y="52" width="84" height="48" rx="4" fill="none" stroke="var(--good)"
+            stroke-width="1.6"/>
+      <text x="336" y="72" class="lbl" text-anchor="middle">DECODER</text>
+      <text x="336" y="86" class="cap" text-anchor="middle" id="a7deccap">6 M, learning</text>
+
+      <text x="0" y="180" class="cap" id="a7m1"></text>
+      <text x="0" y="197" class="cap" id="a7m2"></text>
+    </svg>
+    <div class="ctl">
+      <button id="a7mode">Showing: TRAINING</button>
+      <span class="readout" id="a7read"></span>
+    </div>
+    <figcaption>Press the button to take the scaffolding down. Everything that disappears was
+    never part of the thing you ship.</figcaption>
+  </figure>
+
+  <h3 style="font-size:1.05rem;margin-top:2.5rem">Reading it off, piece by piece</h3>
+
+  <p><strong>One encoder, not two.</strong> Both lanes go through the same taped encoder. Nothing
+  about it differs between them &mdash; it is the same 109 M numbers, and they do not move for
+  either kind of clip. That is part&nbsp;2.</p>
+
+  <p><strong>The detour is only on the synthetic side.</strong> Real clips never touch the adapter,
+  during training or after. So the fake-voice lesson from the synthetic clips has exactly one place
+  it can land, and that place is the thing you are going to throw away.</p>
+
+  <p><strong>Both lanes end at the same decoder.</strong> This is the part that has to work, and it
+  is why part&nbsp;5 mattered: because the adapter started at zero, a synthetic clip arrives at the
+  decoder looking almost like a real one, so the word it teaches still means something when a real
+  caller says it.</p>
+
+  <p><strong>Then you delete the adapter.</strong> What ships is Typhoon's encoder, untouched, and
+  a decoder that knows more words than it did. That is the entire deliverable.</p>
+
+  <h3 style="font-size:1.05rem;margin-top:2.5rem">Where this can fail &mdash; three honest ones</h3>
+
+  <p><strong>1. The decoder can leak.</strong> The decoder sees synthetic clips too, and nothing
+  stops it picking up TTS-flavoured habits directly, where no adapter can catch them. Some poison
+  reaches the half you are keeping. You would see it as real-speech accuracy getting
+  <em>worse</em> as you add more synthetic &mdash; which is exactly why the amount of synthetic has
+  to be swept rather than guessed.</p>
+
+  <p><strong>2. Nothing here knows which lesson is which.</strong> No part of this machinery
+  inspects a lesson and decides &ldquo;that one is vocabulary, that one is fake voice&rdquo;. The
+  arrangement just leaves the fake-voice lesson nowhere else to go. Whether the split is actually
+  clean is a measurement, not a guarantee.</p>
+
+  <p><strong>3. It might all be unnecessary.</strong> The published claim this is built on
+  &mdash; that transducer models like Typhoon get no benefit from synthetic audio &mdash; is one
+  paper from 2021, and another result partly contradicts it. That is why the experiment starts with
+  the plain untrained baseline and the naive mix, before any of this gets built.</p>
+
+  <div class="quiz">
+    <p><strong>Check yourself:</strong> what actually ships at the end?</p>
+    <button onclick="pick(this)">Typhoon's encoder unchanged, plus a decoder that learned more words</button>
+    <button onclick="pick(this)">Typhoon plus the adapter, which is the thing you trained</button>
+    <button onclick="pick(this)">A retrained encoder that handles synthetic audio better</button>
+    <p class="fb ok">Right &mdash; and notice how little that is. One group of 6 M numbers changed.
+       Everything else in the design exists to make sure that is the <em>only</em> thing that
+       changed.</p>
+    <p class="fb no">That is what a normal adapter setup ships &mdash; mint_v4, for instance, where
+       the adapter <em>is</em> the product. Here it is the opposite: the adapter is scaffolding,
+       and shipping it would mean shipping the fake-voice lesson you spent the whole design
+       catching.</p>
+    <p class="fb no">The encoder was taped from the first step to the last &mdash; it cannot have
+       changed. And handling synthetic audio well was never a goal; no real caller sounds like
+       VoxCPM.</p>
+    <details class="hint"><summary>Give me a hint</summary>
+      <p>Go back to the diagram and press the button. What is still on screen?</p></details>
+  </div>
+
+  <p class="ask">Last one, and it is the real question: of the three failure modes above, which
+  would you test <em>first</em>, and what number would tell you it had happened?</p>
+</section>
+</main>
+
+<script>
+function pick(btn){
+  var q=btn.closest('.quiz');
+  var btns=[].slice.call(q.querySelectorAll('button'));
+  var fbs=q.querySelectorAll('.fb');
+  fbs.forEach(function(f){f.classList.remove('show')});
+  fbs[btns.indexOf(btn)].classList.add('show');
+}
+
+/* Part 1 — waveform with a draggable slice. Deterministic, no randomness between renders. */
+(function(){
+  var pos=document.getElementById('pos'), read=document.getElementById('posRead'),
+      wave=document.getElementById('wave'), sel=document.getElementById('sel'),
+      micVals=document.getElementById('micVals'), encVals=document.getElementById('encVals'),
+      encBars=document.getElementById('encBars'), encNote=document.getElementById('encNote'),
+      micCount=document.getElementById('micCount');
+
+  function hash(n){ var x=Math.sin(n*127.1)*43758.5453; return x-Math.floor(x); }
+
+  /* loudness of the caller across the two seconds: quiet, then speech, then quiet */
+  function loud(t){
+    if(t<0.18) return 0.04;
+    if(t<0.28) return 0.04+(t-0.18)/0.10*0.9;
+    if(t<0.74) return 0.6+0.4*Math.abs(Math.sin(t*26));
+    if(t<0.82) return 0.94-(t-0.74)/0.08*0.88;
+    return 0.05;
+  }
+
+  var N=190, s='';
+  for(var i=0;i<N;i++){
+    var t=i/N, a=loud(t)*24*(0.55+0.45*hash(i));
+    var x=i*2.08;
+    s+='<line x1="'+x.toFixed(1)+'" y1="'+(43-a).toFixed(1)+'" x2="'+x.toFixed(1)+'" y2="'
+      +(43+a).toFixed(1)+'" stroke="var(--cool)" stroke-width="1.3" opacity=".65"/>';
+  }
+  s+='<line x1="0" y1="43" x2="396" y2="43" stroke="var(--line)" stroke-width="1"/>';
+  wave.innerHTML=s;
+
+  function draw(){
+    var p=+pos.value, t=p/100, L=loud(t);
+    sel.setAttribute('x', (t*380).toFixed(1));
+
+    /* raw mic samples: just the wave, scaled to int16-ish numbers he'd recognise */
+    var m=[];
+    for(var i=0;i<10;i++){
+      var v=Math.round((hash(p*13+i)*2-1)*L*9000);
+      m.push((v>=0?' ':'')+v);
+    }
+    micVals.textContent=m.join(' ');
+    micCount.textContent='1,280 numbers for this slice — first 10:';
+
+    /* encoder row: 512 values. quiet -> mostly near zero; loud -> broad and varied */
+    var vals=[], bars='';
+    for(var k=0;k<512;k++){
+      var base=hash(k*3.7)*2-1;
+      var gate=hash(k*1.3+p*0.07);
+      var act=(L>0.25 ? (gate<0.62?base*L*1.6:base*0.12)
+                      : (gate<0.07?base*0.9:base*0.06));
+      vals.push(act);
+      var h=Math.min(18, Math.abs(act)*17);
+      var col=Math.abs(act)>0.25?'var(--accent)':'var(--muted)';
+      bars+='<rect x="'+(k*0.742).toFixed(2)+'" y="'+(224-h).toFixed(1)+'" width="0.62" height="'
+        +h.toFixed(1)+'" fill="'+col+'" opacity="'+(Math.abs(act)>0.25?'.85':'.4')+'"/>';
+    }
+    encBars.innerHTML=bars
+      +'<line x1="0" y1="224" x2="380" y2="224" stroke="var(--line)" stroke-width="1"/>';
+    encVals.textContent=vals.slice(0,6).map(function(v){
+      return (v>=0?' ':'')+v.toFixed(2); }).join('  ');
+
+    var busy=vals.filter(function(v){return Math.abs(v)>0.25}).length;
+    encNote.textContent=busy+' of the 512 are clearly lit — '
+      +(L>0.25?'this slice has speech in it':'this slice is near-silence');
+    read.textContent=(t*2).toFixed(2)+' s';
+  }
+  pos.oninput=draw; draw();
+})();
+
+
+
+
+
+
+
+/* Part 6 - the whole setup, training vs what ships. */
+(function(){
+  var btn=document.getElementById('a7mode'), read=document.getElementById('a7read'),
+      title=document.getElementById('a7title'),
+      synsrc=document.getElementById('a7synsrc'), ada=document.getElementById('a7ada'),
+      in2=document.getElementById('a7in2'), deccap=document.getElementById('a7deccap'),
+      m1=document.getElementById('a7m1'), m2=document.getElementById('a7m2');
+  var training=true;
+
+  function draw(){
+    var o = training ? '1' : '0.12';
+    synsrc.setAttribute('opacity', o);
+    ada.setAttribute('opacity', o);
+    in2.setAttribute('opacity', o);
+
+    btn.textContent = 'Showing: ' + (training ? 'TRAINING' : 'WHAT SHIPS');
+    title.textContent = training
+      ? 'During training \u2014 two lanes, one taped encoder, one shared decoder'
+      : 'What ships \u2014 the scaffolding is gone';
+    deccap.textContent = training ? '6 M, learning' : '6 M, knows more words';
+
+    if(training){
+      m1.textContent='Real clips go straight through. Synthetic clips take the detour.';
+      m1.setAttribute('fill','var(--muted)');
+      m2.textContent='The fake-voice lesson has exactly one place it can land \u2014 the bin.';
+      m2.setAttribute('fill','var(--accent)');
+      read.textContent='moving: adapter + decoder';
+    }else{
+      m1.textContent='Encoder: byte-identical to what you downloaded. Adapter: deleted.';
+      m1.setAttribute('fill','var(--good)');
+      m2.textContent='One group of 6 M numbers changed. That is the whole deliverable.';
+      m2.setAttribute('fill','var(--good)');
+      read.textContent='changed: the decoder, and nothing else';
+    }
+  }
+  btn.onclick=function(){ training=!training; draw(); };
+  draw();
+})();
+
+/* Part 5 - the same clip down two lanes; zero start vs random start. */
+(function(){
+  var real=document.getElementById('a6real'), syn=document.getElementById('a6syn'),
+      title=document.getElementById('a6title'), agree=document.getElementById('a6agree'),
+      m1=document.getElementById('a6msg1'), m2=document.getElementById('a6msg2'),
+      prev=document.getElementById('a6prev'), next=document.getElementById('a6next'),
+      read=document.getElementById('a6read'), mode=document.getElementById('a6mode');
+  var n=0, MAX=3, zero=true, N=512;
+
+  function hash(v){ var x=Math.sin(v*127.1)*43758.5453; return x-Math.floor(x); }
+
+  var base=[];
+  for(var k=0;k<N;k++){
+    base.push(hash(k*1.9)<0.55 ? (hash(k*3.7)*2-1)*0.95 : (hash(k*3.7)*2-1)*0.10);
+  }
+
+  function bars(vals, mid, g){
+    var s='';
+    for(var k=0;k<N;k++){
+      var h=Math.max(0.4,Math.min(15,Math.abs(vals[k])*15));
+      var y=vals[k]>=0?mid-h:mid;
+      var strong=Math.abs(vals[k])>0.22;
+      s+='<rect x="'+(k*0.742).toFixed(2)+'" y="'+y.toFixed(1)+'" width="0.62" height="'
+        +h.toFixed(1)+'" fill="'+(strong?'var(--accent)':'var(--muted)')
+        +'" opacity="'+(strong?'.85':'.4')+'"/>';
+    }
+    g.innerHTML=s;
+  }
+
+  function draw(){
+    var syv=[], same=0;
+    for(var k=0;k<N;k++){
+      var d;
+      if(zero){
+        /* starts at exactly 0, drifts a little per step and only on some numbers */
+        d = n===0 ? 0 : (hash(k*5.3+11)*2-1)*0.055*n*(hash(k*2.2)<0.45?1:0.15);
+      }else{
+        /* random from the very first step, barely related to the input */
+        d = (hash(k*7.7+3)*2-1)*0.85 + (hash(k*5.3+11)*2-1)*0.05*n;
+      }
+      var v=base[k]+d;
+      syv.push(v);
+      if(Math.abs(d)<0.02) same++;
+    }
+    bars(base, 60, real);
+    bars(syv, 126, syn);
+
+    title.textContent = n===0
+      ? 'Before any training. The same clip sent down both lanes.'
+      : 'After '+n+' training step'+(n>1?'s':'')+'.';
+
+    agree.textContent = same+' of the 512 numbers are the same in both lanes';
+    agree.setAttribute('fill', same>400 ? 'var(--good)' : 'var(--warm)');
+
+    if(zero){
+      m1.textContent = n===0
+        ? 'Identical. Not similar \u2014 the same numbers, because the adapter is adding zero.'
+        : 'Drifting apart only where the adapter has learned it needs to.';
+      m1.setAttribute('fill','var(--good)');
+      m2.textContent = 'The synthetic lane is a branch of the real one.';
+      m2.setAttribute('fill','var(--good)');
+    }else{
+      m1.textContent = n===0
+        ? 'Unrelated already \u2014 and nothing has been taught yet.'
+        : 'Still unrelated. Training is not closing this gap.';
+      m1.setAttribute('fill','var(--warm)');
+      m2.textContent = 'Whatever the decoder learns down here says nothing about a real caller.';
+      m2.setAttribute('fill','var(--warm)');
+    }
+    read.textContent=n+' / '+MAX;
+    mode.textContent='Start: '+(zero?'ZERO':'RANDOM');
+    prev.disabled=(n===0); next.disabled=(n===MAX);
+  }
+  next.onclick=function(){ if(n<MAX){n++;draw();} };
+  prev.onclick=function(){ if(n>0){n--;draw();} };
+  mode.onclick=function(){ zero=!zero; n=0; draw(); };
+  draw();
+})();
+
+/* Part 4, opener - one number in, one out, with and without the corner. */
+(function(){
+  var inp=document.getElementById('a5in'), btn=document.getElementById('a5bend'),
+      read=document.getElementById('a5read'), curve=document.getElementById('a5curve'),
+      dot=document.getElementById('a5dot'), chain=document.getElementById('a5chain'),
+      chain2=document.getElementById('a5chain2'), note=document.getElementById('a5note'),
+      title=document.getElementById('a5title');
+  var bend=false, W1=1.4, W2=0.8;          /* the two fixed weights, squeeze then widen */
+
+  function out(x){ var m=x*W1; if(bend) m=Math.max(0,m); return m*W2; }
+  function px(x){ return 180+x*150; }      /* input  -1..1  -> 30..330 */
+  function py(y){ return 180-y*72; }       /* output -1.2..1.2 */
+
+  function draw(){
+    var x=(+inp.value)/100, mid=x*W1, gated=bend?Math.max(0,mid):mid, y=gated*W2;
+
+    var d='';
+    for(var i=0;i<=120;i++){
+      var xv=-1+i/60;
+      d+=(i?'L':'M')+px(xv).toFixed(1)+' '+py(out(xv)).toFixed(1)+' ';
+    }
+    curve.setAttribute('d',d);
+    dot.setAttribute('cx',px(x).toFixed(1));
+    dot.setAttribute('cy',py(y).toFixed(1));
+
+    title.textContent = bend
+      ? 'The bend is ON \u2014 the line has a corner in it'
+      : 'The bend is OFF \u2014 the line is straight';
+
+    chain.textContent = 'in '+x.toFixed(2)+'   \u2192 narrow \u2192 '+mid.toFixed(2)
+      + (bend ? ('   \u2192 bend \u2192 '+gated.toFixed(2)) : '   \u2192 (no bend)     ')
+      + '   \u2192 widen \u2192 out '+y.toFixed(2);
+    chain2.textContent = bend && mid<0
+      ? 'the bend threw the negative away \u2014 this detector is silent'
+      : '';
+    chain2.setAttribute('fill', bend&&mid<0 ? 'var(--good)' : 'var(--muted)');
+
+    if(bend){
+      note.textContent='Everything left of the corner gives exactly zero out. That is the adapter saying nothing.';
+      note.setAttribute('fill','var(--good)');
+    }else{
+      note.textContent='Output tracks input everywhere. It can be big, small or negative \u2014 but never nothing.';
+      note.setAttribute('fill','var(--warm)');
+    }
+    read.textContent='in '+x.toFixed(2)+'  out '+y.toFixed(2);
+    btn.textContent='The bend: '+(bend?'ON':'OFF');
+  }
+  inp.oninput=draw; btn.onclick=function(){ bend=!bend; draw(); };
+  draw();
+})();
+
+/* Part 4 - four slices, detectors allowed to stay silent or not. */
+(function(){
+  var cols=document.getElementById('a4cols'), btn=document.getElementById('a4bend'),
+      read=document.getElementById('a4read'),
+      n1=document.getElementById('a4note1'), n2=document.getElementById('a4note2');
+  var bend=false, NAMES=['silence','a vowel','a burst','phrase end'], NB=52;
+
+  function hash(n){ var x=Math.sin(n*127.1)*43758.5453; return x-Math.floor(x); }
+
+  /* raw detector readings: signed, deterministic, different per slice */
+  function act(i,c){ return (hash(i*3.1+c*17.3)*2-1) + 0.30*Math.sin(i*0.9+c*1.7); }
+  /* each detector's fixed output pattern */
+  function basis(i,j){ return Math.sin((j+1)*(i+3)*0.21) * 0.9; }
+
+  function draw(){
+    var s='', totals=[];
+    for(var c=0;c<4;c++){
+      var x0=c*100;
+      s+='<text x="'+(x0+44)+'" y="26" class="lbl" text-anchor="middle">'+NAMES[c]+'</text>';
+
+      var contrib=[], live=0;
+      for(var i=0;i<32;i++){
+        var a=act(i,c);
+        var v=bend ? Math.max(0,a) : a;
+        contrib.push(v);
+        if(v!==0) live++;
+      }
+      totals.push(live);
+
+      for(var i2=0;i2<32;i2++){
+        var cx=x0+6+(i2%8)*11, cy=40+Math.floor(i2/8)*11;
+        var v2=contrib[i2], silent=(v2===0);
+        s+='<circle cx="'+cx+'" cy="'+cy+'" r="3.6" fill="'
+          +(silent?'none':'var(--accent)')+'" opacity="'
+          +(silent?'1':(0.30+Math.min(0.7,Math.abs(v2)*0.55)).toFixed(2))
+          +'" stroke="'+(silent?'var(--line)':'none')+'" stroke-width="1"/>';
+      }
+      s+='<text x="'+(x0+44)+'" y="99" class="cap" text-anchor="middle">'
+        +live+' of 32 contributing</text>';
+
+      /* the resulting correction */
+      var mx=0, corr=[];
+      for(var j=0;j<NB;j++){
+        var t=0;
+        for(var i3=0;i3<32;i3++) t+=contrib[i3]*basis(i3,j);
+        corr.push(t); if(Math.abs(t)>mx) mx=Math.abs(t);
+      }
+      for(var j2=0;j2<NB;j2++){
+        var h=Math.max(0.5,Math.min(15,Math.abs(corr[j2])/(mx||1)*15));
+        var y=corr[j2]>=0?126-h:126;
+        s+='<rect x="'+(x0+6+j2*1.62).toFixed(2)+'" y="'+y.toFixed(1)
+          +'" width="1.25" height="'+h.toFixed(1)+'" fill="var(--cool)" opacity=".75"/>';
+      }
+      s+='<line x1="'+(x0+6)+'" y1="126" x2="'+(x0+6+NB*1.62).toFixed(1)
+        +'" y2="126" stroke="var(--line)" stroke-width="1"/>';
+      s+='<text x="'+(x0+44)+'" y="152" class="cap" text-anchor="middle">the correction</text>';
+    }
+    cols.innerHTML=s;
+
+    btn.textContent='The bend: '+(bend?'ON':'OFF');
+    if(bend){
+      n1.textContent='Different detectors stood down in each slice \u2014 '+totals.join(', ')
+        +' of 32. The four corrections are genuinely different shapes.';
+      n1.setAttribute('fill','var(--good)');
+      n2.textContent='The bin can now aim at what is actually in front of it.';
+      n2.setAttribute('fill','var(--good)');
+      read.textContent='silenced: '+totals.map(function(t){return 32-t}).join(' / ');
+    }else{
+      n1.textContent='All 32 contribute in every slice. None of them can ever stand down.';
+      n1.setAttribute('fill','var(--warm)');
+      n2.textContent='Every correction is a blend of the same thirty-two things \u2014 nothing can be aimed.';
+      n2.setAttribute('fill','var(--warm)');
+      read.textContent='silenced: 0 / 0 / 0 / 0';
+    }
+  }
+  btn.onclick=function(){ bend=!bend; draw(); };
+  draw();
+})();
+
+/* Part 2 - stepper: which groups of weights move, with the encoder taped or not. */
+(function(){
+  var enc=document.getElementById('a2enc'), ada=document.getElementById('a2ada'),
+      dec=document.getElementById('a2dec'), msg=document.getElementById('a2msg'),
+      title=document.getElementById('a2title'), lock=document.getElementById('a2lock'),
+      prev=document.getElementById('a2prev'), next=document.getElementById('a2next'),
+      read=document.getElementById('a2read'), tape=document.getElementById('a2tape');
+  var n=0, MAX=4, taped=true;
+
+  function grid(g, count, x0, y0, cols, moved){
+    var s='';
+    for(var i=0;i<count;i++){
+      var c=i%cols, r=Math.floor(i/cols);
+      var fill = moved ? 'var(--accent)' : 'var(--muted)';
+      var op   = moved ? '.9' : '.28';
+      s+='<rect x="'+(x0+c*6.4).toFixed(1)+'" y="'+(y0+r*8).toFixed(1)
+        +'" width="5" height="5.6" rx="1" fill="'+fill+'" opacity="'+op+'"/>';
+    }
+    g.innerHTML=s;
+  }
+
+  var titles=[
+    'Nothing has happened yet. One square is about a million numbers, drawn to scale.',
+    'A synthetic clip goes in. The model writes the wrong thing.',
+    'Nudged. Watch which groups changed colour.',
+    'Another clip. Same again.',
+    'Four clips in.'
+  ];
+
+  function draw(){
+    var active = n>=2;
+    var encMoved = active && !taped;
+    grid(enc, 109, 0, 38, 28, encMoved);
+    grid(ada,   1,  0, 116, 28, active);
+    grid(dec,   6,  0, 152, 28, active);
+
+    title.textContent = titles[n];
+    lock.textContent = taped ? '\uD83D\uDD12 taped down' : '\u26A0 free to move';
+    lock.setAttribute('fill', taped ? 'var(--muted)' : 'var(--warm)');
+    tape.textContent = 'Encoder: ' + (taped ? 'TAPED' : 'FREE');
+
+    if(n<2){
+      msg.textContent = n===0
+        ? 'Press Feed a clip. Decide first which group you think moves.'
+        : 'The nudge is being worked out for every number in the model, taped or not.';
+      msg.setAttribute('fill','var(--muted)');
+    } else if(taped){
+      msg.textContent = (n===MAX)
+        ? 'Adapter and decoder have changed. The encoder is exactly as you downloaded it.'
+        : 'Adapter and decoder moved. The taped group did not \u2014 its nudge was thrown away.';
+      msg.setAttribute('fill','var(--good)');
+    } else {
+      msg.textContent = (n===MAX)
+        ? 'The encoder has moved too. Delete the adapter and the encoder is still different.'
+        : 'The encoder moved as well \u2014 and that change has no off-switch.';
+      msg.setAttribute('fill','var(--warm)');
+    }
+    read.textContent = n+' / '+MAX;
+    prev.disabled = (n===0);
+    next.disabled = (n===MAX);
+  }
+  next.onclick=function(){ if(n<MAX){n++;draw();} };
+  prev.onclick=function(){ if(n>0){n--;draw();} };
+  tape.onclick=function(){ taped=!taped; draw(); };
+  draw();
+})();
+
+/* Part 3 - three rows: encoder out, adapter's own correction, the sum. */
+(function(){
+  var tog=document.getElementById('a3toggle'), str=document.getElementById('a3str'),
+      read=document.getElementById('a3read'),
+      rowA=document.getElementById('a3rowA'), rowB=document.getElementById('a3rowB'),
+      rowC=document.getElementById('a3rowC'),
+      noteB=document.getElementById('a3noteB'), noteC=document.getElementById('a3noteC');
+  var on=true, N=512;
+
+  function hash(n){ var x=Math.sin(n*127.1)*43758.5453; return x-Math.floor(x); }
+
+  var base=[], corr=[];
+  for(var k=0;k<N;k++){
+    var g=hash(k*1.9);
+    base.push(g<0.55 ? (hash(k*3.7)*2-1)*0.95 : (hash(k*3.7)*2-1)*0.10);
+    corr.push((hash(k*5.3+11)*2-1)*0.30);
+  }
+
+  function bars(vals, mid, g){
+    var s='';
+    for(var k=0;k<N;k++){
+      var h=Math.max(0.4, Math.min(15, Math.abs(vals[k])*15));
+      var y=vals[k]>=0 ? mid-h : mid;
+      var strong=Math.abs(vals[k])>0.22;
+      s+='<rect x="'+(k*0.742).toFixed(2)+'" y="'+y.toFixed(1)+'" width="0.62" height="'
+        +h.toFixed(1)+'" fill="'+(strong?'var(--accent)':'var(--muted)')
+        +'" opacity="'+(strong?'.85':'.4')+'"/>';
+    }
+    g.innerHTML=s;
+  }
+
+  function draw(){
+    var scale = on ? (+str.value)/100 : 0;
+    var applied=[], sum=[], moved=0;
+    for(var k=0;k<N;k++){
+      var c=corr[k]*scale;
+      applied.push(c);
+      sum.push(base[k]+c);
+      if(Math.abs(c)>0.02) moved++;
+    }
+    bars(base, 52, rowA);
+    bars(applied, 114, rowB);
+    bars(sum, 185, rowC);
+
+    if(!on || scale===0){
+      noteB.textContent='every one of the 512 is zero \u2014 the adapter is contributing nothing';
+      noteC.textContent='identical to the top row. Not close to it. The same numbers.';
+    }else{
+      noteB.textContent=moved+' of the 512 carry a correction, and all of them are small';
+      noteC.textContent='the top row, shifted \u2014 every original value is still underneath';
+    }
+    str.disabled=!on;
+    tog.textContent='Adapter: '+(on?'ON':'OFF');
+    read.textContent = on ? ('strength \u00d7'+(scale).toFixed(2)) : 'switched off';
+  }
+  tog.onclick=function(){ on=!on; draw(); };
+  str.oninput=draw;
+  draw();
+})();
+
+(function(){
+  var parts=document.querySelectorAll('section.part');
+  if(!parts.length||!window.IntersectionObserver) return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var n=e.target.id.replace('part-','');
+      document.querySelectorAll('nav li').forEach(function(li){
+        li.classList.toggle('current', li.dataset.part===n);
+      });
+    });
+  },{rootMargin:'-15% 0px -70% 0px'});
+  parts.forEach(function(p){io.observe(p)});
+})();
+</script>
+</body></html>

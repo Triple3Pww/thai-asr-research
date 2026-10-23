@@ -1,0 +1,20 @@
+{
+ "base": "results\\nectec_fc_greedy_hyps.jsonl",
+ "arm": "results\\loop9_gl75_g50_nec_hyps.jsonl",
+ "official_cer": {
+  "base": 0.05059,
+  "arm": 0.04823
+ },
+ "official_entity_recall": {
+  "base": 0.4268,
+  "arm": 0.4268
+ },
+ "own_cer": {
+  "base": 0.05016,
+  "arm": 0.04791
+ },
+ "rel_change": -0.0465,
+ "p_arm_not_better": 0.0365,
+ "utts_changed": 219,
+ "half": "dev"
+}

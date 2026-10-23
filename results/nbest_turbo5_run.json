@@ -1,0 +1,7 @@
+{
+ "model": "E:/fw-spike/models/typhoon-whisper-turbo-ct2",
+ "n": 5,
+ "utts": 682,
+ "latency_ms_p50": 459.0,
+ "latency_ms_p90": 652.6
+}

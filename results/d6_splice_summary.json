@@ -1,0 +1,114 @@
+{
+ "arm": "D6 two-model splice",
+ "corpus": "thai-contextasr-bench, 682 real utts",
+ "align_backend": "dp",
+ "tau": -1.5,
+ "rows": [
+  {
+   "system": "RNN-T, no list (D0)",
+   "tag": "d4_ctrl_none",
+   "condition": "none",
+   "recall": 0.32801822323462415,
+   "gold": [
+    144,
+    439
+   ],
+   "cer": 0.11248415716096324,
+   "u_cer": 0.10570929567285976,
+   "b_cer": 0.26177836761778367,
+   "rtf": 0.0279,
+   "spots_accepted": null
+  },
+  {
+   "system": "RNN-T + boosting tree (D4) b50",
+   "tag": "d4_real_bias50_a1_s0.5",
+   "condition": "bias@50",
+   "recall": 0.35079726651480636,
+   "gold": [
+    154,
+    439
+   ],
+   "cer": 0.11270102023171365,
+   "u_cer": 0.10102683007618417,
+   "b_cer": 0.3730691739422431,
+   "rtf": 0.0212,
+   "spots_accepted": null
+  },
+  {
+   "system": "CTC alone, no list",
+   "tag": "d6_ctc_real_none_tau-1.5",
+   "condition": "none",
+   "recall": 0.1571753986332574,
+   "gold": [
+    69,
+    439
+   ],
+   "cer": 0.14439559495338614,
+   "u_cer": 0.13464723418350447,
+   "b_cer": 0.33421284080914687,
+   "rtf": 0.0048,
+   "spots_accepted": 0
+  },
+  {
+   "system": "CTC + spot, dis@50 (control)",
+   "tag": "d6_ctc_real_dis50_tau-1.5",
+   "condition": "dis@50",
+   "recall": 0.1548974943052392,
+   "gold": [
+    68,
+    439
+   ],
+   "cer": 0.14617345477458898,
+   "u_cer": 0.13107892438796712,
+   "b_cer": 0.4401759530791789,
+   "rtf": 0.0189,
+   "spots_accepted": 48
+  },
+  {
+   "system": "CTC + spot, bias@50 (theirs)",
+   "tag": "d6_ctc_real_bias50_tau-1.5",
+   "condition": "bias@50",
+   "recall": 0.48519362186788156,
+   "gold": [
+    213,
+    439
+   ],
+   "cer": 0.13910753642270374,
+   "u_cer": 0.12916679213466228,
+   "b_cer": 0.33015046296296297,
+   "rtf": 0.0193,
+   "spots_accepted": 253
+  },
+  {
+   "system": "RNN-T + spot, dis@50 (control)",
+   "tag": "d6_rnnt_real_dis50_tau-1.5",
+   "condition": "dis@50",
+   "recall": 0.32801822323462415,
+   "gold": [
+    144,
+    439
+   ],
+   "cer": 0.11499567847882454,
+   "u_cer": 0.10450480291487248,
+   "b_cer": 0.34710193204530315,
+   "rtf": 0.0318,
+   "spots_accepted": 48
+  },
+  {
+   "system": "RNN-T + spot, bias@50 (OURS)",
+   "tag": "d6_rnnt_real_bias50_tau-1.5",
+   "condition": "bias@50",
+   "recall": 0.5535307517084282,
+   "gold": [
+    243,
+    439
+   ],
+   "cer": 0.11162270321442402,
+   "u_cer": 0.10351109638953296,
+   "b_cer": 0.2749317975143983,
+   "rtf": 0.0316,
+   "spots_accepted": 253
+  }
+ ],
+ "gate": "compare bias@50 against dis@50 (same list size), never against none"
+}

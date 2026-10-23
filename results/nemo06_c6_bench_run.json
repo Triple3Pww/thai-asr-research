@@ -1,0 +1,13 @@
+{
+ "model": "E:/asr-spike/models/typhoon-nemotron/typhoon-asr-streaming-nemotron-0.6b.nemo",
+ "strategy": "greedy_batch",
+ "beam": 4,
+ "lm": null,
+ "lm_alpha": 0.0,
+ "prompt": "th-TH",
+ "att_context": "56,6",
+ "n": 682,
+ "latency_ms_p50": 88.1,
+ "latency_ms_p90": 113.2,
+ "rtf": 0.0096
+}

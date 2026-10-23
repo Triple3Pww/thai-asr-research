@@ -1,0 +1,13 @@
+{
+ "tag": "d4_real_bias500_a1_s0.5",
+ "condition": "bias@500",
+ "n_utts": 682,
+ "alpha": 1.0,
+ "context_score": 0.5,
+ "audio_h": 1.83,
+ "rtf": 0.0311,
+ "tree_rebuilds": 682,
+ "tree_rebuild_s": 90.1,
+ "device": "cuda",
+ "align_backend": "dp"
+}

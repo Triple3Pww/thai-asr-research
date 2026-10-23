@@ -1,0 +1,53 @@
+{
+  "none": {
+    "cer": 0.04894678927925804,
+    "b_cer": 0.19,
+    "u_cer": 0.028656837184212892,
+    "entity_recall": 0.2920353982300885,
+    "script_compliance": null,
+    "distractor_fire_rate": null,
+    "counts": {
+      "overall": {
+        "sub": 985,
+        "ins": 466,
+        "dele": 1040,
+        "ref": 50892
+      },
+      "biased": {
+        "sub": 653,
+        "ins": 0,
+        "dele": 563,
+        "ref": 6400
+      },
+      "unbiased": {
+        "sub": 332,
+        "ins": 466,
+        "dele": 477,
+        "ref": 44492
+      },
+      "gold": [
+        198,
+        678
+      ],
+      "fired": [
+        0,
+        0
+      ]
+    },
+    "n_utts": 400,
+    "ci95": {
+      "cer": [
+        0.0447,
+        0.0533
+      ],
+      "b_cer": [
+        0.1749,
+        0.2051
+      ],
+      "entity_recall": [
+        0.2568,
+        0.3278
+      ]
+    }
+  }
+}

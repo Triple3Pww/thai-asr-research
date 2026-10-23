@@ -1,0 +1,13 @@
+{
+ "tag": "pathumma_d4_synth_bias50_a1_s3",
+ "condition": "bias@50",
+ "n_utts": 1380,
+ "alpha": 1.0,
+ "context_score": 3.0,
+ "audio_h": 3.847,
+ "rtf": 0.036,
+ "tree_rebuilds": 4140,
+ "tree_rebuild_s": 279.6,
+ "device": "cuda",
+ "align_backend": "dp"
+}

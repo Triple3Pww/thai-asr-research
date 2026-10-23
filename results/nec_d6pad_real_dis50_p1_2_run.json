@@ -1,0 +1,13 @@
+{
+ "tag": "nec_d6pad_real_dis50_p1_2",
+ "mode": "rnnt",
+ "condition": "dis@50",
+ "split": "real",
+ "n_utts": 682,
+ "tau": -1.5,
+ "max_gap": 6,
+ "spots_accepted": 48,
+ "audio_h": 1.83,
+ "rtf": 0.0266,
+ "align_backend": "dp"
+}

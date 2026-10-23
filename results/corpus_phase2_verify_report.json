@@ -1,0 +1,45 @@
+{
+  "n": 1960,
+  "keep": 1502,
+  "reject": 458,
+  "keep_rate": 0.7663265306122449,
+  "reasons": {
+    "panel_rejected": 194,
+    "entity_unheard": 227,
+    "too_short_for_text": 2,
+    "internal_stall": 34,
+    "repetition": 1
+  },
+  "chars_per_s": {
+    "median": 9.714655810510733,
+    "band": [
+      2.9392506291635803,
+      16.490060991857884
+    ],
+    "mad_k": 4.0
+  },
+  "thresholds": {
+    "cer_max": 0.1,
+    "rep_max": 0.8,
+    "gap_max": 1.5
+  },
+  "asr": "panel",
+  "hard_case_texts": [
+    "p2_0263",
+    "p2_0257",
+    "p2_0004",
+    "p2_0011",
+    "p2_0121",
+    "p2_0192",
+    "p2_0007",
+    "p2_0065",
+    "p2_0210",
+    "p2_0083",
+    "p2_0103",
+    "p2_0102",
+    "p2_0089",
+    "p2_0074",
+    "p2_0088"
+  ],
+  "note": "CER here is a gate, not an arm number -- adapter/_score.py pins the backend, this does not."
+}

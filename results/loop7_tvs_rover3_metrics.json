@@ -1,0 +1,16 @@
+{
+ "manifest": "E:/asr-bench/typhoon-eval/manifest_tvspeech.jsonl",
+ "pool": [
+  "nec",
+  "patL",
+  "twL"
+ ],
+ "cer": {
+  "nec": 0.08106,
+  "patL": 0.11588,
+  "twL": 0.07845,
+  "rover": 0.0803
+ },
+ "rel_vs_base": -0.0094,
+ "p_rover_not_better": 0.3618
+}

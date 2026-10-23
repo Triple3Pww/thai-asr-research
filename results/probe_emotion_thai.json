@@ -1,0 +1,289 @@
+{
+  "probe": "emotion-transfer-to-thai",
+  "date": "2026-09-19 16:08:07",
+  "question": "does prosody-based emotion recognition transfer zero-shot to Thai?",
+  "corpus": {
+    "name": "airesearch/thai-ser",
+    "licence": "CC-BY-SA-4.0",
+    "mic": "mic_clip",
+    "agreement_min": 0.7,
+    "rows_scanned": 2882,
+    "rows_kept": 1256,
+    "held_out_frustrated_n": 760,
+    "actors": 22,
+    "audio_seconds": 5912.0,
+    "gold_distribution": {
+      "NEUTRAL": 415,
+      "HAPPY": 352,
+      "ANGRY": 289,
+      "SAD": 200
+    }
+  },
+  "human_ceiling": {
+    "leave_one_out_accuracy": 0.951140544518028,
+    "rows_usable": 1256,
+    "rows_total": 1256,
+    "votes_scored": 6795,
+    "majority_vs_assigned_accuracy": 0.9285714285714286,
+    "majority_vs_assigned_n": 1204,
+    "published_human_accuracy_5way": 0.772,
+    "published_krippendorff_alpha": 0.692,
+    "published_source": "THAI-SER, arXiv 2507.09618 -- 5-way over the whole corpus, NOT directly comparable to the 4-way filtered numbers here"
+  },
+  "sensevoice_raw_samples": [
+    "<|en|><|EMO_UNKNOWN|><|Speech|><|woitn|>so the cap made i add of timing cap",
+    "<|yue|><|EMO_UNKNOWN|><|Speech|><|woitn|>佢面电楼你饭俾电及灯系就及楼面有病电实铺啲臭柳砌柳啦咁埋又只牛及",
+    "<|yue|><|NEUTRAL|><|Speech|><|woitn|>诶两个食样原嚟咗喂红咙",
+    "<|ja|><|NEUTRAL|><|Speech|><|woitn|>か",
+    "<|yue|><|NEUTRAL|><|Speech|><|woitn|>town咧急爆狂佢uc",
+    "<|yue|><|NEUTRAL|><|Speech|><|woitn|>婆话 look下你正话狂啲鞋摆嘅佢嘅 bow",
+    "<|ja|><|NEUTRAL|><|Speech|><|woitn|>t up糖売",
+    "<|yue|><|EMO_UNKNOWN|><|Speech|><|woitn|>咕噜卡低破吉喉龙鼻铁十有啦嘛佢"
+  ],
+  "sensevoice": {
+    "n": 1256,
+    "accuracy": 0.47611464968152867,
+    "ci95": [
+      0.44849391977639635,
+      0.503735379586661
+    ],
+    "chance_uniform": 0.25,
+    "chance_majority_class": 0.3304140127388535,
+    "beats_majority_class": true,
+    "macro_recall": 0.43217920952447725,
+    "per_class": {
+      "NEUTRAL": {
+        "support": 415,
+        "recall": 0.6457831325301204,
+        "precision": 0.950354609929078
+      },
+      "HAPPY": {
+        "support": 352,
+        "recall": 0.35511363636363635,
+        "precision": 0.6218905472636815
+      },
+      "ANGRY": {
+        "support": 289,
+        "recall": 0.6678200692041523,
+        "precision": 0.9018691588785047
+      },
+      "SAD": {
+        "support": 200,
+        "recall": 0.06,
+        "precision": 1.0
+      }
+    },
+    "confusion": {
+      "ANGRY->ANGRY": 193,
+      "ANGRY->EMO_UNKNOWN": 87,
+      "ANGRY->HAPPY": 8,
+      "ANGRY->NEUTRAL": 1,
+      "HAPPY->ANGRY": 16,
+      "HAPPY->EMO_UNKNOWN": 209,
+      "HAPPY->HAPPY": 125,
+      "HAPPY->NEUTRAL": 1,
+      "HAPPY->SURPRISED": 1,
+      "NEUTRAL->ANGRY": 3,
+      "NEUTRAL->EMO_UNKNOWN": 99,
+      "NEUTRAL->HAPPY": 45,
+      "NEUTRAL->NEUTRAL": 268,
+      "SAD->ANGRY": 2,
+      "SAD->EMO_UNKNOWN": 151,
+      "SAD->HAPPY": 23,
+      "SAD->NEUTRAL": 12,
+      "SAD->SAD": 12
+    },
+    "pred_distribution": {
+      "EMO_UNKNOWN": 546,
+      "NEUTRAL": 282,
+      "HAPPY": 201,
+      "ANGRY": 214,
+      "SURPRISED": 1,
+      "SAD": 12
+    },
+    "seconds": 725.522575378418,
+    "event_distribution": {
+      "Speech": 1245,
+      "NONE": 9,
+      "Laughter": 1,
+      "Cry": 1
+    },
+    "by_turn_type": {
+      "impro": {
+        "n": 691,
+        "accuracy": 0.41244573082489144
+      },
+      "script": {
+        "n": 565,
+        "accuracy": 0.5539823008849557
+      }
+    },
+    "by_room_type": {
+      "A": {
+        "n": 506,
+        "accuracy": 0.43280632411067194
+      },
+      "B": {
+        "n": 750,
+        "accuracy": 0.5053333333333333
+      }
+    },
+    "by_actor_gender": {
+      "Female": {
+        "n": 875,
+        "accuracy": 0.46514285714285714
+      },
+      "Male": {
+        "n": 381,
+        "accuracy": 0.5013123359580053
+      }
+    },
+    "by_duration_band": {
+      "a_under_1s": {
+        "n": 64,
+        "accuracy": 0.34375
+      },
+      "b_1_2s": {
+        "n": 132,
+        "accuracy": 0.2878787878787879
+      },
+      "c_2_4s": {
+        "n": 356,
+        "accuracy": 0.5365168539325843
+      },
+      "d_over_4s": {
+        "n": 704,
+        "accuracy": 0.4928977272727273
+      }
+    },
+    "held_out_frustrated": {
+      "EMO_UNKNOWN": 429,
+      "HAPPY": 96,
+      "NEUTRAL": 179,
+      "ANGRY": 52,
+      "SAD": 4
+    }
+  },
+  "emotion2vec": {
+    "n": 1256,
+    "accuracy": 0.7380573248407644,
+    "ci95": [
+      0.7137403565593026,
+      0.7623742931222262
+    ],
+    "chance_uniform": 0.25,
+    "chance_majority_class": 0.3304140127388535,
+    "beats_majority_class": true,
+    "macro_recall": 0.7193723269138207,
+    "per_class": {
+      "NEUTRAL": {
+        "support": 415,
+        "recall": 0.7975903614457831,
+        "precision": 0.9093406593406593
+      },
+      "HAPPY": {
+        "support": 352,
+        "recall": 0.7244318181818182,
+        "precision": 0.6189320388349514
+      },
+      "ANGRY": {
+        "support": 289,
+        "recall": 0.7854671280276817,
+        "precision": 0.8730769230769231
+      },
+      "SAD": {
+        "support": 200,
+        "recall": 0.57,
+        "precision": 0.7916666666666666
+      }
+    },
+    "confusion": {
+      "ANGRY->ANGRY": 227,
+      "ANGRY->DISGUSTED": 5,
+      "ANGRY->HAPPY": 41,
+      "ANGRY->NEUTRAL": 7,
+      "ANGRY->SAD": 6,
+      "ANGRY->SURPRISED": 3,
+      "HAPPY-><UNK>": 3,
+      "HAPPY->ANGRY": 31,
+      "HAPPY->DISGUSTED": 12,
+      "HAPPY->FEARFUL": 6,
+      "HAPPY->HAPPY": 255,
+      "HAPPY->NEUTRAL": 15,
+      "HAPPY->OTHER": 1,
+      "HAPPY->SAD": 14,
+      "HAPPY->SURPRISED": 15,
+      "NEUTRAL-><UNK>": 5,
+      "NEUTRAL->ANGRY": 2,
+      "NEUTRAL->DISGUSTED": 6,
+      "NEUTRAL->FEARFUL": 1,
+      "NEUTRAL->HAPPY": 56,
+      "NEUTRAL->NEUTRAL": 331,
+      "NEUTRAL->OTHER": 1,
+      "NEUTRAL->SAD": 10,
+      "NEUTRAL->SURPRISED": 3,
+      "SAD->DISGUSTED": 6,
+      "SAD->FEARFUL": 7,
+      "SAD->HAPPY": 60,
+      "SAD->NEUTRAL": 11,
+      "SAD->OTHER": 1,
+      "SAD->SAD": 114,
+      "SAD->SURPRISED": 1
+    },
+    "pred_distribution": {
+      "NEUTRAL": 364,
+      "HAPPY": 412,
+      "SAD": 144,
+      "FEARFUL": 14,
+      "SURPRISED": 22,
+      "ANGRY": 260,
+      "<UNK>": 8,
+      "DISGUSTED": 29,
+      "OTHER": 3
+    },
+    "seconds": 725.522575378418,
+    "by_turn_type": {
+      "impro": {
+        "n": 691,
+        "accuracy": 0.6989869753979739
+      },
+      "script": {
+        "n": 565,
+        "accuracy": 0.7858407079646018
+      }
+    },
+    "by_duration_band": {
+      "a_under_1s": {
+        "n": 64,
+        "accuracy": 0.65625
+      },
+      "b_1_2s": {
+        "n": 132,
+        "accuracy": 0.696969696969697
+      },
+      "c_2_4s": {
+        "n": 356,
+        "accuracy": 0.7696629213483146
+      },
+      "d_over_4s": {
+        "n": 704,
+        "accuracy": 0.7372159090909091
+      }
+    },
+    "by_room_type": {
+      "A": {
+        "n": 506,
+        "accuracy": 0.733201581027668
+      },
+      "B": {
+        "n": 750,
+        "accuracy": 0.7413333333333333
+      }
+    }
+  },
+  "environment": {
+    "python": "3.11.9",
+    "device": "cpu",
+    "venv": "D:/sensevoice-spike/.venv"
+  }
+}

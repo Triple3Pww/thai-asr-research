@@ -1,0 +1,7 @@
+{
+ "model": "checkpoints/soup3_lot_s0c_a_a75.nemo",
+ "n": 682,
+ "latency_ms_p50": 124.6,
+ "latency_ms_p90": 187.2,
+ "rtf": 0.0134
+}

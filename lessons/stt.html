@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>From basic ML to Thai STT</title>
+
+<!-- TUTOR_PLAN
+lesson_plan:
+  - step: "1. What a model actually is"
+    substeps:
+    - substep: "Frame with a mixing desk: one fader = one weight. Map fader/preset/precision onto
+        weight/checkpoint/quantisation. Static SVG of ONE weight doing its job (inputs x weights,
+        summed). Then the arithmetic recovering parameter count from file size, worked on his own
+        19.3 GB qwen3.5:9b. Interactive slider: bits-per-weight -> GB -> fits the 16 GB card or
+        not. Deliberately NOT covering how weights get their values (part 2) or what layers mean
+        (part 5)."
+  - step: "2. How a model learns"
+    substeps:
+    - substep: "Loss as a single number saying how wrong. Gradient as which direction each weight
+        should move. Backprop as the bookkeeping that gets a gradient for every weight at once.
+        Anchor: his RSFT generate-rate-SFT loop, a training loop he already built by hand."
+  - step: "3. Why you split the data"
+    substeps:
+    - substep: "Overfitting = memorising the training set. Train/val/test. Anchor: his smartturn
+        speaker- AND text-disjoint split by connected components -- he already solved the hard
+        version. Tie to CER 3.2 (his corpus) vs 6.81 (Typhoon's own benchmarks)."
+  - step: "4. Sound as numbers"
+    substeps:
+    - substep: "Sampling rate, int16, frames, mel spectrogram. Anchor: his own int16 question, the
+        48 kHz never-resample rule, VoxCPM encoding at 16 kHz and reconstructing at 48 kHz.
+        Stepper: waveform -> frames -> spectrogram grid."
+  - step: "5. The encoder"
+    substeps:
+    - substep: "What a vector means. Why you can throw away a decoder and keep the encoder. Anchor:
+        Smart Turn v3 = Whisper Tiny with the decoder amputated, 8M params -- his own question.
+        Closes the Encoder Reuse gap."
+  - step: "6. Attention and context"
+    substeps:
+    - substep: "Attention as each frame choosing which other frames to look at. Then the payoff:
+        att_context_size [-1,-1] means look everywhere, which is exactly why Typhoon cannot stream.
+        Interactive: drag the context window and watch what a frame can see."
+  - step: "7. The alignment problem"
+    substeps:
+    - substep: "100 frames, 8 characters, nobody wrote down which is which. CTC vs transducer vs
+        attention decoder as three answers. Stepper showing a transducer emitting while audio
+        arrives vs an attention decoder waiting for the end."
+  - step: "8. Training without timestamps"
+    substeps:
+    - substep: "The loss that sums probability over every possible alignment at once. Why that is
+        the trick making 11,000 unmarked hours trainable. Worked example on a 3-frame toy."
+  - step: "9. Labels and the ceiling"
+    substeps:
+    - substep: "Ground truth, pseudo-labelling, label noise vs label bias. Anchor: 94% of Typhoon's
+        training text written by three Whisper models voting, only 35.4 h by humans. Closes the
+        Ground Truth gap from heard-of to can-explain."
+  - step: "10. Fine-tuning, LoRA, frozen backbones"
+    substeps:
+    - substep: "Full fine-tune vs adapter vs frozen encoder. Anchor: mint_v4 at r/alpha 32/32 and
+        why half strength breaks it; Typhoon's Isan stage 2 freezing the encoder."
+  - step: "11. Measuring honestly, and the capstone"
+    substeps:
+    - substep: "WER vs CER and why Thai forces CER. Distribution shift. Then the capstone: given
+        everything, what would it take to make Typhoon stream, and what would you measure?"
+END_TUTOR_PLAN -->
+
+<style>
+:root{--bg:#fdfdfc;--fg:#1a1a18;--muted:#6b6b66;--line:#e3e3df;--accent:#7a5cff;--card:#fff;
+  --warm:#e5484d;--cool:#0090ff;--good:#30a46c}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#16161a;--fg:#e8e8e4;--muted:#9a9a94;--line:#2c2c33;--accent:#a78bfa;--card:#1d1d22;
+    --warm:#ff6369;--cool:#52a9ff;--good:#3dd68c}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font:16px/1.7 ui-serif,Georgia,"Times New Roman",serif;
+  display:grid;grid-template-columns:240px 1fr}
+nav{border-right:1px solid var(--line);padding:2rem 1.25rem;position:sticky;top:0;height:100vh;
+  font-family:ui-sans-serif,system-ui,sans-serif;font-size:.85rem;overflow-y:auto}
+nav ol{list-style:none;padding:0;margin:0}
+nav li{padding:.45rem 0;color:var(--muted);transition:color .15s}
+nav li.built{color:var(--fg)}
+nav li.built::before{content:"\25CF ";color:var(--accent)}
+nav li.unbuilt::before{content:"\25CB "}
+nav li a{color:inherit;text-decoration:none;display:inline}
+nav li.built:hover{color:var(--accent)}
+nav li.current{color:var(--accent);font-weight:600}
+nav li.unbuilt{cursor:default}
+nav li.unbuilt:hover{color:var(--muted)}
+section.part{scroll-margin-top:1.5rem}
+main{padding:3rem clamp(1.5rem,5vw,5rem);max-width:70ch}
+h2{font-size:1.6rem;margin-top:3.5rem;padding-top:2rem;border-top:1px solid var(--line)}
+h3{font-size:1.1rem;margin-top:2.5rem;font-family:ui-sans-serif,system-ui,sans-serif}
+main>section:first-of-type h2{border-top:0;margin-top:0;padding-top:0}
+.analogy{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:0 10px 10px 0;padding:1rem 1.25rem;margin:1.75rem 0 0}
+.analogy h4{margin:0 0 .5rem;font-family:ui-sans-serif,system-ui,sans-serif;font-size:.75rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.analogy p{margin:0}
+.maptable{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.92rem}
+.maptable caption{caption-side:top;text-align:left;font:600 .7rem/1.4 ui-sans-serif,system-ui,sans-serif;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--accent);padding-bottom:.5rem}
+.maptable th{text-align:left;font:600 .78rem/1.4 ui-sans-serif,system-ui,sans-serif;
+  letter-spacing:.04em;text-transform:uppercase;color:var(--muted);
+  padding:.4rem .9rem .4rem 0;border-bottom:1px solid var(--line)}
+.maptable td{padding:.6rem .9rem .6rem 0;border-bottom:1px solid var(--line);vertical-align:top}
+.maptable th:last-child,.maptable td:last-child{padding-right:0}
+.maptable tr:last-child td{border-bottom:0}
+.maptable td:first-child{color:var(--muted)}
+.maptable .sub{display:block;font-size:.84em;color:var(--muted);margin-top:.15rem}
+.analogy + .maptable{margin-top:1rem}
+@media(max-width:620px){
+  .maptable,.maptable tbody,.maptable tr,.maptable td{display:block;width:100%}
+  .maptable thead{display:none}
+  .maptable tr{border-bottom:1px solid var(--line);padding:.6rem 0}
+  .maptable tr:last-child{border-bottom:0}
+  .maptable td{border:0;padding:.1rem 0}
+  .maptable td:first-child::after{content:" \2193";color:var(--accent)}
+}
+.quiz{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1.25rem;margin:2rem 0}
+.quiz.pre{background:transparent;border-style:dashed;margin:1.5rem 0 0}
+.quiz.pre summary{cursor:pointer;color:var(--accent);font-size:.9rem}
+.quiz.pre p{margin:0 0 .5rem}
+.quiz button{display:block;width:100%;text-align:left;margin:.4rem 0;padding:.7rem .9rem;
+  border:1px solid var(--line);border-radius:7px;background:transparent;color:var(--fg);
+  font:inherit;font-size:.95rem;cursor:pointer}
+.quiz button:hover{border-color:var(--accent)}
+.fb{display:none;margin:.6rem 0 0;padding:.7rem .9rem;border-radius:7px;font-size:.9rem}
+.fb.show{display:block}
+.fb.ok{background:color-mix(in srgb,var(--accent) 12%,transparent)}
+.fb.no{background:color-mix(in srgb,#e5484d 12%,transparent)}
+dfn{font-style:normal;font-weight:600;border-bottom:1.5px dotted var(--accent)}
+.unit{background:var(--card);border:1px solid var(--line);border-radius:8px;
+  padding:.75rem 1rem;margin:1.25rem 0;font-size:.9rem}
+.unit b{font-family:ui-monospace,monospace;color:var(--accent)}
+.unit p{margin:0}
+.hint{margin-top:1rem;font-size:.9rem}
+.hint summary{cursor:pointer;color:var(--accent)}
+.ask{font-style:italic;color:var(--muted);border-top:1px dashed var(--line);
+  margin-top:2rem;padding-top:1rem;font-size:.95rem}
+figure{margin:2rem 0}
+figcaption{font-size:.85rem;color:var(--muted);font-family:ui-sans-serif,system-ui,sans-serif;
+  margin-top:.6rem}
+svg{max-width:100%;height:auto}
+.ctl{display:flex;gap:.5rem;align-items:center;margin-top:.75rem;flex-wrap:wrap}
+.ctl input[type=range]{flex:1;accent-color:var(--accent);min-width:120px}
+.readout{font-family:ui-monospace,monospace;font-size:.8rem;color:var(--muted)}
+.cap{fill:var(--muted);font-size:11px}
+.lbl{fill:var(--fg);font-size:12px}
+.mono{font-family:ui-monospace,monospace;font-size:11px}
+code{font-family:ui-monospace,monospace;font-size:.88em;background:var(--card);
+  border:1px solid var(--line);border-radius:4px;padding:.05em .35em}
+.calc{font-family:ui-monospace,monospace;font-size:.87rem;line-height:2;
+  border-left:2px solid var(--line);padding-left:1rem;margin:1.25rem 0}
+@media(max-width:800px){body{grid-template-columns:1fr}
+  nav{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line)}}
+</style>
+</head>
+<body>
+
+<nav><ol>
+  <li data-part="1" class="built"><a href="#part-1">What a model actually is</a></li>
+  <li data-part="2" class="built"><a href="#part-2">How a model learns</a></li>
+  <li data-part="3" class="unbuilt" title="Not built yet -- ask in chat to build this part">Why you split the data</li>
+  <li data-part="4" class="unbuilt" title="Not built yet -- ask in chat to build this part">Sound as numbers</li>
+  <li data-part="5" class="unbuilt" title="Not built yet -- ask in chat to build this part">The encoder</li>
+  <li data-part="6" class="unbuilt" title="Not built yet -- ask in chat to build this part">Attention and context</li>
+  <li data-part="7" class="unbuilt" title="Not built yet -- ask in chat to build this part">The alignment problem</li>
+  <li data-part="8" class="unbuilt" title="Not built yet -- ask in chat to build this part">Training without timestamps</li>
+  <li data-part="9" class="unbuilt" title="Not built yet -- ask in chat to build this part">Labels and the ceiling</li>
+  <li data-part="10" class="unbuilt" title="Not built yet -- ask in chat to build this part">Fine-tuning, LoRA, frozen backbones</li>
+  <li data-part="11" class="unbuilt" title="Not built yet -- ask in chat to build this part">Measuring honestly, and the capstone</li>
+</ol></nav>
+
+<main>
+<section class="part" id="part-1">
+  <h2>1. What a model actually is</h2>
+
+  <div class="quiz pre">
+    <p><strong>Before you read:</strong> a model file on your disk is 19.3 GB. Without opening it,
+       roughly how many individual numbers do you think are stored inside?</p>
+    <details><summary>Commit to a guess, then open this</summary>
+      <p>About 9.6 billion &mdash; and you can get there with a single division, because the file is
+         almost nothing but those numbers. That division is what this part is about, and it is also
+         how you read a model's size straight off its name.</p></details>
+  </div>
+
+  <div class="analogy">
+    <h4>The analogy</h4>
+    <p>A model is a mixing desk. Every fader decides how much of one incoming channel reaches the
+       mix &mdash; push it up and that channel gets louder in the output, pull it below zero and it
+       fights the others instead. A desk with 24 faders gives you a rough mix. A desk with nine
+       billion of them, arranged in rows so that each row feeds the next, can turn a Thai sentence
+       into text. The skill sits entirely in where the faders are set, and nowhere else.</p>
+  </div>
+
+  <table class="maptable">
+    <caption>You have been setting faders and saving presets for months</caption>
+    <thead><tr><th>At the mixing desk</th><th>In the model</th></tr></thead>
+    <tbody>
+      <tr><td>one fader<span class="sub">a single position you can set</span></td>
+          <td>one <dfn>weight</dfn> &mdash; one number, and nothing more than a number</td></tr>
+      <tr><td>how much of that channel reaches the mix</td>
+          <td>how much that input contributes to the next value along</td></tr>
+      <tr><td>the summed output coming off the desk</td>
+          <td>the value handed to the next row of faders</td></tr>
+      <tr><td>saving every fader position as a preset file</td>
+          <td>the checkpoint on disk<span class="sub">the file you download</span></td></tr>
+      <tr><td>a desk with nine billion faders</td>
+          <td><code>qwen3.5:9b</code> &mdash; the model in your loop right now</td></tr>
+      <tr><td>writing each fader position down with fewer decimal places</td>
+          <td>quantisation &mdash; what <code>Q4</code>, <code>Q8_0</code> and <code>FP8</code> do</td></tr>
+    </tbody>
+  </table>
+
+  <p>That last row is the one worth sitting with, because you have already measured its
+     consequences without necessarily being told the cause. When you quantised the 9B from 19.3 GB
+     down to 11.0 GB, you did not remove a single fader. You wrote each one down less precisely.</p>
+
+  <h3>What one weight does</h3>
+
+  <p>Strip everything away and one step inside a model is this: take the numbers coming in,
+     multiply each by its own weight, add up the results. That is the entire operation. A model is
+     that operation repeated billions of times.</p>
+
+  <figure>
+    <svg viewBox="0 0 400 150" role="img"
+         aria-label="Three input values each multiplied by their own weight, then added together to
+                     produce one output value of 0.43">
+      <text x="0" y="12" class="cap">one step inside the model</text>
+
+      <text x="0" y="45" class="lbl">0.5</text>
+      <text x="0" y="80" class="lbl">0.2</text>
+      <text x="0" y="115" class="lbl">0.9</text>
+      <text x="0" y="136" class="cap">values coming in</text>
+
+      <line x1="26" y1="41" x2="150" y2="74" stroke="var(--cool)" stroke-width="1.4"/>
+      <line x1="26" y1="76" x2="150" y2="78" stroke="var(--cool)" stroke-width="1.4"/>
+      <line x1="26" y1="111" x2="150" y2="82" stroke="var(--cool)" stroke-width="1.4"/>
+
+      <text x="60" y="47" class="mono" fill="var(--accent)">x 0.8</text>
+      <text x="60" y="71" class="mono" fill="var(--accent)">x -0.3</text>
+      <text x="60" y="112" class="mono" fill="var(--accent)">x 0.1</text>
+      <text x="60" y="129" class="cap" fill="var(--accent)">three weights</text>
+
+      <rect x="152" y="60" width="96" height="36" rx="5" fill="none" stroke="var(--line)"/>
+      <text x="200" y="83" class="lbl" text-anchor="middle">add them up</text>
+
+      <line x1="250" y1="78" x2="298" y2="78" stroke="var(--cool)" stroke-width="1.4"/>
+      <text x="306" y="83" class="lbl">0.43</text>
+      <text x="306" y="101" class="cap">to the next step</text>
+    </svg>
+    <figcaption>0.5 &times; 0.8 = 0.40, plus 0.2 &times; &minus;0.3 = &minus;0.06, plus
+      0.9 &times; 0.1 = 0.09, giving 0.43. The three purple weights are the only part that was ever
+      learned. Everything else is fixed arithmetic that never changes.</figcaption>
+  </figure>
+
+  <p>Notice what is <em>not</em> in that picture: any rule, any logic, any instruction. Nobody wrote
+     "if you hear a rising tone, it is probably a question." Those three purple numbers are the
+     entire knowledge, and Part 2 is about where they came from.</p>
+
+  <h3>Reading a model's size off its file</h3>
+
+  <p>Because a checkpoint is basically those numbers written one after another, the file size and
+     the weight count are two views of the same fact. To move between them you only need to know
+     how many bytes each weight takes.</p>
+
+  <div class="unit">
+    <p><b>bit</b> &mdash; one digit that is either 0 or 1. The smallest thing a computer stores.<br>
+       <b>byte</b> &mdash; 8 bits, so one byte can hold 256 different values.<br>
+       <b>GB</b> &mdash; gigabyte, one billion bytes. An <em>amount</em>, not a speed.<br>
+       <b>9b</b> in a model name &mdash; 9 billion <em>weights</em>. Also an amount, but it counts
+       numbers, not bytes. The two are unrelated until you say how many bytes each number costs.<br>
+       <b>bf16</b>, <b>Q8_0</b>, <b>FP8</b>, <b>Q4</b> &mdash; these all answer one question: how
+       many bits do we spend per weight? Roughly 16, 8, 8 and 4. Fewer bits, smaller file, cruder
+       fader.</p>
+  </div>
+
+  <p><strong>Worked example.</strong> Your <code>qwen3.5:9b</code> checkpoint at full precision is
+     19.3 GB, and full precision here means <code>bf16</code> &mdash; 16 bits, which is 2 bytes,
+     per weight.</p>
+
+  <div class="calc">
+    19.3 GB = 19,300,000,000 bytes<br>
+    each weight costs 2 bytes<br>
+    19,300,000,000 &divide; 2 = <strong>9,650,000,000 weights</strong><br>
+    that is 9.65 billion &mdash; which is where the <code>9b</code> in the name comes from
+  </div>
+
+  <p>Run it the other way and your FP8 result falls out too. <code>FP8</code> spends 8 bits, one
+     byte, per weight. 9.65 billion weights at 1 byte each is 9.65 GB &mdash; and you measured
+     11.0 GB, the extra being the parts of the model deliberately left at full precision. The
+     number was never mysterious. It was arithmetic.</p>
+
+  <p><strong>Now you finish one.</strong> VoxCPM2, the TTS on port 8005, is a 2B model at
+     <code>bf16</code>. How large is its checkpoint?</p>
+
+  <div class="calc">
+    2B = 2,000,000,000 weights<br>
+    bf16 costs 2 bytes per weight<br>
+    2,000,000,000 &times; 2 = <strong>?</strong>
+  </div>
+
+  <details class="hint"><summary>Check your answer</summary>
+    <p>4,000,000,000 bytes = 4 GB. Which is why VoxCPM2, a quantised 9B and Typhoon can share one
+       16 GB card &mdash; your repo puts the three of them at roughly 12 GB together.</p></details>
+
+  <h3>Why this decides what fits on your card</h3>
+
+  <p>Every weight has to be sitting in GPU memory before the model can run at all. So
+     bits-per-weight is not a storage detail. It is the thing that decides whether a model runs on
+     your RTX 5060 Ti. Drag this and watch the 9B cross the line.</p>
+
+  <figure>
+    <svg viewBox="0 0 400 145" role="img"
+         aria-label="Checkpoint size of a 9.65 billion parameter model as the reader drags the
+                     number of bits used per weight, compared against a 16 gigabyte card">
+      <text x="0" y="12" class="cap">qwen3.5:9b &mdash; 9.65 billion weights, always</text>
+      <g id="szViz"></g>
+    </svg>
+    <div class="ctl">
+      <input type="range" id="szBits" min="3" max="16" step="1" value="16">
+      <span class="readout" id="szRead"></span>
+    </div>
+    <figcaption>The weight count never changes as you drag. Only how precisely each one is written
+      down. That is the whole of what quantisation is.</figcaption>
+  </figure>
+
+  <p>This is also why your repo could never run the 9B at full precision beside the TTS and the
+     ASR. Not because the model was too clever or too slow, but because 19.3 GB of numbers does not
+     fit in 16 GB of memory. Quantisation there was not an optimisation. It was the price of
+     entry.</p>
+
+  <div class="quiz">
+    <p><strong>Check yourself:</strong> the same model produces tokens faster after you quantise
+       it. Why?</p>
+    <button onclick="pick(this)">The GPU has fewer multiplications to do</button>
+    <button onclick="pick(this)">There are fewer weights in the model</button>
+    <button onclick="pick(this)">Fewer bytes have to be read from memory for each token</button>
+    <p class="fb no">No, and this is the most common wrong answer. The number of multiplications is
+       set by the number of weights, and quantising changed none of them. The desk still has 9.65
+       billion faders and every one still gets used. Only how each is <em>written down</em>
+       changed.</p>
+    <p class="fb no">Not quite. Quantising never deletes a weight. <code>qwen3.5:9b</code> at Q4 has
+       exactly the same 9.65 billion weights as at bf16, each one just recorded in 4 bits instead
+       of 16. Same desk, cruder markings on the faders.</p>
+    <p class="fb ok">Right. To produce one token the GPU must read every weight, so the time is
+       dominated by shifting bytes rather than by multiplying. Halve the bytes, read them sooner.
+       Be careful with the word "proportionally" though &mdash; your own measurements say it does
+       not scale cleanly, and the question below is exactly that.</p>
+    <details class="hint"><summary>Give me a hint</summary>
+      <p>Ask what the GPU physically has to fetch before it can compute anything &mdash; and notice
+         it has to fetch all of it again for the very next token.</p></details>
+  </div>
+
+  <p class="ask">Try this in chat and I will check your reasoning. Your own bracketed measurements:
+    <code>Q8_0</code> is 4.92 GiB and decodes at 64.6 tokens per second; <code>Q4</code> is about
+    3.17 GiB and decodes at 81.5. So Q4 is <strong>1.56&times; smaller</strong> but only
+    <strong>1.26&times; faster</strong>. If decoding really is just reading the weights, where did
+    the missing speed go?</p>
+</section>
+
+<section class="part" id="part-2">
+  <h2>2. How a model learns</h2>
+
+  <div class="quiz pre">
+    <p><strong>Before you read:</strong> before training starts &mdash; on the very first step,
+       before the model has seen a single example &mdash; what do you think those 9.65 billion
+       weights are set to?</p>
+    <details><summary>Commit to a guess, then open this</summary>
+      <p><strong>Random numbers.</strong> Small ones, scattered around zero, drawn by a random
+         number generator. Nobody chose any of them. Every piece of Thai the model knows arrived
+         later, and arrived only from data &mdash; which is why Part 9, about where that data's
+         labels came from, ends up mattering so much.</p></details>
+  </div>
+
+  <div class="analogy">
+    <h4>The analogy</h4>
+    <p>Same desk as Part 1, but now you are the one setting it. You play the track, listen, and
+       think "too much bass." You reach for the bass fader &mdash; not the vocal fader, and you pull
+       it <em>down</em>, not up &mdash; and you move it a little, not all the way. Then you play it
+       again. Three decisions, every pass: how wrong it is, which faders to move and which way, and
+       how far to move them. Training is those same three decisions, made ten million times.</p>
+  </div>
+
+  <table class="maptable">
+    <caption>You did this by ear for mint_v4 &mdash; 102 keeps out of a rated pile</caption>
+    <thead><tr><th>Mixing by ear</th><th>In training</th></tr></thead>
+    <tbody>
+      <tr><td>playing the track to hear where it is at</td>
+          <td>the <dfn>forward pass</dfn> &mdash; run one example through and see what comes out</td></tr>
+      <tr><td>"it sounds wrong, and about this wrong"</td>
+          <td>the <dfn>loss</dfn> &mdash; one single number saying how far off it was</td></tr>
+      <tr><td>knowing it is the bass fader, and that it goes down</td>
+          <td>the <dfn>gradient</dfn> &mdash; for each weight, which direction reduces the loss</td></tr>
+      <tr><td>nudging it a little rather than slamming it</td>
+          <td>the <dfn>learning rate</dfn> &mdash; how big a step to take</td></tr>
+      <tr><td>playing it again with the next track</td>
+          <td>the next example, then the next, for millions of rounds</td></tr>
+      <tr><td>one engineer, nine billion faders, by ear</td>
+          <td>impossible &mdash; and solving that is the one real trick, below</td></tr>
+    </tbody>
+  </table>
+
+  <p>Everything in the right-hand column is ordinary except the last row. An engineer moves one
+     fader at a time because they can only hear the mix as a whole and have to reason backwards
+     about which control caused what. That approach does not survive nine billion faders.</p>
+
+  <h3>The loop, one turn at a time</h3>
+
+  <figure>
+    <svg viewBox="0 0 400 155" role="img"
+         aria-label="One turn of the training loop, advanced by the reader: forward pass, loss,
+                     gradient, weight update, and the loss shrinking as a result">
+      <text x="0" y="12" class="cap" id="trTitle">Step 0</text>
+      <g id="trBody"></g>
+    </svg>
+    <div class="ctl">
+      <button id="trPrev" disabled>&#8592; Back</button>
+      <button id="trNext">Next step &#8594;</button>
+      <span class="readout" id="trRead">0 / 4</span>
+    </div>
+    <p class="cap" style="margin-top:.5rem;color:var(--muted)">Before you click to step 3: the
+      model got the answer too high. Do you think <em>every</em> weight moves, or only the ones
+      that were involved?</p>
+    <figcaption>The loss is one number for the whole model, but the update touches every weight
+      individually. Getting both of those at once is what backpropagation is for.</figcaption>
+  </figure>
+
+  <h3>The one real trick</h3>
+
+  <p>Here is the problem an engineer at a desk cannot solve. You have one number telling you how
+     wrong the output was. You need, for each of 9.65 billion weights, its own answer to "would
+     nudging <em>you</em> up or down have made that number smaller, and by how much?"</p>
+
+  <p>Testing them one at a time would mean 9.65 billion runs of the model to learn one example.
+     At your box's speed that is centuries per example.</p>
+
+  <p><dfn>Backpropagation</dfn> gets all 9.65 billion answers in roughly the time of <em>one</em>
+     extra pass through the model. It does it by working backwards from the output: the last row of
+     weights can see directly how much it contributed to the error, and it hands the row before it
+     the piece of blame that belongs to it, which hands the row before that, and so on to the front.
+     Each row does a small amount of arithmetic and passes the rest back.</p>
+
+  <p>That is the entire reason deep learning is possible at all. Not the maths &mdash; the maths was
+     known for decades. The fact that the cost is <strong>one pass, not nine billion</strong>.</p>
+
+  <h3>Doing one update by hand</h3>
+
+  <p>Take the exact step from Part 1. Inputs 0.5, 0.2, 0.9 with weights 0.8, &minus;0.3, 0.1 gave
+     an output of <strong>0.43</strong>. Suppose the right answer was <strong>0.30</strong>.</p>
+
+  <div class="unit">
+    <p><b>loss</b> &mdash; one number for how wrong. Here we will just use the gap: 0.43 &minus;
+       0.30 = <b>0.13</b>, too high. Real systems square it or use something fancier, but the shape
+       is the same.<br>
+       <b>gradient</b> &mdash; for one weight, how much the loss would change if you nudged it. It
+       carries a <em>sign</em> (which way) and a <em>size</em> (how strongly). Not a number you
+       store; a number computed fresh for every weight on every example.<br>
+       <b>learning rate</b> &mdash; the fraction of the suggested nudge you actually take. Written
+       <b>0.1</b>, or in the compressed form <b>1e-5</b>, which means 1 followed by moving the
+       decimal point 5 places left: <b>0.00001</b>. Typhoon's Isan recipe uses 1e-5 for one stage
+       and 1e-3 (0.001) for the other &mdash; a hundred times bigger.<br>
+       <b>epoch</b> &mdash; one complete pass through all your training data. Typhoon's stage 1 ran
+       10 of them, stage 2 ran 15.</p>
+  </div>
+
+  <p><strong>Worked example &mdash; the first weight.</strong> Its input was 0.5, its weight 0.8.
+     The gradient for a weight is how wrong we were, times how much that input pushed on it:</p>
+
+  <div class="calc">
+    error = 0.43 &minus; 0.30 = <strong>0.13</strong> &nbsp;(too high, so weights should come down)<br>
+    gradient = error &times; its input = 0.13 &times; 0.5 = <strong>0.065</strong><br>
+    nudge = learning rate &times; gradient = 0.1 &times; 0.065 = <strong>0.0065</strong><br>
+    new weight = 0.8 &minus; 0.0065 = <strong>0.7935</strong>
+  </div>
+
+  <p><strong>Now the second one.</strong> Its input was 0.2, its weight &minus;0.3. Same error, same
+     learning rate.</p>
+
+  <div class="calc">
+    gradient = 0.13 &times; 0.2 = <strong>0.026</strong><br>
+    nudge = 0.1 &times; 0.026 = 0.0026<br>
+    new weight = &minus;0.3 &minus; 0.0026 = <strong>?</strong>
+  </div>
+
+  <details class="hint"><summary>Check your answer</summary>
+    <p>&minus;0.3026. Note it moved <em>down</em> too, even though it was already negative &mdash;
+      "down" means down, not "toward zero".</p></details>
+
+  <p><strong>And the third, with no scaffold.</strong> Input 0.9, weight 0.1. What is the new
+     weight, and why is its correction the biggest of the three?</p>
+
+  <details class="hint"><summary>Check your answer</summary>
+    <p>gradient = 0.13 &times; 0.9 = 0.117, nudge = 0.0117, new weight = <strong>0.0883</strong>.
+      It got the biggest correction because its input was the largest, so it pushed hardest on the
+      output and therefore carries the most blame for the output being too high. Fixing it fixes
+      the most.</p></details>
+
+  <h3>How far to nudge</h3>
+
+  <p>The gradient tells you which way. It does not tell you how far to trust it &mdash; that is your
+     choice, and it is the single most consequential number in a training run. Drag it.</p>
+
+  <figure>
+    <svg viewBox="0 0 400 130" role="img"
+         aria-label="A single weight moving toward its target over fifteen training steps as the
+                     reader drags the learning rate, showing crawling, landing, and overshooting">
+      <text x="0" y="12" class="cap">one weight, 15 steps, starting at 0.8, target 0.3</text>
+      <g id="lrViz"></g>
+    </svg>
+    <div class="ctl">
+      <input type="range" id="lrVal" min="5" max="250" step="5" value="20">
+      <span class="readout" id="lrRead"></span>
+    </div>
+    <figcaption>Too small and it never arrives in the steps you can afford. Too large and it
+      throws itself past the answer, further every time. A failed training run usually looks like
+      the right-hand end of this slider.</figcaption>
+  </figure>
+
+  <p>This is why Typhoon's Isan recipe uses two different rates in two stages: a cautious 1e-5 while
+     the whole model adjusts, then a much bolder 1e-3 once most of the model is frozen and only a
+     small part is still moving. Part 10 comes back to why freezing changes the safe step size.</p>
+
+  <div class="quiz">
+    <p><strong>Check yourself:</strong> in the worked example, the weight whose input was 0.9 got a
+       bigger correction than the one whose input was 0.2. Why?</p>
+    <button onclick="pick(this)">Because that weight matters more to the model</button>
+    <button onclick="pick(this)">Because that input pushed hardest on the wrong answer</button>
+    <button onclick="pick(this)">Because bigger numbers always change more in arithmetic</button>
+    <p class="fb no">Careful &mdash; how much a weight matters is the size of the <em>weight</em>,
+       not the size of its input. That weight was 0.1, the smallest of the three. A large input
+       running through a tiny weight still barely moves the output.</p>
+    <p class="fb ok">Right. Blame is shared out in proportion to contribution. That input
+       contributed most to the output being 0.13 too high, so adjusting its weight buys the most
+       correction per unit of nudge. Every weight moves; they just do not move equally.</p>
+    <p class="fb no">There is no such rule &mdash; it is a design choice, not arithmetic gravity.
+       The update was deliberately made proportional to each input's contribution, because that is
+       what makes the loss fall fastest. A different rule would give different corrections.</p>
+    <details class="hint"><summary>Give me a hint</summary>
+      <p>The output was too high. Ask which of the three inputs was most responsible for pushing it
+         up in the first place.</p></details>
+  </div>
+
+  <p class="ask">Try this one in chat. Your RSFT loop for mint_v4 was: generate clips, you rate them
+    by ear, keep the good ones, fine-tune on the keeps &mdash; 102 of them. Map it onto this part.
+    <strong>What was playing the role of the loss, what was playing the role of the gradient, and
+    which of the three decisions from the analogy were you not actually making?</strong></p>
+</section>
+</main>
+
+<script>
+function pick(btn){
+  var q=btn.closest('.quiz');
+  var btns=[].slice.call(q.querySelectorAll('button'));
+  var fbs=q.querySelectorAll('.fb');
+  fbs.forEach(function(f){f.classList.remove('show')});
+  fbs[btns.indexOf(btn)].classList.add('show');
+}
+
+(function(){
+  var bits=document.getElementById('szBits'), read=document.getElementById('szRead'),
+      viz=document.getElementById('szViz');
+  var PARAMS=9.65e9, CARD=16, SCALE=380/24;
+  function draw(){
+    var b=+bits.value;
+    var gb=PARAMS*b/8/1e9;
+    var w=Math.max(3, gb*SCALE);
+    var cardX=CARD*SCALE;
+    var fits=gb<=CARD;
+    var name=b>=16?'bf16':(b>=8?'FP8 or Q8_0':(b>=4?'about Q4':'below anything usable'));
+    viz.innerHTML=
+       '<rect x="0" y="30" width="'+w+'" height="28" rx="4" fill="'
+      +(fits?'var(--good)':'var(--warm)')+'" opacity=".3" stroke="'
+      +(fits?'var(--good)':'var(--warm)')+'"/>'
+      +'<line x1="'+cardX+'" y1="22" x2="'+cardX+'" y2="66" stroke="var(--fg)" '
+      +'stroke-width="1.5" stroke-dasharray="4 3"/>'
+      +'<text x="'+(cardX+6)+'" y="80" class="cap">your 16 GB card</text>'
+      +'<text x="0" y="103" class="lbl">'+gb.toFixed(1)+' GB checkpoint</text>'
+      +'<text x="0" y="126" class="cap">'+b+' bits per weight &#183; '+name+' &#183; '
+      +'<tspan fill="'+(fits?'var(--good)':'var(--warm)')+'" font-weight="700">'
+      +(fits?'fits':'does not fit')+'</tspan></text>';
+    read.textContent=b+' bits per weight';
+  }
+  bits.oninput=draw; draw();
+})();
+
+(function(){
+  var n=0, max=4;
+  var body=document.getElementById('trBody'), title=document.getElementById('trTitle'),
+      read=document.getElementById('trRead'),
+      prev=document.getElementById('trPrev'), next=document.getElementById('trNext');
+  if(!body) return;
+  var msg=['Step 0 - the weights are random. Nothing has been learned yet.',
+           'Forward - one example goes in. The model outputs 0.43.',
+           'Loss - we wanted 0.30. One number for how wrong: 0.13 too high.',
+           'Gradient - each weight gets its own answer: which way, how strongly.',
+           'Update - every weight nudged. Barely moved. Now do it 10 million more times.'];
+  var W0=[0.8,-0.3,0.1], W1=[0.7935,-0.3026,0.0883], IN=[0.5,0.2,0.9], GR=[0.065,0.026,0.117];
+  var X=[36,104,172];
+  function ypos(w){ return 88-(w+0.5)/1.5*58; }
+  function draw(){
+    var w = (n>=4)?W1:W0, s='';
+    for(var i=0;i<3;i++){
+      s+='<line x1="'+X[i]+'" y1="28" x2="'+X[i]+'" y2="88" stroke="var(--line)" stroke-width="1"/>';
+      s+='<rect x="'+(X[i]-9)+'" y="'+(ypos(w[i])-4)+'" width="18" height="8" rx="2" '
+        +'fill="var(--accent)" opacity=".55" stroke="var(--accent)"/>';
+      s+='<text x="'+X[i]+'" y="104" class="mono" text-anchor="middle" fill="var(--fg)">'
+        +w[i].toFixed(n>=4?4:1)+'</text>';
+      s+='<text x="'+X[i]+'" y="120" class="cap" text-anchor="middle">in '+IN[i]+'</text>';
+      if(n===3){
+        var len=GR[i]*90;
+        s+='<line x1="'+(X[i]+16)+'" y1="'+ypos(w[i])+'" x2="'+(X[i]+16)+'" y2="'
+          +(ypos(w[i])+len)+'" stroke="var(--warm)" stroke-width="1.6"/>'
+          +'<text x="'+(X[i]+20)+'" y="'+(ypos(w[i])+len+9)+'" class="mono" fill="var(--warm)">'
+          +GR[i]+'</text>';
+      }
+    }
+    s+='<text x="0" y="140" class="cap">three of the 9.65 billion faders</text>';
+    if(n>=1) s+='<text x="240" y="34" class="lbl">output 0.43</text>';
+    if(n>=2){
+      s+='<text x="240" y="56" class="lbl">wanted 0.30</text>'
+        +'<rect x="240" y="66" width="130" height="16" rx="3" fill="var(--warm)" opacity=".3" '
+        +'stroke="var(--warm)"/>'
+        +'<text x="240" y="98" class="cap" fill="var(--warm)">loss 0.13</text>';
+    }
+    if(n>=3) s+='<text x="240" y="120" class="cap">red = the gradient for each weight</text>';
+    body.innerHTML=s;
+    title.textContent=msg[n]; read.textContent=n+' / '+max;
+    prev.disabled=(n===0); next.disabled=(n===max);
+  }
+  next.onclick=function(){ if(n<max){n++;draw();} };
+  prev.onclick=function(){ if(n>0){n--;draw();} };
+  draw();
+})();
+
+(function(){
+  var sl=document.getElementById('lrVal'), read=document.getElementById('lrRead'),
+      viz=document.getElementById('lrViz');
+  if(!sl) return;
+  var START=0.8, TARGET=0.3, STEPS=15;
+  function xp(v){ return (v+0.5)/2*380; }
+  function draw(){
+    var lr=+sl.value/100, w=START, s='', pts=[w], i;
+    for(i=0;i<STEPS;i++){ w = w - lr*(w-TARGET); pts.push(w); }
+    var fin=Math.abs(pts[STEPS]-TARGET);
+    var verdict = fin>0.5 ? 'overshooting - it is getting further away'
+                : (fin>0.05 ? 'still crawling - not there in 15 steps'
+                : 'lands on the answer');
+    var col = fin>0.5 ? 'var(--warm)' : (fin>0.05 ? 'var(--muted)' : 'var(--good)');
+    s+='<line x1="0" y1="60" x2="380" y2="60" stroke="var(--line)" stroke-width="1"/>';
+    s+='<line x1="'+xp(TARGET)+'" y1="40" x2="'+xp(TARGET)+'" y2="80" stroke="var(--fg)" '
+      +'stroke-width="1.5" stroke-dasharray="4 3"/>';
+    s+='<text x="'+(xp(TARGET)+6)+'" y="36" class="cap">target 0.3</text>';
+    for(i=0;i<=STEPS;i++){
+      var x=xp(pts[i]);
+      if(x<-40||x>420) continue;
+      s+='<circle cx="'+x+'" cy="'+(60-i*0.6)+'" r="3.2" fill="'+col+'" opacity="'
+        +(0.25+0.05*i).toFixed(2)+'"/>';
+    }
+    s+='<text x="'+xp(START)+'" y="96" class="cap" text-anchor="middle">started here</text>';
+    s+='<text x="0" y="118" class="lbl">learning rate '+lr.toFixed(2)+' &#183; '
+      +'<tspan fill="'+col+'" font-weight="700">'+verdict+'</tspan></text>';
+    viz.innerHTML=s;
+    read.textContent='rate '+lr.toFixed(2);
+  }
+  sl.oninput=draw; draw();
+})();
+
+(function(){
+  var parts=document.querySelectorAll('section.part');
+  if(!parts.length||!window.IntersectionObserver) return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var n=e.target.id.replace('part-','');
+      document.querySelectorAll('nav li').forEach(function(li){
+        li.classList.toggle('current', li.dataset.part===n);
+      });
+    });
+  },{rootMargin:'-15% 0px -70% 0px'});
+  parts.forEach(function(p){io.observe(p)});
+})();
+</script>
+</body></html>

@@ -1,0 +1,9 @@
+{
+ "model": "E:/fw-spike/models/nectec_Pathumma-whisper-th-large-v3-ct2",
+ "runtime": "ctranslate2/faster-whisper",
+ "compute": "float16",
+ "n": 682,
+ "latency_ms_p50": 1026.8,
+ "latency_ms_p90": 1627.1,
+ "rtf": 0.1096
+}

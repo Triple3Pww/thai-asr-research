@@ -1,0 +1,13 @@
+{
+ "tag": "loop4_ens_ctrl",
+ "models": [
+  "base"
+ ],
+ "weights": [
+  1.0
+ ],
+ "n": 682,
+ "audio_s": 6588.6,
+ "encode_ms_per_turn": 25.1,
+ "decode_ms_per_turn": 54.9
+}

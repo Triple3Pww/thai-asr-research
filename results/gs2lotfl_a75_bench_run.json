@@ -1,0 +1,7 @@
+{
+ "model": "checkpoints/gs2lotfl_a75.nemo",
+ "n": 682,
+ "latency_ms_p50": 124.6,
+ "latency_ms_p90": 191.1,
+ "rtf": 0.0133
+}

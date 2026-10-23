@@ -1,0 +1,7 @@
+{
+ "manifest": "E:/Claude/datasets/thai_extra/elderly16k_fresh300.jsonl",
+ "n": 300,
+ "cer": {
+  "nec": 0.0031
+ }
+}

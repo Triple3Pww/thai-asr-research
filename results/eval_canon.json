@@ -1,0 +1,716 @@
+{
+ "tw": {
+  "cer": 0.07351843243319388,
+  "b_cer": 0.1798219584569733,
+  "u_cer": 0.06822047057779618,
+  "entity_recall": 0.40774487471526194,
+  "script_compliance": null,
+  "distractor_fire_rate": null,
+  "counts": {
+   "overall": {
+    "sub": 1799,
+    "ins": 2072,
+    "dele": 1348,
+    "ref": 70989
+   },
+   "biased": {
+    "sub": 423,
+    "ins": 0,
+    "dele": 183,
+    "ref": 3370
+   },
+   "unbiased": {
+    "sub": 1376,
+    "ins": 2072,
+    "dele": 1165,
+    "ref": 67619
+   },
+   "gold": [
+    179,
+    439
+   ],
+   "fired": [
+    0,
+    0
+   ]
+  },
+  "n_utts": 682,
+  "ci95": {
+   "cer": [
+    0.0645,
+    0.0848
+   ],
+   "b_cer": [
+    0.1591,
+    0.203
+   ],
+   "entity_recall": [
+    0.3558,
+    0.4577
+   ]
+  }
+ },
+ "pat": {
+  "cer": 0.07620068247835528,
+  "b_cer": 0.20157623522279478,
+  "u_cer": 0.07008385217172688,
+  "entity_recall": 0.35079726651480636,
+  "script_compliance": null,
+  "distractor_fire_rate": null,
+  "counts": {
+   "overall": {
+    "sub": 1957,
+    "ins": 1721,
+    "dele": 1726,
+    "ref": 70918
+   },
+   "biased": {
+    "sub": 441,
+    "ins": 0,
+    "dele": 224,
+    "ref": 3299
+   },
+   "unbiased": {
+    "sub": 1516,
+    "ins": 1721,
+    "dele": 1502,
+    "ref": 67619
+   },
+   "gold": [
+    154,
+    439
+   ],
+   "fired": [
+    0,
+    0
+   ]
+  },
+  "n_utts": 682,
+  "ci95": {
+   "cer": [
+    0.0663,
+    0.0868
+   ],
+   "b_cer": [
+    0.1811,
+    0.2264
+   ],
+   "entity_recall": [
+    0.3052,
+    0.3966
+   ]
+  }
+ },
+ "q17": {
+  "cer": 0.08025883580279983,
+  "b_cer": 0.2248038624019312,
+  "u_cer": 0.0731746994188024,
+  "entity_recall": 0.3621867881548975,
+  "script_compliance": null,
+  "distractor_fire_rate": null,
+  "counts": {
+   "overall": {
+    "sub": 2142,
+    "ins": 1919,
+    "dele": 1632,
+    "ref": 70933
+   },
+   "biased": {
+    "sub": 513,
+    "ins": 0,
+    "dele": 232,
+    "ref": 3314
+   },
+   "unbiased": {
+    "sub": 1629,
+    "ins": 1919,
+    "dele": 1400,
+    "ref": 67619
+   },
+   "gold": [
+    159,
+    439
+   ],
+   "fired": [
+    0,
+    0
+   ]
+  },
+  "n_utts": 682,
+  "ci95": {
+   "cer": [
+    0.0714,
+    0.0904
+   ],
+   "b_cer": [
+    0.2015,
+    0.2486
+   ],
+   "entity_recall": [
+    0.3097,
+    0.4124
+   ]
+  }
+ },
+ "isan": {
+  "cer": 0.08799943626241985,
+  "b_cer": 0.23411270983213428,
+  "u_cer": 0.08079090196542392,
+  "entity_recall": 0.34851936218678814,
+  "script_compliance": null,
+  "distractor_fire_rate": null,
+  "counts": {
+   "overall": {
+    "sub": 2368,
+    "ins": 2405,
+    "dele": 1471,
+    "ref": 70955
+   },
+   "biased": {
+    "sub": 571,
+    "ins": 0,
+    "dele": 210,
+    "ref": 3336
+   },
+   "unbiased": {
+    "sub": 1797,
+    "ins": 2405,
+    "dele": 1261,
+    "ref": 67619
+   },
+   "gold": [
+    153,
+    439
+   ],
+   "fired": [
+    0,
+    0
+   ]
+  },
+  "n_utts": 682,
+  "ci95": {
+   "cer": [
+    0.0781,
+    0.0993
+   ],
+   "b_cer": [
+    0.2119,
+    0.2604
+   ],
+   "entity_recall": [
+    0.3024,
+    0.3986
+   ]
+  }
+ },
+ "bio": {
+  "cer": 0.09925045962381558,
+  "b_cer": 0.2021999352960207,
+  "u_cer": 0.09454443277776957,
+  "entity_recall": 0.4305239179954442,
+  "script_compliance": null,
+  "distractor_fire_rate": null,
+  "counts": {
+   "overall": {
+    "sub": 2024,
+    "ins": 3043,
+    "dele": 1951,
+    "ref": 70710
+   },
+   "biased": {
+    "sub": 410,
+    "ins": 0,
+    "dele": 215,
+    "ref": 3091
+   },
+   "unbiased": {
+    "sub": 1614,
+    "ins": 3043,
+    "dele": 1736,
+    "ref": 67619
+   },
+   "gold": [
+    189,
+    439
+   ],
+   "fired": [
+    0,
+    0
+   ]
+  },
+  "n_utts": 682,
+  "ci95": {
+   "cer": [
+    0.0771,
+    0.1262
+   ],
+   "b_cer": [
+    0.178,
+    0.2302
+   ],
+   "entity_recall": [
+    0.383,
+    0.4776
+   ]
+  }
+ },
+ "q06": {
+  "cer": 0.10176144656850936,
+  "b_cer": 0.2930800542740841,
+  "u_cer": 0.09342048832428755,
+  "entity_recall": 0.2505694760820046,
+  "script_compliance": null,
+  "distractor_fire_rate": null,
+  "counts": {
+   "overall": {
+    "sub": 2941,
+    "ins": 1919,
+    "dele": 2321,
+    "ref": 70567
+   },
+   "biased": {
+    "sub": 592,
+    "ins": 0,
+    "dele": 272,
+    "ref": 2948
+   },
+   "unbiased": {
+    "sub": 2349,
+    "ins": 1919,
+    "dele": 2049,
+    "ref": 67619
+   },
+   "gold": [
+    110,
+    439
+   ],
+   "fired": [
+    0,
+    0
+   ]
+  },
+  "n_utts": 682,
+  "ci95": {
+   "cer": [
+    0.0925,
+    0.1129
+   ],
+   "b_cer": [
+    0.267,
+    0.3193
+   ],
+   "entity_recall": [
+    0.2122,
+    0.2918
+   ]
+  }
+ },
+ "qctx": {
+  "cer": 0.0806360583570844,
+  "b_cer": 0.21996927803379415,
+  "u_cer": 0.07392892530206008,
+  "entity_recall": 0.3690205011389522,
+  "script_compliance": null,
+  "distractor_fire_rate": null,
+  "counts": {
+   "overall": {
+    "sub": 2023,
+    "ins": 2127,
+    "dele": 1565,
+    "ref": 70874
+   },
+   "biased": {
+    "sub": 499,
+    "ins": 0,
+    "dele": 217,
+    "ref": 3255
+   },
+   "unbiased": {
+    "sub": 1524,
+    "ins": 2127,
+    "dele": 1348,
+    "ref": 67619
+   },
+   "gold": [
+    162,
+    439
+   ],
+   "fired": [
+    0,
+    0
+   ]
+  },
+  "n_utts": 682,
+  "ci95": {
+   "cer": [
+    0.0723,
+    0.0902
+   ],
+   "b_cer": [
+    0.1956,
+    0.2443
+   ],
+   "entity_recall": [
+    0.3195,
+    0.4195
+   ]
+  }
+ },
+ "rt": {
+  "cer": 0.09458100162924134,
+  "b_cer": 0.2589345920431558,
+  "u_cer": 0.08737189251541727,
+  "entity_recall": 0.32801822323462415,
+  "script_compliance": null,
+  "distractor_fire_rate": null,
+  "counts": {
+   "overall": {
+    "sub": 2293,
+    "ins": 1977,
+    "dele": 2406,
+    "ref": 70585
+   },
+   "biased": {
+    "sub": 501,
+    "ins": 0,
+    "dele": 267,
+    "ref": 2966
+   },
+   "unbiased": {
+    "sub": 1792,
+    "ins": 1977,
+    "dele": 2139,
+    "ref": 67619
+   },
+   "gold": [
+    144,
+    439
+   ],
+   "fired": [
+    0,
+    0
+   ]
+  },
+  "n_utts": 682,
+  "ci95": {
+   "cer": [
+    0.0866,
+    0.1045
+   ],
+   "b_cer": [
+    0.2302,
+    0.2893
+   ],
+   "entity_recall": [
+    0.2751,
+    0.3802
+   ]
+  }
+ },
+ "ctchead_h3_real_dis50_tau-1.5": {
+  "cer": 0.07370328938984155,
+  "b_cer": 0.32445036642238506,
+  "u_cer": 0.06257117082476818,
+  "entity_recall": 0.35990888382687924,
+  "script_compliance": null,
+  "distractor_fire_rate": 0.0014665337009444478,
+  "counts": {
+   "overall": {
+    "sub": 1674,
+    "ins": 1645,
+    "dele": 1886,
+    "ref": 70621
+   },
+   "biased": {
+    "sub": 421,
+    "ins": 313,
+    "dele": 240,
+    "ref": 3002
+   },
+   "unbiased": {
+    "sub": 1253,
+    "ins": 1332,
+    "dele": 1646,
+    "ref": 67619
+   },
+   "gold": [
+    158,
+    439
+   ],
+   "fired": [
+    50,
+    34094
+   ]
+  },
+  "n_utts": 682,
+  "ci95": {
+   "cer": [
+    0.0663,
+    0.0831
+   ],
+   "b_cer": [
+    0.252,
+    0.4531
+   ],
+   "entity_recall": [
+    0.3102,
+    0.4079
+   ]
+  }
+ },
+ "ctchead_h3_real_bias50_tau-1.5": {
+  "cer": 0.07478430320403293,
+  "b_cer": 0.21388367729831145,
+  "u_cer": 0.06820568183498721,
+  "entity_recall": 0.5671981776765376,
+  "script_compliance": 0.8353413654618473,
+  "distractor_fire_rate": 0.0010558732952045756,
+  "counts": {
+   "overall": {
+    "sub": 1533,
+    "ins": 1578,
+    "dele": 2185,
+    "ref": 70817
+   },
+   "biased": {
+    "sub": 313,
+    "ins": 193,
+    "dele": 178,
+    "ref": 3198
+   },
+   "unbiased": {
+    "sub": 1220,
+    "ins": 1385,
+    "dele": 2007,
+    "ref": 67619
+   },
+   "gold": [
+    249,
+    439
+   ],
+   "fired": [
+    36,
+    34095
+   ]
+  },
+  "n_utts": 682,
+  "ci95": {
+   "cer": [
+    0.067,
+    0.0841
+   ],
+   "b_cer": [
+    0.1806,
+    0.2475
+   ],
+   "entity_recall": [
+    0.5151,
+    0.6167
+   ]
+  }
+ },
+ "ctchead_a2h3_real_dis50_tau-1": {
+  "cer": 0.07225662340599995,
+  "b_cer": 0.295024077046549,
+  "u_cer": 0.06199440985521821,
+  "entity_recall": 0.3439635535307517,
+  "script_compliance": null,
+  "distractor_fire_rate": 0.0004399601102833343,
+  "counts": {
+   "overall": {
+    "sub": 1680,
+    "ins": 1815,
+    "dele": 1616,
+    "ref": 70734
+   },
+   "biased": {
+    "sub": 449,
+    "ins": 224,
+    "dele": 246,
+    "ref": 3115
+   },
+   "unbiased": {
+    "sub": 1231,
+    "ins": 1591,
+    "dele": 1370,
+    "ref": 67619
+   },
+   "gold": [
+    151,
+    439
+   ],
+   "fired": [
+    15,
+    34094
+   ]
+  },
+  "n_utts": 682,
+  "ci95": {
+   "cer": [
+    0.0649,
+    0.0816
+   ],
+   "b_cer": [
+    0.2468,
+    0.3677
+   ],
+   "entity_recall": [
+    0.2968,
+    0.389
+   ]
+  }
+ },
+ "ctchead_a2h3_real_bias50_tau-1": {
+  "cer": 0.0740976105744789,
+  "b_cer": 0.24271844660194175,
+  "u_cer": 0.06613525784173087,
+  "entity_recall": 0.5193621867881549,
+  "script_compliance": 0.8157894736842105,
+  "distractor_fire_rate": 0.0003519577650681918,
+  "counts": {
+   "overall": {
+    "sub": 1602,
+    "ins": 1765,
+    "dele": 1880,
+    "ref": 70812
+   },
+   "biased": {
+    "sub": 374,
+    "ins": 201,
+    "dele": 200,
+    "ref": 3193
+   },
+   "unbiased": {
+    "sub": 1228,
+    "ins": 1564,
+    "dele": 1680,
+    "ref": 67619
+   },
+   "gold": [
+    228,
+    439
+   ],
+   "fired": [
+    12,
+    34095
+   ]
+  },
+  "n_utts": 682,
+  "ci95": {
+   "cer": [
+    0.0668,
+    0.0834
+   ],
+   "b_cer": [
+    0.2079,
+    0.2775
+   ],
+   "entity_recall": [
+    0.4688,
+    0.5699
+   ]
+  }
+ },
+ "lot2_a75_bench": {
+  "cer": 0.07146693806010233,
+  "b_cer": 0.22353693636072913,
+  "u_cer": 0.06443455241869889,
+  "entity_recall": 0.3439635535307517,
+  "script_compliance": null,
+  "distractor_fire_rate": null,
+  "counts": {
+   "overall": {
+    "sub": 1670,
+    "ins": 1796,
+    "dele": 1590,
+    "ref": 70746
+   },
+   "biased": {
+    "sub": 453,
+    "ins": 0,
+    "dele": 246,
+    "ref": 3127
+   },
+   "unbiased": {
+    "sub": 1217,
+    "ins": 1796,
+    "dele": 1344,
+    "ref": 67619
+   },
+   "gold": [
+    151,
+    439
+   ],
+   "fired": [
+    0,
+    0
+   ]
+  },
+  "n_utts": 682,
+  "ci95": {
+   "cer": [
+    0.0637,
+    0.0809
+   ],
+   "b_cer": [
+    0.1983,
+    0.2518
+   ],
+   "entity_recall": [
+    0.2989,
+    0.389
+   ]
+  }
+ },
+ "qctx_bias50": {
+  "cer": 0.07908001185988395,
+  "b_cer": 0.2627805486284289,
+  "u_cer": 0.07036483828509739,
+  "entity_recall": 0.4715261958997722,
+  "script_compliance": 0.7246376811594203,
+  "distractor_fire_rate": 0.00014664906877841325,
+  "counts": {
+   "overall": {
+    "sub": 1955,
+    "ins": 2103,
+    "dele": 1543,
+    "ref": 70827
+   },
+   "biased": {
+    "sub": 386,
+    "ins": 283,
+    "dele": 174,
+    "ref": 3208
+   },
+   "unbiased": {
+    "sub": 1569,
+    "ins": 1820,
+    "dele": 1369,
+    "ref": 67619
+   },
+   "gold": [
+    207,
+    439
+   ],
+   "fired": [
+    5,
+    34095
+   ]
+  },
+  "n_utts": 682,
+  "ci95": {
+   "cer": [
+    0.0708,
+    0.0885
+   ],
+   "b_cer": [
+    0.2255,
+    0.3009
+   ],
+   "entity_recall": [
+    0.4214,
+    0.5283
+   ]
+  }
+ }
+}

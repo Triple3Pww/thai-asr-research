@@ -1,0 +1,266 @@
+{
+ "dev_general_cer": {
+  "corpus": "smartturn/refs, 150 Common Voice 17.0 th, CC0, denoised",
+  "metric": "CER, punctuation stripped + Thai SARA AM folded",
+  "device": "cuda",
+  "rows": [
+   {
+    "tag": "d0_ctrl_final",
+    "label": "D0 greedy_batch (control x3)",
+    "cer_fold_mean": 0.05177296561693406,
+    "p90": 0.16666666666666666,
+    "max": 0.8,
+    "perfect": 85,
+    "rtf": 0.0118,
+    "decoding": {
+     "strategy": "greedy_batch",
+     "device": "cuda",
+     "cuda_graphs": true,
+     "shipped_strategy": "greedy_batch"
+    }
+   },
+   {
+    "tag": "d1_malsd_b2",
+    "label": "D1 malsd_batch beam 2",
+    "cer_fold_mean": 0.04718443108063844,
+    "p90": 0.16666666666666666,
+    "max": 0.5161290322580645,
+    "perfect": 86,
+    "rtf": 0.0157,
+    "decoding": {
+     "strategy": "malsd_batch",
+     "device": "cuda",
+     "beam_size": 2,
+     "shipped_strategy": "greedy_batch"
+    }
+   },
+   {
+    "tag": "d1_malsd_b4",
+    "label": "D1 malsd_batch beam 4",
+    "cer_fold_mean": 0.047761217324807086,
+    "p90": 0.15625,
+    "max": 0.532258064516129,
+    "perfect": 85,
+    "rtf": 0.0159,
+    "decoding": {
+     "strategy": "malsd_batch",
+     "device": "cuda",
+     "beam_size": 4,
+     "shipped_strategy": "greedy_batch"
+    }
+   },
+   {
+    "tag": "d1_malsd_b8",
+    "label": "D1 malsd_batch beam 8",
+    "cer_fold_mean": 0.04762114594177256,
+    "p90": 0.15625,
+    "max": 0.532258064516129,
+    "perfect": 85,
+    "rtf": 0.0159,
+    "decoding": {
+     "strategy": "malsd_batch",
+     "device": "cuda",
+     "beam_size": 8,
+     "shipped_strategy": "greedy_batch"
+    }
+   },
+   {
+    "tag": "d1_beam2_nograph",
+    "label": "D1 beam 2, CUDA graphs OFF (control)",
+    "cer_fold_mean": 0.04718443108063844,
+    "p90": 0.16666666666666666,
+    "max": 0.5161290322580645,
+    "perfect": 86,
+    "rtf": 0.0561,
+    "decoding": {
+     "strategy": "malsd_batch",
+     "device": "cuda",
+     "cuda_graphs": false,
+     "beam_size": 2,
+     "shipped_strategy": "greedy_batch"
+    }
+   },
+   {
+    "tag": "d1_maes_b2",
+    "label": "maes_batch beam 2",
+    "cer_fold_mean": 0.04939883173163673,
+    "p90": 0.16666666666666666,
+    "max": 0.532258064516129,
+    "perfect": 85,
+    "rtf": 0.0791,
+    "decoding": {
+     "strategy": "maes_batch",
+     "device": "cuda",
+     "beam_size": 2,
+     "shipped_strategy": "greedy_batch"
+    }
+   },
+   {
+    "tag": "d2_ngram_a015",
+    "label": "D2 greedy + 4-gram a=0.15",
+    "cer_fold_mean": 0.05218719516115865,
+    "p90": 0.16666666666666666,
+    "max": 0.8,
+    "perfect": 86,
+    "rtf": 0.0297,
+    "decoding": {
+     "strategy": "greedy_batch",
+     "device": "cuda",
+     "ngram_lm": "E:/asr-bench/typhoon-ngram/ngram_4gram_bpe2048.nemo",
+     "ngram_alpha": 0.15,
+     "shipped_strategy": "greedy_batch"
+    }
+   },
+   {
+    "tag": "d2_ngram_a03",
+    "label": "D2 greedy + 4-gram a=0.30",
+    "cer_fold_mean": 0.05160256834334918,
+    "p90": 0.16666666666666666,
+    "max": 0.8,
+    "perfect": 85,
+    "rtf": 0.0303,
+    "decoding": {
+     "strategy": "greedy_batch",
+     "device": "cuda",
+     "ngram_lm": "E:/asr-bench/typhoon-ngram/ngram_4gram_bpe2048.nemo",
+     "ngram_alpha": 0.3,
+     "shipped_strategy": "greedy_batch"
+    }
+   },
+   {
+    "tag": "d2_ngram_a05",
+    "label": "D2 greedy + 4-gram a=0.50",
+    "cer_fold_mean": 0.054552369063098585,
+    "p90": 0.17307692307692307,
+    "max": 0.8,
+    "perfect": 80,
+    "rtf": 0.0301,
+    "decoding": {
+     "strategy": "greedy_batch",
+     "device": "cuda",
+     "ngram_lm": "E:/asr-bench/typhoon-ngram/ngram_4gram_bpe2048.nemo",
+     "ngram_alpha": 0.5,
+     "shipped_strategy": "greedy_batch"
+    }
+   },
+   {
+    "tag": "d3_beam2_a005",
+    "label": "D3 beam 2 + 4-gram a=0.05",
+    "cer_fold_mean": 0.048858079712199715,
+    "p90": 0.16666666666666666,
+    "max": 0.6451612903225806,
+    "perfect": 87,
+    "rtf": 0.1303,
+    "decoding": {
+     "strategy": "malsd_batch",
+     "device": "cuda",
+     "cuda_graphs": false,
+     "beam_size": 2,
+     "ngram_lm": "E:/asr-bench/typhoon-ngram/ngram_4gram_bpe2048.nemo",
+     "ngram_alpha": 0.05,
+     "shipped_strategy": "greedy_batch"
+    }
+   },
+   {
+    "tag": "d3_beam2_a01",
+    "label": "D3 beam 2 + 4-gram a=0.10",
+    "cer_fold_mean": 0.046268676317177224,
+    "p90": 0.16279069767441862,
+    "max": 0.6451612903225806,
+    "perfect": 90,
+    "rtf": 0.1294,
+    "decoding": {
+     "strategy": "malsd_batch",
+     "device": "cuda",
+     "cuda_graphs": false,
+     "beam_size": 2,
+     "ngram_lm": "E:/asr-bench/typhoon-ngram/ngram_4gram_bpe2048.nemo",
+     "ngram_alpha": 0.1,
+     "shipped_strategy": "greedy_batch"
+    }
+   },
+   {
+    "tag": "d3_beam2_a015",
+    "label": "D3 beam 2 + 4-gram a=0.15",
+    "cer_fold_mean": 0.046268676317177224,
+    "p90": 0.16279069767441862,
+    "max": 0.6451612903225806,
+    "perfect": 90,
+    "rtf": 0.1324,
+    "decoding": {
+     "strategy": "malsd_batch",
+     "device": "cuda",
+     "cuda_graphs": false,
+     "beam_size": 2,
+     "ngram_lm": "E:/asr-bench/typhoon-ngram/ngram_4gram_bpe2048.nemo",
+     "ngram_alpha": 0.15,
+     "shipped_strategy": "greedy_batch"
+    }
+   },
+   {
+    "tag": "d3_beam2_a03",
+    "label": "D3 beam 2 + 4-gram a=0.30",
+    "cer_fold_mean": 0.04903691310113904,
+    "p90": 0.17647058823529413,
+    "max": 0.532258064516129,
+    "perfect": 87,
+    "rtf": 0.1239,
+    "decoding": {
+     "strategy": "malsd_batch",
+     "device": "cuda",
+     "cuda_graphs": false,
+     "beam_size": 2,
+     "ngram_lm": "E:/asr-bench/typhoon-ngram/ngram_4gram_bpe2048.nemo",
+     "ngram_alpha": 0.3,
+     "shipped_strategy": "greedy_batch"
+    }
+   }
+  ]
+ },
+ "heldout_rareword": {
+  "corpus": "wayu-ai/thai-contextasr-bench, 682 real utts, condition none",
+  "align_backend": "dp",
+  "rows": [
+   {
+    "tag": "arm1_rareword",
+    "label": "D0 greedy",
+    "cer": 0.11248415716096324,
+    "u_cer": 0.10570929567285976,
+    "b_cer": 0.26177836761778367,
+    "entity_recall": 0.32801822323462415,
+    "gold": [
+     144,
+     439
+    ],
+    "rtf": null
+   },
+   {
+    "tag": "d1_rw_malsd_b2",
+    "label": "D1 beam 2",
+    "cer": 0.10994598487576522,
+    "u_cer": 0.10334547863530971,
+    "b_cer": 0.25573661456601265,
+    "entity_recall": 0.32574031890660593,
+    "gold": [
+     143,
+     439
+    ],
+    "rtf": 0.013
+   },
+   {
+    "tag": "d3_rw_beam2_a01",
+    "label": "D3 beam 2 + 4-gram a=0.10",
+    "cer": 0.10814432692584801,
+    "u_cer": 0.10146345870095456,
+    "b_cer": 0.2570469798657718,
+    "entity_recall": 0.32574031890660593,
+    "gold": [
+     143,
+     439
+    ],
+    "rtf": 0.1358
+   }
+  ]
+ },
+ "note": "alpha selected on the 150-clip dev set; the 682-utt benchmark is the held-out report"
+}

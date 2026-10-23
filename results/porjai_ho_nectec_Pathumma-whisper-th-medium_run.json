@@ -1,0 +1,8 @@
+{
+ "model": "E:/fw-spike/models/nectec_Pathumma-whisper-th-medium-ct2",
+ "n": 5,
+ "utts": 1000,
+ "manifest": "E:/Claude/datasets/porjai/manifest_heldout.jsonl",
+ "latency_ms_p50": 2005.5,
+ "latency_ms_p90": 4908.2
+}

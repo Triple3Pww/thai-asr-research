@@ -1,0 +1,13 @@
+{
+ "tag": "ctchead_a2h3_real_bias50_tau-1",
+ "mode": "rnnt",
+ "condition": "bias@50",
+ "split": "real",
+ "n_utts": 682,
+ "tau": -1.0,
+ "max_gap": 6,
+ "spots_accepted": 179,
+ "audio_h": 1.83,
+ "rtf": 0.0264,
+ "align_backend": "dp"
+}

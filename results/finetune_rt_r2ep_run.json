@@ -1,0 +1,21 @@
+{
+ "base": "E:/asr-spike/models/pathumma-stt-th-fastconformer-rnnt-large.nemo",
+ "seed": 2026,
+ "train": "E:\\Claude\\datasets\\gigaspeech2_th\\manifest_train_conv_plus_lot.jsonl",
+ "val": "E:\\Claude\\datasets\\gigaspeech2_th\\manifest_val_conv.jsonl",
+ "lr": 5e-05,
+ "epochs": 2,
+ "max_steps": -1,
+ "bs": 8,
+ "accum": 2,
+ "loss": "fast",
+ "freeze_encoder": false,
+ "checkpoint": "E:\\Claude\\asr-research\\checkpoints\\rt_student_r2ep.nemo",
+ "metrics": {
+  "train_loss": 0.29739564657211304,
+  "learning_rate": 5.0000089686363935e-06,
+  "global_step": 3746.0,
+  "training_batch_wer": 0.625,
+  "val_wer": 0.5705705881118774
+ }
+}

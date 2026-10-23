@@ -1,0 +1,7 @@
+{
+ "model": "checkpoints/soup2ep_a90.nemo",
+ "n": 682,
+ "latency_ms_p50": 127.0,
+ "latency_ms_p90": 196.6,
+ "rtf": 0.0136
+}

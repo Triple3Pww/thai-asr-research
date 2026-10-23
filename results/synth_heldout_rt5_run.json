@@ -1,0 +1,8 @@
+{
+ "model": "typhoon-ai/typhoon-asr-realtime",
+ "decoding": "malsd_batch beam 5, n-best",
+ "utts": 424,
+ "mean_cands": 4.73,
+ "latency_ms_p50": 95.0,
+ "latency_ms_p90": 119.4
+}

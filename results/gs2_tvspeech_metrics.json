@@ -1,0 +1,8 @@
+{
+ "manifest": "E:/asr-bench/typhoon-eval/manifest_tvspeech.jsonl",
+ "n": 570,
+ "cer": {
+  "gl75": 0.0734,
+  "g50": 0.0713
+ }
+}

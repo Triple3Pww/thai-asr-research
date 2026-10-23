@@ -1,0 +1,7 @@
+{
+ "tag": "loop5_merge_nec_a2",
+ "pen": "results/nectec_fc_greedy_hyps.jsonl",
+ "ear": "results/lot2_a75_bench_hyps.jsonl",
+ "same_sound_keep_pen": 35,
+ "diff_sound_take_ear": 532
+}

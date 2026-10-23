@@ -1,0 +1,14 @@
+{
+ "kept": 42348,
+ "latin_rows": 6178,
+ "dropped": {
+  "leak": 148,
+  "chars": 4450,
+  "dur": 0,
+  "dup": 0,
+  "empty": 1010
+ },
+ "nectec_thai_cer_vs_caption": 0.2727,
+ "hard": 31993,
+ "easy": 10355
+}

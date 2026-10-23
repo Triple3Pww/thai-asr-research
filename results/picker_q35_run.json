@@ -1,0 +1,10 @@
+{
+ "tag": "picker_q35",
+ "model": "qwen3.5:9b",
+ "n": 682,
+ "stats": {
+  "spots": 1960,
+  "llm_overrode_vote": 161
+ },
+ "llm_latency_ms_p50": 503.9
+}

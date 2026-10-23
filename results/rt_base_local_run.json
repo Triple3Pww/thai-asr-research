@@ -1,0 +1,7 @@
+{
+ "model": "typhoon-ai/typhoon-asr-realtime",
+ "n": 682,
+ "latency_ms_p50": 65.3,
+ "latency_ms_p90": 297.9,
+ "rtf": 0.015
+}

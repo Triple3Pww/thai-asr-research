@@ -1,0 +1,7 @@
+{
+ "model": "typhoon-ai/typhoon-whisper-large-v3",
+ "n": 682,
+ "spec_ms_p50": 296.8494999804534,
+ "spec_ms_p90": 638.443260017084,
+ "passes_p50": 10.0
+}

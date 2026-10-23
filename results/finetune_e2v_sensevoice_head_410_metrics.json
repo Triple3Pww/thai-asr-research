@@ -1,0 +1,106 @@
+{
+  "arm": "rescore_sensevoice_head",
+  "condition": "testactors410",
+  "date": "2026-09-22 13:45:45",
+  "what": "SenseVoiceSmall's shipped CTC emotion token, raw, on the 410 held-out clips",
+  "test_actors": [
+    "001",
+    "004",
+    "108",
+    "111",
+    "114",
+    "182",
+    "185",
+    "188"
+  ],
+  "test": {
+    "n": 410,
+    "accuracy": 0.4951219512195122,
+    "ci95": [
+      0.44672550436985514,
+      0.5435183980691692
+    ],
+    "macro_recall": 0.42818799963351994,
+    "chance_majority_class": 0.35365853658536583,
+    "beats_majority_class": true,
+    "per_class": {
+      "NEUTRAL": {
+        "support": 145,
+        "recall": 0.6068965517241379,
+        "precision": 0.9361702127659575
+      },
+      "HAPPY": {
+        "support": 110,
+        "recall": 0.39090909090909093,
+        "precision": 0.6323529411764706
+      },
+      "ANGRY": {
+        "support": 102,
+        "recall": 0.696078431372549,
+        "precision": 0.8658536585365854
+      },
+      "SAD": {
+        "support": 53,
+        "recall": 0.018867924528301886,
+        "precision": 1.0
+      }
+    },
+    "confusion": {
+      "ANGRY->ANGRY": 71,
+      "ANGRY->EMO_UNKNOWN": 29,
+      "ANGRY->HAPPY": 2,
+      "HAPPY->ANGRY": 7,
+      "HAPPY->EMO_UNKNOWN": 59,
+      "HAPPY->HAPPY": 43,
+      "HAPPY->SURPRISED": 1,
+      "NEUTRAL->ANGRY": 3,
+      "NEUTRAL->EMO_UNKNOWN": 38,
+      "NEUTRAL->HAPPY": 16,
+      "NEUTRAL->NEUTRAL": 88,
+      "SAD->ANGRY": 1,
+      "SAD->EMO_UNKNOWN": 38,
+      "SAD->HAPPY": 7,
+      "SAD->NEUTRAL": 6,
+      "SAD->SAD": 1
+    },
+    "pred_distribution": {
+      "EMO_UNKNOWN": 164,
+      "NEUTRAL": 94,
+      "HAPPY": 68,
+      "ANGRY": 82,
+      "SURPRISED": 1,
+      "SAD": 1
+    },
+    "by_turn_type": {
+      "impro": {
+        "n": 225,
+        "accuracy": 0.4311111111111111,
+        "macro_recall": 0.35866013071895425
+      },
+      "script": {
+        "n": 185,
+        "accuracy": 0.572972972972973,
+        "macro_recall": 0.5282173085420987
+      }
+    }
+  },
+  "abstention_rate": 0.4,
+  "precision_when_committing": 0.8252032520325203,
+  "n_committed": 246,
+  "event_distribution": {
+    "Speech": 409,
+    "NONE": 1
+  },
+  "raw_samples": [
+    "<|en|><|EMO_UNKNOWN|><|Speech|><|woitn|>so the cap made i add of timing cap",
+    "<|yue|><|EMO_UNKNOWN|><|Speech|><|woitn|>佢面电楼你饭俾电及灯系就及楼面有病电实铺啲臭柳砌柳啦咁埋又只牛及",
+    "<|yue|><|NEUTRAL|><|Speech|><|woitn|>诶两个食乜原嚟咗喂红咙",
+    "<|ja|><|NEUTRAL|><|Speech|><|woitn|>か",
+    "<|yue|><|NEUTRAL|><|Speech|><|woitn|>town lamb急狂佢uc",
+    "<|yue|><|NEUTRAL|><|Speech|><|woitn|>婆话 look下你正话狂啲鞋摆嘅佢嘅 bow",
+    "<|ja|><|NEUTRAL|><|Speech|><|woitn|>t up糖売",
+    "<|yue|><|EMO_UNKNOWN|><|Speech|><|woitn|>你咕噜卡低破吉喉龙鼻铁十俾有啦嘛佢"
+  ],
+  "reproduces": "results/probe_emotion_thai_testactors.json -> sensevoice",
+  "seconds": 73.6
+}

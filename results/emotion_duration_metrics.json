@@ -1,0 +1,168 @@
+{
+  "arm": "emotion_duration",
+  "date": "2026-09-22 21:23:42",
+  "question": "how much audio does emotion2vec need before its prediction stops improving?",
+  "method": "same clips truncated from the start to each window, so speakers, emotions and labels are identical at every point -- only the amount of audio varies",
+  "eval_set": {
+    "n": 212,
+    "min_seconds": 4.0,
+    "test_actors": [
+      "001",
+      "004",
+      "108",
+      "111",
+      "114",
+      "182",
+      "185",
+      "188"
+    ],
+    "class_mix": {
+      "NEUTRAL": 63,
+      "HAPPY": 49,
+      "ANGRY": 50,
+      "SAD": 50
+    }
+  },
+  "head": {
+    "dev_accuracy": 0.8071428571428572,
+    "weight_decay": 0.0001,
+    "epoch": 100
+  },
+  "by_window": {
+    "0.5s": {
+      "window_seconds": 0.5,
+      "n": 212,
+      "mean_encoder_frames": 24.0,
+      "finetuned_head": {
+        "accuracy": 0.5943396226415094,
+        "macro_recall": 0.5706575963718821,
+        "mean_confidence": 0.762504640180026,
+        "per_class_recall": {
+          "NEUTRAL": 0.9365079365079365,
+          "HAPPY": 0.30612244897959184,
+          "ANGRY": 0.74,
+          "SAD": 0.3
+        }
+      },
+      "shipped_9class_head": {
+        "accuracy": 0.5141509433962265
+      }
+    },
+    "1s": {
+      "window_seconds": 1.0,
+      "n": 212,
+      "mean_encoder_frames": 49.0,
+      "finetuned_head": {
+        "accuracy": 0.6226415094339622,
+        "macro_recall": 0.6032426303854875,
+        "mean_confidence": 0.7681830598728551,
+        "per_class_recall": {
+          "NEUTRAL": 0.8888888888888888,
+          "HAPPY": 0.20408163265306123,
+          "ANGRY": 0.84,
+          "SAD": 0.48
+        }
+      },
+      "shipped_9class_head": {
+        "accuracy": 0.6226415094339622
+      }
+    },
+    "1.5s": {
+      "window_seconds": 1.5,
+      "n": 212,
+      "mean_encoder_frames": 74.0,
+      "finetuned_head": {
+        "accuracy": 0.6509433962264151,
+        "macro_recall": 0.6391156462585034,
+        "mean_confidence": 0.7968062513257251,
+        "per_class_recall": {
+          "NEUTRAL": 0.8095238095238095,
+          "HAPPY": 0.3469387755102041,
+          "ANGRY": 0.82,
+          "SAD": 0.58
+        }
+      },
+      "shipped_9class_head": {
+        "accuracy": 0.5801886792452831
+      }
+    },
+    "2s": {
+      "window_seconds": 2.0,
+      "n": 212,
+      "mean_encoder_frames": 99.0,
+      "finetuned_head": {
+        "accuracy": 0.6745283018867925,
+        "macro_recall": 0.6689569160997734,
+        "mean_confidence": 0.8360026339681687,
+        "per_class_recall": {
+          "NEUTRAL": 0.746031746031746,
+          "HAPPY": 0.4897959183673469,
+          "ANGRY": 0.8,
+          "SAD": 0.64
+        }
+      },
+      "shipped_9class_head": {
+        "accuracy": 0.6084905660377359
+      }
+    },
+    "3s": {
+      "window_seconds": 3.0,
+      "n": 212,
+      "mean_encoder_frames": 149.0,
+      "finetuned_head": {
+        "accuracy": 0.7216981132075472,
+        "macro_recall": 0.7145124716553288,
+        "mean_confidence": 0.8312702842082594,
+        "per_class_recall": {
+          "NEUTRAL": 0.8253968253968254,
+          "HAPPY": 0.6326530612244898,
+          "ANGRY": 0.76,
+          "SAD": 0.64
+        }
+      },
+      "shipped_9class_head": {
+        "accuracy": 0.6132075471698113
+      }
+    },
+    "4s": {
+      "window_seconds": 4.0,
+      "n": 212,
+      "mean_encoder_frames": 199.0,
+      "finetuned_head": {
+        "accuracy": 0.7924528301886793,
+        "macro_recall": 0.787233560090703,
+        "mean_confidence": 0.8360442210518751,
+        "per_class_recall": {
+          "NEUTRAL": 0.873015873015873,
+          "HAPPY": 0.7959183673469388,
+          "ANGRY": 0.88,
+          "SAD": 0.6
+        }
+      },
+      "shipped_9class_head": {
+        "accuracy": 0.6839622641509434
+      }
+    },
+    "full": {
+      "window_seconds": null,
+      "n": 212,
+      "mean_encoder_frames": 311.66509433962267,
+      "finetuned_head": {
+        "accuracy": 0.7924528301886793,
+        "macro_recall": 0.7885714285714286,
+        "mean_confidence": 0.868685907514694,
+        "per_class_recall": {
+          "NEUTRAL": 0.8571428571428571,
+          "HAPPY": 0.8571428571428571,
+          "ANGRY": 0.82,
+          "SAD": 0.62
+        }
+      },
+      "shipped_9class_head": {
+        "accuracy": 0.7075471698113207
+      }
+    }
+  },
+  "shortest_window_within_2pts_of_full": 4.0,
+  "seconds": 20.1
+}

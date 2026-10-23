@@ -1,0 +1,7 @@
+{
+ "model": "checkpoints/rt_student_s3.nemo",
+ "n": 682,
+ "latency_ms_p50": 60.6,
+ "latency_ms_p90": 68.3,
+ "rtf": 0.0064
+}

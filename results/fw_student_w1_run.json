@@ -1,0 +1,9 @@
+{
+ "model": "E:/fw-spike/models/whisper_student_w1-ct2",
+ "runtime": "ctranslate2/faster-whisper",
+ "compute": "float16",
+ "n": 682,
+ "latency_ms_p50": 366.2,
+ "latency_ms_p90": 510.8,
+ "rtf": 0.0394
+}

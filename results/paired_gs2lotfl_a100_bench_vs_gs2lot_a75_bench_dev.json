@@ -1,0 +1,20 @@
+{
+ "base": "results\\gs2lot_a75_bench_hyps.jsonl",
+ "arm": "results\\gs2lotfl_a100_bench_hyps.jsonl",
+ "official_cer": {
+  "base": 0.04716,
+  "arm": 0.04844
+ },
+ "official_entity_recall": {
+  "base": 0.4459,
+  "arm": 0.4204
+ },
+ "own_cer": {
+  "base": 0.04689,
+  "arm": 0.04808
+ },
+ "rel_change": 0.0273,
+ "p_arm_not_better": 0.6721,
+ "utts_changed": 161,
+ "half": "dev"
+}

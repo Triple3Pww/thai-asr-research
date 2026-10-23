@@ -1,0 +1,11 @@
+{
+ "model": "checkpoints/r2ep_a75.nemo",
+ "strategy": "malsd_batch",
+ "beam": 4,
+ "lm": null,
+ "lm_alpha": 0.0,
+ "n": 682,
+ "latency_ms_p50": 90.6,
+ "latency_ms_p90": 129.1,
+ "rtf": 0.0096
+}

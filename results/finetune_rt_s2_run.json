@@ -1,0 +1,19 @@
+{
+ "train": "E:\\Claude\\datasets\\yodas2_th\\train_teach7.tr.jsonl",
+ "val": "E:\\Claude\\datasets\\yodas2_th\\train_teach7.va.jsonl",
+ "lr": 5e-05,
+ "epochs": 3,
+ "max_steps": -1,
+ "bs": 8,
+ "accum": 2,
+ "loss": "fast",
+ "freeze_encoder": false,
+ "checkpoint": "E:\\Claude\\asr-research\\checkpoints\\rt_student_s2.nemo",
+ "metrics": {
+  "train_loss": 0.5500628352165222,
+  "learning_rate": 5.00009946335922e-06,
+  "global_step": 1257.0,
+  "training_batch_wer": 0.9090909361839294,
+  "val_wer": 0.9032257795333862
+ }
+}

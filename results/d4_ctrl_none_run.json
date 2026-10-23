@@ -1,0 +1,13 @@
+{
+ "tag": "d4_ctrl_none",
+ "condition": "none",
+ "n_utts": 682,
+ "alpha": 1.0,
+ "context_score": 3.0,
+ "audio_h": 1.83,
+ "rtf": 0.0279,
+ "tree_rebuilds": 1,
+ "tree_rebuild_s": 0.1,
+ "device": "cuda",
+ "align_backend": "dp"
+}

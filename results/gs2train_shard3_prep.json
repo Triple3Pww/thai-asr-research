@@ -1,0 +1,11 @@
+{
+ "shard": 3,
+ "rows": 50871,
+ "latin_dropped": 5,
+ "nectec_cer": 0.0479,
+ "hard": 22171,
+ "easy": 28695,
+ "kept": 26475,
+ "kept_hours": 28.6,
+ "easy_frac": 0.15
+}

@@ -1,0 +1,3963 @@
+{
+  "arm": "pseudolabel_yield",
+  "date": "2026-09-22 13:25:02",
+  "question": "does the teacher's confidence separate its right answers from its wrong ones well enough to rescue pseudo-labelling on mostly-neutral speech?",
+  "measured_on": "410 actor-held-out THAI-SER clips (acted); projections are OPTIMISTIC",
+  "test_actors": [
+    "001",
+    "004",
+    "108",
+    "111",
+    "114",
+    "182",
+    "185",
+    "188"
+  ],
+  "feature_cache": "D:\\sensevoice-spike\\ft_cache\\feats_e2v_mean_cuda.npy",
+  "finetuned_head": {
+    "dev_accuracy": 0.8071428571428572,
+    "weight_decay": 0.0001,
+    "epoch": 100
+  },
+  "priors": {
+    "thaiser_acted_measured": {
+      "NEUTRAL": 0.354,
+      "HAPPY": 0.268,
+      "ANGRY": 0.249,
+      "SAD": 0.129
+    },
+    "mildly_neutral_70": {
+      "NEUTRAL": 0.7,
+      "HAPPY": 0.1,
+      "ANGRY": 0.1,
+      "SAD": 0.1
+    },
+    "spontaneous_85": {
+      "NEUTRAL": 0.85,
+      "HAPPY": 0.06,
+      "ANGRY": 0.05,
+      "SAD": 0.04
+    },
+    "read_corpus_95": {
+      "NEUTRAL": 0.95,
+      "HAPPY": 0.02,
+      "ANGRY": 0.015,
+      "SAD": 0.015
+    }
+  },
+  "threshold_selection": {
+    "zeroshot": {
+      "global": {
+        "threshold_chosen_on_dev": null,
+        "rule": "lowest t whose DEV projection >= 0.75 on ALL 4 classes @85% neutral",
+        "dev_projection": null,
+        "test_projection": null,
+        "test_coverage": null
+      },
+      "per_class": {
+        "thresholds_chosen_on_dev": {
+          "NEUTRAL": 0.0,
+          "HAPPY": null,
+          "ANGRY": 0.0,
+          "SAD": 0.6
+        },
+        "rule": "per class, lowest t whose DEV projection >= 0.75 @85% neutral",
+        "dev_projection": {
+          "NEUTRAL": {
+            "precision": 0.9887149520641878,
+            "share_of_corpus_labelled_this": 0.6326107406461084,
+            "correct_per_100k": 62547
+          },
+          "HAPPY": {
+            "precision": null,
+            "share_of_corpus_labelled_this": 0.0,
+            "correct_per_100k": 0
+          },
+          "ANGRY": {
+            "precision": 0.7998295570620562,
+            "share_of_corpus_labelled_this": 0.04911760754381103,
+            "correct_per_100k": 3929
+          },
+          "SAD": {
+            "precision": 0.77212684469165,
+            "share_of_corpus_labelled_this": 0.03330318831817686,
+            "correct_per_100k": 2571
+          },
+          "OTHER_unusable": 0.0,
+          "kept_fraction": 0.7150315365080965,
+          "coverage_measured": 0.6095238095238096
+        },
+        "test_projection": {
+          "NEUTRAL": {
+            "precision": 0.9905304449941285,
+            "share_of_corpus_labelled_this": 0.6865008576329331,
+            "correct_per_100k": 68000
+          },
+          "HAPPY": {
+            "precision": null,
+            "share_of_corpus_labelled_this": 0.0,
+            "correct_per_100k": 0
+          },
+          "ANGRY": {
+            "precision": 0.7804090419806243,
+            "share_of_corpus_labelled_this": 0.05401893171061528,
+            "correct_per_100k": 4216
+          },
+          "SAD": {
+            "precision": 0.4887982064226843,
+            "share_of_corpus_labelled_this": 0.029336487845271188,
+            "correct_per_100k": 1434
+          },
+          "OTHER_unusable": 0.0,
+          "kept_fraction": 0.7698562771888197,
+          "coverage_measured": 0.6121951219512195
+        }
+      }
+    },
+    "finetuned": {
+      "global": {
+        "threshold_chosen_on_dev": "0.99",
+        "rule": "lowest t whose DEV projection >= 0.75 on ALL 4 classes @85% neutral",
+        "dev_projection": {
+          "NEUTRAL": {
+            "precision": 0.9955019157364025,
+            "share_of_corpus_labelled_this": 0.4081250892174892,
+            "correct_per_100k": 40629
+          },
+          "HAPPY": {
+            "precision": 0.8460431654676259,
+            "share_of_corpus_labelled_this": 0.0033139423993896622,
+            "correct_per_100k": 280
+          },
+          "ANGRY": {
+            "precision": 1.0,
+            "share_of_corpus_labelled_this": 0.002040816326530612,
+            "correct_per_100k": 204
+          },
+          "SAD": {
+            "precision": 0.9695541862993838,
+            "share_of_corpus_labelled_this": 0.01841789052069426,
+            "correct_per_100k": 1786
+          },
+          "OTHER_unusable": 0.0,
+          "kept_fraction": 0.4318977384641037
+        },
+        "test_projection": {
+          "NEUTRAL": {
+            "precision": 0.9956546983574011,
+            "share_of_corpus_labelled_this": 0.34737150292778135,
+            "correct_per_100k": 34586
+          },
+          "HAPPY": {
+            "precision": 1.0,
+            "share_of_corpus_labelled_this": 0.0032727272727272726,
+            "correct_per_100k": 327
+          },
+          "ANGRY": {
+            "precision": 1.0,
+            "share_of_corpus_labelled_this": 0.0004901960784313725,
+            "correct_per_100k": 49
+          },
+          "SAD": {
+            "precision": 0.7867679928475637,
+            "share_of_corpus_labelled_this": 0.00767409948542024,
+            "correct_per_100k": 604
+          },
+          "OTHER_unusable": 0.0,
+          "kept_fraction": 0.35880852576436023
+        },
+        "test_coverage": 0.1926829268292683
+      },
+      "per_class": {
+        "thresholds_chosen_on_dev": {
+          "NEUTRAL": 0.0,
+          "HAPPY": 0.99,
+          "ANGRY": 0.6,
+          "SAD": 0.9
+        },
+        "rule": "per class, lowest t whose DEV projection >= 0.75 @85% neutral",
+        "dev_projection": {
+          "NEUTRAL": {
+            "precision": 0.988271546970246,
+            "share_of_corpus_labelled_this": 0.7086255468507275,
+            "correct_per_100k": 70031
+          },
+          "HAPPY": {
+            "precision": 0.8460431654676259,
+            "share_of_corpus_labelled_this": 0.0033139423993896622,
+            "correct_per_100k": 280
+          },
+          "ANGRY": {
+            "precision": 0.7686969620332167,
+            "share_of_corpus_labelled_this": 0.04977944237119994,
+            "correct_per_100k": 3827
+          },
+          "SAD": {
+            "precision": 0.8132042052488602,
+            "share_of_corpus_labelled_this": 0.03162094532752265,
+            "correct_per_100k": 2571
+          },
+          "OTHER_unusable": 0.0,
+          "kept_fraction": 0.7933398769488399,
+          "coverage_measured": 0.6571428571428571
+        },
+        "test_projection": {
+          "NEUTRAL": {
+            "precision": 0.9863711455598356,
+            "share_of_corpus_labelled_this": 0.7191110040278015,
+            "correct_per_100k": 70931
+          },
+          "HAPPY": {
+            "precision": 1.0,
+            "share_of_corpus_labelled_this": 0.0032727272727272726,
+            "correct_per_100k": 327
+          },
+          "ANGRY": {
+            "precision": 0.6926694294860659,
+            "share_of_corpus_labelled_this": 0.059446063064724323,
+            "correct_per_100k": 4118
+          },
+          "SAD": {
+            "precision": 0.8353469105971694,
+            "share_of_corpus_labelled_this": 0.019876500857632935,
+            "correct_per_100k": 1660
+          },
+          "OTHER_unusable": 0.0,
+          "kept_fraction": 0.801706295222886,
+          "coverage_measured": 0.6536585365853659
+        }
+      }
+    }
+  },
+  "teachers": {
+    "zeroshot": {
+      "test": {
+        "n": 410,
+        "accuracy_at_full_coverage": 0.7317073170731707,
+        "confidence_auroc_for_correctness": 0.7368939393939394,
+        "mean_confidence_when_right": 0.9432954788208008,
+        "mean_confidence_when_wrong": 0.8227461576461792,
+        "by_threshold": {
+          "0": {
+            "coverage": 1.0,
+            "n_kept": 410,
+            "precision_on_kept": 0.7317073170731707,
+            "per_class_kept_recall": {
+              "NEUTRAL": 1.0,
+              "HAPPY": 0.9999999999999999,
+              "ANGRY": 1.0,
+              "SAD": 1.0
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.9206349206349206,
+              "HAPPY": 0.5923076923076923,
+              "ANGRY": 0.8775510204081632,
+              "SAD": 0.6
+            }
+          },
+          "0.5": {
+            "coverage": 0.9560975609756097,
+            "n_kept": 392,
+            "precision_on_kept": 0.75,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.9586206896551726,
+              "HAPPY": 0.9727272727272727,
+              "ANGRY": 0.9411764705882353,
+              "SAD": 0.9433962264150944
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.9421487603305785,
+              "HAPPY": 0.5968992248062015,
+              "ANGRY": 0.8723404255319149,
+              "SAD": 0.7
+            }
+          },
+          "0.6": {
+            "coverage": 0.9146341463414634,
+            "n_kept": 375,
+            "precision_on_kept": 0.7573333333333333,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.9310344827586208,
+              "HAPPY": 0.9090909090909092,
+              "ANGRY": 0.9313725490196079,
+              "SAD": 0.8490566037735848
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.9491525423728814,
+              "HAPPY": 0.6016949152542372,
+              "ANGRY": 0.8723404255319149,
+              "SAD": 0.7037037037037037
+            }
+          },
+          "0.7": {
+            "coverage": 0.8707317073170732,
+            "n_kept": 357,
+            "precision_on_kept": 0.773109243697479,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.9103448275862069,
+              "HAPPY": 0.8272727272727273,
+              "ANGRY": 0.9117647058823529,
+              "SAD": 0.7735849056603773
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.9487179487179487,
+              "HAPPY": 0.6055045871559633,
+              "ANGRY": 0.8791208791208791,
+              "SAD": 0.76
+            }
+          },
+          "0.8": {
+            "coverage": 0.8097560975609757,
+            "n_kept": 332,
+            "precision_on_kept": 0.7981927710843374,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.8827586206896552,
+              "HAPPY": 0.7363636363636363,
+              "ANGRY": 0.8627450980392157,
+              "SAD": 0.660377358490566
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.9649122807017544,
+              "HAPPY": 0.6078431372549019,
+              "ANGRY": 0.8928571428571429,
+              "SAD": 0.75
+            }
+          },
+          "0.9": {
+            "coverage": 0.7560975609756098,
+            "n_kept": 310,
+            "precision_on_kept": 0.8225806451612904,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.8206896551724139,
+              "HAPPY": 0.6909090909090908,
+              "ANGRY": 0.8235294117647058,
+              "SAD": 0.5849056603773585
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.981651376146789,
+              "HAPPY": 0.631578947368421,
+              "ANGRY": 0.9113924050632911,
+              "SAD": 0.8
+            }
+          },
+          "0.95": {
+            "coverage": 0.7024390243902439,
+            "n_kept": 288,
+            "precision_on_kept": 0.8333333333333334,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.7655172413793103,
+              "HAPPY": 0.6363636363636362,
+              "ANGRY": 0.7745098039215685,
+              "SAD": 0.5283018867924528
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.9805825242718447,
+              "HAPPY": 0.6511627906976745,
+              "ANGRY": 0.9054054054054054,
+              "SAD": 0.8
+            }
+          },
+          "0.99": {
+            "coverage": 0.5634146341463414,
+            "n_kept": 231,
+            "precision_on_kept": 0.8614718614718615,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.6413793103448275,
+              "HAPPY": 0.5090909090909091,
+              "ANGRY": 0.627450980392157,
+              "SAD": 0.339622641509434
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.9770114942528736,
+              "HAPPY": 0.7142857142857143,
+              "ANGRY": 0.9076923076923077,
+              "SAD": 0.7692307692307693
+            }
+          }
+        },
+        "projected": {
+          "0": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9208210031533285,
+                "share_of_corpus_labelled_this": 0.3075516295025729,
+                "correct_per_100k": 28320
+              },
+              "HAPPY": {
+                "precision": 0.5920929852375738,
+                "share_of_corpus_labelled_this": 0.3168421256075625,
+                "correct_per_100k": 18760
+              },
+              "ANGRY": {
+                "precision": 0.8777445152098511,
+                "share_of_corpus_labelled_this": 0.23918255578093306,
+                "correct_per_100k": 20994
+              },
+              "SAD": {
+                "precision": 0.5995191720515591,
+                "share_of_corpus_labelled_this": 0.08525700249461587,
+                "correct_per_100k": 5111
+              },
+              "OTHER_unusable": 0.051166686614315685,
+              "kept_fraction": 0.9999999999999999
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9756447419537998,
+                "share_of_corpus_labelled_this": 0.5739794168096054,
+                "correct_per_100k": 56000
+              },
+              "HAPPY": {
+                "precision": 0.32253208515600845,
+                "share_of_corpus_labelled_this": 0.21703267123375047,
+                "correct_per_100k": 7000
+              },
+              "ANGRY": {
+                "precision": 0.8504398826979471,
+                "share_of_corpus_labelled_this": 0.09914131169709264,
+                "correct_per_100k": 8431
+              },
+              "SAD": {
+                "precision": 0.5496656063739195,
+                "share_of_corpus_labelled_this": 0.07208499322127858,
+                "correct_per_100k": 3962
+              },
+              "OTHER_unusable": 0.03776160703827281,
+              "kept_fraction": 0.9999999999999999
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9905304449941285,
+                "share_of_corpus_labelled_this": 0.6865008576329331,
+                "correct_per_100k": 68000
+              },
+              "HAPPY": {
+                "precision": 0.23241880670904333,
+                "share_of_corpus_labelled_this": 0.18070826795259418,
+                "correct_per_100k": 4200
+              },
+              "ANGRY": {
+                "precision": 0.7804090419806243,
+                "share_of_corpus_labelled_this": 0.05401893171061528,
+                "correct_per_100k": 4216
+              },
+              "SAD": {
+                "precision": 0.31724777625279466,
+                "share_of_corpus_labelled_this": 0.049957975406404356,
+                "correct_per_100k": 1585
+              },
+              "OTHER_unusable": 0.028813967297453075,
+              "kept_fraction": 1.0
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9969511852126859,
+                "share_of_corpus_labelled_this": 0.7623241852487135,
+                "correct_per_100k": 76000
+              },
+              "HAPPY": {
+                "precision": 0.0917391365954028,
+                "share_of_corpus_labelled_this": 0.15260662482299361,
+                "correct_per_100k": 1400
+              },
+              "ANGRY": {
+                "precision": 0.5965936274040762,
+                "share_of_corpus_labelled_this": 0.021198782961460445,
+                "correct_per_100k": 1265
+              },
+              "SAD": {
+                "precision": 0.14759285352145096,
+                "share_of_corpus_labelled_this": 0.04026886183585636,
+                "correct_per_100k": 594
+              },
+              "OTHER_unusable": 0.023601545130976034,
+              "kept_fraction": 1.0
+            }
+          },
+          "0.5": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9422913932715544,
+                "share_of_corpus_labelled_this": 0.2953621813450051,
+                "correct_per_100k": 27832
+              },
+              "HAPPY": {
+                "precision": 0.5966906955833144,
+                "share_of_corpus_labelled_this": 0.31440074629721765,
+                "correct_per_100k": 18760
+              },
+              "ANGRY": {
+                "precision": 0.8725409582416028,
+                "share_of_corpus_labelled_this": 0.2294178498985801,
+                "correct_per_100k": 20018
+              },
+              "SAD": {
+                "precision": 0.6996487389626749,
+                "share_of_corpus_labelled_this": 0.07305552729638612,
+                "correct_per_100k": 5111
+              },
+              "OTHER_unusable": 0.043857382775668974,
+              "kept_fraction": 0.9560936876128581
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9816730478488436,
+                "share_of_corpus_labelled_this": 0.5606192701248003,
+                "correct_per_100k": 55034
+              },
+              "HAPPY": {
+                "precision": 0.3298695692949191,
+                "share_of_corpus_labelled_this": 0.21220508502685392,
+                "correct_per_100k": 7000
+              },
+              "ANGRY": {
+                "precision": 0.8442803379961656,
+                "share_of_corpus_labelled_this": 0.09521974306964165,
+                "correct_per_100k": 8039
+              },
+              "SAD": {
+                "precision": 0.6652565095632486,
+                "share_of_corpus_labelled_this": 0.05955994558466908,
+                "correct_per_100k": 3962
+              },
+              "OTHER_unusable": 0.029160435925715884,
+              "kept_fraction": 0.956764479731681
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9930821571406647,
+                "share_of_corpus_labelled_this": 0.6729310936298575,
+                "correct_per_100k": 66828
+              },
+              "HAPPY": {
+                "precision": 0.24021111264251305,
+                "share_of_corpus_labelled_this": 0.17484619898707696,
+                "correct_per_100k": 4200
+              },
+              "ANGRY": {
+                "precision": 0.7721380886822349,
+                "share_of_corpus_labelled_this": 0.0520581473968898,
+                "correct_per_100k": 4020
+              },
+              "SAD": {
+                "precision": 0.43176039521641196,
+                "share_of_corpus_labelled_this": 0.03670799077305258,
+                "correct_per_100k": 1585
+              },
+              "OTHER_unusable": 0.021442464369671684,
+              "kept_fraction": 0.9579858951565485
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9977590327289312,
+                "share_of_corpus_labelled_this": 0.7485740817412906,
+                "correct_per_100k": 74690
+              },
+              "HAPPY": {
+                "precision": 0.09585436664113124,
+                "share_of_corpus_labelled_this": 0.14605490068506258,
+                "correct_per_100k": 1400
+              },
+              "ANGRY": {
+                "precision": 0.5850802086408818,
+                "share_of_corpus_labelled_this": 0.0206105476673428,
+                "correct_per_100k": 1206
+              },
+              "SAD": {
+                "precision": 0.22268686882117902,
+                "share_of_corpus_labelled_this": 0.026689477731117288,
+                "correct_per_100k": 594
+              },
+              "OTHER_unusable": 0.01648378325719594,
+              "kept_fraction": 0.9584127910820094
+            }
+          },
+          "0.6": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9492833593158361,
+                "share_of_corpus_labelled_this": 0.2880430590879517,
+                "correct_per_100k": 27343
+              },
+              "HAPPY": {
+                "precision": 0.6014706112669503,
+                "share_of_corpus_labelled_this": 0.28759812190565,
+                "correct_per_100k": 17298
+              },
+              "ANGRY": {
+                "precision": 0.8725409582416028,
+                "share_of_corpus_labelled_this": 0.2294178498985801,
+                "correct_per_100k": 20018
+              },
+              "SAD": {
+                "precision": 0.7033907133630821,
+                "share_of_corpus_labelled_this": 0.0657462234577394,
+                "correct_per_100k": 4625
+              },
+              "OTHER_unusable": 0.043857382775668974,
+              "kept_fraction": 0.9146626371255901
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9829737907778463,
+                "share_of_corpus_labelled_this": 0.5500550068019163,
+                "correct_per_100k": 54069
+              },
+              "HAPPY": {
+                "precision": 0.33052403077903814,
+                "share_of_corpus_labelled_this": 0.19528218385005863,
+                "correct_per_100k": 6455
+              },
+              "ANGRY": {
+                "precision": 0.8442803379961656,
+                "share_of_corpus_labelled_this": 0.09521974306964165,
+                "correct_per_100k": 8039
+              },
+              "SAD": {
+                "precision": 0.7034913412878964,
+                "share_of_corpus_labelled_this": 0.05095877447211214,
+                "correct_per_100k": 3585
+              },
+              "OTHER_unusable": 0.029160435925715884,
+              "kept_fraction": 0.9206761441194447
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9937792999769736,
+                "share_of_corpus_labelled_this": 0.6606615011533685,
+                "correct_per_100k": 65655
+              },
+              "HAPPY": {
+                "precision": 0.23765324277919525,
+                "share_of_corpus_labelled_this": 0.16295705572700483,
+                "correct_per_100k": 3873
+              },
+              "ANGRY": {
+                "precision": 0.7721380886822349,
+                "share_of_corpus_labelled_this": 0.0520581473968898,
+                "correct_per_100k": 4020
+              },
+              "SAD": {
+                "precision": 0.4887982064226843,
+                "share_of_corpus_labelled_this": 0.029336487845271188,
+                "correct_per_100k": 1434
+              },
+              "OTHER_unusable": 0.021442464369671684,
+              "kept_fraction": 0.926455656492206
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9979658172350173,
+                "share_of_corpus_labelled_this": 0.7352888152836103,
+                "correct_per_100k": 73379
+              },
+              "HAPPY": {
+                "precision": 0.09394158342007837,
+                "share_of_corpus_labelled_this": 0.13741615202891946,
+                "correct_per_100k": 1291
+              },
+              "ANGRY": {
+                "precision": 0.5850802086408818,
+                "share_of_corpus_labelled_this": 0.0206105476673428,
+                "correct_per_100k": 1206
+              },
+              "SAD": {
+                "precision": 0.27475151027957173,
+                "share_of_corpus_labelled_this": 0.019571715857337194,
+                "correct_per_100k": 538
+              },
+              "OTHER_unusable": 0.01648378325719594,
+              "kept_fraction": 0.9293710140944057
+            }
+          },
+          "0.7": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.948849823499965,
+                "share_of_corpus_labelled_this": 0.28560167977760686,
+                "correct_per_100k": 27099
+              },
+              "HAPPY": {
+                "precision": 0.6052721449319081,
+                "share_of_corpus_labelled_this": 0.2656656205748402,
+                "correct_per_100k": 16080
+              },
+              "ANGRY": {
+                "precision": 0.8793105795904432,
+                "share_of_corpus_labelled_this": 0.22209913332104,
+                "correct_per_100k": 19529
+              },
+              "SAD": {
+                "precision": 0.7596948740764808,
+                "share_of_corpus_labelled_this": 0.060873496185012116,
+                "correct_per_100k": 4625
+              },
+              "OTHER_unusable": 0.03655309461100345,
+              "kept_fraction": 0.8707930244695027
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9828230362675414,
+                "share_of_corpus_labelled_this": 0.5452274205950197,
+                "correct_per_100k": 53586
+              },
+              "HAPPY": {
+                "precision": 0.3383942601578284,
+                "share_of_corpus_labelled_this": 0.17730797198515058,
+                "correct_per_100k": 6000
+              },
+              "ANGRY": {
+                "precision": 0.8492851628018423,
+                "share_of_corpus_labelled_this": 0.09234986784682525,
+                "correct_per_100k": 7843
+              },
+              "SAD": {
+                "precision": 0.7295202330227968,
+                "share_of_corpus_labelled_this": 0.04914059265393032,
+                "correct_per_100k": 3585
+              },
+              "OTHER_unusable": 0.0244777601109646,
+              "kept_fraction": 0.8885036131918906
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9937236093780569,
+                "share_of_corpus_labelled_this": 0.6547994321878512,
+                "correct_per_100k": 65069
+              },
+              "HAPPY": {
+                "precision": 0.24490427153890373,
+                "share_of_corpus_labelled_this": 0.14699621110643346,
+                "correct_per_100k": 3600
+              },
+              "ANGRY": {
+                "precision": 0.7760518665385411,
+                "share_of_corpus_labelled_this": 0.0505323006945725,
+                "correct_per_100k": 3922
+              },
+              "SAD": {
+                "precision": 0.50767671522025,
+                "share_of_corpus_labelled_this": 0.0282455787543621,
+                "correct_per_100k": 1434
+              },
+              "OTHER_unusable": 0.01938757586195299,
+              "kept_fraction": 0.8999610986051721
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9979475288776876,
+                "share_of_corpus_labelled_this": 0.7287370911456792,
+                "correct_per_100k": 72724
+              },
+              "HAPPY": {
+                "precision": 0.09768997791952513,
+                "share_of_corpus_labelled_this": 0.12283757510811741,
+                "correct_per_100k": 1200
+              },
+              "ANGRY": {
+                "precision": 0.584302591812437,
+                "share_of_corpus_labelled_this": 0.020134611838465793,
+                "correct_per_100k": 1176
+              },
+              "SAD": {
+                "precision": 0.279952948566748,
+                "share_of_corpus_labelled_this": 0.019208079493700833,
+                "correct_per_100k": 538
+              },
+              "OTHER_unusable": 0.0157359273395287,
+              "kept_fraction": 0.906653284925492
+            }
+          },
+          "0.8": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9650068226712899,
+                "share_of_corpus_labelled_this": 0.2782899745667474,
+                "correct_per_100k": 26855
+              },
+              "HAPPY": {
+                "precision": 0.6075943107371292,
+                "share_of_corpus_labelled_this": 0.24861086219073894,
+                "correct_per_100k": 15105
+              },
+              "ANGRY": {
+                "precision": 0.8930239372822896,
+                "share_of_corpus_labelled_this": 0.20502052369537158,
+                "correct_per_100k": 18309
+              },
+              "SAD": {
+                "precision": 0.7496863478419638,
+                "share_of_corpus_labelled_this": 0.05843953392086118,
+                "correct_per_100k": 4381
+              },
+              "OTHER_unusable": 0.019493320552920995,
+              "kept_fraction": 0.8098542149266403
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9877800967514444,
+                "share_of_corpus_labelled_this": 0.5376039510262021,
+                "correct_per_100k": 53103
+              },
+              "HAPPY": {
+                "precision": 0.3414520328856653,
+                "share_of_corpus_labelled_this": 0.16507043723623005,
+                "correct_per_100k": 5636
+              },
+              "ANGRY": {
+                "precision": 0.8586902685358657,
+                "share_of_corpus_labelled_this": 0.08562972524432971,
+                "correct_per_100k": 7353
+              },
+              "SAD": {
+                "precision": 0.7187202723676964,
+                "share_of_corpus_labelled_this": 0.047253800201100135,
+                "correct_per_100k": 3396
+              },
+              "OTHER_unusable": 0.008321730064238388,
+              "kept_fraction": 0.8438796437721003
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9956617601260758,
+                "share_of_corpus_labelled_this": 0.6476371916957473,
+                "correct_per_100k": 64483
+              },
+              "HAPPY": {
+                "precision": 0.2460526100619744,
+                "share_of_corpus_labelled_this": 0.1374428899968339,
+                "correct_per_100k": 3382
+              },
+              "ANGRY": {
+                "precision": 0.7823874048871989,
+                "share_of_corpus_labelled_this": 0.046990411211506544,
+                "correct_per_100k": 3676
+              },
+              "SAD": {
+                "precision": 0.4941607786775906,
+                "share_of_corpus_labelled_this": 0.027490861773230024,
+                "correct_per_100k": 1358
+              },
+              "OTHER_unusable": 0.004517640332290721,
+              "kept_fraction": 0.8640789950096085
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9985716427026793,
+                "share_of_corpus_labelled_this": 0.7217205299580054,
+                "correct_per_100k": 72069
+              },
+              "HAPPY": {
+                "precision": 0.09803007415106835,
+                "share_of_corpus_labelled_this": 0.11499254050706459,
+                "correct_per_100k": 1127
+              },
+              "ANGRY": {
+                "precision": 0.579407248826655,
+                "share_of_corpus_labelled_this": 0.019035681357182373,
+                "correct_per_100k": 1103
+              },
+              "SAD": {
+                "precision": 0.2691848508904071,
+                "share_of_corpus_labelled_this": 0.018925060625776306,
+                "correct_per_100k": 509
+              },
+              "OTHER_unusable": 0.001520986782363031,
+              "kept_fraction": 0.8761947992303918
+            }
+          },
+          "0.9": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9817061005093539,
+                "share_of_corpus_labelled_this": 0.26609551073519844,
+                "correct_per_100k": 26123
+              },
+              "HAPPY": {
+                "precision": 0.6313489635617361,
+                "share_of_corpus_labelled_this": 0.23153885825223802,
+                "correct_per_100k": 14618
+              },
+              "ANGRY": {
+                "precision": 0.9115516457184695,
+                "share_of_corpus_labelled_this": 0.19281925133689842,
+                "correct_per_100k": 17576
+              },
+              "SAD": {
+                "precision": 0.7998421734964207,
+                "share_of_corpus_labelled_this": 0.048688850771869636,
+                "correct_per_100k": 3894
+              },
+              "OTHER_unusable": 0.01705695691655736,
+              "kept_fraction": 0.7561994280127617
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9927476429839698,
+                "share_of_corpus_labelled_this": 0.5203253090435914,
+                "correct_per_100k": 51655
+              },
+              "HAPPY": {
+                "precision": 0.37384914418145687,
+                "share_of_corpus_labelled_this": 0.14590231218766564,
+                "correct_per_100k": 5455
+              },
+              "ANGRY": {
+                "precision": 0.9173036831132731,
+                "share_of_corpus_labelled_this": 0.07695187165775402,
+                "correct_per_100k": 7059
+              },
+              "SAD": {
+                "precision": 0.8924949290060852,
+                "share_of_corpus_labelled_this": 0.03382504288164666,
+                "correct_per_100k": 3019
+              },
+              "OTHER_unusable": 0.00741263915514748,
+              "kept_fraction": 0.7844171749258052
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9975993129067975,
+                "share_of_corpus_labelled_this": 0.628750813272609,
+                "correct_per_100k": 62724
+              },
+              "HAPPY": {
+                "precision": 0.2784805392231578,
+                "share_of_corpus_labelled_this": 0.1175208609498096,
+                "correct_per_100k": 3273
+              },
+              "ANGRY": {
+                "precision": 0.9023789991796555,
+                "share_of_corpus_labelled_this": 0.03911229946524065,
+                "correct_per_100k": 3529
+              },
+              "SAD": {
+                "precision": 0.8469682386910492,
+                "share_of_corpus_labelled_this": 0.014257289879931388,
+                "correct_per_100k": 1208
+              },
+              "OTHER_unusable": 0.003972185786836175,
+              "kept_fraction": 0.8036134493544268
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9991932193330613,
+                "share_of_corpus_labelled_this": 0.7016005204944697,
+                "correct_per_100k": 70103
+              },
+              "HAPPY": {
+                "precision": 0.11538681279110814,
+                "share_of_corpus_labelled_this": 0.09454365403818119,
+                "correct_per_100k": 1091
+              },
+              "ANGRY": {
+                "precision": 0.8926961226330027,
+                "share_of_corpus_labelled_this": 0.01186096256684492,
+                "correct_per_100k": 1059
+              },
+              "SAD": {
+                "precision": 0.8616187989556136,
+                "share_of_corpus_labelled_this": 0.00525557461406518,
+                "correct_per_100k": 453
+              },
+              "OTHER_unusable": 0.001339168600544849,
+              "kept_fraction": 0.8145998803141059
+            }
+          },
+          "0.95": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9806403735926623,
+                "share_of_corpus_labelled_this": 0.2514472348731294,
+                "correct_per_100k": 24658
+              },
+              "HAPPY": {
+                "precision": 0.6509096506608273,
+                "share_of_corpus_labelled_this": 0.20960875829364098,
+                "correct_per_100k": 13644
+              },
+              "ANGRY": {
+                "precision": 0.9055742908153144,
+                "share_of_corpus_labelled_this": 0.18061336898395722,
+                "correct_per_100k": 16356
+              },
+              "SAD": {
+                "precision": 0.7998421734964207,
+                "share_of_corpus_labelled_this": 0.048688850771869636,
+                "correct_per_100k": 3894
+              },
+              "OTHER_unusable": 0.012184229643830088,
+              "kept_fraction": 0.7025424425664273
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9923201186409258,
+                "share_of_corpus_labelled_this": 0.491359791802212,
+                "correct_per_100k": 48759
+              },
+              "HAPPY": {
+                "precision": 0.4010156045095062,
+                "share_of_corpus_labelled_this": 0.12695039877901831,
+                "correct_per_100k": 5091
+              },
+              "ANGRY": {
+                "precision": 0.9116773874319644,
+                "share_of_corpus_labelled_this": 0.07204991087344029,
+                "correct_per_100k": 6569
+              },
+              "SAD": {
+                "precision": 0.8924949290060852,
+                "share_of_corpus_labelled_this": 0.03382504288164666,
+                "correct_per_100k": 3019
+              },
+              "OTHER_unusable": 0.005594457336965661,
+              "kept_fraction": 0.7297796016732829
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9974570604934618,
+                "share_of_corpus_labelled_this": 0.5935783994795054,
+                "correct_per_100k": 59207
+              },
+              "HAPPY": {
+                "precision": 0.30138359481305477,
+                "share_of_corpus_labelled_this": 0.10135075389356074,
+                "correct_per_100k": 3055
+              },
+              "ANGRY": {
+                "precision": 0.8958525793747265,
+                "share_of_corpus_labelled_this": 0.03666131907308378,
+                "correct_per_100k": 3284
+              },
+              "SAD": {
+                "precision": 0.8469682386910492,
+                "share_of_corpus_labelled_this": 0.014257289879931388,
+                "correct_per_100k": 1208
+              },
+              "OTHER_unusable": 0.0028812766959270845,
+              "kept_fraction": 0.7487290390220085
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9991453327308093,
+                "share_of_corpus_labelled_this": 0.6622901756668834,
+                "correct_per_100k": 66172
+              },
+              "HAPPY": {
+                "precision": 0.12748965661064784,
+                "share_of_corpus_labelled_this": 0.0798638764312728,
+                "correct_per_100k": 1018
+              },
+              "ANGRY": {
+                "precision": 0.885604422013939,
+                "share_of_corpus_labelled_this": 0.011125668449197861,
+                "correct_per_100k": 985
+              },
+              "SAD": {
+                "precision": 0.8616187989556136,
+                "share_of_corpus_labelled_this": 0.00525557461406518,
+                "correct_per_100k": 453
+              },
+              "OTHER_unusable": 0.0009755322369084854,
+              "kept_fraction": 0.7595108273983278
+            }
+          },
+          "0.99": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9770797338528838,
+                "share_of_corpus_labelled_this": 0.21238516590761222,
+                "correct_per_100k": 20752
+              },
+              "HAPPY": {
+                "precision": 0.7140429592514678,
+                "share_of_corpus_labelled_this": 0.15354309179281816,
+                "correct_per_100k": 10964
+              },
+              "ANGRY": {
+                "precision": 0.9078575256765913,
+                "share_of_corpus_labelled_this": 0.1586475935828877,
+                "correct_per_100k": 14403
+              },
+              "SAD": {
+                "precision": 0.7690556711758586,
+                "share_of_corpus_labelled_this": 0.031648713550600345,
+                "correct_per_100k": 2434
+              },
+              "OTHER_unusable": 0.007306689536878215,
+              "kept_fraction": 0.5635312543707965
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9908876669285153,
+                "share_of_corpus_labelled_this": 0.4141184124918672,
+                "correct_per_100k": 41034
+              },
+              "HAPPY": {
+                "precision": 0.4358257524800968,
+                "share_of_corpus_labelled_this": 0.09386570361272799,
+                "correct_per_100k": 4091
+              },
+              "ANGRY": {
+                "precision": 0.9138270909602929,
+                "share_of_corpus_labelled_this": 0.06329768270944743,
+                "correct_per_100k": 5784
+              },
+              "SAD": {
+                "precision": 0.8737092930897538,
+                "share_of_corpus_labelled_this": 0.021595197255574617,
+                "correct_per_100k": 1887
+              },
+              "OTHER_unusable": 0.003704974271012007,
+              "kept_fraction": 0.5965819703406292
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9969798351927307,
+                "share_of_corpus_labelled_this": 0.4997852960312296,
+                "correct_per_100k": 49828
+              },
+              "HAPPY": {
+                "precision": 0.3160362824069121,
+                "share_of_corpus_labelled_this": 0.07766657156740972,
+                "correct_per_100k": 2455
+              },
+              "ANGRY": {
+                "precision": 0.8983444991971652,
+                "share_of_corpus_labelled_this": 0.032194295900178256,
+                "correct_per_100k": 2892
+              },
+              "SAD": {
+                "precision": 0.8218154650728428,
+                "share_of_corpus_labelled_this": 0.009183533447684392,
+                "correct_per_100k": 755
+              },
+              "OTHER_unusable": 0.0018456260720411662,
+              "kept_fraction": 0.6206753230185432
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9989846175392731,
+                "share_of_corpus_labelled_this": 0.557462589459987,
+                "correct_per_100k": 55690
+              },
+              "HAPPY": {
+                "precision": 0.13039585336739234,
+                "share_of_corpus_labelled_this": 0.06274599974253615,
+                "correct_per_100k": 818
+              },
+              "ANGRY": {
+                "precision": 0.8883109772789488,
+                "share_of_corpus_labelled_this": 0.009767379679144384,
+                "correct_per_100k": 868
+              },
+              "SAD": {
+                "precision": 0.8384146341463414,
+                "share_of_corpus_labelled_this": 0.003375643224699829,
+                "correct_per_100k": 283
+              },
+              "OTHER_unusable": 0.0006466552315608919,
+              "kept_fraction": 0.6339982673379282
+            }
+          }
+        }
+      },
+      "dev": {
+        "n": 420,
+        "accuracy_at_full_coverage": 0.7309523809523809,
+        "confidence_auroc_for_correctness": 0.7784151509036926,
+        "mean_confidence_when_right": 0.9446897506713867,
+        "mean_confidence_when_wrong": 0.8062790036201477,
+        "by_threshold": {
+          "0": {
+            "coverage": 1.0,
+            "n_kept": 420,
+            "precision_on_kept": 0.7309523809523809,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.9999999999999999,
+              "HAPPY": 1.0,
+              "ANGRY": 1.0,
+              "SAD": 1.0
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.9069767441860465,
+              "HAPPY": 0.5826771653543307,
+              "ANGRY": 0.8953488372093024,
+              "SAD": 0.8125
+            }
+          },
+          "0.5": {
+            "coverage": 0.9523809523809523,
+            "n_kept": 400,
+            "precision_on_kept": 0.745,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.9559748427672955,
+              "HAPPY": 0.9439252336448598,
+              "ANGRY": 0.9795918367346939,
+              "SAD": 0.9107142857142857
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.912,
+              "HAPPY": 0.5901639344262295,
+              "ANGRY": 0.9047619047619048,
+              "SAD": 0.8372093023255814
+            }
+          },
+          "0.6": {
+            "coverage": 0.9166666666666666,
+            "n_kept": 385,
+            "precision_on_kept": 0.7662337662337663,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.9371069182389936,
+              "HAPPY": 0.9065420560747663,
+              "ANGRY": 0.9081632653061225,
+              "SAD": 0.8928571428571429
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.9344262295081968,
+              "HAPPY": 0.5966386554621849,
+              "ANGRY": 0.9024390243902439,
+              "SAD": 0.8780487804878049
+            }
+          },
+          "0.7": {
+            "coverage": 0.8785714285714286,
+            "n_kept": 369,
+            "precision_on_kept": 0.7750677506775068,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.8993710691823898,
+              "HAPPY": 0.8598130841121495,
+              "ANGRY": 0.8673469387755103,
+              "SAD": 0.875
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.9322033898305084,
+              "HAPPY": 0.6,
+              "ANGRY": 0.9113924050632911,
+              "SAD": 0.8974358974358975
+            }
+          },
+          "0.8": {
+            "coverage": 0.8047619047619048,
+            "n_kept": 338,
+            "precision_on_kept": 0.8076923076923077,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.8427672955974842,
+              "HAPPY": 0.7570093457943925,
+              "ANGRY": 0.8163265306122449,
+              "SAD": 0.7678571428571428
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.9385964912280702,
+              "HAPPY": 0.6382978723404256,
+              "ANGRY": 0.9113924050632911,
+              "SAD": 0.8947368421052632
+            }
+          },
+          "0.9": {
+            "coverage": 0.7404761904761905,
+            "n_kept": 311,
+            "precision_on_kept": 0.8295819935691319,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.7987421383647798,
+              "HAPPY": 0.6448598130841121,
+              "ANGRY": 0.7448979591836734,
+              "SAD": 0.75
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.9537037037037037,
+              "HAPPY": 0.6292134831460674,
+              "ANGRY": 0.9295774647887324,
+              "SAD": 0.9166666666666666
+            }
+          },
+          "0.95": {
+            "coverage": 0.6904761904761905,
+            "n_kept": 290,
+            "precision_on_kept": 0.8448275862068966,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.7547169811320754,
+              "HAPPY": 0.5887850467289719,
+              "ANGRY": 0.6938775510204082,
+              "SAD": 0.6964285714285714
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.9607843137254902,
+              "HAPPY": 0.6455696202531646,
+              "ANGRY": 0.927536231884058,
+              "SAD": 0.9142857142857143
+            }
+          },
+          "0.99": {
+            "coverage": 0.6071428571428571,
+            "n_kept": 255,
+            "precision_on_kept": 0.8745098039215686,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.6540880503144654,
+              "HAPPY": 0.5046728971962616,
+              "ANGRY": 0.6428571428571429,
+              "SAD": 0.6071428571428572
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.978021978021978,
+              "HAPPY": 0.6865671641791045,
+              "ANGRY": 0.9375,
+              "SAD": 0.9333333333333333
+            }
+          }
+        },
+        "projected": {
+          "0": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.8983068946556084,
+                "share_of_corpus_labelled_this": 0.2899794798275508,
+                "correct_per_100k": 26049
+              },
+              "HAPPY": {
+                "precision": 0.6012221169898154,
+                "share_of_corpus_labelled_this": 0.3082817300875561,
+                "correct_per_100k": 18535
+              },
+              "ANGRY": {
+                "precision": 0.897828736669229,
+                "share_of_corpus_labelled_this": 0.21790665541476686,
+                "correct_per_100k": 19564
+              },
+              "SAD": {
+                "precision": 0.8051362460827206,
+                "share_of_corpus_labelled_this": 0.1115827118098165,
+                "correct_per_100k": 8984
+              },
+              "OTHER_unusable": 0.0722494228603097,
+              "kept_fraction": 0.9999999999999999
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9738080628845294,
+                "share_of_corpus_labelled_this": 0.5289485261570682,
+                "correct_per_100k": 51509
+              },
+              "HAPPY": {
+                "precision": 0.3010310750568104,
+                "share_of_corpus_labelled_this": 0.22973999774482173,
+                "correct_per_100k": 6916
+              },
+              "ANGRY": {
+                "precision": 0.8686669420758736,
+                "share_of_corpus_labelled_this": 0.09045057980871771,
+                "correct_per_100k": 7857
+              },
+              "SAD": {
+                "precision": 0.7865364733495737,
+                "share_of_corpus_labelled_this": 0.08854370967219545,
+                "correct_per_100k": 6964
+              },
+              "OTHER_unusable": 0.0623171866171967,
+              "kept_fraction": 0.9999999999999998
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9887149520641878,
+                "share_of_corpus_labelled_this": 0.6326107406461084,
+                "correct_per_100k": 62547
+              },
+              "HAPPY": {
+                "precision": 0.19664487575039272,
+                "share_of_corpus_labelled_this": 0.2110165695620516,
+                "correct_per_100k": 4150
+              },
+              "ANGRY": {
+                "precision": 0.7998295570620562,
+                "share_of_corpus_labelled_this": 0.04911760754381103,
+                "correct_per_100k": 3929
+              },
+              "SAD": {
+                "precision": 0.5900834251894677,
+                "share_of_corpus_labelled_this": 0.04720882110558912,
+                "correct_per_100k": 2786
+              },
+              "OTHER_unusable": 0.060046261142439696,
+              "kept_fraction": 1.0
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9965047329664394,
+                "share_of_corpus_labelled_this": 0.7015085635294498,
+                "correct_per_100k": 69906
+              },
+              "HAPPY": {
+                "precision": 0.07202607805539996,
+                "share_of_corpus_labelled_this": 0.1920384404423028,
+                "correct_per_100k": 1383
+              },
+              "ANGRY": {
+                "precision": 0.6120578099840724,
+                "share_of_corpus_labelled_this": 0.01925588415581362,
+                "correct_per_100k": 1179
+              },
+              "SAD": {
+                "precision": 0.3546139139274186,
+                "share_of_corpus_labelled_this": 0.029458597537057492,
+                "correct_per_100k": 1045
+              },
+              "OTHER_unusable": 0.05773851433537619,
+              "kept_fraction": 0.9999999999999999
+            }
+          },
+          "0.5": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9039007570692676,
+                "share_of_corpus_labelled_this": 0.2807955616473357,
+                "correct_per_100k": 25381
+              },
+              "HAPPY": {
+                "precision": 0.6081845807119126,
+                "share_of_corpus_labelled_this": 0.2965159826759129,
+                "correct_per_100k": 18034
+              },
+              "ANGRY": {
+                "precision": 0.9071736487764053,
+                "share_of_corpus_labelled_this": 0.21286116619103998,
+                "correct_per_100k": 19310
+              },
+              "SAD": {
+                "precision": 0.8323946391711391,
+                "share_of_corpus_labelled_this": 0.09962650830037535,
+                "correct_per_100k": 8293
+              },
+              "OTHER_unusable": 0.06298834834586275,
+              "kept_fraction": 0.9527875671605266
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9749039500936317,
+                "share_of_corpus_labelled_this": 0.5148063995480046,
+                "correct_per_100k": 50189
+              },
+              "HAPPY": {
+                "precision": 0.3096911394669296,
+                "share_of_corpus_labelled_this": 0.21728009313406194,
+                "correct_per_100k": 6729
+              },
+              "ANGRY": {
+                "precision": 0.8763263624188731,
+                "share_of_corpus_labelled_this": 0.08849559220620005,
+                "correct_per_100k": 7755
+              },
+              "SAD": {
+                "precision": 0.7913882126742438,
+                "share_of_corpus_labelled_this": 0.08123157921253496,
+                "correct_per_100k": 6429
+              },
+              "OTHER_unusable": 0.05079186144568919,
+              "kept_fraction": 0.9526055255464908
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9893211623743325,
+                "share_of_corpus_labelled_this": 0.6160122571335005,
+                "correct_per_100k": 60943
+              },
+              "HAPPY": {
+                "precision": 0.20340592663542975,
+                "share_of_corpus_labelled_this": 0.198488964621292,
+                "correct_per_100k": 4037
+              },
+              "ANGRY": {
+                "precision": 0.807038691029766,
+                "share_of_corpus_labelled_this": 0.04804665579862698,
+                "correct_per_100k": 3878
+              },
+              "SAD": {
+                "precision": 0.5844818405125769,
+                "share_of_corpus_labelled_this": 0.043995012217547924,
+                "correct_per_100k": 2571
+              },
+              "OTHER_unusable": 0.04807940386523151,
+              "kept_fraction": 0.954622293636199
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9966856110394452,
+                "share_of_corpus_labelled_this": 0.6833971193397126,
+                "correct_per_100k": 68113
+              },
+              "HAPPY": {
+                "precision": 0.07499673427955125,
+                "share_of_corpus_labelled_this": 0.17944706598915353,
+                "correct_per_100k": 1346
+              },
+              "ANGRY": {
+                "precision": 0.614966706829856,
+                "share_of_corpus_labelled_this": 0.01891590704347336,
+                "correct_per_100k": 1163
+              },
+              "SAD": {
+                "precision": 0.34055590524211043,
+                "share_of_corpus_labelled_this": 0.028315048996145804,
+                "correct_per_100k": 964
+              },
+              "OTHER_unusable": 0.045334055770077375,
+              "kept_fraction": 0.9554091971385625
+            }
+          },
+          "0.6": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9281937045496267,
+                "share_of_corpus_labelled_this": 0.2734465009950374,
+                "correct_per_100k": 25381
+              },
+              "HAPPY": {
+                "precision": 0.6154846309664327,
+                "share_of_corpus_labelled_this": 0.2889296771256554,
+                "correct_per_100k": 17783
+              },
+              "ANGRY": {
+                "precision": 0.9049034087320165,
+                "share_of_corpus_labelled_this": 0.20777953353797873,
+                "correct_per_100k": 18802
+              },
+              "SAD": {
+                "precision": 0.8713393563632816,
+                "share_of_corpus_labelled_this": 0.09517367811169611,
+                "correct_per_100k": 8293
+              },
+              "OTHER_unusable": 0.05067095480406939,
+              "kept_fraction": 0.916000344574437
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9820396766032747,
+                "share_of_corpus_labelled_this": 0.5110656976597726,
+                "correct_per_100k": 50189
+              },
+              "HAPPY": {
+                "precision": 0.3096298914665679,
+                "share_of_corpus_labelled_this": 0.21430469736827898,
+                "correct_per_100k": 6636
+              },
+              "ANGRY": {
+                "precision": 0.8734069727591475,
+                "share_of_corpus_labelled_this": 0.08645477587966945,
+                "correct_per_100k": 7551
+              },
+              "SAD": {
+                "precision": 0.8875987641081231,
+                "share_of_corpus_labelled_this": 0.07242654776599408,
+                "correct_per_100k": 6429
+              },
+              "OTHER_unusable": 0.042479370517383465,
+              "kept_fraction": 0.9267310891910986
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9921966027928508,
+                "share_of_corpus_labelled_this": 0.6142270196740308,
+                "correct_per_100k": 60943
+              },
+              "HAPPY": {
+                "precision": 0.20219149436427317,
+                "share_of_corpus_labelled_this": 0.1969078087944753,
+                "correct_per_100k": 3981
+              },
+              "ANGRY": {
+                "precision": 0.8028516826085471,
+                "share_of_corpus_labelled_this": 0.04702624763536167,
+                "correct_per_100k": 3776
+              },
+              "SAD": {
+                "precision": 0.77212684469165,
+                "share_of_corpus_labelled_this": 0.03330318831817686,
+                "correct_per_100k": 2571
+              },
+              "OTHER_unusable": 0.04059158842517786,
+              "kept_fraction": 0.9320558528472224
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9975728828073042,
+                "share_of_corpus_labelled_this": 0.6827892850845152,
+                "correct_per_100k": 68113
+              },
+              "HAPPY": {
+                "precision": 0.07415886756774469,
+                "share_of_corpus_labelled_this": 0.17895402765232346,
+                "correct_per_100k": 1327
+              },
+              "ANGRY": {
+                "precision": 0.6086330851780076,
+                "share_of_corpus_labelled_this": 0.018609784594493764,
+                "correct_per_100k": 1133
+              },
+              "SAD": {
+                "precision": 0.5892235247637532,
+                "share_of_corpus_labelled_this": 0.01636536346155461,
+                "correct_per_100k": 964
+              },
+              "OTHER_unusable": 0.03867925877810126,
+              "kept_fraction": 0.9353977195709882
+            }
+          },
+          "0.7": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9257763746630802,
+                "share_of_corpus_labelled_this": 0.2645408406176789,
+                "correct_per_100k": 24491
+              },
+              "HAPPY": {
+                "precision": 0.6190955069530576,
+                "share_of_corpus_labelled_this": 0.2791530999103926,
+                "correct_per_100k": 17282
+              },
+              "ANGRY": {
+                "precision": 0.9138110082396219,
+                "share_of_corpus_labelled_this": 0.2001932279877213,
+                "correct_per_100k": 18294
+              },
+              "SAD": {
+                "precision": 0.8922106232677082,
+                "share_of_corpus_labelled_this": 0.09036543378592841,
+                "correct_per_100k": 8062
+              },
+              "OTHER_unusable": 0.0433990504860029,
+              "kept_fraction": 0.8776516527877243
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9813987224782985,
+                "share_of_corpus_labelled_this": 0.49345563476669096,
+                "correct_per_100k": 48428
+              },
+              "HAPPY": {
+                "precision": 0.31150749644897424,
+                "share_of_corpus_labelled_this": 0.20701261460323855,
+                "correct_per_100k": 6449
+              },
+              "ANGRY": {
+                "precision": 0.8800902409058577,
+                "share_of_corpus_labelled_this": 0.0834793801138865,
+                "correct_per_100k": 7347
+              },
+              "SAD": {
+                "precision": 0.8966196915877014,
+                "share_of_corpus_labelled_this": 0.06970625404102745,
+                "correct_per_100k": 6250
+              },
+              "OTHER_unusable": 0.03612186719159538,
+              "kept_fraction": 0.8897757507164389
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9919151370542975,
+                "share_of_corpus_labelled_this": 0.5928433718752887,
+                "correct_per_100k": 58805
+              },
+              "HAPPY": {
+                "precision": 0.20371478210079474,
+                "share_of_corpus_labelled_this": 0.1899301974360543,
+                "correct_per_100k": 3869
+              },
+              "ANGRY": {
+                "precision": 0.8083313822383753,
+                "share_of_corpus_labelled_this": 0.045445091808544974,
+                "correct_per_100k": 3673
+              },
+              "SAD": {
+                "precision": 0.7805632277778288,
+                "share_of_corpus_labelled_this": 0.03202815494033974,
+                "correct_per_100k": 2500
+              },
+              "OTHER_unusable": 0.034174724730308276,
+              "kept_fraction": 0.8944215407905358
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9974848459847898,
+                "share_of_corpus_labelled_this": 0.6588899140153328,
+                "correct_per_100k": 65723
+              },
+              "HAPPY": {
+                "precision": 0.07478703890056117,
+                "share_of_corpus_labelled_this": 0.17245229188483713,
+                "correct_per_100k": 1290
+              },
+              "ANGRY": {
+                "precision": 0.6082995261140491,
+                "share_of_corpus_labelled_this": 0.018116746257663706,
+                "correct_per_100k": 1102
+              },
+              "SAD": {
+                "precision": 0.5892301760105657,
+                "share_of_corpus_labelled_this": 0.015910590430847,
+                "correct_per_100k": 938
+              },
+              "OTHER_unusable": 0.032364438898465395,
+              "kept_fraction": 0.897733981487146
+            }
+          },
+          "0.8": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9329154378130501,
+                "share_of_corpus_labelled_this": 0.2553569224374638,
+                "correct_per_100k": 23823
+              },
+              "HAPPY": {
+                "precision": 0.6579557418587273,
+                "share_of_corpus_labelled_this": 0.22840498877209145,
+                "correct_per_100k": 15028
+              },
+              "ANGRY": {
+                "precision": 0.9138110082396219,
+                "share_of_corpus_labelled_this": 0.2001932279877213,
+                "correct_per_100k": 18294
+              },
+              "SAD": {
+                "precision": 0.8893910084889924,
+                "share_of_corpus_labelled_this": 0.08806186235735698,
+                "correct_per_100k": 7832
+              },
+              "OTHER_unusable": 0.03152000331079355,
+              "kept_fraction": 0.8035370048654269
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9827997216281686,
+                "share_of_corpus_labelled_this": 0.4793135081576273,
+                "correct_per_100k": 47107
+              },
+              "HAPPY": {
+                "precision": 0.3354756271800493,
+                "share_of_corpus_labelled_this": 0.16715004552341126,
+                "correct_per_100k": 5607
+              },
+              "ANGRY": {
+                "precision": 0.8800902409058577,
+                "share_of_corpus_labelled_this": 0.0834793801138865,
+                "correct_per_100k": 7347
+              },
+              "SAD": {
+                "precision": 0.8939016964972848,
+                "share_of_corpus_labelled_this": 0.06792053975531316,
+                "correct_per_100k": 6071
+              },
+              "OTHER_unusable": 0.026192935294378727,
+              "kept_fraction": 0.824056408844617
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9926553626213431,
+                "share_of_corpus_labelled_this": 0.5762448883626806,
+                "correct_per_100k": 57201
+              },
+              "HAPPY": {
+                "precision": 0.21851534979646528,
+                "share_of_corpus_labelled_this": 0.15397023524627626,
+                "correct_per_100k": 3364
+              },
+              "ANGRY": {
+                "precision": 0.8083313822383753,
+                "share_of_corpus_labelled_this": 0.045445091808544974,
+                "correct_per_100k": 3673
+              },
+              "SAD": {
+                "precision": 0.775557760377561,
+                "share_of_corpus_labelled_this": 0.031313869226054024,
+                "correct_per_100k": 2429
+              },
+              "OTHER_unusable": 0.026329289606867257,
+              "kept_fraction": 0.8333033742504231
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9977054570429514,
+                "share_of_corpus_labelled_this": 0.6407784698255955,
+                "correct_per_100k": 63931
+              },
+              "HAPPY": {
+                "precision": 0.08040544712460272,
+                "share_of_corpus_labelled_this": 0.13948001873117435,
+                "correct_per_100k": 1121
+              },
+              "ANGRY": {
+                "precision": 0.6082995261140491,
+                "share_of_corpus_labelled_this": 0.018116746257663706,
+                "correct_per_100k": 1102
+              },
+              "SAD": {
+                "precision": 0.5821963904565911,
+                "share_of_corpus_labelled_this": 0.015642733287989853,
+                "correct_per_100k": 911
+              },
+              "OTHER_unusable": 0.025513904733115253,
+              "kept_fraction": 0.8395318728355387
+            }
+          },
+          "0.9": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9497967803759807,
+                "share_of_corpus_labelled_this": 0.24144191626571276,
+                "correct_per_100k": 22932
+              },
+              "HAPPY": {
+                "precision": 0.648879342861882,
+                "share_of_corpus_labelled_this": 0.21615988208896678,
+                "correct_per_100k": 14026
+              },
+              "ANGRY": {
+                "precision": 0.9305096208085902,
+                "share_of_corpus_labelled_this": 0.1802172420370017,
+                "correct_per_100k": 16769
+              },
+              "SAD": {
+                "precision": 0.9130877304817353,
+                "share_of_corpus_labelled_this": 0.0832536180315893,
+                "correct_per_100k": 7602
+              },
+              "OTHER_unusable": 0.016734080301138266,
+              "kept_fraction": 0.7378067387244088
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9861359470619521,
+                "share_of_corpus_labelled_this": 0.45983428638604085,
+                "correct_per_100k": 45346
+              },
+              "HAPPY": {
+                "precision": 0.32914098451059864,
+                "share_of_corpus_labelled_this": 0.15900921204313148,
+                "correct_per_100k": 5234
+              },
+              "ANGRY": {
+                "precision": 0.9351165254237288,
+                "share_of_corpus_labelled_this": 0.07201983597177189,
+                "correct_per_100k": 6735
+              },
+              "SAD": {
+                "precision": 0.9038090347257884,
+                "share_of_corpus_labelled_this": 0.06520024603034655,
+                "correct_per_100k": 5893
+              },
+              "OTHER_unusable": 0.017031693650833634,
+              "kept_fraction": 0.7730952740821244
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9943821724086372,
+                "share_of_corpus_labelled_this": 0.5537397452368357,
+                "correct_per_100k": 55063
+              },
+              "HAPPY": {
+                "precision": 0.21452099521183074,
+                "share_of_corpus_labelled_this": 0.14638133264238512,
+                "correct_per_100k": 3140
+              },
+              "ANGRY": {
+                "precision": 0.9231372549019609,
+                "share_of_corpus_labelled_this": 0.03647720770551211,
+                "correct_per_100k": 3367
+              },
+              "SAD": {
+                "precision": 0.7846984713566307,
+                "share_of_corpus_labelled_this": 0.030038835848216913,
+                "correct_per_100k": 2357
+              },
+              "OTHER_unusable": 0.01823018292134346,
+              "kept_fraction": 0.7848673043542932
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9982214881072541,
+                "share_of_corpus_labelled_this": 0.6165052669807122,
+                "correct_per_100k": 61541
+              },
+              "HAPPY": {
+                "precision": 0.0788451781704402,
+                "share_of_corpus_labelled_this": 0.13275751241247688,
+                "correct_per_100k": 1047
+              },
+              "ANGRY": {
+                "precision": 0.9153201417091505,
+                "share_of_corpus_labelled_this": 0.011036620255578868,
+                "correct_per_100k": 1010
+              },
+              "SAD": {
+                "precision": 0.5819929447107618,
+                "share_of_corpus_labelled_this": 0.015187960257282248,
+                "correct_per_100k": 884
+              },
+              "OTHER_unusable": 0.018638337189927988,
+              "kept_fraction": 0.7941256970959781
+            }
+          },
+          "0.95": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9569415781965853,
+                "share_of_corpus_labelled_this": 0.22800626936544321,
+                "correct_per_100k": 21819
+              },
+              "HAPPY": {
+                "precision": 0.6670962743001154,
+                "share_of_corpus_labelled_this": 0.1914840821004826,
+                "correct_per_100k": 12774
+              },
+              "ANGRY": {
+                "precision": 0.9284933285124957,
+                "share_of_corpus_labelled_this": 0.1751356093839405,
+                "correct_per_100k": 16261
+              },
+              "SAD": {
+                "precision": 0.9106144938468461,
+                "share_of_corpus_labelled_this": 0.08095004660301787,
+                "correct_per_100k": 7371
+              },
+              "OTHER_unusable": 0.012002992309602382,
+              "kept_fraction": 0.6875789997624865
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9894746014731466,
+                "share_of_corpus_labelled_this": 0.43603599348397437,
+                "correct_per_100k": 43145
+              },
+              "HAPPY": {
+                "precision": 0.32851735358747053,
+                "share_of_corpus_labelled_this": 0.14508686034808915,
+                "correct_per_100k": 4766
+              },
+              "ANGRY": {
+                "precision": 0.9332243118015808,
+                "share_of_corpus_labelled_this": 0.06997901964524127,
+                "correct_per_100k": 6531
+              },
+              "SAD": {
+                "precision": 0.9011003561923173,
+                "share_of_corpus_labelled_this": 0.06341453174463225,
+                "correct_per_100k": 5714
+              },
+              "OTHER_unusable": 0.01169459848831086,
+              "kept_fraction": 0.7262110037102478
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9954464233789995,
+                "share_of_corpus_labelled_this": 0.5262958997741223,
+                "correct_per_100k": 52390
+              },
+              "HAPPY": {
+                "precision": 0.2103008094793025,
+                "share_of_corpus_labelled_this": 0.1359867844157589,
+                "correct_per_100k": 2860
+              },
+              "ANGRY": {
+                "precision": 0.9209252286175363,
+                "share_of_corpus_labelled_this": 0.0354567995422468,
+                "correct_per_100k": 3265
+              },
+              "SAD": {
+                "precision": 0.7794541690409444,
+                "share_of_corpus_labelled_this": 0.029324550133931197,
+                "correct_per_100k": 2286
+              },
+              "OTHER_unusable": 0.012323523308106526,
+              "kept_fraction": 0.7393875571741657
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9985868744626895,
+                "share_of_corpus_labelled_this": 0.5863631960013771,
+                "correct_per_100k": 58553
+              },
+              "HAPPY": {
+                "precision": 0.07618790225049055,
+                "share_of_corpus_labelled_this": 0.12512104938960245,
+                "correct_per_100k": 953
+              },
+              "ANGRY": {
+                "precision": 0.91290437255599,
+                "share_of_corpus_labelled_this": 0.010730497806599276,
+                "correct_per_100k": 980
+              },
+              "SAD": {
+                "precision": 0.5744885612178856,
+                "share_of_corpus_labelled_this": 0.014920103114425102,
+                "correct_per_100k": 857
+              },
+              "OTHER_unusable": 0.012476578534781926,
+              "kept_fraction": 0.7496114248467858
+            }
+          },
+          "0.99": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9763093044481738,
+                "share_of_corpus_labelled_this": 0.20295918772199412,
+                "correct_per_100k": 19815
+              },
+              "HAPPY": {
+                "precision": 0.7069084906629006,
+                "share_of_corpus_labelled_this": 0.16298425438770112,
+                "correct_per_100k": 11521
+              },
+              "ANGRY": {
+                "precision": 0.9383342451086969,
+                "share_of_corpus_labelled_this": 0.16246767118062178,
+                "correct_per_100k": 15245
+              },
+              "SAD": {
+                "precision": 0.9279327731092437,
+                "share_of_corpus_labelled_this": 0.06950934579439252,
+                "correct_per_100k": 6450
+              },
+              "OTHER_unusable": 0.007271904318066497,
+              "kept_fraction": 0.6051923634027759
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9931052242750802,
+                "share_of_corpus_labelled_this": 0.3945441930960358,
+                "correct_per_100k": 39182
+              },
+              "HAPPY": {
+                "precision": 0.371906715116396,
+                "share_of_corpus_labelled_this": 0.11559526208649568,
+                "correct_per_100k": 4299
+              },
+              "ANGRY": {
+                "precision": 0.9424544920728127,
+                "share_of_corpus_labelled_this": 0.06496280755292771,
+                "correct_per_100k": 6122
+              },
+              "SAD": {
+                "precision": 0.9639639639639639,
+                "share_of_corpus_labelled_this": 0.05186915887850468,
+                "correct_per_100k": 5000
+              },
+              "OTHER_unusable": 0.006357503325788083,
+              "kept_fraction": 0.6333289249397519
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9973273169435644,
+                "share_of_corpus_labelled_this": 0.47706119689984966,
+                "correct_per_100k": 47579
+              },
+              "HAPPY": {
+                "precision": 0.24512628047547738,
+                "share_of_corpus_labelled_this": 0.10522899655365583,
+                "correct_per_100k": 2579
+              },
+              "ANGRY": {
+                "precision": 0.9317311041448971,
+                "share_of_corpus_labelled_this": 0.032855235552164797,
+                "correct_per_100k": 3061
+              },
+              "SAD": {
+                "precision": 0.9469026548672567,
+                "share_of_corpus_labelled_this": 0.021121495327102804,
+                "correct_per_100k": 2000
+              },
+              "OTHER_unusable": 0.00641686369486959,
+              "kept_fraction": 0.6426837880276427
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9991455100574269,
+                "share_of_corpus_labelled_this": 0.5322157793200157,
+                "correct_per_100k": 53176
+              },
+              "HAPPY": {
+                "precision": 0.09157533642063488,
+                "share_of_corpus_labelled_this": 0.09389133774652517,
+                "correct_per_100k": 860
+              },
+              "ANGRY": {
+                "precision": 0.9247167274822354,
+                "share_of_corpus_labelled_this": 0.009931337020789624,
+                "correct_per_100k": 918
+              },
+              "SAD": {
+                "precision": 0.9525222551928785,
+                "share_of_corpus_labelled_this": 0.007873831775700934,
+                "correct_per_100k": 750
+              },
+              "OTHER_unusable": 0.006314819879635861,
+              "kept_fraction": 0.6502271057426674
+            }
+          }
+        }
+      }
+    },
+    "finetuned": {
+      "test": {
+        "n": 410,
+        "accuracy_at_full_coverage": 0.7804878048780488,
+        "confidence_auroc_for_correctness": 0.7771527777777778,
+        "mean_confidence_when_right": 0.8921799659729004,
+        "mean_confidence_when_wrong": 0.7308307886123657,
+        "by_threshold": {
+          "0": {
+            "coverage": 1.0,
+            "n_kept": 410,
+            "precision_on_kept": 0.7804878048780488,
+            "per_class_kept_recall": {
+              "NEUTRAL": 1.0,
+              "HAPPY": 1.0,
+              "ANGRY": 1.0,
+              "SAD": 1.0
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.8897058823529411,
+              "HAPPY": 0.6869565217391305,
+              "ANGRY": 0.7981651376146789,
+              "SAD": 0.66
+            }
+          },
+          "0.5": {
+            "coverage": 0.9512195121951219,
+            "n_kept": 390,
+            "precision_on_kept": 0.7948717948717948,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.9241379310344827,
+              "HAPPY": 0.9454545454545453,
+              "ANGRY": 0.9803921568627451,
+              "SAD": 0.9811320754716981
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.9047619047619048,
+              "HAPPY": 0.6875,
+              "ANGRY": 0.8207547169811321,
+              "SAD": 0.6956521739130435
+            }
+          },
+          "0.6": {
+            "coverage": 0.8829268292682927,
+            "n_kept": 362,
+            "precision_on_kept": 0.8204419889502762,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.8413793103448276,
+              "HAPPY": 0.8818181818181818,
+              "ANGRY": 0.9509803921568627,
+              "SAD": 0.8679245283018868
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.9180327868852459,
+              "HAPPY": 0.7058823529411765,
+              "ANGRY": 0.8571428571428571,
+              "SAD": 0.725
+            }
+          },
+          "0.7": {
+            "coverage": 0.8317073170731707,
+            "n_kept": 341,
+            "precision_on_kept": 0.8504398826979472,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.8137931034482758,
+              "HAPPY": 0.8181818181818182,
+              "ANGRY": 0.9117647058823529,
+              "SAD": 0.7547169811320755
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.925,
+              "HAPPY": 0.7472527472527473,
+              "ANGRY": 0.8829787234042553,
+              "SAD": 0.7777777777777778
+            }
+          },
+          "0.8": {
+            "coverage": 0.7170731707317073,
+            "n_kept": 294,
+            "precision_on_kept": 0.8741496598639455,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.7517241379310345,
+              "HAPPY": 0.6636363636363636,
+              "ANGRY": 0.7843137254901961,
+              "SAD": 0.6037735849056605
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.9459459459459459,
+              "HAPPY": 0.7941176470588235,
+              "ANGRY": 0.8809523809523809,
+              "SAD": 0.7741935483870968
+            }
+          },
+          "0.9": {
+            "coverage": 0.5682926829268292,
+            "n_kept": 233,
+            "precision_on_kept": 0.9098712446351931,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.6827586206896552,
+              "HAPPY": 0.4272727272727273,
+              "ANGRY": 0.5784313725490196,
+              "SAD": 0.5283018867924528
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.9514563106796117,
+              "HAPPY": 0.8717948717948718,
+              "ANGRY": 0.9206349206349206,
+              "SAD": 0.7857142857142857
+            }
+          },
+          "0.95": {
+            "coverage": 0.4024390243902439,
+            "n_kept": 165,
+            "precision_on_kept": 0.9333333333333333,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.593103448275862,
+              "HAPPY": 0.2181818181818182,
+              "ANGRY": 0.3137254901960784,
+              "SAD": 0.4339622641509434
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.9555555555555556,
+              "HAPPY": 0.9411764705882353,
+              "ANGRY": 0.9411764705882353,
+              "SAD": 0.8333333333333334
+            }
+          },
+          "0.99": {
+            "coverage": 0.1926829268292683,
+            "n_kept": 79,
+            "precision_on_kept": 0.9367088607594937,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.4068965517241379,
+              "HAPPY": 0.08181818181818182,
+              "ANGRY": 0.00980392156862745,
+              "SAD": 0.18867924528301885
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.9672131147540983,
+              "HAPPY": 1.0,
+              "ANGRY": 1.0,
+              "SAD": 0.7272727272727273
+            }
+          }
+        },
+        "projected": {
+          "0": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.8899461297603626,
+                "share_of_corpus_labelled_this": 0.3319379529537017,
+                "correct_per_100k": 29541
+              },
+              "HAPPY": {
+                "precision": 0.6867390648836292,
+                "share_of_corpus_labelled_this": 0.28027053813422215,
+                "correct_per_100k": 19247
+              },
+              "ANGRY": {
+                "precision": 0.7983925389517641,
+                "share_of_corpus_labelled_this": 0.2660124469850636,
+                "correct_per_100k": 21238
+              },
+              "SAD": {
+                "precision": 0.6595612862014069,
+                "share_of_corpus_labelled_this": 0.12177906192701249,
+                "correct_per_100k": 8032
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 1.0
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9644536191820635,
+                "share_of_corpus_labelled_this": 0.6056672082685325,
+                "correct_per_100k": 58414
+              },
+              "HAPPY": {
+                "precision": 0.4590163800760554,
+                "share_of_corpus_labelled_this": 0.15646104351718804,
+                "correct_per_100k": 7182
+              },
+              "ANGRY": {
+                "precision": 0.6621952441625746,
+                "share_of_corpus_labelled_this": 0.12880508943389268,
+                "correct_per_100k": 8529
+              },
+              "SAD": {
+                "precision": 0.5708816208330848,
+                "share_of_corpus_labelled_this": 0.10906665878038682,
+                "correct_per_100k": 6226
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.9999999999999999
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9863711455598356,
+                "share_of_corpus_labelled_this": 0.7191110040278015,
+                "correct_per_100k": 70931
+              },
+              "HAPPY": {
+                "precision": 0.3663228934527695,
+                "share_of_corpus_labelled_this": 0.11763094761770562,
+                "correct_per_100k": 4309
+              },
+              "ANGRY": {
+                "precision": 0.49276328825613686,
+                "share_of_corpus_labelled_this": 0.08654674534390558,
+                "correct_per_100k": 4265
+              },
+              "SAD": {
+                "precision": 0.3246674140565847,
+                "share_of_corpus_labelled_this": 0.07671130301058733,
+                "correct_per_100k": 2491
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 1.0
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9956017938799481,
+                "share_of_corpus_labelled_this": 0.79626073954749,
+                "correct_per_100k": 79276
+              },
+              "HAPPY": {
+                "precision": 0.16831874631097837,
+                "share_of_corpus_labelled_this": 0.0853359276874528,
+                "correct_per_100k": 1436
+              },
+              "ANGRY": {
+                "precision": 0.23256301147857214,
+                "share_of_corpus_labelled_this": 0.05501355338373594,
+                "correct_per_100k": 1279
+              },
+              "SAD": {
+                "precision": 0.14733641184215068,
+                "share_of_corpus_labelled_this": 0.06338977938132134,
+                "correct_per_100k": 934
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 1.0
+            }
+          },
+          "0.5": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9049954957068816,
+                "share_of_corpus_labelled_this": 0.30753439403797245,
+                "correct_per_100k": 27832
+              },
+              "HAPPY": {
+                "precision": 0.6872886618734253,
+                "share_of_corpus_labelled_this": 0.2729566343909066,
+                "correct_per_100k": 18760
+              },
+              "ANGRY": {
+                "precision": 0.820965270249339,
+                "share_of_corpus_labelled_this": 0.2586983404019915,
+                "correct_per_100k": 21238
+              },
+              "SAD": {
+                "precision": 0.6952876608869645,
+                "share_of_corpus_labelled_this": 0.11202096173182705,
+                "correct_per_100k": 7789
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.9512103305626977
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.967085734241313,
+                "share_of_corpus_labelled_this": 0.569075530845212,
+                "correct_per_100k": 55034
+              },
+              "HAPPY": {
+                "precision": 0.45554389571229553,
+                "share_of_corpus_labelled_this": 0.15366246954214346,
+                "correct_per_100k": 7000
+              },
+              "ANGRY": {
+                "precision": 0.6982202967681556,
+                "share_of_corpus_labelled_this": 0.1221593214088143,
+                "correct_per_100k": 8529
+              },
+              "SAD": {
+                "precision": 0.6513402627565833,
+                "share_of_corpus_labelled_this": 0.09269710770686698,
+                "correct_per_100k": 6038
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.9375944295030366
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9878498008482267,
+                "share_of_corpus_labelled_this": 0.6764954160998403,
+                "correct_per_100k": 66828
+              },
+              "HAPPY": {
+                "precision": 0.36191345988847284,
+                "share_of_corpus_labelled_this": 0.11604984244836515,
+                "correct_per_100k": 4200
+              },
+              "ANGRY": {
+                "precision": 0.5358090247128953,
+                "share_of_corpus_labelled_this": 0.07959376728747926,
+                "correct_per_100k": 4265
+              },
+              "SAD": {
+                "precision": 0.4137534097771941,
+                "share_of_corpus_labelled_this": 0.05837037913290353,
+                "correct_per_100k": 2415
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.9305094049685882
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9960108392602322,
+                "share_of_corpus_labelled_this": 0.7498879753948069,
+                "correct_per_100k": 74690
+              },
+              "HAPPY": {
+                "precision": 0.16504522990788886,
+                "share_of_corpus_labelled_this": 0.08482523250028702,
+                "correct_per_100k": 1400
+              },
+              "ANGRY": {
+                "precision": 0.26599996549562654,
+                "share_of_corpus_labelled_this": 0.04809819288216854,
+                "correct_per_100k": 1279
+              },
+              "SAD": {
+                "precision": 0.20842975296609476,
+                "share_of_corpus_labelled_this": 0.043451588099603713,
+                "correct_per_100k": 906
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.926262988876866
+            }
+          },
+          "0.6": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9182318332400725,
+                "share_of_corpus_labelled_this": 0.29778371088898087,
+                "correct_per_100k": 27343
+              },
+              "HAPPY": {
+                "precision": 0.7056942339673026,
+                "share_of_corpus_labelled_this": 0.24857533670355822,
+                "correct_per_100k": 17542
+              },
+              "ANGRY": {
+                "precision": 0.8573483765617989,
+                "share_of_corpus_labelled_this": 0.23917794578646506,
+                "correct_per_100k": 20506
+              },
+              "SAD": {
+                "precision": 0.7247286956439359,
+                "share_of_corpus_labelled_this": 0.09739493700833973,
+                "correct_per_100k": 7058
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.882931930387344
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9730816067581262,
+                "share_of_corpus_labelled_this": 0.5556467735257585,
+                "correct_per_100k": 54069
+              },
+              "HAPPY": {
+                "precision": 0.5116839276513713,
+                "share_of_corpus_labelled_this": 0.12791987771627253,
+                "correct_per_100k": 6545
+              },
+              "ANGRY": {
+                "precision": 0.8001863398552282,
+                "share_of_corpus_labelled_this": 0.1029172044993546,
+                "correct_per_100k": 8235
+              },
+              "SAD": {
+                "precision": 0.754155559359893,
+                "share_of_corpus_labelled_this": 0.07255397172768677,
+                "correct_per_100k": 5472
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.8590378274690723
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9898831507839292,
+                "share_of_corpus_labelled_this": 0.6632618442065417,
+                "correct_per_100k": 65655
+              },
+              "HAPPY": {
+                "precision": 0.4406745257165821,
+                "share_of_corpus_labelled_this": 0.0891195768778914,
+                "correct_per_100k": 3927
+              },
+              "ANGRY": {
+                "precision": 0.6926694294860659,
+                "share_of_corpus_labelled_this": 0.059446063064724323,
+                "correct_per_100k": 4118
+              },
+              "SAD": {
+                "precision": 0.5681926364052342,
+                "share_of_corpus_labelled_this": 0.03852002129295558,
+                "correct_per_100k": 2189
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.8503475054421129
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9967056166480521,
+                "share_of_corpus_labelled_this": 0.7362184893830958,
+                "correct_per_100k": 73379
+              },
+              "HAPPY": {
+                "precision": 0.22796046273009568,
+                "share_of_corpus_labelled_this": 0.05742622617154746,
+                "correct_per_100k": 1309
+              },
+              "ANGRY": {
+                "precision": 0.44695160192684913,
+                "share_of_corpus_labelled_this": 0.027638207634150837,
+                "correct_per_100k": 1235
+              },
+              "SAD": {
+                "precision": 0.35766848553113506,
+                "share_of_corpus_labelled_this": 0.022947359082037024,
+                "correct_per_100k": 821
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.8442302822708312
+            }
+          },
+          "0.7": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9251804722497374,
+                "share_of_corpus_labelled_this": 0.2929083693144851,
+                "correct_per_100k": 27099
+              },
+              "HAPPY": {
+                "precision": 0.7470458177094159,
+                "share_of_corpus_labelled_this": 0.2217705036897352,
+                "correct_per_100k": 16567
+              },
+              "ANGRY": {
+                "precision": 0.8831631742274763,
+                "share_of_corpus_labelled_this": 0.22942266273280473,
+                "correct_per_100k": 20262
+              },
+              "SAD": {
+                "precision": 0.7776072899215583,
+                "share_of_corpus_labelled_this": 0.0876418524871355,
+                "correct_per_100k": 6815
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.8317433882241604
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9761895526247737,
+                "share_of_corpus_labelled_this": 0.5489323948660317,
+                "correct_per_100k": 53586
+              },
+              "HAPPY": {
+                "precision": 0.543240833634663,
+                "share_of_corpus_labelled_this": 0.11379516779799989,
+                "correct_per_100k": 6182
+              },
+              "ANGRY": {
+                "precision": 0.8539370053344858,
+                "share_of_corpus_labelled_this": 0.09529104431741349,
+                "correct_per_100k": 8137
+              },
+              "SAD": {
+                "precision": 0.8789954337899544,
+                "share_of_corpus_labelled_this": 0.060102915951972556,
+                "correct_per_100k": 5283
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.8181215229334177
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9909305598015763,
+                "share_of_corpus_labelled_this": 0.6566450582598923,
+                "correct_per_100k": 65069
+              },
+              "HAPPY": {
+                "precision": 0.44986868073604064,
+                "share_of_corpus_labelled_this": 0.08244830253625078,
+                "correct_per_100k": 3709
+              },
+              "ANGRY": {
+                "precision": 0.7823848895140272,
+                "share_of_corpus_labelled_this": 0.05200288892986662,
+                "correct_per_100k": 4069
+              },
+              "SAD": {
+                "precision": 0.828848223896663,
+                "share_of_corpus_labelled_this": 0.02549571183533448,
+                "correct_per_100k": 2113
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.8165919615613442
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9970627710344024,
+                "share_of_corpus_labelled_this": 0.72938374637724,
+                "correct_per_100k": 72724
+              },
+              "HAPPY": {
+                "precision": 0.22428079873397,
+                "share_of_corpus_labelled_this": 0.05512570150198838,
+                "correct_per_100k": 1236
+              },
+              "ANGRY": {
+                "precision": 0.5932157820446754,
+                "share_of_corpus_labelled_this": 0.02057578830905403,
+                "correct_per_100k": 1221
+              },
+              "SAD": {
+                "precision": 0.84491587417703,
+                "share_of_corpus_labelled_this": 0.009379073756432247,
+                "correct_per_100k": 792
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.8144643099447147
+            }
+          },
+          "0.8": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9460761592244642,
+                "share_of_corpus_labelled_this": 0.2709558052877506,
+                "correct_per_100k": 25634
+              },
+              "HAPPY": {
+                "precision": 0.7939646882505093,
+                "share_of_corpus_labelled_this": 0.165704644438955,
+                "correct_per_100k": 13156
+              },
+              "ANGRY": {
+                "precision": 0.8811376360608677,
+                "share_of_corpus_labelled_this": 0.20501571086114698,
+                "correct_per_100k": 18065
+              },
+              "SAD": {
+                "precision": 0.7740211096666273,
+                "share_of_corpus_labelled_this": 0.0754696397941681,
+                "correct_per_100k": 5842
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.7171458003820208
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9837222836324068,
+                "share_of_corpus_labelled_this": 0.5152842018099012,
+                "correct_per_100k": 50690
+              },
+              "HAPPY": {
+                "precision": 0.6222704996983393,
+                "share_of_corpus_labelled_this": 0.07888998291692617,
+                "correct_per_100k": 4909
+              },
+              "ANGRY": {
+                "precision": 0.8479471245375194,
+                "share_of_corpus_labelled_this": 0.08555842399655787,
+                "correct_per_100k": 7255
+              },
+              "SAD": {
+                "precision": 0.8767851212221853,
+                "share_of_corpus_labelled_this": 0.051646655231560895,
+                "correct_per_100k": 4528
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.7313792639549461
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9937029338564559,
+                "share_of_corpus_labelled_this": 0.6194177559590702,
+                "correct_per_100k": 61552
+              },
+              "HAPPY": {
+                "precision": 0.547935335600034,
+                "share_of_corpus_labelled_this": 0.053755513727345786,
+                "correct_per_100k": 2945
+              },
+              "ANGRY": {
+                "precision": 0.7710488563940286,
+                "share_of_corpus_labelled_this": 0.047045669678529724,
+                "correct_per_100k": 3627
+              },
+              "SAD": {
+                "precision": 0.8259033317691225,
+                "share_of_corpus_labelled_this": 0.02193138936535163,
+                "correct_per_100k": 1811
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.7421503287302973
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9979769919190365,
+                "share_of_corpus_labelled_this": 0.6893255456319867,
+                "correct_per_100k": 68793
+              },
+              "HAPPY": {
+                "precision": 0.3090316060875656,
+                "share_of_corpus_labelled_this": 0.03177080151277403,
+                "correct_per_100k": 982
+              },
+              "ANGRY": {
+                "precision": 0.5706398244036395,
+                "share_of_corpus_labelled_this": 0.01907044071547114,
+                "correct_per_100k": 1088
+              },
+              "SAD": {
+                "precision": 0.8421948107188431,
+                "share_of_corpus_labelled_this": 0.008065180102915952,
+                "correct_per_100k": 679
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.7482319679631478
+            }
+          },
+          "0.9": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9515784735147192,
+                "share_of_corpus_labelled_this": 0.2514297864789732,
+                "correct_per_100k": 23926
+              },
+              "HAPPY": {
+                "precision": 0.8717707935829351,
+                "share_of_corpus_labelled_this": 0.09502080620974954,
+                "correct_per_100k": 8284
+              },
+              "ANGRY": {
+                "precision": 0.9207789949573987,
+                "share_of_corpus_labelled_this": 0.15377005347593584,
+                "correct_per_100k": 14159
+              },
+              "SAD": {
+                "precision": 0.7855482078690703,
+                "share_of_corpus_labelled_this": 0.06816535162950257,
+                "correct_per_100k": 5355
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.5683859977941611
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9844385368975532,
+                "share_of_corpus_labelled_this": 0.48058200745253443,
+                "correct_per_100k": 47310
+              },
+              "HAPPY": {
+                "precision": 0.7293759621239593,
+                "share_of_corpus_labelled_this": 0.04237744663134077,
+                "correct_per_100k": 3091
+              },
+              "ANGRY": {
+                "precision": 0.9259796806966618,
+                "share_of_corpus_labelled_this": 0.06140819964349376,
+                "correct_per_100k": 5686
+              },
+              "SAD": {
+                "precision": 0.8838568298027758,
+                "share_of_corpus_labelled_this": 0.04696397941680961,
+                "correct_per_100k": 4151
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.6313316331441786
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9941937686908157,
+                "share_of_corpus_labelled_this": 0.5778378186549951,
+                "correct_per_100k": 57448
+              },
+              "HAPPY": {
+                "precision": 0.6827753089780741,
+                "share_of_corpus_labelled_this": 0.027161870532799382,
+                "correct_per_100k": 1855
+              },
+              "ANGRY": {
+                "precision": 0.9124713958810069,
+                "share_of_corpus_labelled_this": 0.031158645276292335,
+                "correct_per_100k": 2843
+              },
+              "SAD": {
+                "precision": 0.8353469105971694,
+                "share_of_corpus_labelled_this": 0.019876500857632935,
+                "correct_per_100k": 1660
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.6560348353217197
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9981148336014016,
+                "share_of_corpus_labelled_this": 0.6432816584846512,
+                "correct_per_100k": 64207
+              },
+              "HAPPY": {
+                "precision": 0.45025289746537434,
+                "share_of_corpus_labelled_this": 0.013729657747052211,
+                "correct_per_100k": 618
+              },
+              "ANGRY": {
+                "precision": 0.9036827195467422,
+                "share_of_corpus_labelled_this": 0.00943850267379679,
+                "correct_per_100k": 853
+              },
+              "SAD": {
+                "precision": 0.8509142053445851,
+                "share_of_corpus_labelled_this": 0.007317324185248714,
+                "correct_per_100k": 623
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.673767143090749
+            }
+          },
+          "0.95": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9556637047970098,
+                "share_of_corpus_labelled_this": 0.21969927249068433,
+                "correct_per_100k": 20996
+              },
+              "HAPPY": {
+                "precision": 0.9412310419375948,
+                "share_of_corpus_labelled_this": 0.04141578044596912,
+                "correct_per_100k": 3898
+              },
+              "ANGRY": {
+                "precision": 0.9412856332800659,
+                "share_of_corpus_labelled_this": 0.0829903743315508,
+                "correct_per_100k": 7812
+              },
+              "SAD": {
+                "precision": 0.8331963266552365,
+                "share_of_corpus_labelled_this": 0.05842469982847342,
+                "correct_per_100k": 4868
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.4025301270966777
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9867104497417717,
+                "share_of_corpus_labelled_this": 0.4207641805169456,
+                "correct_per_100k": 41517
+              },
+              "HAPPY": {
+                "precision": 0.8851774530271399,
+                "share_of_corpus_labelled_this": 0.016432246998284734,
+                "correct_per_100k": 1455
+              },
+              "ANGRY": {
+                "precision": 0.9452201933404941,
+                "share_of_corpus_labelled_this": 0.03319073083778966,
+                "correct_per_100k": 3137
+              },
+              "SAD": {
+                "precision": 0.912106135986733,
+                "share_of_corpus_labelled_this": 0.04137221269296742,
+                "correct_per_100k": 3774
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.5117593710459873
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9948684692154841,
+                "share_of_corpus_labelled_this": 0.5067382740876559,
+                "correct_per_100k": 50414
+              },
+              "HAPPY": {
+                "precision": 0.9204052098408104,
+                "share_of_corpus_labelled_this": 0.009481989708404802,
+                "correct_per_100k": 873
+              },
+              "ANGRY": {
+                "precision": 0.9349766255843605,
+                "share_of_corpus_labelled_this": 0.01677718360071301,
+                "correct_per_100k": 1569
+              },
+              "SAD": {
+                "precision": 0.8737092930897538,
+                "share_of_corpus_labelled_this": 0.017276157804459694,
+                "correct_per_100k": 1509
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.5502736052012334
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9983527455324065,
+                "share_of_corpus_labelled_this": 0.5643779499615543,
+                "correct_per_100k": 56345
+              },
+              "HAPPY": {
+                "precision": 0.9113379903277808,
+                "share_of_corpus_labelled_this": 0.003192109777015437,
+                "correct_per_100k": 291
+              },
+              "ANGRY": {
+                "precision": 0.9282700421940928,
+                "share_of_corpus_labelled_this": 0.00506951871657754,
+                "correct_per_100k": 471
+              },
+              "SAD": {
+                "precision": 0.8861439312567132,
+                "share_of_corpus_labelled_this": 0.006387650085763294,
+                "correct_per_100k": 566
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.5790272285409106
+            }
+          },
+          "0.99": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9673094668847783,
+                "share_of_corpus_labelled_this": 0.1489093038386467,
+                "correct_per_100k": 14404
+              },
+              "HAPPY": {
+                "precision": 1.0,
+                "share_of_corpus_labelled_this": 0.014618181818181818,
+                "correct_per_100k": 1462
+              },
+              "ANGRY": {
+                "precision": 1.0,
+                "share_of_corpus_labelled_this": 0.0024411764705882352,
+                "correct_per_100k": 244
+              },
+              "SAD": {
+                "precision": 0.7270770886173239,
+                "share_of_corpus_labelled_this": 0.026780789022298454,
+                "correct_per_100k": 1947
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.1927494511497152
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9869245682853149,
+                "share_of_corpus_labelled_this": 0.2886011711125569,
+                "correct_per_100k": 28483
+              },
+              "HAPPY": {
+                "precision": 1.0,
+                "share_of_corpus_labelled_this": 0.005454545454545455,
+                "correct_per_100k": 545
+              },
+              "ANGRY": {
+                "precision": 1.0,
+                "share_of_corpus_labelled_this": 0.000980392156862745,
+                "correct_per_100k": 98
+              },
+              "SAD": {
+                "precision": 0.8469682386910491,
+                "share_of_corpus_labelled_this": 0.017821612349914237,
+                "correct_per_100k": 1509
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.3128577210738793
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9956546983574011,
+                "share_of_corpus_labelled_this": 0.34737150292778135,
+                "correct_per_100k": 34586
+              },
+              "HAPPY": {
+                "precision": 1.0,
+                "share_of_corpus_labelled_this": 0.0032727272727272726,
+                "correct_per_100k": 327
+              },
+              "ANGRY": {
+                "precision": 1.0,
+                "share_of_corpus_labelled_this": 0.0004901960784313725,
+                "correct_per_100k": 49
+              },
+              "SAD": {
+                "precision": 0.7867679928475637,
+                "share_of_corpus_labelled_this": 0.00767409948542024,
+                "correct_per_100k": 604
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.35880852576436023
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9985378151260504,
+                "share_of_corpus_labelled_this": 0.38711776187378005,
+                "correct_per_100k": 38655
+              },
+              "HAPPY": {
+                "precision": 1.0,
+                "share_of_corpus_labelled_this": 0.001090909090909091,
+                "correct_per_100k": 109
+              },
+              "ANGRY": {
+                "precision": 1.0,
+                "share_of_corpus_labelled_this": 0.00014705882352941175,
+                "correct_per_100k": 15
+              },
+              "SAD": {
+                "precision": 0.8058608058608058,
+                "share_of_corpus_labelled_this": 0.0028096054888507717,
+                "correct_per_100k": 226
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.3911653352770693
+            }
+          }
+        }
+      },
+      "dev": {
+        "n": 420,
+        "accuracy_at_full_coverage": 0.8071428571428572,
+        "confidence_auroc_for_correctness": 0.7547980625660075,
+        "mean_confidence_when_right": 0.897472083568573,
+        "mean_confidence_when_wrong": 0.7620758414268494,
+        "by_threshold": {
+          "0": {
+            "coverage": 1.0,
+            "n_kept": 420,
+            "precision_on_kept": 0.8071428571428572,
+            "per_class_kept_recall": {
+              "NEUTRAL": 1.0,
+              "HAPPY": 1.0,
+              "ANGRY": 1.0,
+              "SAD": 1.0
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.903448275862069,
+              "HAPPY": 0.6722689075630253,
+              "ANGRY": 0.84375,
+              "SAD": 0.7833333333333333
+            }
+          },
+          "0.5": {
+            "coverage": 0.9642857142857143,
+            "n_kept": 405,
+            "precision_on_kept": 0.8074074074074075,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.9559748427672956,
+              "HAPPY": 0.9626168224299065,
+              "ANGRY": 0.9795918367346939,
+              "SAD": 0.9642857142857143
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.9064748201438849,
+              "HAPPY": 0.6637931034482759,
+              "ANGRY": 0.8404255319148937,
+              "SAD": 0.8035714285714286
+            }
+          },
+          "0.6": {
+            "coverage": 0.8952380952380953,
+            "n_kept": 376,
+            "precision_on_kept": 0.8351063829787234,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.8867924528301887,
+              "HAPPY": 0.8878504672897196,
+              "ANGRY": 0.9183673469387754,
+              "SAD": 0.8928571428571428
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.9172932330827067,
+              "HAPPY": 0.7019230769230769,
+              "ANGRY": 0.8620689655172413,
+              "SAD": 0.8461538461538461
+            }
+          },
+          "0.7": {
+            "coverage": 0.8357142857142857,
+            "n_kept": 351,
+            "precision_on_kept": 0.8575498575498576,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.8238993710691823,
+              "HAPPY": 0.8130841121495327,
+              "ANGRY": 0.8673469387755103,
+              "SAD": 0.8571428571428571
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.9291338582677166,
+              "HAPPY": 0.7311827956989247,
+              "ANGRY": 0.8690476190476191,
+              "SAD": 0.8936170212765957
+            }
+          },
+          "0.8": {
+            "coverage": 0.7452380952380953,
+            "n_kept": 313,
+            "precision_on_kept": 0.8849840255591054,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.761006289308176,
+              "HAPPY": 0.6261682242990654,
+              "ANGRY": 0.8163265306122449,
+              "SAD": 0.8035714285714285
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.9482758620689655,
+              "HAPPY": 0.7272727272727273,
+              "ANGRY": 0.9210526315789473,
+              "SAD": 0.9318181818181818
+            }
+          },
+          "0.9": {
+            "coverage": 0.6023809523809524,
+            "n_kept": 253,
+            "precision_on_kept": 0.9051383399209486,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.6729559748427673,
+              "HAPPY": 0.411214953271028,
+              "ANGRY": 0.6530612244897959,
+              "SAD": 0.6785714285714286
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.9528301886792453,
+              "HAPPY": 0.7446808510638298,
+              "ANGRY": 0.9193548387096774,
+              "SAD": 0.9473684210526315
+            }
+          },
+          "0.95": {
+            "coverage": 0.4857142857142857,
+            "n_kept": 204,
+            "precision_on_kept": 0.9215686274509803,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.5911949685534591,
+              "HAPPY": 0.2523364485981308,
+              "ANGRY": 0.5,
+              "SAD": 0.6071428571428571
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.9484536082474226,
+              "HAPPY": 0.7307692307692307,
+              "ANGRY": 0.9375,
+              "SAD": 0.9696969696969697
+            }
+          },
+          "0.99": {
+            "coverage": 0.27380952380952384,
+            "n_kept": 115,
+            "precision_on_kept": 0.9565217391304348,
+            "per_class_kept_recall": {
+              "NEUTRAL": 0.4779874213836478,
+              "HAPPY": 0.07476635514018691,
+              "ANGRY": 0.0510204081632653,
+              "SAD": 0.4642857142857143
+            },
+            "per_class_precision_on_kept": {
+              "NEUTRAL": 0.9620253164556962,
+              "HAPPY": 0.8333333333333334,
+              "ANGRY": 1.0,
+              "SAD": 0.9615384615384616
+            }
+          }
+        },
+        "projected": {
+          "0": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.8943276933044149,
+                "share_of_corpus_labelled_this": 0.3261224935133637,
+                "correct_per_100k": 29166
+              },
+              "HAPPY": {
+                "precision": 0.6838422406799485,
+                "share_of_corpus_labelled_this": 0.2930117794075839,
+                "correct_per_100k": 20037
+              },
+              "ANGRY": {
+                "precision": 0.8475676487273626,
+                "share_of_corpus_labelled_this": 0.24281970030121025,
+                "correct_per_100k": 20581
+              },
+              "SAD": {
+                "precision": 0.7842881078866029,
+                "share_of_corpus_labelled_this": 0.13804602677784217,
+                "correct_per_100k": 10827
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 1.0
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9736016444685502,
+                "share_of_corpus_labelled_this": 0.5923670764373462,
+                "correct_per_100k": 57673
+              },
+              "HAPPY": {
+                "precision": 0.4315074218992717,
+                "share_of_corpus_labelled_this": 0.17326783120230985,
+                "correct_per_100k": 7477
+              },
+              "ANGRY": {
+                "precision": 0.7977507535791756,
+                "share_of_corpus_labelled_this": 0.10360762538131105,
+                "correct_per_100k": 8265
+              },
+              "SAD": {
+                "precision": 0.6418644637864506,
+                "share_of_corpus_labelled_this": 0.13075746697903284,
+                "correct_per_100k": 8393
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.9999999999999999
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.988271546970246,
+                "share_of_corpus_labelled_this": 0.7086255468507275,
+                "correct_per_100k": 70031
+              },
+              "HAPPY": {
+                "precision": 0.31293121940527013,
+                "share_of_corpus_labelled_this": 0.1433535879525501,
+                "correct_per_100k": 4486
+              },
+              "ANGRY": {
+                "precision": 0.6968112051022822,
+                "share_of_corpus_labelled_this": 0.059308074137784196,
+                "correct_per_100k": 4133
+              },
+              "SAD": {
+                "precision": 0.37842827590809,
+                "share_of_corpus_labelled_this": 0.08871279105893812,
+                "correct_per_100k": 3357
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 1.0
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9963597542433107,
+                "share_of_corpus_labelled_this": 0.7855640487106499,
+                "correct_per_100k": 78270
+              },
+              "HAPPY": {
+                "precision": 0.130300444224471,
+                "share_of_corpus_labelled_this": 0.11475993897823634,
+                "correct_per_100k": 1495
+              },
+              "ANGRY": {
+                "precision": 0.46299824293660846,
+                "share_of_corpus_labelled_this": 0.02677755126032074,
+                "correct_per_100k": 1240
+              },
+              "SAD": {
+                "precision": 0.17269617949155253,
+                "share_of_corpus_labelled_this": 0.07289846105079309,
+                "correct_per_100k": 1259
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 1.0
+            }
+          },
+          "0.5": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.8977315165435714,
+                "share_of_corpus_labelled_this": 0.31248574514446936,
+                "correct_per_100k": 28053
+              },
+              "HAPPY": {
+                "precision": 0.675521281149254,
+                "share_of_corpus_labelled_this": 0.2854977607159951,
+                "correct_per_100k": 19286
+              },
+              "ANGRY": {
+                "precision": 0.8443094191082157,
+                "share_of_corpus_labelled_this": 0.237738067648149,
+                "correct_per_100k": 20072
+              },
+              "SAD": {
+                "precision": 0.8036583125574072,
+                "share_of_corpus_labelled_this": 0.12898605373202005,
+                "correct_per_100k": 10366
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.9647076272406336
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9741790956462305,
+                "share_of_corpus_labelled_this": 0.5694199183817417,
+                "correct_per_100k": 55472
+              },
+              "HAPPY": {
+                "precision": 0.42215703967149687,
+                "share_of_corpus_labelled_this": 0.17046409288455286,
+                "correct_per_100k": 7196
+              },
+              "ANGRY": {
+                "precision": 0.7936868909062672,
+                "share_of_corpus_labelled_this": 0.10156680905478044,
+                "correct_per_100k": 8061
+              },
+              "SAD": {
+                "precision": 0.6788009742438926,
+                "share_of_corpus_labelled_this": 0.11838100696106339,
+                "correct_per_100k": 8036
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.9598318272821383
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9886247865518368,
+                "share_of_corpus_labelled_this": 0.6813352394387485,
+                "correct_per_100k": 67358
+              },
+              "HAPPY": {
+                "precision": 0.304772783127534,
+                "share_of_corpus_labelled_this": 0.14167134496189587,
+                "correct_per_100k": 4318
+              },
+              "ANGRY": {
+                "precision": 0.6915034557499673,
+                "share_of_corpus_labelled_this": 0.05828766597451889,
+                "correct_per_100k": 4031
+              },
+              "SAD": {
+                "precision": 0.4196612057383326,
+                "share_of_corpus_labelled_this": 0.07659239573099563,
+                "correct_per_100k": 3214
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.957886646106159
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9964623163724341,
+                "share_of_corpus_labelled_this": 0.7555029189863215,
+                "correct_per_100k": 75283
+              },
+              "HAPPY": {
+                "precision": 0.1260299937223394,
+                "share_of_corpus_labelled_this": 0.11419919131468495,
+                "correct_per_100k": 1439
+              },
+              "ANGRY": {
+                "precision": 0.45678821573519957,
+                "share_of_corpus_labelled_this": 0.026471428811341145,
+                "correct_per_100k": 1209
+              },
+              "SAD": {
+                "precision": 0.19951929571297014,
+                "share_of_corpus_labelled_this": 0.06041306123048761,
+                "correct_per_100k": 1205
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.956586600342835
+            }
+          },
+          "0.6": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9091306634125739,
+                "share_of_corpus_labelled_this": 0.2987718404413432,
+                "correct_per_100k": 27162
+              },
+              "HAPPY": {
+                "precision": 0.7117635616792801,
+                "share_of_corpus_labelled_this": 0.2568846332396475,
+                "correct_per_100k": 18284
+              },
+              "ANGRY": {
+                "precision": 0.8648545588330947,
+                "share_of_corpus_labelled_this": 0.22033904145329442,
+                "correct_per_100k": 19056
+              },
+              "SAD": {
+                "precision": 0.846583090007885,
+                "share_of_corpus_labelled_this": 0.11972497921757311,
+                "correct_per_100k": 10136
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.8957204943518581
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9781772512917366,
+                "share_of_corpus_labelled_this": 0.5490895617636933,
+                "correct_per_100k": 53711
+              },
+              "HAPPY": {
+                "precision": 0.47541916813369245,
+                "share_of_corpus_labelled_this": 0.14350346733650257,
+                "correct_per_100k": 6822
+              },
+              "ANGRY": {
+                "precision": 0.8390272353839711,
+                "share_of_corpus_labelled_this": 0.0912135017999441,
+                "correct_per_100k": 7653
+              },
+              "SAD": {
+                "precision": 0.735304171528932,
+                "share_of_corpus_labelled_this": 0.10685568178955587,
+                "correct_per_100k": 7857
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.8906622126896958
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9901692259739465,
+                "share_of_corpus_labelled_this": 0.6586765582621693,
+                "correct_per_100k": 65220
+              },
+              "HAPPY": {
+                "precision": 0.354118448241644,
+                "share_of_corpus_labelled_this": 0.11559572691711141,
+                "correct_per_100k": 4093
+              },
+              "ANGRY": {
+                "precision": 0.7686969620332167,
+                "share_of_corpus_labelled_this": 0.04977944237119994,
+                "correct_per_100k": 3827
+              },
+              "SAD": {
+                "precision": 0.48631813646002253,
+                "share_of_corpus_labelled_this": 0.06462553845378743,
+                "correct_per_100k": 3143
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.888677266004268
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9969664761091708,
+                "share_of_corpus_labelled_this": 0.7311487748864315,
+                "correct_per_100k": 72893
+              },
+              "HAPPY": {
+                "precision": 0.15381366924759038,
+                "share_of_corpus_labelled_this": 0.08871031995940679,
+                "correct_per_100k": 1364
+              },
+              "ANGRY": {
+                "precision": 0.5883799145787197,
+                "share_of_corpus_labelled_this": 0.019510509370385433,
+                "correct_per_100k": 1148
+              },
+              "SAD": {
+                "precision": 0.24549171672226455,
+                "share_of_corpus_labelled_this": 0.048008602665188804,
+                "correct_per_100k": 1179
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.8873782068814123
+            }
+          },
+          "0.7": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9222772618593266,
+                "share_of_corpus_labelled_this": 0.28485683426959213,
+                "correct_per_100k": 26272
+              },
+              "HAPPY": {
+                "precision": 0.7403202296019531,
+                "share_of_corpus_labelled_this": 0.23005957449105544,
+                "correct_per_100k": 17032
+              },
+              "ANGRY": {
+                "precision": 0.871808256892489,
+                "share_of_corpus_labelled_this": 0.21275273590303695,
+                "correct_per_100k": 18548
+              },
+              "SAD": {
+                "precision": 0.8922100429258877,
+                "share_of_corpus_labelled_this": 0.1084385910774114,
+                "correct_per_100k": 9675
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.836107735741096
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.980903913910847,
+                "share_of_corpus_labelled_this": 0.5296103399921067,
+                "correct_per_100k": 51950
+              },
+              "HAPPY": {
+                "precision": 0.5185253697072731,
+                "share_of_corpus_labelled_this": 0.12256179848063367,
+                "correct_per_100k": 6355
+              },
+              "ANGRY": {
+                "precision": 0.8441907840760864,
+                "share_of_corpus_labelled_this": 0.08823810603416116,
+                "correct_per_100k": 7449
+              },
+              "SAD": {
+                "precision": 0.8326236969607989,
+                "share_of_corpus_labelled_this": 0.090076706048316,
+                "correct_per_100k": 7500
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.8304869505552176
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9915843356899586,
+                "share_of_corpus_labelled_this": 0.6361714151363244,
+                "correct_per_100k": 63082
+              },
+              "HAPPY": {
+                "precision": 0.4004346076154591,
+                "share_of_corpus_labelled_this": 0.09522364050539985,
+                "correct_per_100k": 3813
+              },
+              "ANGRY": {
+                "precision": 0.7727431954429924,
+                "share_of_corpus_labelled_this": 0.048198286544383226,
+                "correct_per_100k": 3724
+              },
+              "SAD": {
+                "precision": 0.636142686209991,
+                "share_of_corpus_labelled_this": 0.0471592311761594,
+                "correct_per_100k": 3000
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.8267525733622667
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9973911596699522,
+                "share_of_corpus_labelled_this": 0.706875572041548,
+                "correct_per_100k": 70503
+              },
+              "HAPPY": {
+                "precision": 0.18316628927523343,
+                "share_of_corpus_labelled_this": 0.06939202854479827,
+                "correct_per_100k": 1271
+              },
+              "ANGRY": {
+                "precision": 0.5875370793540359,
+                "share_of_corpus_labelled_this": 0.019017471033555375,
+                "correct_per_100k": 1117
+              },
+              "SAD": {
+                "precision": 0.3807317891910037,
+                "share_of_corpus_labelled_this": 0.029548360077587727,
+                "correct_per_100k": 1125
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.8248334316974893
+            }
+          },
+          "0.8": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9429146124659346,
+                "share_of_corpus_labelled_this": 0.2597325962919112,
+                "correct_per_100k": 24491
+              },
+              "HAPPY": {
+                "precision": 0.7366999151368364,
+                "share_of_corpus_labelled_this": 0.19039188054872805,
+                "correct_per_100k": 14026
+              },
+              "ANGRY": {
+                "precision": 0.9234203039347668,
+                "share_of_corpus_labelled_this": 0.19260692243746377,
+                "correct_per_100k": 17786
+              },
+              "SAD": {
+                "precision": 0.9313882314801316,
+                "share_of_corpus_labelled_this": 0.10140393165730407,
+                "correct_per_100k": 9445
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.7441353309354071
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9868389110344779,
+                "share_of_corpus_labelled_this": 0.49073534104172434,
+                "correct_per_100k": 48428
+              },
+              "HAPPY": {
+                "precision": 0.5075403971920998,
+                "share_of_corpus_labelled_this": 0.10311779887409027,
+                "correct_per_100k": 5234
+              },
+              "ANGRY": {
+                "precision": 0.8872675310045581,
+                "share_of_corpus_labelled_this": 0.08050398434810356,
+                "correct_per_100k": 7143
+              },
+              "SAD": {
+                "precision": 0.8825900737038561,
+                "share_of_corpus_labelled_this": 0.08295389660007893,
+                "correct_per_100k": 7321
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.757311020863997
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9940530555759994,
+                "share_of_corpus_labelled_this": 0.5915683384974515,
+                "correct_per_100k": 58805
+              },
+              "HAPPY": {
+                "precision": 0.385705713625837,
+                "share_of_corpus_labelled_this": 0.08141406271554646,
+                "correct_per_100k": 3140
+              },
+              "ANGRY": {
+                "precision": 0.8142061334660593,
+                "share_of_corpus_labelled_this": 0.04386393598172826,
+                "correct_per_100k": 3571
+              },
+              "SAD": {
+                "precision": 0.7224211303621049,
+                "share_of_corpus_labelled_this": 0.04053828584863675,
+                "correct_per_100k": 2929
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.757384623043363
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9981737964648859,
+                "share_of_corpus_labelled_this": 0.6584351409846252,
+                "correct_per_100k": 65723
+              },
+              "HAPPY": {
+                "precision": 0.17272693880423773,
+                "share_of_corpus_labelled_this": 0.06060021553146034,
+                "correct_per_100k": 1047
+              },
+              "ANGRY": {
+                "precision": 0.607947303848582,
+                "share_of_corpus_labelled_this": 0.017623707920833648,
+                "correct_per_100k": 1071
+              },
+              "SAD": {
+                "precision": 0.4750319794332801,
+                "share_of_corpus_labelled_this": 0.02311874427958452,
+                "correct_per_100k": 1098
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.7597778087165037
+            }
+          },
+          "0.9": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9480490186172458,
+                "share_of_corpus_labelled_this": 0.23719018754565835,
+                "correct_per_100k": 22487
+              },
+              "HAPPY": {
+                "precision": 0.7514544871173535,
+                "share_of_corpus_labelled_this": 0.11665849749351336,
+                "correct_per_100k": 8766
+              },
+              "ANGRY": {
+                "precision": 0.9220412615926449,
+                "share_of_corpus_labelled_this": 0.15707163729536958,
+                "correct_per_100k": 14483
+              },
+              "SAD": {
+                "precision": 0.9460289028860785,
+                "share_of_corpus_labelled_this": 0.08765965942010732,
+                "correct_per_100k": 8293
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.5985799817546485
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9877292302842662,
+                "share_of_corpus_labelled_this": 0.45017812009303804,
+                "correct_per_100k": 44465
+              },
+              "HAPPY": {
+                "precision": 0.5520823552962809,
+                "share_of_corpus_labelled_this": 0.05924891469548497,
+                "correct_per_100k": 3271
+              },
+              "ANGRY": {
+                "precision": 0.8772197551993675,
+                "share_of_corpus_labelled_this": 0.06630409878640224,
+                "correct_per_100k": 5816
+              },
+              "SAD": {
+                "precision": 0.9233427205132999,
+                "share_of_corpus_labelled_this": 0.06962280944823707,
+                "correct_per_100k": 6429
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.6453539430231623
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9945527593220108,
+                "share_of_corpus_labelled_this": 0.5428943832867302,
+                "correct_per_100k": 53994
+              },
+              "HAPPY": {
+                "precision": 0.43329149897391495,
+                "share_of_corpus_labelled_this": 0.045295530308755494,
+                "correct_per_100k": 1963
+              },
+              "ANGRY": {
+                "precision": 0.7930517634739908,
+                "share_of_corpus_labelled_this": 0.036670535256952366,
+                "correct_per_100k": 2908
+              },
+              "SAD": {
+                "precision": 0.8132042052488602,
+                "share_of_corpus_labelled_this": 0.03162094532752265,
+                "correct_per_100k": 2571
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.6564813941799607
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9983199945428017,
+                "share_of_corpus_labelled_this": 0.6044746401911143,
+                "correct_per_100k": 60346
+              },
+              "HAPPY": {
+                "precision": 0.2058498846123677,
+                "share_of_corpus_labelled_this": 0.031780712858234465,
+                "correct_per_100k": 654
+              },
+              "ANGRY": {
+                "precision": 0.5648017084475938,
+                "share_of_corpus_labelled_this": 0.015446996114615833,
+                "correct_per_100k": 872
+              },
+              "SAD": {
+                "precision": 0.6101291715092146,
+                "share_of_corpus_labelled_this": 0.01580461579800321,
+                "correct_per_100k": 964
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.6675069649619678
+            }
+          },
+          "0.95": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9432552433965943,
+                "share_of_corpus_labelled_this": 0.21715245169660174,
+                "correct_per_100k": 20483
+              },
+              "HAPPY": {
+                "precision": 0.7377139521001849,
+                "share_of_corpus_labelled_this": 0.06450845197010209,
+                "correct_per_100k": 4759
+              },
+              "ANGRY": {
+                "precision": 0.9383342451086969,
+                "share_of_corpus_labelled_this": 0.12185075338546633,
+                "correct_per_100k": 11434
+              },
+              "SAD": {
+                "precision": 0.9671384529147982,
+                "share_of_corpus_labelled_this": 0.07621895861148198,
+                "correct_per_100k": 7371
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.47973061566365216
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9865449803232896,
+                "share_of_corpus_labelled_this": 0.4105554785836041,
+                "correct_per_100k": 40503
+              },
+              "HAPPY": {
+                "precision": 0.5475591920830314,
+                "share_of_corpus_labelled_this": 0.03242938773111079,
+                "correct_per_100k": 1776
+              },
+              "ANGRY": {
+                "precision": 0.9424544920728127,
+                "share_of_corpus_labelled_this": 0.048722105664695786,
+                "correct_per_100k": 4592
+              },
+              "SAD": {
+                "precision": 0.9839080459770115,
+                "share_of_corpus_labelled_this": 0.058077436582109475,
+                "correct_per_100k": 5714
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.5497844085615201
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9940230620858381,
+                "share_of_corpus_labelled_this": 0.4947811757395605,
+                "correct_per_100k": 49182
+              },
+              "HAPPY": {
+                "precision": 0.44206246442853336,
+                "share_of_corpus_labelled_this": 0.024101131547664034,
+                "correct_per_100k": 1065
+              },
+              "ANGRY": {
+                "precision": 0.9317311041448972,
+                "share_of_corpus_labelled_this": 0.024641426664123594,
+                "correct_per_100k": 2296
+              },
+              "SAD": {
+                "precision": 0.9760547320410491,
+                "share_of_corpus_labelled_this": 0.02341789052069426,
+                "correct_per_100k": 2286
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.5669416244720423
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.998155949249575,
+                "share_of_corpus_labelled_this": 0.550701055285454,
+                "correct_per_100k": 54969
+              },
+              "HAPPY": {
+                "precision": 0.21679755802695203,
+                "share_of_corpus_labelled_this": 0.016381189444566402,
+                "correct_per_100k": 355
+              },
+              "ANGRY": {
+                "precision": 0.9247167274822354,
+                "share_of_corpus_labelled_this": 0.007448502765592218,
+                "correct_per_100k": 689
+              },
+              "SAD": {
+                "precision": 0.9786585365853658,
+                "share_of_corpus_labelled_this": 0.008758344459279038,
+                "correct_per_100k": 857
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.5832890919548915
+            }
+          },
+          "0.99": {
+            "thaiser_acted_measured": {
+              "NEUTRAL": {
+                "precision": 0.9585718446406758,
+                "share_of_corpus_labelled_this": 0.17652046439277527,
+                "correct_per_100k": 16921
+              },
+              "HAPPY": {
+                "precision": 0.8313339199686002,
+                "share_of_corpus_labelled_this": 0.015064180812511922,
+                "correct_per_100k": 1252
+              },
+              "ANGRY": {
+                "precision": 1.0,
+                "share_of_corpus_labelled_this": 0.010163265306122448,
+                "correct_per_100k": 1016
+              },
+              "SAD": {
+                "precision": 0.9583207205005513,
+                "share_of_corpus_labelled_this": 0.06009395861148198,
+                "correct_per_100k": 5759
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.2618418691228916
+            },
+            "mildly_neutral_70": {
+              "NEUTRAL": {
+                "precision": 0.9891946322261924,
+                "share_of_corpus_labelled_this": 0.3382460681327724,
+                "correct_per_100k": 33459
+              },
+              "HAPPY": {
+                "precision": 0.8207705192629815,
+                "share_of_corpus_labelled_this": 0.005693305359526988,
+                "correct_per_100k": 467
+              },
+              "ANGRY": {
+                "precision": 1.0,
+                "share_of_corpus_labelled_this": 0.004081632653061224,
+                "correct_per_100k": 408
+              },
+              "SAD": {
+                "precision": 0.9794946905895278,
+                "share_of_corpus_labelled_this": 0.045577436582109485,
+                "correct_per_100k": 4464
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.3935984427274701
+            },
+            "spontaneous_85": {
+              "NEUTRAL": {
+                "precision": 0.9955019157364025,
+                "share_of_corpus_labelled_this": 0.4081250892174892,
+                "correct_per_100k": 40629
+              },
+              "HAPPY": {
+                "precision": 0.8460431654676259,
+                "share_of_corpus_labelled_this": 0.0033139423993896622,
+                "correct_per_100k": 280
+              },
+              "ANGRY": {
+                "precision": 1.0,
+                "share_of_corpus_labelled_this": 0.002040816326530612,
+                "correct_per_100k": 204
+              },
+              "SAD": {
+                "precision": 0.9695541862993838,
+                "share_of_corpus_labelled_this": 0.01841789052069426,
+                "correct_per_100k": 1786
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.4318977384641037
+            },
+            "read_corpus_95": {
+              "NEUTRAL": {
+                "precision": 0.9985888564938805,
+                "share_of_corpus_labelled_this": 0.4547297392330235,
+                "correct_per_100k": 45409
+              },
+              "HAPPY": {
+                "precision": 0.8592722490135905,
+                "share_of_corpus_labelled_this": 0.0010876406637421324,
+                "correct_per_100k": 93
+              },
+              "ANGRY": {
+                "precision": 1.0,
+                "share_of_corpus_labelled_this": 0.0006122448979591836,
+                "correct_per_100k": 61
+              },
+              "SAD": {
+                "precision": 0.9728451933567706,
+                "share_of_corpus_labelled_this": 0.006883344459279039,
+                "correct_per_100k": 670
+              },
+              "OTHER_unusable": 0.0,
+              "kept_fraction": 0.46331296925400384
+            }
+          }
+        }
+      }
+    }
+  },
+  "seconds": 6.6
+}

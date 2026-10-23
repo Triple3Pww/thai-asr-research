@@ -1,0 +1,20 @@
+{
+ "base": "E:/asr-spike/models/pathumma-stt-th-fastconformer-rnnt-large.nemo",
+ "train": "E:\\Claude\\datasets\\lotusdis_lav\\manifest_train_conv_plus_synth.jsonl",
+ "val": "E:\\Claude\\datasets\\lotusdis_lav\\manifest_val_conv.jsonl",
+ "lr": 5e-05,
+ "epochs": 2,
+ "max_steps": -1,
+ "bs": 16,
+ "accum": 1,
+ "loss": "fast",
+ "freeze_encoder": false,
+ "checkpoint": "E:\\Claude\\asr-research\\checkpoints\\rt_student_lot3.nemo",
+ "metrics": {
+  "train_loss": 0.46460625529289246,
+  "learning_rate": 5.000018973078113e-06,
+  "global_step": 2605.0,
+  "training_batch_wer": 0.523809552192688,
+  "val_wer": 0.32389381527900696
+ }
+}

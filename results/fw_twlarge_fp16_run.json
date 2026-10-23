@@ -1,0 +1,9 @@
+{
+ "model": "E:/fw-spike/models/typhoon-whisper-large-v3-ct2",
+ "runtime": "ctranslate2/faster-whisper",
+ "compute": "float16",
+ "n": 682,
+ "latency_ms_p50": 1044.1,
+ "latency_ms_p90": 1674.0,
+ "rtf": 0.1123
+}

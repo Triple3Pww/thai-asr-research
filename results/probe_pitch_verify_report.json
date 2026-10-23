@@ -1,0 +1,26 @@
+{
+  "n": 320,
+  "keep": 298,
+  "reject": 22,
+  "keep_rate": 0.93125,
+  "reasons": {
+    "internal_stall": 7,
+    "panel_rejected": 15
+  },
+  "chars_per_s": {
+    "median": 8.810572687224669,
+    "band": [
+      2.6844175470111074,
+      14.93672782743823
+    ],
+    "mad_k": 4.0
+  },
+  "thresholds": {
+    "cer_max": 1.0,
+    "rep_max": 0.8,
+    "gap_max": 1.5
+  },
+  "asr": "biodatlab",
+  "hard_case_texts": [],
+  "note": "CER here is a gate, not an arm number -- adapter/_score.py pins the backend, this does not."
+}

@@ -1,0 +1,30 @@
+{
+ "baseline": {
+  "sentence": 0.03924688855759728,
+  "spot": 0.03232884972947621
+ },
+ "porjai_ho_nectec_fc": {
+  "top1": 0.015393892695020017,
+  "latency_ms_p50": 92.1,
+  "ceil_sentence": 0.01018442519975209,
+  "ceil_spot": 0.008057086383356504
+ },
+ "porjai_ho_biodatlab_distill-whisper-th-small": {
+  "top1": 0.04438935325549842,
+  "latency_ms_p50": 560.8,
+  "ceil_sentence": 0.02206067103301563,
+  "ceil_spot": 0.015326889897653228
+ },
+ "porjai_ho_biodatlab_distill-whisper-th-medium": {
+  "top1": 0.02745439622104223,
+  "latency_ms_p50": 701.5,
+  "ceil_sentence": 0.014723864721352117,
+  "ceil_spot": 0.010904705271445082
+ },
+ "porjai_ho_nectec_Pathumma-whisper-th-medium": {
+  "top1": 0.024791035025712324,
+  "latency_ms_p50": 2005.5,
+  "ceil_sentence": 0.012362016114172767,
+  "ceil_spot": 0.008743865056366103
+ }
+}

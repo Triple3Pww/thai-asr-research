@@ -1,0 +1,11 @@
+{
+ "n": 677,
+ "mean_turn_s": 9.7,
+ "nectec_alone_ms_p50": 45.3,
+ "nectec_alone_ms_p90": 64.0,
+ "onepass_with_splice_ms_p50": 189.8,
+ "onepass_with_splice_ms_p90": 303.9,
+ "of_which_spotting_ms_p50": 153.6,
+ "condition": "bias@50",
+ "fast_spot": false
+}

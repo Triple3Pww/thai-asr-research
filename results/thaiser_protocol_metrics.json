@@ -1,0 +1,255 @@
+{
+  "arm": "thaiser_protocol",
+  "date": "2026-09-24 16:01:36",
+  "question": "our emotion model under THAI-SER's own 8-fold studio-session protocol",
+  "protocol": {
+    "source": "github.com/tann9949/thaiser-experiments",
+    "agreement": 0.71,
+    "classes": [
+      "NEUTRAL",
+      "HAPPY",
+      "ANGRY",
+      "SAD"
+    ],
+    "train_mic": "mic_con",
+    "test_mics": [
+      "mic_con",
+      "mic_clip"
+    ],
+    "max_len_s": 3.0,
+    "folds": 8,
+    "zoom": "excluded"
+  },
+  "their_baseline_4class": {
+    "WA": 67.34,
+    "WA_std": 3.05,
+    "UA": 62.61,
+    "UA_std": 3.19,
+    "model": "CNN+LSTM from scratch, 64-bin fbank, VTLP"
+  },
+  "our_number_full_clip_actor_holdout": {
+    "accuracy": 0.8488,
+    "macro_recall": 0.857,
+    "note": "F18, different protocol -- not this one"
+  },
+  "folds_scored": 8,
+  "folds_skipped": [],
+  "summary": {
+    "mic_con": {
+      "n_folds": 8,
+      "WA_mean": 0.7717971703328397,
+      "WA_std": 0.019796768650190043,
+      "UA_mean": 0.7317965828474468,
+      "UA_std": 0.025162767397534272
+    },
+    "mic_clip": {
+      "n_folds": 8,
+      "WA_mean": 0.7395163003791876,
+      "WA_std": 0.029608575023879896,
+      "UA_mean": 0.6719057329316747,
+      "UA_std": 0.03279580508344551
+    }
+  },
+  "per_fold": {
+    "0": {
+      "n_train": 7425,
+      "n_val": 467,
+      "val_accuracy": 0.7922912205567452,
+      "weight_decay": 0.0001,
+      "test_studios": [
+        76,
+        77,
+        78,
+        79,
+        80
+      ],
+      "per_mic": {
+        "mic_con": {
+          "n": 483,
+          "WA": 0.7660455486542443,
+          "UA": 0.761987546428803
+        },
+        "mic_clip": {
+          "n": 483,
+          "WA": 0.722567287784679,
+          "UA": 0.69879268571852
+        }
+      }
+    },
+    "1": {
+      "n_train": 7588,
+      "n_val": 358,
+      "val_accuracy": 0.7402234636871509,
+      "weight_decay": 1.0,
+      "test_studios": [
+        66,
+        67,
+        68,
+        69,
+        70
+      ],
+      "per_mic": {
+        "mic_con": {
+          "n": 429,
+          "WA": 0.7995337995337995,
+          "UA": 0.7358579638752052
+        },
+        "mic_clip": {
+          "n": 429,
+          "WA": 0.7948717948717948,
+          "UA": 0.6705665024630542
+        }
+      }
+    },
+    "2": {
+      "n_train": 7613,
+      "n_val": 379,
+      "val_accuracy": 0.7810026385224275,
+      "weight_decay": 0.0001,
+      "test_studios": [
+        56,
+        57,
+        58,
+        59,
+        60
+      ],
+      "per_mic": {
+        "mic_con": {
+          "n": 383,
+          "WA": 0.7597911227154047,
+          "UA": 0.6852366310641206
+        },
+        "mic_clip": {
+          "n": 383,
+          "WA": 0.7310704960835509,
+          "UA": 0.613501846057947
+        }
+      }
+    },
+    "3": {
+      "n_train": 7333,
+      "n_val": 496,
+      "val_accuracy": 0.780241935483871,
+      "weight_decay": 0.0001,
+      "test_studios": [
+        46,
+        47,
+        48,
+        49,
+        50
+      ],
+      "per_mic": {
+        "mic_con": {
+          "n": 546,
+          "WA": 0.7948717948717948,
+          "UA": 0.7460871437406168
+        },
+        "mic_clip": {
+          "n": 546,
+          "WA": 0.7417582417582418,
+          "UA": 0.6646385767823034
+        }
+      }
+    },
+    "4": {
+      "n_train": 7266,
+      "n_val": 596,
+      "val_accuracy": 0.7600671140939598,
+      "weight_decay": 0.0001,
+      "test_studios": [
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "per_mic": {
+        "mic_con": {
+          "n": 513,
+          "WA": 0.7758284600389863,
+          "UA": 0.7333641282663501
+        },
+        "mic_clip": {
+          "n": 513,
+          "WA": 0.7426900584795322,
+          "UA": 0.6898016944240614
+        }
+      }
+    },
+    "5": {
+      "n_train": 7286,
+      "n_val": 506,
+      "val_accuracy": 0.7529644268774703,
+      "weight_decay": 0.0001,
+      "test_studios": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "per_mic": {
+        "mic_con": {
+          "n": 583,
+          "WA": 0.7821612349914236,
+          "UA": 0.7522941143167625
+        },
+        "mic_clip": {
+          "n": 583,
+          "WA": 0.7667238421955404,
+          "UA": 0.7171817684777076
+        }
+      }
+    },
+    "6": {
+      "n_train": 7096,
+      "n_val": 665,
+      "val_accuracy": 0.7969924812030075,
+      "weight_decay": 0.0001,
+      "test_studios": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "per_mic": {
+        "mic_con": {
+          "n": 614,
+          "WA": 0.750814332247557,
+          "UA": 0.7052750536161421
+        },
+        "mic_clip": {
+          "n": 614,
+          "WA": 0.7084690553745928,
+          "UA": 0.6416114598187719
+        }
+      }
+    },
+    "7": {
+      "n_train": 7018,
+      "n_val": 768,
+      "val_accuracy": 0.7786458333333334,
+      "weight_decay": 0.0001,
+      "test_studios": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "per_mic": {
+        "mic_con": {
+          "n": 589,
+          "WA": 0.7453310696095077,
+          "UA": 0.734270081471574
+        },
+        "mic_clip": {
+          "n": 589,
+          "WA": 0.7079796264855688,
+          "UA": 0.6791513297110312
+        }
+      }
+    }
+  }
+}

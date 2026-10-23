@@ -1,0 +1,394 @@
+{
+  "arm": "shared_encoder_cost",
+  "date": "2026-09-22 20:56:44",
+  "question": "given a SEPARATE emotion head, must it sit on its own encoder?",
+  "settled_separately": {
+    "shared_ctc_head_sad_recall": 0.019,
+    "linear_probe_on_same_encoder_sad_recall": 0.83,
+    "note": "the shared CTC head is not a candidate; this arm is only about the encoder"
+  },
+  "scope": "FROZEN encoders only -- multi-task fine-tuning is a different, larger experiment",
+  "encoders": {
+    "mel": {
+      "dim": 160,
+      "n_test": 410,
+      "head_chosen_on_dev": "mlp128",
+      "weight_decay": 1.0,
+      "dev_accuracy": 0.6571428571428571,
+      "test_accuracy": 0.5951219512195122,
+      "ci95": [
+        0.5476071142508652,
+        0.6426367881881592
+      ],
+      "test_macro_recall": 0.5919537040580709,
+      "per_class_recall": {
+        "NEUTRAL": 0.7172413793103448,
+        "HAPPY": 0.5,
+        "ANGRY": 0.49019607843137253,
+        "SAD": 0.660377358490566
+      },
+      "capacity_sweep": [
+        {
+          "hidden": 0,
+          "weight_decay": 0.001,
+          "dev_accuracy": 0.6428571428571429,
+          "epoch": 280
+        },
+        {
+          "hidden": 0,
+          "weight_decay": 0.01,
+          "dev_accuracy": 0.6428571428571429,
+          "epoch": 280
+        },
+        {
+          "hidden": 0,
+          "weight_decay": 0.1,
+          "dev_accuracy": 0.6404761904761904,
+          "epoch": 280
+        },
+        {
+          "hidden": 0,
+          "weight_decay": 1.0,
+          "dev_accuracy": 0.6357142857142857,
+          "epoch": 280
+        },
+        {
+          "hidden": 128,
+          "weight_decay": 0.001,
+          "dev_accuracy": 0.6547619047619048,
+          "epoch": 180
+        },
+        {
+          "hidden": 128,
+          "weight_decay": 0.01,
+          "dev_accuracy": 0.65,
+          "epoch": 180
+        },
+        {
+          "hidden": 128,
+          "weight_decay": 0.1,
+          "dev_accuracy": 0.6547619047619048,
+          "epoch": 180
+        },
+        {
+          "hidden": 128,
+          "weight_decay": 1.0,
+          "dev_accuracy": 0.6571428571428571,
+          "epoch": 140
+        },
+        {
+          "hidden": 512,
+          "weight_decay": 0.001,
+          "dev_accuracy": 0.6476190476190476,
+          "epoch": 60
+        },
+        {
+          "hidden": 512,
+          "weight_decay": 0.01,
+          "dev_accuracy": 0.6476190476190476,
+          "epoch": 60
+        },
+        {
+          "hidden": 512,
+          "weight_decay": 0.1,
+          "dev_accuracy": 0.65,
+          "epoch": 140
+        },
+        {
+          "hidden": 512,
+          "weight_decay": 1.0,
+          "dev_accuracy": 0.6476190476190476,
+          "epoch": 100
+        }
+      ]
+    },
+    "typhoon": {
+      "dim": 1024,
+      "n_test": 410,
+      "head_chosen_on_dev": "mlp512",
+      "weight_decay": 1.0,
+      "dev_accuracy": 0.6904761904761905,
+      "test_accuracy": 0.6780487804878049,
+      "ci95": [
+        0.6328226272566684,
+        0.7232749337189415
+      ],
+      "test_macro_recall": 0.6904131830765073,
+      "per_class_recall": {
+        "NEUTRAL": 0.6275862068965518,
+        "HAPPY": 0.6727272727272727,
+        "ANGRY": 0.7254901960784313,
+        "SAD": 0.7358490566037735
+      },
+      "capacity_sweep": [
+        {
+          "hidden": 0,
+          "weight_decay": 0.001,
+          "dev_accuracy": 0.669047619047619,
+          "epoch": 40
+        },
+        {
+          "hidden": 0,
+          "weight_decay": 0.01,
+          "dev_accuracy": 0.669047619047619,
+          "epoch": 40
+        },
+        {
+          "hidden": 0,
+          "weight_decay": 0.1,
+          "dev_accuracy": 0.669047619047619,
+          "epoch": 40
+        },
+        {
+          "hidden": 0,
+          "weight_decay": 1.0,
+          "dev_accuracy": 0.669047619047619,
+          "epoch": 40
+        },
+        {
+          "hidden": 128,
+          "weight_decay": 0.001,
+          "dev_accuracy": 0.6761904761904762,
+          "epoch": 120
+        },
+        {
+          "hidden": 128,
+          "weight_decay": 0.01,
+          "dev_accuracy": 0.6761904761904762,
+          "epoch": 120
+        },
+        {
+          "hidden": 128,
+          "weight_decay": 0.1,
+          "dev_accuracy": 0.6761904761904762,
+          "epoch": 120
+        },
+        {
+          "hidden": 128,
+          "weight_decay": 1.0,
+          "dev_accuracy": 0.6785714285714286,
+          "epoch": 120
+        },
+        {
+          "hidden": 512,
+          "weight_decay": 0.001,
+          "dev_accuracy": 0.6833333333333333,
+          "epoch": 180
+        },
+        {
+          "hidden": 512,
+          "weight_decay": 0.01,
+          "dev_accuracy": 0.6857142857142857,
+          "epoch": 180
+        },
+        {
+          "hidden": 512,
+          "weight_decay": 0.1,
+          "dev_accuracy": 0.6833333333333333,
+          "epoch": 180
+        },
+        {
+          "hidden": 512,
+          "weight_decay": 1.0,
+          "dev_accuracy": 0.6904761904761905,
+          "epoch": 340
+        }
+      ]
+    },
+    "sensevoice": {
+      "dim": 1024,
+      "n_test": 410,
+      "head_chosen_on_dev": "mlp128",
+      "weight_decay": 1.0,
+      "dev_accuracy": 0.7047619047619048,
+      "test_accuracy": 0.7,
+      "ci95": [
+        0.6556418127006095,
+        0.7443581872993904
+      ],
+      "test_macro_recall": 0.7136473522395295,
+      "per_class_recall": {
+        "NEUTRAL": 0.6758620689655173,
+        "HAPPY": 0.7,
+        "ANGRY": 0.6862745098039216,
+        "SAD": 0.7924528301886793
+      },
+      "capacity_sweep": [
+        {
+          "hidden": 0,
+          "weight_decay": 0.001,
+          "dev_accuracy": 0.6857142857142857,
+          "epoch": 40
+        },
+        {
+          "hidden": 0,
+          "weight_decay": 0.01,
+          "dev_accuracy": 0.6857142857142857,
+          "epoch": 40
+        },
+        {
+          "hidden": 0,
+          "weight_decay": 0.1,
+          "dev_accuracy": 0.6857142857142857,
+          "epoch": 40
+        },
+        {
+          "hidden": 0,
+          "weight_decay": 1.0,
+          "dev_accuracy": 0.6880952380952381,
+          "epoch": 40
+        },
+        {
+          "hidden": 128,
+          "weight_decay": 0.001,
+          "dev_accuracy": 0.7,
+          "epoch": 320
+        },
+        {
+          "hidden": 128,
+          "weight_decay": 0.01,
+          "dev_accuracy": 0.7,
+          "epoch": 200
+        },
+        {
+          "hidden": 128,
+          "weight_decay": 0.1,
+          "dev_accuracy": 0.7023809523809523,
+          "epoch": 340
+        },
+        {
+          "hidden": 128,
+          "weight_decay": 1.0,
+          "dev_accuracy": 0.7047619047619048,
+          "epoch": 200
+        },
+        {
+          "hidden": 512,
+          "weight_decay": 0.001,
+          "dev_accuracy": 0.7,
+          "epoch": 220
+        },
+        {
+          "hidden": 512,
+          "weight_decay": 0.01,
+          "dev_accuracy": 0.7,
+          "epoch": 220
+        },
+        {
+          "hidden": 512,
+          "weight_decay": 0.1,
+          "dev_accuracy": 0.7,
+          "epoch": 260
+        },
+        {
+          "hidden": 512,
+          "weight_decay": 1.0,
+          "dev_accuracy": 0.7023809523809523,
+          "epoch": 200
+        }
+      ]
+    },
+    "emotion2vec": {
+      "dim": 2048,
+      "n_test": 410,
+      "head_chosen_on_dev": "linear",
+      "weight_decay": 1.0,
+      "dev_accuracy": 0.7761904761904762,
+      "test_accuracy": 0.7804878048780488,
+      "ci95": [
+        0.7404217547402427,
+        0.8205538550158549
+      ],
+      "test_macro_recall": 0.7531638768951716,
+      "per_class_recall": {
+        "NEUTRAL": 0.8482758620689655,
+        "HAPPY": 0.7272727272727273,
+        "ANGRY": 0.8333333333333334,
+        "SAD": 0.6037735849056604
+      },
+      "capacity_sweep": [
+        {
+          "hidden": 0,
+          "weight_decay": 0.001,
+          "dev_accuracy": 0.7738095238095238,
+          "epoch": 60
+        },
+        {
+          "hidden": 0,
+          "weight_decay": 0.01,
+          "dev_accuracy": 0.7738095238095238,
+          "epoch": 60
+        },
+        {
+          "hidden": 0,
+          "weight_decay": 0.1,
+          "dev_accuracy": 0.7738095238095238,
+          "epoch": 60
+        },
+        {
+          "hidden": 0,
+          "weight_decay": 1.0,
+          "dev_accuracy": 0.7761904761904762,
+          "epoch": 80
+        },
+        {
+          "hidden": 128,
+          "weight_decay": 0.001,
+          "dev_accuracy": 0.7619047619047619,
+          "epoch": 120
+        },
+        {
+          "hidden": 128,
+          "weight_decay": 0.01,
+          "dev_accuracy": 0.7595238095238095,
+          "epoch": 20
+        },
+        {
+          "hidden": 128,
+          "weight_decay": 0.1,
+          "dev_accuracy": 0.7619047619047619,
+          "epoch": 160
+        },
+        {
+          "hidden": 128,
+          "weight_decay": 1.0,
+          "dev_accuracy": 0.7642857142857142,
+          "epoch": 120
+        },
+        {
+          "hidden": 512,
+          "weight_decay": 0.001,
+          "dev_accuracy": 0.7571428571428571,
+          "epoch": 20
+        },
+        {
+          "hidden": 512,
+          "weight_decay": 0.01,
+          "dev_accuracy": 0.7595238095238095,
+          "epoch": 260
+        },
+        {
+          "hidden": 512,
+          "weight_decay": 0.1,
+          "dev_accuracy": 0.7595238095238095,
+          "epoch": 360
+        },
+        {
+          "hidden": 512,
+          "weight_decay": 1.0,
+          "dev_accuracy": 0.7619047619047619,
+          "epoch": 380
+        }
+      ]
+    }
+  },
+  "head_to_head": {
+    "asr_encoder": "sensevoice",
+    "gap_to_emotion2vec": 0.08048780487804885,
+    "mcnemar_b": 43,
+    "mcnemar_c": 76,
+    "mcnemar_p": 0.0031831844482176504
+  },
+  "verdict": "🔴 SHARING COSTS REAL ACCURACY. Best ASR encoder (sensevoice) reaches 0.7000 against emotion2vec's 0.7805 -- a 0.0805 gap that a swept head did NOT close (paired p=0.0032). The emotion information is genuinely thinner in an ASR encoder. Budget two encoders, or accept the gap knowingly.",
+  "seconds": 54.3
+}

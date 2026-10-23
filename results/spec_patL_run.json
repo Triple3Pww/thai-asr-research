@@ -1,0 +1,7 @@
+{
+ "model": "nectec/Pathumma-whisper-th-large-v3",
+ "n": 682,
+ "spec_ms_p50": 264.3333999731112,
+ "spec_ms_p90": 523.1013599957807,
+ "passes_p50": 8.0
+}

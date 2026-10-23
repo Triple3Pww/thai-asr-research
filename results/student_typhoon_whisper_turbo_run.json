@@ -1,0 +1,13 @@
+{
+ "model": "typhoon-ai/typhoon-whisper-turbo",
+ "params_B": 0.809,
+ "n": 682,
+ "beams": 1,
+ "device": "NVIDIA GeForce RTX 5060 Ti",
+ "dtype": "fp16",
+ "batch": 1,
+ "latency_ms_p50": 1228.5,
+ "latency_ms_p90": 2100.6,
+ "rtf": 0.129,
+ "mean_clip_s": 9.7
+}

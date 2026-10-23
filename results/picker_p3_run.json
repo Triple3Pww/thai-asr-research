@@ -1,0 +1,22 @@
+{
+ "base": "Qwen/Qwen3-0.6B",
+ "n_train": 4214,
+ "n_heldout": 424,
+ "epochs": 3,
+ "lr": 2e-05,
+ "heldout_before": {
+  "vote": 0.0184,
+  "picker": 0.0184,
+  "oracle": 0.007
+ },
+ "heldout_after": {
+  "vote": 0.0184,
+  "picker": 0.0156,
+  "oracle": 0.007
+ },
+ "latency_ms_bs1": {
+  "p50": 252.3,
+  "p90": 481.2
+ },
+ "checkpoint": "E:\\Claude\\asr-research\\checkpoints\\picker_p3"
+}

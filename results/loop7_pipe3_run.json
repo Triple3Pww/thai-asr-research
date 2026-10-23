@@ -1,0 +1,7 @@
+{
+ "system": "NECTEC draft -> {Pathumma-L, typhoon-L} speculative, concurrent -> ROVER",
+ "n": 682,
+ "turn_ms_p50": 481.2,
+ "turn_ms_p90": 908.4,
+ "turn_ms_mean": 560.6
+}

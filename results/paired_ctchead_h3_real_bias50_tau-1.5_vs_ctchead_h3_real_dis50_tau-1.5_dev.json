@@ -1,0 +1,20 @@
+{
+ "base": "results\\ctchead_h3_real_dis50_tau-1.5_hyps.jsonl",
+ "arm": "results\\ctchead_h3_real_bias50_tau-1.5_hyps.jsonl",
+ "official_cer": {
+  "base": 0.05529,
+  "arm": 0.05484
+ },
+ "official_entity_recall": {
+  "base": 0.4204,
+  "arm": 0.6115
+ },
+ "own_cer": {
+  "base": 0.97275,
+  "arm": 0.97275
+ },
+ "rel_change": -0.0082,
+ "p_arm_not_better": 1.0,
+ "utts_changed": 0,
+ "half": "dev"
+}

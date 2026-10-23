@@ -1,0 +1,13 @@
+{
+ "tag": "loop1_catalog_k50",
+ "mode": "rnnt",
+ "condition": "none",
+ "split": "real",
+ "n_utts": 682,
+ "tau": -1.5,
+ "max_gap": 6,
+ "spots_accepted": 1517,
+ "audio_h": 1.83,
+ "rtf": 0.0094,
+ "align_backend": "dp"
+}

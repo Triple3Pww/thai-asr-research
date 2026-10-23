@@ -1,0 +1,14 @@
+{
+ "kept": 2192,
+ "latin_rows": 310,
+ "dropped": {
+  "leak": 96,
+  "chars": 256,
+  "dur": 58,
+  "missing": 0
+ },
+ "fresh300": {
+  "nectec": 0.0355,
+  "gs2lot_a75": 0.0305
+ }
+}

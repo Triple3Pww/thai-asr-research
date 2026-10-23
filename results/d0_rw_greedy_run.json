@@ -1,0 +1,18 @@
+{
+ "tag": "d0_rw_greedy",
+ "split": "real",
+ "condition": "none",
+ "n_utts": 682,
+ "audio_h": 1.83,
+ "rtf": 0.0081,
+ "asr_health": {
+  "ok": true,
+  "model": "typhoon-ai/typhoon-asr-realtime",
+  "sample_rate": 16000,
+  "decoding": {
+   "strategy": "greedy_batch",
+   "device": "cuda",
+   "shipped_strategy": "greedy_batch"
+  }
+ }
+}

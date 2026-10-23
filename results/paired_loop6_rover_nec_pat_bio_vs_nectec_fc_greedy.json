@@ -1,0 +1,19 @@
+{
+ "base": "results\\nectec_fc_greedy_hyps.jsonl",
+ "arm": "results\\loop6_rover_nec_pat_bio_hyps.jsonl",
+ "official_cer": {
+  "base": 0.0695,
+  "arm": 0.07001
+ },
+ "official_entity_recall": {
+  "base": 0.3667,
+  "arm": 0.3872
+ },
+ "own_cer": {
+  "base": 0.08453,
+  "arm": 0.08639
+ },
+ "rel_change": 0.0073,
+ "p_arm_not_better": 0.7018,
+ "utts_changed": 520
+}

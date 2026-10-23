@@ -1,0 +1,7 @@
+{
+ "model": "checkpoints/seedsoup_a50.nemo",
+ "n": 682,
+ "latency_ms_p50": 123.7,
+ "latency_ms_p90": 193.6,
+ "rtf": 0.0134
+}

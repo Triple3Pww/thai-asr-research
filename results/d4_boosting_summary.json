@@ -1,0 +1,331 @@
+{
+ "arm": "D4 context biasing via NeMo GPUBoostingTreeModel",
+ "selected": {
+  "alpha": 1.0,
+  "context_score": 0.5,
+  "selected_on": "synth split, 400-utt seeded sample, bias@50"
+ },
+ "dev": [
+  {
+   "label": "none",
+   "alpha": null,
+   "context_score": null,
+   "cer": 0.04894678927925804,
+   "u_cer": 0.028656837184212892,
+   "b_cer": 0.19,
+   "entity_recall": 0.2920353982300885
+  },
+  {
+   "label": "bias@50 a0.25 s1",
+   "alpha": 0.25,
+   "context_score": 1,
+   "cer": 0.04946579304645535,
+   "u_cer": 0.027735323204171537,
+   "b_cer": 0.20217975043437056,
+   "entity_recall": 0.3112094395280236
+  },
+  {
+   "label": "bias@50 a0.5 s1",
+   "alpha": 0.5,
+   "context_score": 1,
+   "cer": 0.049600912200684154,
+   "u_cer": 0.028409601726153016,
+   "b_cer": 0.1975211797929087,
+   "entity_recall": 0.32595870206489674
+  },
+  {
+   "label": "bias@50 a1 s0.5",
+   "alpha": 1,
+   "context_score": 0.5,
+   "cer": 0.049891838741396265,
+   "u_cer": 0.02856693338128203,
+   "b_cer": 0.19911921988046555,
+   "entity_recall": 0.336283185840708
+  },
+  {
+   "label": "bias@50 a1 s0.75",
+   "alpha": 1,
+   "context_score": 0.75,
+   "cer": 0.051513301695449265,
+   "u_cer": 0.0306347208486919,
+   "b_cer": 0.199173422349388,
+   "entity_recall": 0.3480825958702065
+  },
+  {
+   "label": "bias@50 a1 s1",
+   "alpha": 1,
+   "context_score": 1,
+   "cer": 0.05431272154391493,
+   "u_cer": 0.03360154634541041,
+   "b_cer": 0.2008587786259542,
+   "entity_recall": 0.3613569321533923
+  },
+  {
+   "label": "bias@50 a1 s1.25",
+   "alpha": 1,
+   "context_score": 1.25,
+   "cer": 0.05589070262597587,
+   "u_cer": 0.03474781983277893,
+   "b_cer": 0.2068356867779204,
+   "entity_recall": 0.3775811209439528
+  },
+  {
+   "label": "bias@50 a1 s1.5",
+   "alpha": 1,
+   "context_score": 1.5,
+   "cer": 0.05883165853947446,
+   "u_cer": 0.039490245437382,
+   "b_cer": 0.19850673591949358,
+   "entity_recall": 0.3952802359882006
+  },
+  {
+   "label": "bias@50 a1 s2",
+   "alpha": 1,
+   "context_score": 2,
+   "cer": 0.06866315664463006,
+   "u_cer": 0.049177380203182595,
+   "b_cer": 0.21243781094527364,
+   "entity_recall": 0.40707964601769914
+  },
+  {
+   "label": "bias@50 a1 s3",
+   "alpha": 1,
+   "context_score": 3,
+   "cer": 0.12080926011075348,
+   "u_cer": 0.1007596871347658,
+   "b_cer": 0.2821486706456864,
+   "entity_recall": 0.4410029498525074
+  },
+  {
+   "label": "bias@50 a1 s4",
+   "alpha": 1,
+   "context_score": 4,
+   "cer": 0.23580556454221935,
+   "u_cer": 0.20927357727231863,
+   "b_cer": 0.4736099919419823,
+   "entity_recall": 0.4351032448377581
+  },
+  {
+   "label": "bias@50 a1 s5",
+   "alpha": 1,
+   "context_score": 5,
+   "cer": 0.41258584500010187,
+   "u_cer": 0.3799559471365639,
+   "b_cer": 0.729635291548373,
+   "entity_recall": 0.45132743362831856
+  }
+ ],
+ "heldout": [
+  {
+   "condition": "none",
+   "label": "none (control)",
+   "recall": 0.32801822323462415,
+   "gold": [
+    144,
+    439
+   ],
+   "u_cer": 0.10570929567285976,
+   "b_cer": 0.26177836761778367,
+   "cer": 0.11248415716096324,
+   "distractor_fire_rate": null,
+   "rtf": 0.0279,
+   "counts": {
+    "overall": {
+     "sub": 2462,
+     "ins": 3036,
+     "dele": 2312,
+     "ref": 69432
+    },
+    "biased": {
+     "sub": 522,
+     "ins": 0,
+     "dele": 267,
+     "ref": 3014
+    },
+    "unbiased": {
+     "sub": 1940,
+     "ins": 3036,
+     "dele": 2045,
+     "ref": 66418
+    },
+    "gold": [
+     144,
+     439
+    ],
+    "fired": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "condition": "bias@0",
+   "label": "bias@0  gold only",
+   "recall": 0.3621867881548975,
+   "gold": [
+    159,
+    439
+   ],
+   "u_cer": 0.10196031196362432,
+   "b_cer": 0.3138350312191916,
+   "cer": 0.11124227984048603,
+   "distractor_fire_rate": null,
+   "rtf": 0.0184,
+   "counts": {
+    "overall": {
+     "sub": 2423,
+     "ins": 2992,
+     "dele": 2312,
+     "ref": 69461
+    },
+    "biased": {
+     "sub": 491,
+     "ins": 208,
+     "dele": 256,
+     "ref": 3043
+    },
+    "unbiased": {
+     "sub": 1932,
+     "ins": 2784,
+     "dele": 2056,
+     "ref": 66418
+    },
+    "gold": [
+     159,
+     439
+    ],
+    "fired": [
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "condition": "bias@50",
+   "label": "bias@50",
+   "recall": 0.35079726651480636,
+   "gold": [
+    154,
+    439
+   ],
+   "u_cer": 0.10102683007618417,
+   "b_cer": 0.3730691739422431,
+   "cer": 0.11270102023171365,
+   "distractor_fire_rate": 0.0002639683238011439,
+   "rtf": 0.0212,
+   "counts": {
+    "overall": {
+     "sub": 2502,
+     "ins": 2933,
+     "dele": 2386,
+     "ref": 69396
+    },
+    "biased": {
+     "sub": 501,
+     "ins": 364,
+     "dele": 246,
+     "ref": 2978
+    },
+    "unbiased": {
+     "sub": 2001,
+     "ins": 2569,
+     "dele": 2140,
+     "ref": 66418
+    },
+    "gold": [
+     154,
+     439
+    ],
+    "fired": [
+     9,
+     34095
+    ]
+   }
+  },
+  {
+   "condition": "bias@500",
+   "label": "bias@500",
+   "recall": 0.3416856492027335,
+   "gold": [
+    150,
+    439
+   ],
+   "u_cer": 0.09724773404799904,
+   "b_cer": 0.49527983816587995,
+   "cer": 0.11426265421422807,
+   "distractor_fire_rate": 0.0001588155886323331,
+   "rtf": 0.0311,
+   "counts": {
+    "overall": {
+     "sub": 2482,
+     "ins": 3024,
+     "dele": 2422,
+     "ref": 69384
+    },
+    "biased": {
+     "sub": 511,
+     "ins": 703,
+     "dele": 255,
+     "ref": 2966
+    },
+    "unbiased": {
+     "sub": 1971,
+     "ins": 2321,
+     "dele": 2167,
+     "ref": 66418
+    },
+    "gold": [
+     150,
+     439
+    ],
+    "fired": [
+     54,
+     340017
+    ]
+   }
+  },
+  {
+   "condition": "dis@500",
+   "label": "dis@500 NO gold",
+   "recall": 0.3234624145785877,
+   "gold": [
+    142,
+    439
+   ],
+   "u_cer": 0.09830166521123791,
+   "b_cer": 0.4958791208791209,
+   "cer": 0.11500072118851867,
+   "distractor_fire_rate": 0.00016468989774521886,
+   "rtf": 0.0312,
+   "counts": {
+    "overall": {
+     "sub": 2517,
+     "ins": 2938,
+     "dele": 2518,
+     "ref": 69330
+    },
+    "biased": {
+     "sub": 535,
+     "ins": 652,
+     "dele": 257,
+     "ref": 2912
+    },
+    "unbiased": {
+     "sub": 1982,
+     "ins": 2286,
+     "dele": 2261,
+     "ref": 66418
+    },
+    "gold": [
+     142,
+     439
+    ],
+    "fired": [
+     56,
+     340033
+    ]
+   }
+  }
+ ],
+ "caveat_b_cer": "insertion attribution charges an inserted run to B iff it is a >=2-char substring of ANY listed form; with a 500-entry list 82% of charged runs are 2-3 chars, so B-CER inflates and U-CER deflates with list SIZE, independent of the model"
+}

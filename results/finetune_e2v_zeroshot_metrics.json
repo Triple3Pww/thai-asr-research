@@ -1,0 +1,268 @@
+{
+  "arm": "finetune_emotion2vec",
+  "condition": "zeroshot",
+  "date": "2026-09-22 12:48:38",
+  "what": "the SHIPPED 9-class emotion2vec_plus_large head, argmax mapped to 4 classes",
+  "test_actors": [
+    "001",
+    "004",
+    "108",
+    "111",
+    "114",
+    "182",
+    "185",
+    "188"
+  ],
+  "splits": {
+    "train": {
+      "n": 426,
+      "accuracy": 0.7511737089201878,
+      "ci95": [
+        0.710118374459642,
+        0.7922290433807335
+      ],
+      "macro_recall": 0.7414402425638381,
+      "chance_majority_class": 0.31690140845070425,
+      "beats_majority_class": true,
+      "per_class": {
+        "NEUTRAL": {
+          "support": 111,
+          "recall": 0.8828828828828829,
+          "precision": 0.8990825688073395
+        },
+        "HAPPY": {
+          "support": 135,
+          "recall": 0.7703703703703704,
+          "precision": 0.6709677419354839
+        },
+        "ANGRY": {
+          "support": 89,
+          "recall": 0.7191011235955056,
+          "precision": 0.8421052631578947
+        },
+        "SAD": {
+          "support": 91,
+          "recall": 0.5934065934065934,
+          "precision": 0.8852459016393442
+        }
+      },
+      "confusion": {
+        "ANGRY->ANGRY": 64,
+        "ANGRY->HAPPY": 15,
+        "ANGRY->NEUTRAL": 6,
+        "ANGRY->SAD": 3,
+        "ANGRY->SURPRISED": 1,
+        "HAPPY->ANGRY": 12,
+        "HAPPY->DISGUSTED": 7,
+        "HAPPY->FEARFUL": 3,
+        "HAPPY->HAPPY": 104,
+        "HAPPY->NEUTRAL": 2,
+        "HAPPY->SAD": 2,
+        "HAPPY->SURPRISED": 5,
+        "NEUTRAL-><UNK>": 2,
+        "NEUTRAL->HAPPY": 7,
+        "NEUTRAL->NEUTRAL": 98,
+        "NEUTRAL->OTHER": 1,
+        "NEUTRAL->SAD": 2,
+        "NEUTRAL->SURPRISED": 1,
+        "SAD->DISGUSTED": 3,
+        "SAD->FEARFUL": 1,
+        "SAD->HAPPY": 29,
+        "SAD->NEUTRAL": 3,
+        "SAD->OTHER": 1,
+        "SAD->SAD": 54
+      },
+      "pred_distribution": {
+        "NEUTRAL": 109,
+        "HAPPY": 155,
+        "ANGRY": 76,
+        "DISGUSTED": 10,
+        "SAD": 61,
+        "FEARFUL": 4,
+        "SURPRISED": 7,
+        "OTHER": 2,
+        "<UNK>": 2
+      },
+      "by_turn_type": {
+        "impro": {
+          "n": 223,
+          "accuracy": 0.7085201793721974,
+          "macro_recall": 0.7125092661230541
+        },
+        "script": {
+          "n": 203,
+          "accuracy": 0.7980295566502463,
+          "macro_recall": 0.7739487649848714
+        }
+      }
+    },
+    "dev": {
+      "n": 420,
+      "accuracy": 0.7309523809523809,
+      "ci95": [
+        0.6885402059009573,
+        0.7733645560038045
+      ],
+      "macro_recall": 0.7273951746983398,
+      "chance_majority_class": 0.37857142857142856,
+      "beats_majority_class": true,
+      "per_class": {
+        "NEUTRAL": {
+          "support": 159,
+          "recall": 0.7358490566037735,
+          "precision": 0.9069767441860465
+        },
+        "HAPPY": {
+          "support": 107,
+          "recall": 0.6915887850467289,
+          "precision": 0.5826771653543307
+        },
+        "ANGRY": {
+          "support": 98,
+          "recall": 0.7857142857142857,
+          "precision": 0.8953488372093024
+        },
+        "SAD": {
+          "support": 56,
+          "recall": 0.6964285714285714,
+          "precision": 0.8125
+        }
+      },
+      "confusion": {
+        "ANGRY->ANGRY": 77,
+        "ANGRY->DISGUSTED": 4,
+        "ANGRY->HAPPY": 13,
+        "ANGRY->NEUTRAL": 1,
+        "ANGRY->SAD": 1,
+        "ANGRY->SURPRISED": 2,
+        "HAPPY->ANGRY": 8,
+        "HAPPY->DISGUSTED": 4,
+        "HAPPY->FEARFUL": 1,
+        "HAPPY->HAPPY": 74,
+        "HAPPY->NEUTRAL": 8,
+        "HAPPY->OTHER": 1,
+        "HAPPY->SAD": 5,
+        "HAPPY->SURPRISED": 6,
+        "NEUTRAL-><UNK>": 2,
+        "NEUTRAL->ANGRY": 1,
+        "NEUTRAL->DISGUSTED": 4,
+        "NEUTRAL->FEARFUL": 1,
+        "NEUTRAL->HAPPY": 29,
+        "NEUTRAL->NEUTRAL": 117,
+        "NEUTRAL->SAD": 3,
+        "NEUTRAL->SURPRISED": 2,
+        "SAD->DISGUSTED": 1,
+        "SAD->FEARFUL": 2,
+        "SAD->HAPPY": 11,
+        "SAD->NEUTRAL": 3,
+        "SAD->SAD": 39
+      },
+      "pred_distribution": {
+        "ANGRY": 86,
+        "HAPPY": 127,
+        "SURPRISED": 10,
+        "SAD": 48,
+        "NEUTRAL": 129,
+        "DISGUSTED": 13,
+        "OTHER": 1,
+        "<UNK>": 2,
+        "FEARFUL": 4
+      },
+      "by_turn_type": {
+        "impro": {
+          "n": 243,
+          "accuracy": 0.6707818930041153,
+          "macro_recall": 0.6722739820565907
+        },
+        "script": {
+          "n": 177,
+          "accuracy": 0.8135593220338984,
+          "macro_recall": 0.7652138157894737
+        }
+      }
+    },
+    "test": {
+      "n": 410,
+      "accuracy": 0.7317073170731707,
+      "ci95": [
+        0.6888191726957893,
+        0.7745954614505521
+      ],
+      "macro_recall": 0.6848409174990752,
+      "chance_majority_class": 0.35365853658536583,
+      "beats_majority_class": true,
+      "per_class": {
+        "NEUTRAL": {
+          "support": 145,
+          "recall": 0.8,
+          "precision": 0.9206349206349206
+        },
+        "HAPPY": {
+          "support": 110,
+          "recall": 0.7,
+          "precision": 0.5923076923076923
+        },
+        "ANGRY": {
+          "support": 102,
+          "recall": 0.8431372549019608,
+          "precision": 0.8775510204081632
+        },
+        "SAD": {
+          "support": 53,
+          "recall": 0.39622641509433965,
+          "precision": 0.6
+        }
+      },
+      "confusion": {
+        "ANGRY->ANGRY": 86,
+        "ANGRY->DISGUSTED": 1,
+        "ANGRY->HAPPY": 13,
+        "ANGRY->SAD": 2,
+        "HAPPY-><UNK>": 3,
+        "HAPPY->ANGRY": 11,
+        "HAPPY->DISGUSTED": 1,
+        "HAPPY->FEARFUL": 2,
+        "HAPPY->HAPPY": 77,
+        "HAPPY->NEUTRAL": 5,
+        "HAPPY->SAD": 7,
+        "HAPPY->SURPRISED": 4,
+        "NEUTRAL-><UNK>": 1,
+        "NEUTRAL->ANGRY": 1,
+        "NEUTRAL->DISGUSTED": 2,
+        "NEUTRAL->HAPPY": 20,
+        "NEUTRAL->NEUTRAL": 116,
+        "NEUTRAL->SAD": 5,
+        "SAD->DISGUSTED": 2,
+        "SAD->FEARFUL": 4,
+        "SAD->HAPPY": 20,
+        "SAD->NEUTRAL": 5,
+        "SAD->SAD": 21,
+        "SAD->SURPRISED": 1
+      },
+      "pred_distribution": {
+        "NEUTRAL": 126,
+        "HAPPY": 130,
+        "SAD": 35,
+        "FEARFUL": 6,
+        "SURPRISED": 5,
+        "ANGRY": 98,
+        "<UNK>": 4,
+        "DISGUSTED": 6
+      },
+      "by_turn_type": {
+        "impro": {
+          "n": 225,
+          "accuracy": 0.72,
+          "macro_recall": 0.7067683133859604
+        },
+        "script": {
+          "n": 185,
+          "accuracy": 0.745945945945946,
+          "macro_recall": 0.6959781822243156
+        }
+      }
+    }
+  },
+  "headline_test_accuracy": 0.7317073170731707,
+  "seconds": 902.0
+}

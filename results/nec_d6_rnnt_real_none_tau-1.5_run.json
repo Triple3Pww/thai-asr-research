@@ -1,0 +1,13 @@
+{
+ "tag": "nec_d6_rnnt_real_none_tau-1.5",
+ "mode": "rnnt",
+ "condition": "none",
+ "split": "real",
+ "n_utts": 682,
+ "tau": -1.5,
+ "max_gap": 6,
+ "spots_accepted": 0,
+ "audio_h": 1.83,
+ "rtf": 0.0128,
+ "align_backend": "dp"
+}

@@ -1,0 +1,77 @@
+{
+  "arm": "finetune_emotion2vec",
+  "condition": "zeroshot",
+  "date": "2026-09-22 12:48:38",
+  "model": "emotion2vec/emotion2vec_plus_large",
+  "cache": "D:\\sensevoice-spike\\ft_cache",
+  "score_mic": "mic_clip",
+  "cache_index": {
+    "built": "2026-09-22 12:33:23",
+    "shards": [
+      "train-00000.parquet",
+      "train-00010.parquet",
+      "train-00020.parquet"
+    ],
+    "agreement_min": 0.7,
+    "mics": [
+      "mic_clip",
+      "mic_con",
+      "mic_middle",
+      "mic_zoom"
+    ],
+    "mic_clips_available": {
+      "mic_clip": 1256,
+      "mic_con": 1256,
+      "mic_middle": 691,
+      "mic_zoom": 0
+    },
+    "rows_seen": 2882,
+    "rows_kept": 1256,
+    "skipped": {
+      "no_majority_or_unmapped": 247,
+      "below_agreement": 619,
+      "held_out_frustrated": 760
+    },
+    "actors": [
+      "001",
+      "002",
+      "003",
+      "004",
+      "005",
+      "006",
+      "108",
+      "109",
+      "110",
+      "111",
+      "112",
+      "113",
+      "114",
+      "115",
+      "181",
+      "182",
+      "183",
+      "184",
+      "185",
+      "186",
+      "187",
+      "188"
+    ],
+    "gold_distribution": {
+      "NEUTRAL": 415,
+      "HAPPY": 352,
+      "ANGRY": 289,
+      "SAD": 200
+    },
+    "audio_seconds": 5912.0
+  },
+  "hyperparameters": null,
+  "environment": {
+    "python": "3.11.9",
+    "torch": "2.14.0+cpu",
+    "numpy": "1.26.4",
+    "device": "cpu",
+    "threads": 4,
+    "venv": "D:/sensevoice-spike/.venv",
+    "platform": "Windows-10-10.0.26200-SP0"
+  }
+}

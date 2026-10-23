@@ -1,0 +1,58 @@
+{
+ "args": {
+  "cmd": "train",
+  "tag": "f2",
+  "no_whisper": false,
+  "layers": 2,
+  "lr": 5e-05,
+  "dec_lr": 0.0,
+  "bs": 8,
+  "epochs": 4,
+  "eval_every": 1000,
+  "seed": 2026,
+  "max_steps": 0
+ },
+ "whisper": "nectec/Pathumma-whisper-th-large-v3",
+ "train_clips": 15286,
+ "step0_val_cer": 0.0758536470809262,
+ "best_val_cer": 0.052980132450331126,
+ "log": [
+  {
+   "step": 0,
+   "val_cer": 0.0759
+  },
+  {
+   "step": 1000,
+   "val_cer": 0.1004
+  },
+  {
+   "step": 2000,
+   "val_cer": 0.074
+  },
+  {
+   "step": 3000,
+   "val_cer": 0.0829
+  },
+  {
+   "step": 4000,
+   "val_cer": 0.0752
+  },
+  {
+   "step": 5000,
+   "val_cer": 0.0631
+  },
+  {
+   "step": 6000,
+   "val_cer": 0.053
+  },
+  {
+   "step": 7000,
+   "val_cer": 0.0537
+  },
+  {
+   "step": 7644,
+   "val_cer": 0.0539
+  }
+ ],
+ "checkpoint": "E:\\Claude\\asr-research\\checkpoints\\fuse_f2.pt"
+}

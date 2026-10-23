@@ -1,0 +1,74 @@
+{
+ "tag": "h1",
+ "sets": [
+  "lot_train",
+  "porjai_train"
+ ],
+ "hidden": 0,
+ "lr": 0.001,
+ "bs": 32,
+ "epochs": 12,
+ "best_val_greedy_cer": 0.1450381679389313,
+ "log": [
+  {
+   "epoch": 0,
+   "loss": 7.6678,
+   "val_greedy_cer": 0.9908
+  },
+  {
+   "epoch": 1,
+   "loss": 3.8178,
+   "val_greedy_cer": 0.7356
+  },
+  {
+   "epoch": 2,
+   "loss": 2.4799,
+   "val_greedy_cer": 0.5026
+  },
+  {
+   "epoch": 3,
+   "loss": 1.8193,
+   "val_greedy_cer": 0.3479
+  },
+  {
+   "epoch": 4,
+   "loss": 1.4631,
+   "val_greedy_cer": 0.2651
+  },
+  {
+   "epoch": 5,
+   "loss": 1.2511,
+   "val_greedy_cer": 0.2231
+  },
+  {
+   "epoch": 6,
+   "loss": 1.1153,
+   "val_greedy_cer": 0.1937
+  },
+  {
+   "epoch": 7,
+   "loss": 1.0237,
+   "val_greedy_cer": 0.1708
+  },
+  {
+   "epoch": 8,
+   "loss": 0.9586,
+   "val_greedy_cer": 0.1615
+  },
+  {
+   "epoch": 9,
+   "loss": 0.9105,
+   "val_greedy_cer": 0.1577
+  },
+  {
+   "epoch": 10,
+   "loss": 0.874,
+   "val_greedy_cer": 0.1482
+  },
+  {
+   "epoch": 11,
+   "loss": 0.8452,
+   "val_greedy_cer": 0.145
+  }
+ ]
+}

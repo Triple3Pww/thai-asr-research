@@ -1,0 +1,7 @@
+{
+ "manifest": "E:/Claude/datasets/gs2_train/manifest_fresh300.jsonl",
+ "n": 300,
+ "cer": {
+  "base": 0.0333
+ }
+}

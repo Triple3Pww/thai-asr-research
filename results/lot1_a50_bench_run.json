@@ -1,0 +1,7 @@
+{
+ "model": "checkpoints/lot1_a50.nemo",
+ "n": 682,
+ "latency_ms_p50": 50.0,
+ "latency_ms_p90": 60.3,
+ "rtf": 0.0051
+}

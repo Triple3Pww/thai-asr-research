@@ -1,0 +1,20 @@
+{
+ "base": "results\\r2ep_a75_bench_hyps.jsonl",
+ "arm": "results\\r2ep_a75_rs_bench_hyps.jsonl",
+ "official_cer": {
+  "base": 0.04561,
+  "arm": 0.06835
+ },
+ "official_entity_recall": {
+  "base": 0.4331,
+  "arm": 0.4204
+ },
+ "own_cer": {
+  "base": 0.04539,
+  "arm": 0.06794
+ },
+ "rel_change": 0.4984,
+ "p_arm_not_better": 1.0,
+ "utts_changed": 38,
+ "half": "dev"
+}

@@ -1,0 +1,7 @@
+{
+ "manifest": "E:/asr-bench/typhoon-eval/manifest_tvspeech.jsonl",
+ "n": 570,
+ "cer": {
+  "lot2s2_a75": 0.0739
+ }
+}

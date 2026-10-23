@@ -1,0 +1,7 @@
+{
+ "manifest": "E:/Claude/datasets/lotusdis_lav/manifest_val_conv.jsonl",
+ "n": 507,
+ "cer": {
+  "lot2s2_a75": 0.0729
+ }
+}

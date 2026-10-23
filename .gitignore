@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+checkpoints/
+data/
+lm/
+logs/
+*.nemo
+*.pt
+*.wav
+*_hyps.jsonl

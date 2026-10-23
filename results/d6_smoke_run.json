@@ -1,0 +1,13 @@
+{
+ "tag": "d6_smoke",
+ "mode": "ctc",
+ "condition": "bias@50",
+ "split": "real",
+ "n_utts": 40,
+ "tau": -1.5,
+ "max_gap": 6,
+ "spots_accepted": 23,
+ "audio_h": 0.105,
+ "rtf": 0.0211,
+ "align_backend": "dp"
+}

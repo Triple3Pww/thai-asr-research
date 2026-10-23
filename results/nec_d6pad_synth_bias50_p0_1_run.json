@@ -1,0 +1,13 @@
+{
+ "tag": "nec_d6pad_synth_bias50_p0_1",
+ "mode": "rnnt",
+ "condition": "bias@50",
+ "split": "synth",
+ "n_utts": 1380,
+ "tau": -1.5,
+ "max_gap": 6,
+ "spots_accepted": 1345,
+ "audio_h": 5.77,
+ "rtf": 0.0229,
+ "align_backend": "dp"
+}

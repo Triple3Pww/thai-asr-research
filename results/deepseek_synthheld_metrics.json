@@ -1,0 +1,15 @@
+{
+ "manifest": "E:/Claude/datasets/synth/manifest_nectec_heldout.jsonl",
+ "n": 424,
+ "cer": {
+  "base": 0.039,
+  "lot2_a25": 0.0338,
+  "lot2_a50": 0.0254,
+  "lot2_a75": 0.0213,
+  "lot2_a100": 0.0216,
+  "lot3_a25": 0.0224,
+  "lot3_a50": 0.0118,
+  "lot3_a75": 0.0108,
+  "lot3_a100": 0.011
+ }
+}

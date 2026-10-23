@@ -1,0 +1,11 @@
+{
+ "model": "checkpoints/r2ep_e60d100.nemo",
+ "strategy": "greedy_batch",
+ "beam": 4,
+ "lm": null,
+ "lm_alpha": 0.0,
+ "n": 682,
+ "latency_ms_p50": 125.9,
+ "latency_ms_p90": 190.3,
+ "rtf": 0.0135
+}

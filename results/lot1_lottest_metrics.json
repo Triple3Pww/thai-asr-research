@@ -1,0 +1,11 @@
+{
+ "manifest": "E:/Claude/datasets/lotusdis_lav/manifest_test.jsonl",
+ "n": 1000,
+ "cer": {
+  "base": 0.2033,
+  "a25": 0.1784,
+  "a50": 0.1594,
+  "a75": 0.1555,
+  "a100": 0.1533
+ }
+}
